@@ -1,5 +1,7 @@
 ## File della cartella di sistema .vs ##
 .vs
+sitoo
+__pycache__
 
 ## File di prova ##
 #index.html
