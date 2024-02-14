@@ -1,3 +1,9 @@
+<?php
+session_start();
+$host = $_SERVER['HTTP_HOST'];
+$dir = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+?>
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -11,7 +17,7 @@
         <h4> Provo ad inserire le cose</h4>
         <a href="https://www.google.com/"> Google.com </a>
         <br/>
-        <a href="script.php"> PHP </a>
+        <a href="<?php $dir ?>/readme.md"> PHP </a>
         <?php
             $ciao = "Ciao";
 
