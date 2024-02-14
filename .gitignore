@@ -1,6 +1,6 @@
-# Ignoro i file della cartella di sistema .vs
+## File della cartella di sistema .vs ##
 .vs
 
-# File di prova
-./index.html
-./README.md
+## File di prova ##
+! index.html
+! README.md
