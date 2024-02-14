@@ -1,2 +1,5 @@
 # Ignoro i file della cartella di sistema .vs
 .vs
+
+# File di prova
+index.html
