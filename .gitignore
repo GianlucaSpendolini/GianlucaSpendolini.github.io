@@ -1,6 +1,9 @@
-## File della cartella di sistema .vs ##
+## File nelle cartelle ##
+# Di sistema
 .vs
-Sito_allenamento
+
+# Sito sotto dominio "clinicalweb-twin.marionegri.it/" (omentaneamente lo salvo in altra cartella in drive)
+Sito_allenamento 
 
 ## File di prova ##
 #index.html
