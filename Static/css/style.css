@@ -1,11 +1,33 @@
 .imgflex {
+    align-items: center;
     max-height: 25%;
     max-width: 25%;
-	align-self: center;
+}
+
+.movement_into_pages {
+    color: blue;
+    text-align: right;
+    text-decoration: none;
+}
+
+.tAggiunte {
+    width: 25%;
+}
+
+.tData {
+    width: 25%;
+}
+
+.tDescrizione {
+    width: 50%;
 }
 
 h1 {
-    font-family: verdana, geneva, sans serif;
-    font-size: 16px; 
     color: #ccc;
+    font-family: verdana, geneva, sans serif;
+    font-size: 16px;
+}
+
+table {
+    width: 100%;
 }

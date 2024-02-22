@@ -59,6 +59,26 @@ Aggiornamento projects/index.html
 - Aggiunta collegamenti a canali instagram
 - Aggiunta commento indicativo per inserimento i successivi blocchi
 
+## 22/02/2024
+
+Aggiunta pagine e sezioni
+- /changes/
+	- index.html
+		- Indica ogni file sotto questa cartella e una descrizione
+	- changes_table.html
+		- Tabella contenente tutte le modifiche
+- /generic/
+	- index.html
+		- Inserimento link a progetti per i miei amici (cartella di prova, per questa sezione faro' una repo su GitHub condivisa)
+
+Aggiornamento 
+- style.css
+	- Inserimento classe "movement_into_pages" per i link per "viaggiare tra le pagine"
+	- Inserimento classe "tData", "tDescrizione", "tAggiunte" per la tabella dei cambiamenti (in modo che prenda la pagina)
+- .gitignore
+	- Inserimento prova.html (perche' avro' una sezione per la prova ma piu' avanti)
+	- Inserimento generic/index.html (perche' avro' una nuova repo online che potro' accedere con il link in Home)
+
 
 # Altro
 

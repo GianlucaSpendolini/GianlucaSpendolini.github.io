@@ -1,10 +1,23 @@
-## File nelle cartelle ##
+## Cartelle e file in esse ##
+
 # Di sistema
 .vs
+.github
 
 # Sito sotto dominio "clinicalweb-twin.marionegri.it/" (omentaneamente lo salvo in altra cartella in drive)
 Sito_allenamento 
 
-## File di prova ##
-#index.html
-README.md
+
+## File ##
+
+# Readme
+#README.md
+
+
+## Altro ##
+
+# Cartella momentanea
+#generic/index.html
+
+# Di prova
+#prova.html
