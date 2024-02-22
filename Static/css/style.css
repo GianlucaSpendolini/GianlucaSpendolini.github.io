@@ -22,10 +22,11 @@
     width: 50%;
 }
 
-h1 {
+h1.title {
     color: #ccc;
     font-family: verdana, geneva, sans serif;
     font-size: 16px;
+    text-align:center;
 }
 
 table {
