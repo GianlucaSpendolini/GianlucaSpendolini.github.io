@@ -1,0 +1,28 @@
+.tAggiunte .tData {
+    width: 25%;
+}
+
+.tDescrizione {
+    width: 50%;
+}
+
+table {
+    background-color: #ccc;
+    border: 1px solid #000;
+    width: 100%;
+}
+
+td {
+    background-color: #eee;
+    border-color: #fff;
+}
+
+th {
+    background-color: #ddd;
+    border: 1px solid #fff;
+    color: red;
+}
+
+tr {
+    background-color: #ddd;
+}

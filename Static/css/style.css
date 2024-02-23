@@ -1,25 +1,7 @@
-.imgflex {
-    align-items: center;
-    max-height: 25%;
-    max-width: 25%;
-}
-
 .movement_into_pages {
     color: blue;
     text-align: right;
     text-decoration: none;
-}
-
-.tAggiunte {
-    width: 25%;
-}
-
-.tData {
-    width: 25%;
-}
-
-.tDescrizione {
-    width: 50%;
 }
 
 h1.title {
@@ -27,25 +9,4 @@ h1.title {
     font-family: verdana, geneva, sans serif;
     font-size: 16px;
     text-align:center;
-}
-
-table {
-    background-color: #ccc;
-    border: 1px solid #000;
-    width: 100%;
-}
-
-td {
-    background-color: #eee;
-    border-color: #fff;
-}
-
-th {
-    background-color: #ddd;
-    border: 1px solid #fff;
-    color: red;
-}
-
-tr {
-    background-color: #ddd;
 }
