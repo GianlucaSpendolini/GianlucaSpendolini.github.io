@@ -70,6 +70,11 @@ Aggiunta pagine e sezioni
 - /generic/
 	- index.html
 		- Inserimento link a progetti per i miei amici (cartella di prova, per questa sezione faro' una repo su GitHub condivisa)
+- /projects/web/
+  - index.html
+    - Indica i link ai vari siti che non fanno direttamente parte di questo progetto
+- about.html
+  - Pagina in cui parlo di me e fornisco contatti per potermi scrivere
 
 Aggiornamento 
 - style.css
@@ -78,6 +83,36 @@ Aggiornamento
 - .gitignore
 	- Inserimento prova.html (perche' avro' una sezione per la prova ma piu' avanti)
 	- Inserimento generic/index.html (perche' avro' una nuova repo online che potro' accedere con il link in Home)
+- index.html
+  - Aggiunta parte dove parlo della pagina dove "parlo" di me
+
+Modifica /games/
+- Spostamento intera cartella sotto /project/
+
+## 23/02/2024
+
+Aggiornamento
+- /projects/index.html
+  - Lettere accentate con "lettera'"
+- index.html
+  - Modifica al posto del link completo, uso "/generic/"
+- about.html
+  - Sistemati i linl per i social e per la mail
+  - Aggiunte foto per
+    - Mail
+    - Linkedin
+    - Git Hub
+    - Telegram
+- /web/index.html
+  - Aggiunti link per tornare a sezione precedente o alla home
+- Generale
+  - Cambio nome link da 'sito' a Home
+ 
+Aggiunte
+- /Static/css/photo.css
+  - Contiene ogni cambiamento per ogni tipo di immagine (es icone o sfondi)
+- /Static/css/table.css
+  - Contiene ogni cambiamento per ogni tipo di tabelle (es generale o per contatti)
 
 
 # Altro
