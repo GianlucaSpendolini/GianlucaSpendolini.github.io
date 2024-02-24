@@ -4,12 +4,17 @@
     max-width: 25%;
 }
 
-img.github, img.linkedin {
+/*img.github, img.linkedin {
     height: 5%;
     width: 5%;
 }
 
 img.mail, img.telegram {
+    height: 10%;
+    width: 10%;
+}*/
+
+img.github, img.linkedin, img.mail, img.telegram {
     height: 10%;
     width: 10%;
 }
