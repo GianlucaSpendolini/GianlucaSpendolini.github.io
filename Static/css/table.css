@@ -12,6 +12,11 @@ table {
     width: 100%;
 }
 
+table.contatti {
+    width: 50%;
+    align-self: center;
+}
+
 td {
     background-color: #eee;
     border-color: #fff;
