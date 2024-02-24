@@ -22,6 +22,14 @@ td {
     border-color: #fff;
 }
 
+td.icone {
+    width: 20%;
+}
+
+td.link {
+    width: 30%;
+}
+
 th {
     background-color: #ddd;
     border: 1px solid #fff;
