@@ -114,6 +114,22 @@ Aggiunte
 - /Static/css/table.css
   - Contiene ogni cambiamento per ogni tipo di tabelle (es generale o per contatti)
 
+## 24/02/2024
+
+Aggiornamento
+- /css/image.css
+	- Ridimensionamento loghi (10% della cella)
+- /css/table.css
+	- Ridimensionamento tabella generale (50% della larghezza totale)
+
+## 26/02/2024
+
+Aggiornamento
+- /css/table.css
+	- Larghezza colonne changes_table
+- readme.md
+	- Aggiornamento readme con data di oggi e 24/02/2024
+
 
 # Altro
 

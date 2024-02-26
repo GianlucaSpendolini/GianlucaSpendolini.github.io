@@ -1,9 +1,13 @@
-.tAggiunte, .tData {
-    width: 25%;
+.tAggiunte {
+    width: 30%;
+}
+
+.tData {
+    width: 10%;
 }
 
 .tDescrizione {
-    width: 50%;
+    width: 60%;
 }
 
 table {
