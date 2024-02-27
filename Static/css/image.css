@@ -26,6 +26,6 @@ img.mail, img.telegram {
     Ultima modifica: 12.5% per tabella e 80% per immagini
 */
 img.github, img.linkedin, img.mail, img.telegram {
-    height: 5%;
-    width: 5%;
+    height: 80%;
+    width: 80%;
 }
