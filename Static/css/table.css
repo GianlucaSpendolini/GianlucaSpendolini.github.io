@@ -10,18 +10,18 @@
     width: 60%;
 }
 
-table {
+table.change {
     background-color: #ccc;
     border: 1px solid #000;
     width: 100%;
 }
 
 table.contatti {
-    width: 25%;
+    width: 12.5%;
     text-align: center;
 }
 
-td {
+td.change {
     background-color: #eee;
     border-color: #fff;
 }
@@ -34,12 +34,12 @@ td.link {
     width: 30%;
 }
 
-th {
+th.change {
     background-color: #ddd;
     border: 1px solid #fff;
     color: red;
 }
 
-tr {
+tr.change {
     background-color: #ddd;
 }
