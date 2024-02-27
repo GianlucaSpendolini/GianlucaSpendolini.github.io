@@ -17,8 +17,8 @@ table {
 }
 
 table.contatti {
-    width: 50%;
-    align-items: center;
+    width: 25%;
+    text-align: center;
 }
 
 td {
