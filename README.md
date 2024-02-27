@@ -130,6 +130,28 @@ Aggiornamento
 - readme.md
 	- Aggiornamento readme con data di oggi e 24/02/2024
 
+## 27/02/2024
+
+Aggiornamento
+- /css/table.css
+    - Modifica dimensioni tabella contatti (25% con 30% e 20%)
+    - Aggiunto css "text-align: center;" per allineare il testo all'interno
+- /css/image.css
+    - Modifica dimensioni (in scala) delle icone
+- about.html
+    - Inserito attributo "align" con valore "center" per allineare al centro la tabella
+
+Aggiunta in /css/table.css
+- Classe "change" per diverse parti della tabella
+    - Righe
+    - Dati
+    - Header
+    - Tabella (in se')
+- In modo da applicare le modifiche solo alla tabella dei cambiamenti*
+    - Quella dei contatti deve essere fatta in altro modo e con altre caratteristiche
+
+*Non funziona -> provare con altro approccio
+
 
 # Altro
 
