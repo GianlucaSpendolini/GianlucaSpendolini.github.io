@@ -14,14 +14,18 @@ img.mail, img.telegram {
     width: 10%;
 }*/
 
-/* Le immagini sono al 100% della tabella -> 10% della dimensione
+/* 
+    SE DENTRO LA TABELLA, REGOLARSI CON QUESTE PROPORZIONI:
+    Le immagini sono al 100% della tabella -> 10% della dimensione
     quindi sono da aumentare al diminuire della dimensione 
     es: 50% sono al 20% e al 25% sono al 40%
 
     SE DIMINUISCO DELL'X% DEVO AUMENTARE L'IMMAGINE IN PROPORZIONE
     es: se riduco la tabella della meta', aumento l'immagine del doppio
+
+    Ultima modifica: 12.5% per tabella e 80% per immagini
 */
 img.github, img.linkedin, img.mail, img.telegram {
-    height: 40%;
-    width: 40%;
+    height: 5%;
+    width: 5%;
 }
