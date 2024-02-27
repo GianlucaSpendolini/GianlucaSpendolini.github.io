@@ -22,7 +22,7 @@ table.contatti {
     text-align: center;
 }
 
-td.change {
+/*td.change*/ table.change td {
     background-color: #eee;
     border-color: #fff;
 }
@@ -35,12 +35,12 @@ td.link {
     width: 30%;
 }
 
-th.change {
+/*th.change*/ table.change th {
     background-color: #ddd;
     border: 1px solid #fff;
     color: red;
 }
 
-tr.change {
+/*tr.change*/ table.change tr {
     background-color: #ddd;
 }

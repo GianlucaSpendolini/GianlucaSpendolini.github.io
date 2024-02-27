@@ -10,3 +10,11 @@ h1.title {
     font-size: 16px;
     text-align:center;
 }
+
+ul.contatti {
+    display: inline;
+}
+
+ul.contatti li {
+    display: inline;
+}
