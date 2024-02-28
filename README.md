@@ -150,7 +150,13 @@ Aggiunta in /css/table.css
 - In modo da applicare le modifiche solo alla tabella dei cambiamenti*
     - Quella dei contatti deve essere fatta in altro modo e con altre caratteristiche
 
+Provo con dimensioni 
+- Tabella 12.5%
+- Icone: 80% (poiche' abbiamo diminuito di 1/8 la dimensione della tabella -> la incremento per 8 volte)
+
+
 *Non funziona -> provare con altro approccio
+**Tolta poichè posso fare "attributi a discesa" usando: table.change 'tag' {}
 
 
 # Altro
