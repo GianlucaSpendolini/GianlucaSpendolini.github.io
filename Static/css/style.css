@@ -19,6 +19,10 @@ header ul {
     list-style-type: none;
 }
 
+header ul li {
+    padding: 10px;
+}
+
 ul.contatti {
     display: inline;
 }
