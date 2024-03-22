@@ -11,11 +11,19 @@ h1.title {
     text-align:center;
 }
 
+body {
+    margin: 20px;
+}
+
+header, main, footer {
+    padding: 10px;
+}
+
 header ul {
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
     list-style-type: none;
 }
 

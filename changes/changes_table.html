@@ -3,486 +3,506 @@
 
 <head>
     <meta charset="utf-8">
-    <link href="./../Static/css/style.css" rel="stylesheet" type="text/css" media="screen">
-    <link href="./../Static/css/table.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="./Static/css/image.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="./Static/css/style.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="./Static/css/table.css" rel="stylesheet" type="text/css" media="screen">
     <title> Changes table </title>
 </head>
 
 <body>
-    <h1 class="title"> Tabella dei cambiamenti </h1>
 
-    <p class="movement_into_pages">
-        Torna/vai a <a href="./../">Home/</a>
+    <header>
+
+        <h1 class="title">Tabella dei cambiamenti</h1>
+
         <br />
-        Torna/vai a <a href="./">Home/changes/</a>
-    </p>
 
-    <table class="change">
-        <thead>
-            <tr>
-                <th class="tData">Data</th>
-                <th class="tDescrizione">Descrizione</th>
-                <th class="tAggiunte">Aggiunte</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="tData">
-                    14/02/2024
-                </td>
-                <td class="tDescrizione">
-                    Creazione primi file
-                    <ul>
-                        <li>Aggiunta file index.html</li>
-                    </ul>
+        <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./projects/">Projects</a></li>
+            <li><a href="./utilities/">Utilities</a></li>
+            <li><a href="./generic/">Other</a></li>
+        </ul>
 
-                    Aggiunta progetto Django
-                    <ul>
-                        <li>Prove se funziona</li>
-                        <li>Tolto perche' non funziona*</li>
-                    </ul>
+    </header>
 
-                    Aggiunta file .php
-                    <ul>
-                        <li>Eliminati poiche' non funzionano*</li>
-                    </ul>
+    <hr />
 
-                    Aggiornamento .gitignore
-                    <ul>
-                        <li>Ignora cartelle</li>
-                        <li>.vs</li>
-                        <li>pycache (tolto)</li>
-                        <li>Ignora file</li>
-                        <li>README.md</li>
-                    </ul>
-                </td>
-                <td class="tAggiunte">
-                    *poiche' posso creare solo siti statici e non dinamici
-                </td>
-            </tr>
-            <tr>
-                <td class="tData">
-                    15/02/2024
-                </td>
-                <td class="tDescrizione">
-                    Aggiunte sezioni
-                    <ul>
-                        <li>Games/</li>
-                        <li>games.html -> games/index.html</li>
-                        <li>scratch.html</li>
-                        <li>Projects/</li>
-                        <li>projects/index.html</li>
-                        <li>Static/</li>
-                        <li>css/style.css</li>
-                    </ul>
+    <main>
+        <p class="movement_into_pages">
+            Torna/vai a <a href="./">Home/changes/</a>
+        </p>
 
-                    Modifica
-                    <ul>
-                        <li>index.html</li>
-                        <li>Tolta la parte "di prova" e tenuta solo parte vera e propria</li>
-                        <li>Spostato la parte "di prova" in prova.html e messo link che punta a prova.html</li>
-                        <li>Aggiunta immagine scratch.png + ridimensionamento</li>
-                    </ul>
-                </td>
-                <td class="tAggiunte">
-                    <strong>Niente da aggiungere</strong>
-                </td>
-            </tr>
-            <tr>
-                <td class="tData">
-                    16/02/2024
-                </td>
-                <td class="tDescrizione">
-                    Aggiornamento .gitignore
-                    <ul>
-                        <li>Descrizione migliore (con piu' commenti)</li>
-                    </ul>
-                </td>
-                <td class="tAggiunte">
-                    <strong>Niente da aggiungere</strong>
-                </td>
-            </tr>
-            <tr>
-                <td class="tData">
-                    17/02/2024
-                </td>
-                <td class="tDescrizione">
-                    Modifica index.html
-                    <ul>
-                        <li>Aggiunta commento Alessia</li>
-                    </ul>
-                </td>
-                <td class="tAggiunte">
-                    <strong>Niente da aggiungere</strong>
-                </td>
-            </tr>
-            <tr>
-                <td class="tData">
-                    20/02/2024
-                </td>
-                <td class="tDescrizione">
-                    Aggiornamento projects/index.html
-                    <ul>
-                        <li>Aggiunta collegamenti a canali instagram</li>
-                        <li>Aggiunta commento indicativo per inserimento i successivi blocchi</li>
-                    </ul>
-                </td>
-                <td class="tAggiunte">
-                    <strong>Niente da aggiungere</strong>
-                </td>
-            </tr>
-            <tr>
-                <td class="tData">
-                    22/02/2024
-                </td>
-                <td class="tDescrizione">
-                    Aggiunta pagine e sezioni
-                    <ul>
-                        <li>
-                            /changes/
-                            <ul>
-                                <li>
-                                    index.html
-                                    <ul>
-                                        <li>Indica ogni file sotto questa cartella e una descrizione</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    changes_table.html
-                                    <ul>
-                                        <li>Tabella contenente tutte le modifiche</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            /generic/
-                            <ul>
-                                <li>
-                                    index.html
-                                    <ul>
-                                        <li>Inserimento link a progetti per i miei amici (cartella di prova, per questa sezione faro' una repo su GitHub condivisa)</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            /projects/web/
-                            <ul>
-                                <li>
-                                    index.html
-                                    <ul>
-                                        <li>Indica i link ai vari siti che non fanno direttamente parte di questo progetto</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            about.html
-                            <ul>
-                                <li>Pagina in cui parlo di me e fornisco contatti per potermi scrivere</li>
-                            </ul>
-                        </li>
-                    </ul>
+        <table class="change">
+            <thead>
+                <tr>
+                    <th class="tData">Data</th>
+                    <th class="tDescrizione">Descrizione</th>
+                    <th class="tAggiunte">Aggiunte</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tData">
+                        14/02/2024
+                    </td>
+                    <td class="tDescrizione">
+                        Creazione primi file
+                        <ul>
+                            <li>Aggiunta file index.html</li>
+                        </ul>
 
-                    Aggiornamento
-                    <ul>
-                        <li>
-                            style.css
-                            <ul>
-                                <li>Inserimento classe "movement_into_pages" per i link per "viaggiare tra le pagine"</li>
-                                <li>Inserimento classe "tData", "tDescrizione", "tAggiunte" per la tabella dei cambiamenti (in modo che prenda la pagina)</li>
-                            </ul>
-                        </li>
-                        <li>
-                            .gitignore
-                            <ul>
-                                <li>Inserimento prova.html (perche' avro' una sezione per la prova ma piu' avanti)</li>
-                                <li>Inserimento generic/index.html (perche' avro' una nuova repo online che potro' accedere con il link in Home)</li>
-                            </ul>
-                        </li>
-                        <li>
-                            index.html
-                            <ul>
-                                <li>Aggiunta parte dove parlo della pagina dove "parlo" di me</li>
-                            </ul>
-                        </li>
-                    </ul>
+                        Aggiunta progetto Django
+                        <ul>
+                            <li>Prove se funziona</li>
+                            <li>Tolto perche' non funziona*</li>
+                        </ul>
 
-                    Modifica /games/
-                    <ul>
-                        <li>Spostamento intera cartella sotto /projects/</li>
-                    </ul>
-                </td>
-                <td class="tAggiunte">
-                    <strong>Niente da aggiungere</strong>
-                </td>
-            </tr>
-            <tr>
-                <td class="tData">
-                    23/02/2024
-                </td>
-                <td class="tDescrizione">
-                    Aggiornamento
-                    <ul>
-                        <li>
-                            /projects/index.html
-                            <ul>
-                                <li>
-                                    Lettere accentate con "lettera'"
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            index.html
-                            <ul>
-                                <li>
-                                    Modifica al posto del link completo, uso "/generic/"
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            about.html
-                            <ul>
-                                <li>
-                                    Sistemati i link per i social e per la mail
-                                </li>
-                                <li>
-                                    Aggiunte foto per
-                                    <ul>
-                                        <li>
-                                            Mail
-                                        </li>
-                                        <li>
-                                            Linkedin
-                                        </li>
-                                        <li>
-                                            Git Hub
-                                        </li>
-                                        <li>
-                                            Telegram
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            /web/index.html
-                            <ul>
-                                <li>
-                                    Aggiunti link per tornare a sezione precedente o alla home
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            Generale
-                            <ul>
-                                <li>
-                                    Cambio nome link da 'sito' a Home
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                        Aggiunta file .php
+                        <ul>
+                            <li>Eliminati poiche' non funzionano*</li>
+                        </ul>
 
-                    Aggiunte
-                    <ul>
-                        <li>
-                            /Static/css/photo.css
-                            <ul>
-                                <li>
-                                    Contiene ogni cambiamento per ogni tipo di immagine (es icone o sfondi)
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            /Static/css/table.css
-                            <ul>
-                                <li>
-                                    Contiene ogni cambiamento per ogni tipo di tabelle (es generale o per contatti)
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </td>
-                <td class="tAggiunte">
-                    Controllare se il ridimensionamento delle icone e' giusto
-                </td>
-            </tr>
-            <tr>
-                <td class="tData">
-                    24/02/2024
-                </td>
-                <td class="tDescrizione">
-                    Aggiornamento
-                    <ul>
-                        <li>
-                            /css/image.css
-                            <ul>
-                                <li>
-                                    Ridimensionamento loghi (10% della cella)
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            /css/table.css
-                            <ul>
-                                <li>
-                                    Ridimensionamento tabella generale (50% della larghezza totale)
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </td>
-                <td class="tAggiunte">
-                    Fai in modo che la tabella sia centrale alla pagina (andrà in basso)
-                </td>
-            </tr>
-            <tr>
-                <td class="tData">
-                    26/02/2024
-                </td>
-                <td class="tDescrizione">
-                    Aggiornamento
-                    <ul>
-                        <li>
-                            /css/table.css
-                            <ul>
-                                <li>
-                                    Larghezza colonne changes_table (10-60-20)
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            readme.md
-                            <ul>
-                                <li>
-                                    Aggiornamento readme con giorni di oggi e 24/02/2024
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </td>
-                <td class="tAggiunte">
-                    <strong>Niente da aggiungere</strong>
-                </td>
-            </tr>
-            <tr>
-                <td class="tData">
-                    27/02/2024
-                </td>
-                <td class="tDescrizione">
-                    Aggiornamento
-                    <ul>
-                        <li>
-                            /css/table.css
-                            <ul>
-                                <li>
-                                    Modifica dimensioni tabella contatti (25% con 30% e 20%)
-                                </li>
-                                <li>
-                                    Aggiunto css "text-align: center;" per allineare il testo all'interno'
-                                </li>
-                                <li>
-                                    Tolti i bordi da tabella contatti (lasciati solo in /changes/changes_table.html)
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            /css/image.css
-                            <ul>
-                                <li>
-                                    Modifica dimensioni (in scala) delle icone
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            about.html
-                            <ul>
-                                <li>
-                                    Inserito attributo "align" con valore "center" per allineare al centro la tabella
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                        Aggiornamento .gitignore
+                        <ul>
+                            <li>Ignora cartelle</li>
+                            <li>.vs</li>
+                            <li>pycache (tolto)</li>
+                            <li>Ignora file</li>
+                            <li>README.md</li>
+                        </ul>
+                    </td>
+                    <td class="tAggiunte">
+                        *poiche' posso creare solo siti statici e non dinamici
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tData">
+                        15/02/2024
+                    </td>
+                    <td class="tDescrizione">
+                        Aggiunte sezioni
+                        <ul>
+                            <li>Games/</li>
+                            <li>games.html -> games/index.html</li>
+                            <li>scratch.html</li>
+                            <li>Projects/</li>
+                            <li>projects/index.html</li>
+                            <li>Static/</li>
+                            <li>css/style.css</li>
+                        </ul>
 
-                    Aggiunta in /css/table.css
-                    <ul>
-                        <li>
-                            Classe "change" per diverse parti della tabella**
-                            <ul>
-                                <li>Righe</li>
-                                <li>Dati</li>
-                                <li>Header</li>
-                                <li>Tabella</li>
-                            </ul>
-                        </li>
-                        <li>
-                            In modo da applicare le modifiche solo alla tabella dei cambiamenti*
-                            <ul>
-                                <li>Quella dei contatti deve essere fatta in altro modo e con altre caratteristiche</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </td>
-                <td class="tAggiunte">
-                    Provo con dimensioni
-                    <ul>
-                        <li>
-                            Tabella: 12.5%
-                        </li>
-                        <li>
-                            Icone: 80% (poiche' abbiamo diminuito di 1/8 la dimensione della tabella -> la incremento per 8 volte)
-                        </li>
-                    </ul>
+                        Modifica
+                        <ul>
+                            <li>index.html</li>
+                            <li>Tolta la parte "di prova" e tenuta solo parte vera e propria</li>
+                            <li>Spostato la parte "di prova" in prova.html e messo link che punta a prova.html</li>
+                            <li>Aggiunta immagine scratch.png + ridimensionamento</li>
+                        </ul>
+                    </td>
+                    <td class="tAggiunte">
+                        <strong>Niente da aggiungere</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tData">
+                        16/02/2024
+                    </td>
+                    <td class="tDescrizione">
+                        Aggiornamento .gitignore
+                        <ul>
+                            <li>Descrizione migliore (con piu' commenti)</li>
+                        </ul>
+                    </td>
+                    <td class="tAggiunte">
+                        <strong>Niente da aggiungere</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tData">
+                        17/02/2024
+                    </td>
+                    <td class="tDescrizione">
+                        Modifica index.html
+                        <ul>
+                            <li>Aggiunta commento Alessia</li>
+                        </ul>
+                    </td>
+                    <td class="tAggiunte">
+                        <strong>Niente da aggiungere</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tData">
+                        20/02/2024
+                    </td>
+                    <td class="tDescrizione">
+                        Aggiornamento projects/index.html
+                        <ul>
+                            <li>Aggiunta collegamenti a canali instagram</li>
+                            <li>Aggiunta commento indicativo per inserimento i successivi blocchi</li>
+                        </ul>
+                    </td>
+                    <td class="tAggiunte">
+                        <strong>Niente da aggiungere</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tData">
+                        22/02/2024
+                    </td>
+                    <td class="tDescrizione">
+                        Aggiunta pagine e sezioni
+                        <ul>
+                            <li>
+                                /changes/
+                                <ul>
+                                    <li>
+                                        index.html
+                                        <ul>
+                                            <li>Indica ogni file sotto questa cartella e una descrizione</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        changes_table.html
+                                        <ul>
+                                            <li>Tabella contenente tutte le modifiche</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                /generic/
+                                <ul>
+                                    <li>
+                                        index.html
+                                        <ul>
+                                            <li>Inserimento link a progetti per i miei amici (cartella di prova, per questa sezione faro' una repo su GitHub condivisa)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                /projects/web/
+                                <ul>
+                                    <li>
+                                        index.html
+                                        <ul>
+                                            <li>Indica i link ai vari siti che non fanno direttamente parte di questo progetto</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                about.html
+                                <ul>
+                                    <li>Pagina in cui parlo di me e fornisco contatti per potermi scrivere</li>
+                                </ul>
+                            </li>
+                        </ul>
 
-		            *Non funziona, prova con altro approccio [FUNZIONA MA **]
+                        Aggiornamento
+                        <ul>
+                            <li>
+                                style.css
+                                <ul>
+                                    <li>Inserimento classe "movement_into_pages" per i link per "viaggiare tra le pagine"</li>
+                                    <li>Inserimento classe "tData", "tDescrizione", "tAggiunte" per la tabella dei cambiamenti (in modo che prenda la pagina)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                .gitignore
+                                <ul>
+                                    <li>Inserimento prova.html (perche' avro' una sezione per la prova ma piu' avanti)</li>
+                                    <li>Inserimento generic/index.html (perche' avro' una nuova repo online che potro' accedere con il link in Home)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                index.html
+                                <ul>
+                                    <li>Aggiunta parte dove parlo della pagina dove "parlo" di me</li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                    <br />
+                        Modifica /games/
+                        <ul>
+                            <li>Spostamento intera cartella sotto /projects/</li>
+                        </ul>
+                    </td>
+                    <td class="tAggiunte">
+                        <strong>Niente da aggiungere</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tData">
+                        23/02/2024
+                    </td>
+                    <td class="tDescrizione">
+                        Aggiornamento
+                        <ul>
+                            <li>
+                                /projects/index.html
+                                <ul>
+                                    <li>
+                                        Lettere accentate con "lettera'"
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                index.html
+                                <ul>
+                                    <li>
+                                        Modifica al posto del link completo, uso "/generic/"
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                about.html
+                                <ul>
+                                    <li>
+                                        Sistemati i link per i social e per la mail
+                                    </li>
+                                    <li>
+                                        Aggiunte foto per
+                                        <ul>
+                                            <li>
+                                                Mail
+                                            </li>
+                                            <li>
+                                                Linkedin
+                                            </li>
+                                            <li>
+                                                Git Hub
+                                            </li>
+                                            <li>
+                                                Telegram
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                /web/index.html
+                                <ul>
+                                    <li>
+                                        Aggiunti link per tornare a sezione precedente o alla home
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Generale
+                                <ul>
+                                    <li>
+                                        Cambio nome link da 'sito' a Home
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                    ** Tolta poiche' posso fare "attributi a discesa" usando: table.change 'tag'
-                </td>
-            </tr>
-            <!--
-            Inserimento nuova riga della tabella
+                        Aggiunte
+                        <ul>
+                            <li>
+                                /Static/css/photo.css
+                                <ul>
+                                    <li>
+                                        Contiene ogni cambiamento per ogni tipo di immagine (es icone o sfondi)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                /Static/css/table.css
+                                <ul>
+                                    <li>
+                                        Contiene ogni cambiamento per ogni tipo di tabelle (es generale o per contatti)
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="tAggiunte">
+                        Controllare se il ridimensionamento delle icone e' giusto
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tData">
+                        24/02/2024
+                    </td>
+                    <td class="tDescrizione">
+                        Aggiornamento
+                        <ul>
+                            <li>
+                                /css/image.css
+                                <ul>
+                                    <li>
+                                        Ridimensionamento loghi (10% della cella)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                /css/table.css
+                                <ul>
+                                    <li>
+                                        Ridimensionamento tabella generale (50% della larghezza totale)
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="tAggiunte">
+                        Fai in modo che la tabella sia centrale alla pagina (andrà in basso)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tData">
+                        26/02/2024
+                    </td>
+                    <td class="tDescrizione">
+                        Aggiornamento
+                        <ul>
+                            <li>
+                                /css/table.css
+                                <ul>
+                                    <li>
+                                        Larghezza colonne changes_table (10-60-20)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                readme.md
+                                <ul>
+                                    <li>
+                                        Aggiornamento readme con giorni di oggi e 24/02/2024
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="tAggiunte">
+                        <strong>Niente da aggiungere</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tData">
+                        27/02/2024
+                    </td>
+                    <td class="tDescrizione">
+                        Aggiornamento
+                        <ul>
+                            <li>
+                                /css/table.css
+                                <ul>
+                                    <li>
+                                        Modifica dimensioni tabella contatti (25% con 30% e 20%)
+                                    </li>
+                                    <li>
+                                        Aggiunto css "text-align: center;" per allineare il testo all'interno'
+                                    </li>
+                                    <li>
+                                        Tolti i bordi da tabella contatti (lasciati solo in /changes/changes_table.html)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                /css/image.css
+                                <ul>
+                                    <li>
+                                        Modifica dimensioni (in scala) delle icone
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                about.html
+                                <ul>
+                                    <li>
+                                        Inserito attributo "align" con valore "center" per allineare al centro la tabella
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
 
-            <tr>
-                <td class="tData">
-                    'data'
-                </td>
-                <td class="tDescrizione">
-                    'descrizione'
-                    <ul>
-                        <li>
-                            ...
-                            <ul>
-                                <li>
-                                    ...
-                                </li>
-                                <li>
-                                    ...
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            ...
-                            <ul>
-                                <li>
-                                    ...
-                                </li>
-                                <li>
-                                    ...
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </td>
-                <td class="tAggiunte">
-                    'commento'
-                </td>
-            </tr>
-    -->
-        </tbody>
-    </table>
+                        Aggiunta in /css/table.css
+                        <ul>
+                            <li>
+                                Classe "change" per diverse parti della tabella**
+                                <ul>
+                                    <li>Righe</li>
+                                    <li>Dati</li>
+                                    <li>Header</li>
+                                    <li>Tabella</li>
+                                </ul>
+                            </li>
+                            <li>
+                                In modo da applicare le modifiche solo alla tabella dei cambiamenti*
+                                <ul>
+                                    <li>Quella dei contatti deve essere fatta in altro modo e con altre caratteristiche</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="tAggiunte">
+                        Provo con dimensioni
+                        <ul>
+                            <li>
+                                Tabella: 12.5%
+                            </li>
+                            <li>
+                                Icone: 80% (poiche' abbiamo diminuito di 1/8 la dimensione della tabella -> la incremento per 8 volte)
+                            </li>
+                        </ul>
+
+                        *Non funziona, prova con altro approccio [FUNZIONA MA **]
+
+                        <br />
+
+                        ** Tolta poiche' posso fare "attributi a discesa" usando: table.change 'tag'
+                    </td>
+                </tr>
+                <!--
+                        Inserimento nuova riga della tabella
+
+                        <tr>
+                            <td class="tData">
+                                'data'
+                            </td>
+                            <td class="tDescrizione">
+                                'descrizione'
+                                <ul>
+                                    <li>
+                                        ...
+                                        <ul>
+                                            <li>
+                                                ...
+                                            </li>
+                                            <li>
+                                                ...
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        ...
+                                        <ul>
+                                            <li>
+                                                ...
+                                            </li>
+                                            <li>
+                                                ...
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td class="tAggiunte">
+                                'commento'
+                            </td>
+                        </tr>
+                -->
+            </tbody>
+        </table>
+    </main>
+
+    <hr />
 </body>
 
 </html>
