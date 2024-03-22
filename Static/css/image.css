@@ -4,6 +4,13 @@
     max-width: 25%;
 }
 
+footer li.link img {
+    height: auto;
+    max-width: 30px;
+    min-width: 20px;
+    padding: 10px;
+}
+
 /*img.github, img.linkedin {
     height: 5%;
     width: 5%;

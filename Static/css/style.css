@@ -16,15 +16,24 @@ body {
 }
 
 /* Display flex */
-footer, header ul, footer ul {
+footer, header ul, footer, footer ul {
     display: flex;
 }
 
 footer {
-    color: aqua;
+    background-color: rgb(0, 255, 255);
 }
 
-header, main, footer {
+footer section {
+    text-align: center;
+    width: 25%;
+}
+
+footer ul {
+    flex-direction: column;
+}
+
+footer, header, main {
     padding: 10px;
 }
 
@@ -35,14 +44,8 @@ header ul, footer ul {
     list-style-type: none;
 }
 
-header ul li {
+footer ul li, header ul li {
     padding: 10px;
-}
-
-section {
-    text-align: center;
-    padding: 10px;
-    width: 25%;
 }
 
 ul.contatti {
