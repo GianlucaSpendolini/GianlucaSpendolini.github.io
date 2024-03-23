@@ -12,7 +12,7 @@
 }
 
 h1.title {
-    color: #ccc;
+    color: darkblue;
     font-family: verdana, geneva, sans serif;
     font-size: 16px;
     text-align:center;
@@ -44,6 +44,7 @@ footer section {
 
 footer ul {
     flex-direction: column;
+    padding: 0;
 }
 
 footer, header, main {
@@ -61,8 +62,14 @@ footer ul li, header ul li {
     padding: 10px;
 }
 
+header ul li {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
 ul.contatti {
     display: inline;
+    line-height: 7.5;
 }
 
 ul.contatti li {
