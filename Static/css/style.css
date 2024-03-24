@@ -58,17 +58,18 @@ footer ul, header ul {
     list-style-type: none;
 }
 
+footer ul li {
+    padding: 10px;
+}
+
 header ul {
     padding: 0;
 }
 
 header ul li {
+    padding: 10px;
     padding-left: 40px;
     padding-right: 40px;
-}
-
-footer ul li, header ul li {
-    padding: 10px;
 }
 
 ul.contatti {
