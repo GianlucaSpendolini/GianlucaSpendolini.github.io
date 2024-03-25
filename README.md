@@ -158,6 +158,53 @@ Provo con dimensioni
 *Non funziona -> provare con altro approccio
 **Tolta poichè posso fare "attributi a discesa" usando: table.change 'tag' {}
 
+## 21/03/2024
+
+Aggiornamento
+- prova.html
+  - Suddivisione struttura pagina nei tag "header", "main" e "footer"
+  - Inserimento elenchi puntati come riga
+    - Applicazione distanziamento elementi (padding 10px)
+    - Posizionarlo nel centro del contenitore
+  - Inserimento elementi già presenti nel "body" in "main"
+    - Tolti i link che rimandano ad Home poiche' gia' inserito nel menu' dell'header
+- image.css
+  - Le icone inserite nei footer messe con massimo e minimo dimensionamento
+- style.css
+  - Modifiche a tag
+    - ul
+    - li
+    - footer
+    - section
+  - Colore al tag
+    - "h1" negli header
+    - "footer" come sfondo
+
+## 22/03/2024
+
+Aggiornamento
+- Applicazione modifiche "body" ai tag "header" e "main" a tutti gli altri script
+- Risoluzione problemi tag (in generale)
+  - Centralizzazione dei contenuti rispetto ai contenitori
+
+## 23/03/2024
+
+Aggiornamento
+- prova.html
+  - Maggiore padding ai lati degli elementi del tag "ul" in header
+- Applicazioni modifiche per avere url senza estensione dei file (NO /'file'.'estenzione' MA /'file')
+  - Anche per /generic/
+ 
+## 25/03/2024
+
+Aggiornamento
+- prova.html
+  - Tolti i punti nei tag "section" laterali
+    - Lasciati i tag laterali per permettere di metterli a 2/5 e 4/5
+  - Controllo funzionamento per monitor di diverse dimensioni
+- Applicazione modifiche tag "footer" a tutti gli script con sistemazione riferimenti nei tag "a"
+  - Anche per /generic/
+
 
 # Altro
 
