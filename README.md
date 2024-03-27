@@ -205,6 +205,13 @@ Aggiornamento
 - Applicazione modifiche tag "footer" a tutti gli script con sistemazione riferimenti nei tag "a"
   - Anche per /generic/
 
+## 27/03/2024
+
+Aggiornamento
+- index.html
+  - tolto il doppione del tag "hr"
+- /projects/web/index.html
+  - aggiornato il link che porta al sito del Mario Negri (da "clinicalweb-twin" tolto "-twin")
 
 # Altro
 
