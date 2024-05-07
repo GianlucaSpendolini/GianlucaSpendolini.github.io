@@ -212,6 +212,18 @@ Aggiornamento
   - tolto il doppione del tag "hr"
 - /projects/web/index.html
   - aggiornato il link che porta al sito del Mario Negri (da "clinicalweb-twin" tolto "-twin")
+ 
+ ## 07/05/2024
+
+ Aggiunta
+ - /static/javascript/prova.js
+   - funzione prova()
+
+Aggiornamento
+- prova.html
+  - prova utilizzo funzione prova() con bottone "Cliccami"
+ 
+Controlla perchè non riesce a importare file/la funzione js
 
 # Altro
 
