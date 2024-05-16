@@ -225,6 +225,25 @@ Aggiornamento
  
 Controlla perchè non riesce a importare file/la funzione js
 
+## 16/05/2024
+
+Aggiornamento
+- prova.html
+  - spostamento file js di prova in fondo
+  - aggiunto meta tag con descrizione e per dispositivi
+  - aggiunto tag nav
+  - tolto l'onclick
+- /Static/prova.js
+  - aggiunto event listener per DOMContentLoaded
+    - aggiunti alert e console log
+    - aggiunto addEventListener all'id del bottone
+  - modifica alla funzione di prova per fargli dire quello che metto come messaggio
+- /Static/style.css
+  - aggiunto stile per renderlo responsivo sui dispositivi più piccoli
+
+ Aggiungere nuovo setTimeout per vedere se aggiunge il "click" al bottone;
+ Vedere se si può mettere l'inserimento (giusto) automatico di elementi in header e footer
+
 # Altro
 
 ...
