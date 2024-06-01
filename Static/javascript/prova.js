@@ -6,10 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
         prova("ciaooooo ho cliccato il bottone!!!")
         });
 
+    // Assegno ai "bottoni" il link che devono raggiungere
+
+    navbar_element_clicked();
+
     //alert("boh");
 });
 
 
 function prova(messaggio) {
     console.log(messaggio);
+}
+
+
+function navbar_element_clicked() {
+
+    // Home
+    document.querySelector('#home').addEventListener('click', function() {
+        fetch('gianlucaspendolini.github.io', {
+            method: 'GET'
+        });
+    });
 }
