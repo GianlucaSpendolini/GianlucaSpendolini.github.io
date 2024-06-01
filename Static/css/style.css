@@ -86,6 +86,10 @@ header ul {
     padding: 0;
 }
 
+header nav {
+    justify-content: space-between;
+}
+
 header ul li {
     padding-bottom: 10px;
     padding-top: 10px;
