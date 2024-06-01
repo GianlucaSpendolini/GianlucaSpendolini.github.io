@@ -88,6 +88,7 @@ header ul {
 
 header nav {
     justify-content: space-between;
+    max-width: 75%;
 }
 
 header ul li {

@@ -28,28 +28,24 @@ function navbar_header() {
         window.location.href = 'https://gianlucaspendolini.github.io/';
     });
 
-    console.log('info');
     // Info (/about)
     document.querySelector('#info').addEventListener('click', function() {
         console.log('/about');
         window.location.href = 'https://gianlucaspendolini.github.io/about';
     });
 
-    console.log('progetti');
     // Progetti (/projects/)
     document.querySelector('#progetti').addEventListener('click', function() {
         console.log('/projects/');
         window.location.href = 'https://gianlucaspendolini.github.io/projects/';
     });
 
-    console.log('utili');
     // Utili (/utilities/)
     document.querySelector('#utili').addEventListener('click', function() {
         console.log('/utilities/');
         window.location.href = 'https://gianlucaspendolini.github.io/utilities/';
     });
 
-    console.log('altro');
     // Altro (/generic/)
     document.querySelector('#altro').addEventListener('click', function() {
         console.log('/generic/');
