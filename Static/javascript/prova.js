@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     // Assegno ai "bottoni" il link che devono raggiungere
-    navbar_element_clicked();
+    navbar_header();
 
     //alert("boh");
 });
@@ -18,15 +18,13 @@ function prova(messaggio) {
 }
 
 
-function navbar_element_clicked() {
+function navbar_header() {
 
     console.log('dentro funzione');
 
     // Home
     document.querySelector('#home').addEventListener('click', function() {
         console.log('home');
-        fetch('https://gianlucaspendolini.github.io', {
-            method: 'GET'
-        });
+        fetch('https://gianlucaspendolini.github.io');
     });
 }
