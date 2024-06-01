@@ -26,7 +26,8 @@ function navbar_header() {
     document.querySelector('#home').addEventListener('click', function() {
         console.log('home');
         fetch('https://gianlucaspendolini.github.io/', {
-            method: 'GET'
+            method: 'GET',
+            redirect: 'follow'
         })
         .then((response) => {
             // Controllo che risposta mi restituisce
