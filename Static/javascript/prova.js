@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#buttProva').addEventListener('click', prova("ciaooooo ho cliccato il bottone!!!"));
         }, 2000);
 
-    alert("boh");
+    //alert("boh");
 });
 
 
