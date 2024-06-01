@@ -44,7 +44,7 @@ body {
 }
 
 /* Display flex */
-footer, footer ul, header ul {
+footer, footer ul, header ul, header nav {
     display: flex;
 }
 
@@ -71,7 +71,7 @@ footer, header, main {
     padding: 10px;
 }
 
-footer ul, header ul {
+footer ul, header ul, header nav {
     align-items: center;
     flex-direction: row;
     justify-content: center;

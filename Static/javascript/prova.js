@@ -25,6 +25,12 @@ function navbar_header() {
     // Home
     document.querySelector('#home').addEventListener('click', function() {
         console.log('home');
-        fetch('https://gianlucaspendolini.github.io');
+        fetch('https://gianlucaspendolini.github.io/', {
+            method: 'GET'
+        })
+        .then((response) => {
+            // Controllo che risposta mi restituisce
+            console.log(response);
+        });
     });
 }
