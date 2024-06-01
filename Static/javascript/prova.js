@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Per controllo se funziona
     console.log('ciaoooo funziona');
 
-    setTimeout( () => {
-        document.querySelector('#buttProva').addEventListener('click', prova("ciaooooo ho cliccato il bottone!!!"));
-        }, 2000);
+    document.querySelector('#buttProva').addEventListener('click', () => {
+        prova("ciaooooo ho cliccato il bottone!!!")
+        });
 
     //alert("boh");
 });
