@@ -87,6 +87,7 @@ header ul {
 }
 
 header nav {
+    align-self: center;
     justify-content: space-between;
     max-width: 75%;
 }
