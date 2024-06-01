@@ -20,8 +20,11 @@ function prova(messaggio) {
 
 function navbar_element_clicked() {
 
+    console.log('dentro funzione');
+
     // Home
     document.querySelector('#home').addEventListener('click', function() {
+        console.log('home');
         fetch('https://gianlucaspendolini.github.io', {
             method: 'GET'
         });
