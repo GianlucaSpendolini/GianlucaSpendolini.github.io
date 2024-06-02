@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function what_page(path) {
     // Prova
     if (path === '/prova') {
-        alert('Ciao prova');
+        console.log('Ciao prova');
     }
 
     // About
