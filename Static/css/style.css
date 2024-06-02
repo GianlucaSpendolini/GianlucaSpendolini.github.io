@@ -13,6 +13,12 @@
 
 /* Consiglio di Chat GPT-4 */
 @media (max-width: 768px) {
+    header nav {
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
     header ul {
         display: flex;
         flex-direction: column;
