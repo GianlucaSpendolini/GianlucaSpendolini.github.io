@@ -15,7 +15,7 @@ function what_page(path) {
     // About
     if (path === '/about') {
         const date = new Date();
-        const my_age = data.getFullYear() - 2001;
+        const my_age = date.getFullYear() - 2001;
 
         if (date.getDate() < 11 || (date.getMonth() + 1) < 9) {
             my_age -= 1;
