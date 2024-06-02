@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Cose da fare inizialmente (inserire connessioni nei bottoni)
-    navbar_header();
+    //navbar_header();
 
     // In base alla sezione in cui mi trovo, faccio qualcosa
     setTimeout(what_page(window.location.pathname), 0);
@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function what_page(path) {
     // Prova
     if (path === '/prova') {
+        navbar_header();
         console.log('Ciao prova');
     }
 
