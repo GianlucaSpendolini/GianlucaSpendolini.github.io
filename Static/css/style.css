@@ -51,7 +51,7 @@ body {
 }
 
 /* Display flex */
-footer, footer ul, nav ul, header nav {
+footer, footer ul, header ul, nav ul, header nav {
     display: flex;
 }
 
@@ -78,7 +78,7 @@ footer, header, main {
     padding: 10px;
 }
 
-footer ul, nav ul, header nav {
+footer ul, header ul, nav ul, header nav {
     align-items: center;
     flex-direction: row;
     justify-content: center;
@@ -95,16 +95,16 @@ header {
 
 header nav {
     justify-content: space-between;
-    max-width: 75%;
-    /*padding-left: 100px;
+    /*max-width: 75%;
+    padding-left: 100px;
     padding-right: 100px;*/
 }
 
-nav ul {
+header ul, nav ul {
     padding: 0;
 }
 
-nav ul li {
+header ul li/*, nav ul li*/ {
     padding-bottom: 10px;
     padding-top: 10px;
     padding-left: 40px;
