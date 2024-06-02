@@ -90,19 +90,22 @@ footer ul li {
 }
 
 header {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     justify-content: center;
 }
 
 header nav {
     justify-content: space-between;
-    max-width: 75%;
-    /*padding-left: 100px;
+    /*max-width: 75%;
+    padding-left: 100px;
     padding-right: 100px;*/
 }
 
-header ul, nav ul {
+nav button {
+    margin: 0px 10px 0px 10px;
+}
+
+header ul, header nav ul {
     padding: 0;
 }
 
