@@ -90,6 +90,8 @@ footer ul li {
 }
 
 header {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
