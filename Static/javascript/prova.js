@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     // Assegno ai "bottoni" il link che devono raggiungere
-    navbar_header();
+    /*navbar_header();*/
 
-    //alert("boh");
+    console.log("file di prova js");
 });
 
 
