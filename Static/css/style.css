@@ -13,11 +13,11 @@
 
 /* Consiglio di Chat GPT-4 */
 @media (max-width: 768px) {
-    header nav {
+    /*header nav {
         justify-content: space-between;
         padding-left: 10px;
         padding-right: 10px;
-    }
+    }*/
 
     header ul {
         display: flex;
@@ -88,14 +88,19 @@ footer ul li {
     padding: 10px;
 }
 
-header ul {
-    padding: 0;
+header {
+    justify-content: center;
 }
 
 header nav {
     justify-content: space-between;
-    padding-left: 100px;
-    padding-right: 100px;
+    max-width: 75%;
+    /*padding-left: 100px;
+    padding-right: 100px;*/
+}
+
+header ul {
+    padding: 0;
 }
 
 header ul li {
