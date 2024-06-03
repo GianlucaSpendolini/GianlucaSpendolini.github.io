@@ -37,6 +37,10 @@
     }
 }
 
+aside ul {
+    list-style-type: none;
+}
+
 
 h1.title {
     color: darkblue;
@@ -106,10 +110,12 @@ main#descrizione {
     display: flex;
 }
 
+/* Gestione della colonna aside */
 main aside#contatti {
-    max-width: 20%;
+    max-width: 40%;
 }
 
+/* Gestione delle descrizioni */
 main div#parte-descrittiva {
     max-width: auto;
 }
