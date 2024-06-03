@@ -70,6 +70,8 @@ function navbar_header() {
 
 function creazione_pulsanti() {
 
+    console.log('dentro creazione_pulsanti');
+
     // Elenco dei nomi dei bottoni
     var bottons_name = [
         'Home',
@@ -90,11 +92,15 @@ function creazione_pulsanti() {
 
     var navbar = document.querySelector('header nav');
 
+    console.log('prima del controllo if');
+
     // Controllo se la lunghezza non corrisponde e blocco nel caso
     if (bottons_name.length != links_list.length) {
         navbar.append = 'La lunghezza della lista dei bottoni e quella dei link non corrisponde';
     }
     else {
+
+        console.log('dentro else');
 
         for (let i = 0; i < bottons_name.length; i++) {
             // Creo l'elemento che devo inserire
@@ -113,6 +119,8 @@ function creazione_pulsanti() {
 
             navbar.appendChild = element;
         }
+
+        console.log('dopo else');
 
     }
 }
