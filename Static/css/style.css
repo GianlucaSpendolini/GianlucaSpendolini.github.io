@@ -4,6 +4,13 @@
     text-decoration: none;
 }
 
+/* Decorazione per i link delle descrizioni */
+#parte-descrittiva a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 600px) {
     footer, section, section img, section ul {
         flex-direction: column;
@@ -111,8 +118,9 @@ header, footer {
     max-height: 25vh;
 }
 
-main {
+main#descrizione {
     max-height: 50vh;
+    overflow: auto;
 }
 
 /* In pagina about, divisione del main in due parti */
@@ -122,6 +130,7 @@ main#descrizione {
 
 /* Gestione della colonna aside */
 main#descrizione aside#contatti {
+    overflow: auto;
     max-width: 30%;
     padding:0 10px 0 10px;
 }
@@ -152,6 +161,12 @@ header ul li/*, nav ul li*/ {
     padding-top: 10px;
     padding-left: 40px;
     padding-right: 40px;
+}
+
+/* Decorazione per ogni elenco di link */
+ul li a {
+    color: mediumblue;
+    text-decoration: none;
 }
 
 ul.contatti {
