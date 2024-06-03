@@ -102,7 +102,7 @@ header nav {
 }
 
 /* In pagina about, divisione del main in due parti */
-main > aside#contatti {
+main#descrizione {
     display: flex;
 }
 
