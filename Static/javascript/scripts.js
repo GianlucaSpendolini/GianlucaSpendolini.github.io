@@ -117,7 +117,7 @@ function creazione_pulsanti() {
             });
             console.log("ascoltatore: ", element);
 
-            navbar.appendChild = element;
+            navbar.appendChild(element);
         }
 
         console.log('dopo else');
