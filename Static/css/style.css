@@ -39,6 +39,7 @@
 
 aside ul {
     list-style-type: none;
+    padding-inline-start: 0;
 }
 
 
@@ -105,19 +106,37 @@ header nav {
     padding-right: 100px;*/
 }
 
+/* Specifico l'altezza */
+header, footer {
+    max-height: 25vh;
+}
+
+main {
+    max-height: 50vh;
+}
+
 /* In pagina about, divisione del main in due parti */
 main#descrizione {
     display: flex;
 }
 
 /* Gestione della colonna aside */
-main aside#contatti {
-    max-width: 40%;
+main#descrizione aside#contatti {
+    max-width: 30%;
+    padding:0 10px 0 10px;
 }
 
 /* Gestione delle descrizioni */
-main div#parte-descrittiva {
-    max-width: auto;
+main#descrizione div#parte-descrittiva {
+    max-width: 65%;
+    overflow: auto;
+    padding: 0 10px 0 10px;
+}
+
+/* Rendo spesso il divisorio*/
+main#descrizione hr {
+    border: solid;
+    margin: 0 2.5% 0 2.5%;
 }
 
 nav button {
