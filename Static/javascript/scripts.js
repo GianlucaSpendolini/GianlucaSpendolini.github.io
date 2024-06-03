@@ -70,8 +70,6 @@ function navbar_header() {
 
 function creazione_pulsanti() {
 
-    console.log('dentro creazione_pulsanti');
-
     // Elenco dei nomi dei bottoni
     var bottons_name = [
         'Home',
@@ -100,27 +98,20 @@ function creazione_pulsanti() {
     }
     else {
 
-        console.log('dentro else');
-
         for (let i = 0; i < bottons_name.length; i++) {
             // Creo l'elemento che devo inserire
             var element = document.createElement('button');
-            console.log("inizio: ", element);
 
             // Inserisco il nome del bottone dalla lista
             element.innerText = bottons_name[i];
-            console.log("testo: ", element);
 
             element.addEventListener('click', function() {
                 console.log(bottons_name[i]);
                 window.location.href = links_list[i];
             });
-            console.log("ascoltatore: ", element);
 
             navbar.appendChild(element);
         }
-
-        console.log('dopo else');
 
     }
 }
