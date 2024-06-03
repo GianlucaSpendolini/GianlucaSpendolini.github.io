@@ -233,16 +233,42 @@ Aggiornamento
   - aggiunto meta tag con descrizione e per dispositivi
   - aggiunto tag nav
   - tolto l'onclick
-- /Static/prova.js
+- /Static/javascript/prova.js
   - aggiunto event listener per DOMContentLoaded
     - aggiunti alert e console log
     - aggiunto addEventListener all'id del bottone
   - modifica alla funzione di prova per fargli dire quello che metto come messaggio
-- /Static/style.css
+- /Static/css/style.css
   - aggiunto stile per renderlo responsivo sui dispositivi più piccoli
 
  Aggiungere nuovo setTimeout per vedere se aggiunge il "click" al bottone;
  Vedere se si può mettere l'inserimento (giusto) automatico di elementi in header e footer
+
+ ## 01/06/2024
+
+ Aggiornamento
+ - /javascript/prova.js
+   - sistemato bottone "cliccami" per controllo codice js
+   - inserimento possibilità di aggiungere link a bottoni della nav
+- /css/style.css
+  - aggiunti i selettori per prendere anche nav e bottoni
+
+Bloccare ad una certa distanza i bottoni della navbar, in modo che, andando a rimpicciolire, si distanziano fino ad una distanza minima e, allargando, si allargano fino ad una certa e poi si bloccano.
+
+## 02/06/2024
+
+Aggiunta
+- /javascript/scripts.js
+  - aggiunta assegnazione automatica dei link ai bottoni tramite id
+  - aggiunto controllo in base all'url
+    - per parte di "/about" aggiunta l'età
+
+Aggiornamento
+- about.html
+  - file js generico
+  - contenitore dove inserire l'età
+ 
+Fare in modo che i bottoni vengano inseriti in automatico ed aggiungere solo il blocco nav nei file html.
 
 # Altro
 
