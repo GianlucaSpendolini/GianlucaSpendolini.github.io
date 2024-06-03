@@ -101,6 +101,19 @@ header nav {
     padding-right: 100px;*/
 }
 
+/* In pagina about, divisione del main in due parti */
+main div#contatti, div#parte-descrittiva {
+    display: flex;
+}
+
+main > div#contatti {
+    max-width: 20%;
+}
+
+main > div#parte-descrittiva {
+    max-width: auto;
+}
+
 nav button {
     margin: 0px 10px 0px 10px;
 }
