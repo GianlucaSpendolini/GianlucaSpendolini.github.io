@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function what_page(path) {
     // Prova
     if (path === '/prova') {
-        navbar_header();
+        //navbar_header();
+        creazione_pulsanti();
         console.log('Ciao prova');
     }
 
@@ -64,4 +65,51 @@ function navbar_header() {
 
     // Assegnati tutti i link
     console.log('Assegnati i link');
+}
+
+
+function creazione_pulsanti() {
+
+    // Elenco dei nomi dei bottoni
+    var bottons_name = [
+        'Home',
+        'Info',
+        'Progetti',
+        'Utili',
+        'Altro'
+    ];
+
+    // Elenco dei link che devo assegnare ai rispettivi bottoni
+    var links_list = [
+        'https://gianlucaspendolini.github.io/',
+        'https://gianlucaspendolini.github.io/about',
+        'https://gianlucaspendolini.github.io/projects/',
+        'https://gianlucaspendolini.github.io/utilities/',
+        'https://gianlucaspendolini.github.io/generic/'
+    ];
+
+    var navbar = document.querySelector('header nav');
+
+    // Controllo se la lunghezza non corrisponde e blocco nel caso
+    if (bottons_name.length != links_list.length) {
+        navbar.append = 'La lunghezza della lista dei bottoni e quella dei link non corrisponde';
+    }
+    else {
+
+        for (const i = 0; i < bottons_name.length; i++) {
+            // Creo l'elemento che devo inserire
+            var element = document.createElement('button');
+
+            // Inserisco il nome del bottone dalla lista
+            element.innerText = bottons_name[i];
+
+            element.addEventListener('click', function() {
+                console.log(bottons_name[i]);
+                window.location.href = links_list[i];
+            });
+
+            navbar.appendChild = element;
+        }
+
+    }
 }
