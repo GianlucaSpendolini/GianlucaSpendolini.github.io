@@ -102,15 +102,15 @@ header nav {
 }
 
 /* In pagina about, divisione del main in due parti */
-main aside#contatti {
+main > aside#contatti {
     display: flex;
 }
 
-main > aside#contatti {
+main aside#contatti {
     max-width: 20%;
 }
 
-main > div#parte-descrittiva {
+main div#parte-descrittiva {
     max-width: auto;
 }
 
