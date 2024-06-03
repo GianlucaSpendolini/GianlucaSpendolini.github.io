@@ -99,14 +99,17 @@ function creazione_pulsanti() {
         for (let i = 0; i < bottons_name.length; i++) {
             // Creo l'elemento che devo inserire
             var element = document.createElement('button');
+            console.log("inizio: ", element);
 
             // Inserisco il nome del bottone dalla lista
             element.innerText = bottons_name[i];
+            console.log("testo: ", element);
 
             element.addEventListener('click', function() {
                 console.log(bottons_name[i]);
                 window.location.href = links_list[i];
             });
+            console.log("ascoltatore: ", element);
 
             navbar.appendChild = element;
         }
