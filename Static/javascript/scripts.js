@@ -96,7 +96,7 @@ function creazione_pulsanti() {
     }
     else {
 
-        for (const i = 0; i < bottons_name.length; i++) {
+        for (let i = 0; i < bottons_name.length; i++) {
             // Creo l'elemento che devo inserire
             var element = document.createElement('button');
 
