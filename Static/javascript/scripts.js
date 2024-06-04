@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Cose da fare inizialmente (inserire connessioni nei bottoni)
-    //navbar_header();
+    creazione_header();
 
     // In base alla sezione in cui mi trovo, faccio qualcosa
     setTimeout(what_page(window.location.pathname), 0);
@@ -11,7 +11,7 @@ function what_page(path) {
     // Prova
     if (path === '/prova') {
         //navbar_header();
-        creazione_pulsanti();
+        //creazione_header();
         console.log('Ciao prova');
     }
 
@@ -68,7 +68,7 @@ function navbar_header() {
 }
 
 
-function creazione_pulsanti() {
+function creazione_header() {
 
     // Elenco dei nomi dei bottoni
     var bottons_name = [
@@ -88,9 +88,8 @@ function creazione_pulsanti() {
         'https://gianlucaspendolini.github.io/generic/'
     ];
 
+    // Vado a selezionare la navbar dell'header
     var navbar = document.querySelector('header nav');
-
-    console.log('prima del controllo if');
 
     // Controllo se la lunghezza non corrisponde e blocco nel caso
     if (bottons_name.length != links_list.length) {
