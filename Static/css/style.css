@@ -63,7 +63,7 @@ body {
 }
 
 /* Display flex */
-footer, footer ul, header ul, nav ul, header nav {
+footer, footer ul, header ul, nav ul, #nav-bar nav {
     display: flex;
 }
 
@@ -90,7 +90,7 @@ footer, header, main {
     padding: 10px;
 }
 
-footer ul, header ul, nav ul, header nav {
+footer ul, header ul, nav ul, #nav-bar nav {
     align-items: center;
     flex-direction: row;
     justify-content: center;
@@ -102,14 +102,15 @@ footer ul li {
 }
 
 header {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-header nav {
+#nav-bar nav {
     justify-content: space-between;
-    /*max-width: 75%;
-    padding-left: 100px;
+    max-width: 75%;
+    /*padding-left: 100px;
     padding-right: 100px;*/
 }
 
@@ -148,9 +149,9 @@ main#descrizione hr {
     margin: 0 2.5% 0 2.5%;
 }
 
-nav button {
+/*nav button {
     margin: 0px 10px 0px 10px;
-}
+}*/
 
 header ul, header nav ul {
     padding: 0;
