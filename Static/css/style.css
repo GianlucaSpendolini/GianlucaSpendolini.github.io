@@ -70,9 +70,9 @@ footer, footer ul, header ul, nav ul, #nav-bar nav {
 footer {
     background-color: rgb(0, 255, 255);
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding-left: 5%;
-    padding-right: 5%;
+    justify-content: space-evenly;
+    /*padding-left: 5%;
+    padding-right: 5%;*/
 }
 
 footer section {
