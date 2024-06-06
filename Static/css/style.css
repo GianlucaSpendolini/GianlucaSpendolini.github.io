@@ -109,7 +109,8 @@ header {
 
 #nav-bar nav {
     justify-content: space-between;
-    max-width: 75%;
+    max-width: 750px;
+    min-width: 300px;
     /*padding-left: 100px;
     padding-right: 100px;*/
 }
