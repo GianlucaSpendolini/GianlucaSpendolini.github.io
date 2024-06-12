@@ -276,16 +276,23 @@ Aggiornamento
 - ogni file html
   - tolti i bottoni da nav per essere inseriti in automatico
 - /css/style.css
-  - centrata la nav e data una larghezza massima
-  - spstituito la display grid con flex (direction column)
+  - dato alla nav justyfy-content: space-evenly
 - /javascript/scripts.js
-  - creata funzione per inserire in automatico i bottoni (inserita nel DOMCOntentLoaded)
+  - creata funzione per inserire in automatico i bottoni (inserita nel DOMContentLoaded)
+ 
+Fare in modo di centrare i bottoni: prova ad inserire un div (con align center) dentro il quale mettere il nav (togli display grid e metti flex).
 
 ## 04/06/2024
 
 Aggiornamento
 - ogni file html
   - sostituzione tag nav con tag 'div' (id = nav-bar) dentro il quale colloco la nav
+- /css/style.css
+  - centrata la nav e data una larghezza massima
+  - sostituito la display 'grid' con 'flex' (direction column)
+  - dato al footer la proptietà justify-content = space-evenly
+ 
+Inserisci in automatico "section" o le cose dentro "section" dando ad entrambi degli id per riferimento.
 
 # Altro
 
