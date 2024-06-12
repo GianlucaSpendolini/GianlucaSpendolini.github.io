@@ -270,6 +270,23 @@ Aggiornamento
  
 Fare in modo che i bottoni vengano inseriti in automatico ed aggiungere solo il blocco nav nei file html.
 
+## 03/06/2024
+
+Aggiornamento
+- ogni file html
+  - tolti i bottoni da nav per essere inseriti in automatico
+- /css/style.css
+  - centrata la nav e data una larghezza massima
+  - spstituito la display grid con flex (direction column)
+- /javascript/scripts.js
+  - creata funzione per inserire in automatico i bottoni (inserita nel DOMCOntentLoaded)
+
+## 04/06/2024
+
+Aggiornamento
+- ogni file html
+  - sostituzione tag nav con tag 'div' (id = nav-bar) dentro il quale colloco la nav
+
 # Altro
 
 ...
