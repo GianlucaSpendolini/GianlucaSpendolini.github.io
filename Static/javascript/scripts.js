@@ -122,8 +122,11 @@ function create_header(buttons_name, links_list) {
 
 // Funzione per sistemare il footer in automatico
 function create_footer(links_list) {
+
+    console.log('dentro create_footer');
     // Creo liste per link/immagini da inserire (section dx e sx)
 
+    // Nomi link prima section
     var links_name = [
         'Info su di me',
         'I miei progetti',
