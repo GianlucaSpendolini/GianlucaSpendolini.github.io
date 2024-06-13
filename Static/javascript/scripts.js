@@ -38,6 +38,15 @@ function what_page(path) {
             //navbar_header();
             //creazione_header();
             console.log('Ciao prova');
+
+            // Inserisco il titolo in automatico
+            document.querySelector('title').innerHTML = 'Prova';
+            break;
+
+        // Home
+        case '/':
+            //
+
             break;
 
         // About
@@ -55,66 +64,10 @@ function what_page(path) {
         default:
             // Non faccio nulla
     }
-    /*// Prova
-    if (path === '/prova') {
-        //navbar_header();
-        //creazione_header();
-        console.log('Ciao prova');
-    }
-
-    // About
-    if (path === '/about') {
-        const date = new Date();
-        var my_age = date.getFullYear() - 2001;
-
-        if (date.getDate() < 11 || (date.getMonth() + 1) < 9) {
-            my_age -= 1;
-        }
-        // Inserisco il mio anno nella presentazione
-        document.querySelector('#my-age').innerHTML = my_age;
-    }*/
 }
 
 
-function navbar_header() {
-
-    console.log('dentro funzione');
-
-    // Home (/)
-    document.querySelector('#home').addEventListener('click', function() {
-        console.log('home');
-        window.location.href = 'https://gianlucaspendolini.github.io/';
-    });
-
-    // Info (/about)
-    document.querySelector('#info').addEventListener('click', function() {
-        console.log('/about');
-        window.location.href = 'https://gianlucaspendolini.github.io/about';
-    });
-
-    // Progetti (/projects/)
-    document.querySelector('#progetti').addEventListener('click', function() {
-        console.log('/projects/');
-        window.location.href = 'https://gianlucaspendolini.github.io/projects/';
-    });
-
-    // Utili (/utilities/)
-    document.querySelector('#utili').addEventListener('click', function() {
-        console.log('/utilities/');
-        window.location.href = 'https://gianlucaspendolini.github.io/utilities/';
-    });
-
-    // Altro (/generic/)
-    document.querySelector('#altro').addEventListener('click', function() {
-        console.log('/generic/');
-        window.location.href = 'https://gianlucaspendolini.github.io/generic/';
-    });
-
-    // Assegnati tutti i link
-    console.log('Assegnati i link');
-}
-
-
+// Funzione per sistemare l'header
 function create_header(buttons_name, links_list) {
 
     // Vado a selezionare la navbar dell'header
@@ -248,10 +201,8 @@ function create_footer(links_list) {
         // Aggiungo l'elenco 'ul' alla section
         section = document.createElement('section');
         section.appendChild(ul);
-        console.log('section: ', section);
 
         // Aggiungo la section al footer
         footer.appendChild(section);
-        console.log('footer: ', footer);
     }
 }
