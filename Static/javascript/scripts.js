@@ -31,6 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function what_page(path) {
 
+    // Seleziono il tag 'title'
+    var title = document.querySelector('title');
+
+    // Seleziono il tag 'header'
+    var header_title = document.querySelector('h1.title');
+
     switch (path) {
 
         // Prova
@@ -39,28 +45,100 @@ function what_page(path) {
             //creazione_header();
             console.log('Ciao prova');
 
-            // Inserisco il titolo in automatico
-            document.querySelector('title').innerHTML = 'Prova';
+            // Titolo
+            title.innerHTML = 'Prova';
+
+            // Header
+            header_title.innerHTML = 'Prove';
+
             break;
 
         // Home
         case '/':
-            //
+
+            //Titolo
+            title.innerHTML = 'Home';
 
             break;
 
         // About
         case '/about':
+
+            // Titolo
+            title.innerHTML = 'Contatti';
+
+            // Prendo la classe Date per assegnarla da una variabile
             const date = new Date();
+
+            // Calcolo la mia età
             var my_age = date.getFullYear() - 2001;
 
+            // Se è prima del mio compleanno -> vado in dietro di 1 anno
             if (date.getDate() < 11 || (date.getMonth() + 1) < 9) {
                 my_age -= 1;
             }
+
             // Inserisco il mio anno nella presentazione
             document.querySelector('#my-age').innerHTML = my_age;
 
             break;
+
+        // Changes
+        case '/changes/':
+
+            // Titolo
+            title.innerHTML = 'Changes';
+
+            break;
+
+        // /changes_table
+        case '/changes/changes_table':
+
+            // Titolo
+            title.innerHTML = 'Changes table';
+
+            break;
+
+        // Projects
+        case '/projects/':
+
+            // Titolo
+            title.innerHTML = 'Projects';
+
+            break;
+
+        // /games/
+        case '/projects/games/':
+
+            // Titolo
+            title.innerHTML = 'Games';
+
+            break;
+
+        // /games/scratch
+        case '/projects/games/scratch':
+
+            // Titolo
+            title.innerHTML = 'Scratch';
+
+            break;
+
+        // /web/
+        case '/projects/web/':
+
+            // Titolo
+            title.innerHTML = 'Sites';
+
+            break;
+
+        // Utilities
+        case '/utilities/':
+
+            // Titolo
+            title.innerHTML = 'Utilities';
+
+            break;
+
         default:
             // Non faccio nulla
     }
@@ -70,7 +148,18 @@ function what_page(path) {
 // Funzione per sistemare l'header
 function create_header(buttons_name, links_list) {
 
-    // Vado a selezionare la navbar dell'header
+    // Seleziono l'header
+    var header = document.querySelector('header');
+
+    // Inserisco una struttura nell'header
+    header.innerHTML = `<h1 class="title"></h1>
+                        <br />
+                        <div align="center" id="nav-bar">
+                            <nav></nav>
+                        </div>
+                        `;
+
+    // Seleziono la navbar
     var navbar = document.querySelector('header nav');
 
     // Controllo se la lunghezza non corrisponde e blocco nel caso
