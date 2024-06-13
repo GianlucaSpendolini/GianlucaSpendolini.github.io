@@ -221,7 +221,8 @@ function create_footer(links_list) {
         }
 
         // Aggiungo l'elenco 'ul' alla section
-        section = document.createElement('section').appendChild(ul);
+        section = document.createElement('section')
+        section.appendChild(ul);
         console.log('section: ', section);
 
         // Aggiungo la section al footer
