@@ -294,6 +294,20 @@ Aggiornamento
  
 Inserisci in automatico "section" o le cose dentro "section" dando ad entrambi degli id per riferimento.
 
+## 13/06/2024
+
+Aggiornamento
+- ogni file html
+  - tolto contenuto main e footer per inserimento automatico tramite js (se url non inizia con /generic/)
+- /javascript/scripts.js
+  - modifica a funzioni per header -> inserito in automatico il contenuto
+  - aggiunta funzione per inserimento automatico del footer
+  - aggiunto switch-case per capire in che pagina ci troviamo e fare azioni di conseguenza
+- /css/style.css
+  - modifica padding di aside in 'about'
+ 
+Fare in modo che, per schermo molto stretto, il footer non sbordi ma resti in colonna.
+
 # Altro
 
 ...
