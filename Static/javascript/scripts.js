@@ -30,7 +30,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function what_page(path) {
-    // Prova
+
+    switch (path) {
+
+        // Prova
+        case '/prova':
+            //navbar_header();
+            //creazione_header();
+            console.log('Ciao prova');
+            break;
+
+        // About
+        case '/about':
+            const date = new Date();
+            var my_age = date.getFullYear() - 2001;
+
+            if (date.getDate() < 11 || (date.getMonth() + 1) < 9) {
+                my_age -= 1;
+            }
+            // Inserisco il mio anno nella presentazione
+            document.querySelector('#my-age').innerHTML = my_age;
+
+            break;
+        default:
+            // Non faccio nulla
+    }
+    /*// Prova
     if (path === '/prova') {
         //navbar_header();
         //creazione_header();
@@ -47,7 +72,7 @@ function what_page(path) {
         }
         // Inserisco il mio anno nella presentazione
         document.querySelector('#my-age').innerHTML = my_age;
-    }
+    }*/
 }
 
 
@@ -109,7 +134,6 @@ function create_header(buttons_name, links_list) {
             element.innerText = buttons_name[i];
 
             element.addEventListener('click', function() {
-                console.log(buttons_name[i]);
                 window.location.href = links_list[i];
             });
 
@@ -123,7 +147,6 @@ function create_header(buttons_name, links_list) {
 // Funzione per sistemare il footer in automatico
 function create_footer(links_list) {
 
-    console.log('dentro create_footer');
     // Creo liste per link/immagini da inserire (section dx e sx)
 
     // Nomi link prima section
@@ -197,11 +220,10 @@ function create_footer(links_list) {
         else if (j === 1) {
             // Aggiungo la classe all'ul
             ul.classList.add('contatti');
-            console.log('if contatti');
 
             // Controllo che le lunghezze corrispondano (per rapporto 1:1)
             if (links_4_icons.length === images_4_icons.length) {
-                console.log('if if contatti');
+
                 // Inserisco ogni elemento della lista delle immagini
                 for (i = 0; i < links_4_icons.length; i++) {
 
@@ -224,7 +246,7 @@ function create_footer(links_list) {
         }
 
         // Aggiungo l'elenco 'ul' alla section
-        section = document.createElement('section')
+        section = document.createElement('section');
         section.appendChild(ul);
         console.log('section: ', section);
 
