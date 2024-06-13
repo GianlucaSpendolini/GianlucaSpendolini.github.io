@@ -175,9 +175,6 @@ function create_footer(links_list) {
         // Inserisco i link nella section di sx
         var ul = document.createElement('ul');
 
-        // Creo l'elemento 'li' della lista
-        var li = document.createElement('li');
-
         // Lavoro per la prima lista
         if (j === 0) {
             // Aggiungo la classe all'ul
@@ -185,6 +182,9 @@ function create_footer(links_list) {
 
             // Inserisco ogni elemento della lista dei nomi (non uso .foreach perchè mi serve il 'n' + 1)
             for (i = 1; i < links_name.length; i++) {
+
+                // Creo l'elemento 'li' della lista
+                var li = document.createElement('li');
 
                 // Aggiungo il contenuto all'elemento 'li'
                 li.innerHTML = `<a href='${links_list[i + 1]}'>${links_name[i]}</a>`;
@@ -202,6 +202,9 @@ function create_footer(links_list) {
             if (links_4_icons.length === images_4_icons.length) {
                 // Inserisco ogni elemento della lista delle immagini
                 for (i = 0; i < links_4_icons.length; i++) {
+
+                    // Creo l'elemento 'li' della lista
+                    var li = document.createElement('li');
 
                     // Aggiungo il contenuto all'elemento 'li'
                     li.innerHTML = `<a href='${links_4_icons[i]}><img alt='${images_4_icons[i]['alt']} class='${images_4_icons[i]['class']}' src='${images_4_icons[i]['src']}' /></a>`;
