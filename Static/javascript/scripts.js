@@ -48,7 +48,7 @@ function what_page(path) {
             // Titolo
             title.innerHTML = 'Prova';
 
-            // Header
+            // Header title
             header_title.innerHTML = 'Prove';
 
             break;
@@ -59,6 +59,9 @@ function what_page(path) {
             //Titolo
             title.innerHTML = 'Home';
 
+            // Header title
+            header_title.innerHTML = 'Home';
+
             break;
 
         // About
@@ -66,6 +69,9 @@ function what_page(path) {
 
             // Titolo
             title.innerHTML = 'Contatti';
+
+            // Header title
+            header_title.innerHTML = 'About me';
 
             // Prendo la classe Date per assegnarla da una variabile
             const date = new Date();
@@ -89,6 +95,9 @@ function what_page(path) {
             // Titolo
             title.innerHTML = 'Changes';
 
+            // Header title
+            header_title.innerHTML = 'Changes';
+
             break;
 
         // /changes_table
@@ -96,6 +105,9 @@ function what_page(path) {
 
             // Titolo
             title.innerHTML = 'Changes table';
+
+            // Header title
+            header_title.innerHTML = 'Tabella dei cambiamenti';
 
             break;
 
@@ -105,6 +117,9 @@ function what_page(path) {
             // Titolo
             title.innerHTML = 'Projects';
 
+            // Header title
+            header_title.innerHTML = 'Progetti';
+
             break;
 
         // /games/
@@ -112,6 +127,9 @@ function what_page(path) {
 
             // Titolo
             title.innerHTML = 'Games';
+
+            // Header title
+            header_title.innerHTML = 'Games';
 
             break;
 
@@ -121,6 +139,9 @@ function what_page(path) {
             // Titolo
             title.innerHTML = 'Scratch';
 
+            // Header title
+            header_title.innerHTML = 'Pagina di scratch';
+
             break;
 
         // /web/
@@ -129,6 +150,9 @@ function what_page(path) {
             // Titolo
             title.innerHTML = 'Sites';
 
+            // Header title
+            header_title.innerHTML = 'Siti';
+
             break;
 
         // Utilities
@@ -136,6 +160,9 @@ function what_page(path) {
 
             // Titolo
             title.innerHTML = 'Utilities';
+
+            // Header title
+            header_title.innerHTML = 'Utilities';
 
             break;
 
