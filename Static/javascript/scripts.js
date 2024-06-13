@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Creazione variabili generali da usare
 
     // Elenco dei nomi dei bottoni
-    var bottons_name = [
+    var buttons_name = [
         'Home',
         'Info',
         'Progetti',
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Cose da fare inizialmente (inserire connessioni nei bottoni)
-    create_header(bottons_name, links_list);
+    create_header(buttons_name, links_list);
     create_footer(links_list);
 
     // In base alla sezione in cui mi trovo, faccio qualcosa
@@ -106,10 +106,10 @@ function create_header(buttons_name, links_list) {
             var element = document.createElement('button');
 
             // Inserisco il nome del bottone dalla lista
-            element.innerText = bottons_name[i];
+            element.innerText = buttons_name[i];
 
             element.addEventListener('click', function() {
-                console.log(bottons_name[i]);
+                console.log(buttons_name[i]);
                 window.location.href = links_list[i];
             });
 
