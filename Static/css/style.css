@@ -44,6 +44,10 @@
     }
 }
 
+aside {
+    padding: 10px 0 10px 0;
+}
+
 aside ul {
     list-style-type: none;
     padding-inline-start: 0;
