@@ -173,7 +173,7 @@ function create_footer(links_list) {
     for (j = 0; j < 2; j++) {
 
         // Inserisco i link nella section di sx
-        var ul = docunent.createElement('ul');
+        var ul = document.createElement('ul');
 
         // Creo l'elemento 'li' della lista
         var li = document.createElement('li');
