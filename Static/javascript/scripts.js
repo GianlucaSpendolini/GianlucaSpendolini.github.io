@@ -209,7 +209,7 @@ function create_footer(links_list) {
                     var li = document.createElement('li');
 
                     // Aggiungo il contenuto all'elemento 'li'
-                    li.innerHTML = `<a href='${links_4_icons[i]}><img alt='${images_4_icons[i]['alt']} class='${images_4_icons[i]['class']}' src='${images_4_icons[i]['src']}' /></a>`;
+                    li.innerHTML = `<a href='${links_4_icons[i]}'><img alt='${images_4_icons[i]['alt']}' class='${images_4_icons[i]['class']}' src='${images_4_icons[i]['src']}' /></a>`;
 
                     // Aggiungo 'li' all'elenco 'ul'
                     ul.appendChild(li);
@@ -222,8 +222,10 @@ function create_footer(links_list) {
 
         // Aggiungo l'elenco 'ul' alla section
         section = document.createElement('section').appendChild(ul);
+        console.log('section: ', section);
 
         // Aggiungo la section al footer
         footer.appendChild(section);
+        console.log('footer: ', footer);
     }
 }
