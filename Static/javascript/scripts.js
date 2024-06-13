@@ -208,6 +208,9 @@ function create_footer(links_list) {
                     // Creo l'elemento 'li' della lista
                     var li = document.createElement('li');
 
+                    // Aggiungo la classe 'link' al tag 'li'
+                    li.classList.add = 'link';
+
                     // Aggiungo il contenuto all'elemento 'li'
                     li.innerHTML = `<a href='${links_4_icons[i]}'><img alt='${images_4_icons[i]['alt']}' class='${images_4_icons[i]['class']}' src='${images_4_icons[i]['src']}' /></a>`;
 
