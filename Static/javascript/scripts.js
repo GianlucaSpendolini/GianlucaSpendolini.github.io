@@ -175,16 +175,20 @@ function what_page(path) {
 // Funzione per sistemare l'header
 function create_header(buttons_name, links_list) {
 
-    // Seleziono l'header
-    var header = document.querySelector('header');
+    // Aggiungo header solo se non sono in /generic/
+    if (!window.location.pathname.startsWith('/generic/')) {
 
-    // Inserisco una struttura nell'header
-    header.innerHTML = `<h1 class="title"></h1>
+        // Seleziono l'header
+        var header = document.querySelector('header');
+
+        // Inserisco una struttura nell'header
+        header.innerHTML = `<h1 class="title"></h1>
                         <br />
                         <div align="center" id="nav-bar">
                             <nav></nav>
                         </div>
                         `;
+    }
 
     // Seleziono la navbar
     var navbar = document.querySelector('header nav');
