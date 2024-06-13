@@ -181,7 +181,7 @@ function create_footer(links_list) {
             ul.classList.add('sezioni');
 
             // Inserisco ogni elemento della lista dei nomi (non uso .foreach perchè mi serve il 'n' + 1)
-            for (i = 1; i < links_name.length; i++) {
+            for (i = 0; i < links_name.length; i++) {
 
                 // Creo l'elemento 'li' della lista
                 var li = document.createElement('li');
@@ -197,9 +197,11 @@ function create_footer(links_list) {
         else if (j === 1) {
             // Aggiungo la classe all'ul
             ul.classList.add('contatti');
+            console.log('if contatti');
 
             // Controllo che le lunghezze corrispondano (per rapporto 1:1)
             if (links_4_icons.length === images_4_icons.length) {
+                console.log('if if contatti');
                 // Inserisco ogni elemento della lista delle immagini
                 for (i = 0; i < links_4_icons.length; i++) {
 
