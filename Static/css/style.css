@@ -48,7 +48,7 @@ aside {
     padding: 10px;
 }
 
-aside ul {
+aside #contatti-cv ul {
     list-style-type: none;
     padding-inline-start: 0;
 }
