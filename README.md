@@ -308,6 +308,31 @@ Aggiornamento
  
 Fare in modo che, per schermo molto stretto, il footer non sbordi ma resti in colonna.
 
+## 15/06/2024
+
+Aggiornamento
+- /projects/games/scratch
+  - aggiunti quasi tutti i link per i giochi di scratch
+  - aggiunte le descrizioni dei giochi e relativi avvertimenti
+- /projects/
+  - corretto riferimento nella pagina per #games
+- /about
+  - inserimento link per riferimenti nella pagina delle varie sezioni
+  - aggiunti titoli per presentazione e contatti/cv
+ 
+Inserire un modo per inviare mail in changes o da qualche altra parte. 
+Inserire gioco di gruppo su /scratch.
+
+## 16/06/2024
+
+Aggiornamento
+- /about
+  - correzione elenco per introduzione aggiungendo punti laterali
+  - correzione "." con ":" per introduzione
+  - correzione attributo name (introduzione - presentazione)
+- /css/style.css
+  - suddivisione file per parte generale/in comune/specifiche
+
 # Altro
 
 ...
