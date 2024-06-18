@@ -1,5 +1,5 @@
 // Importo funzioni da file esterni
-import { add_css_js, points_number, what_page } from './util_function.js';
+import { add_css_js, points_number, insert_meta } from './util_function.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const meta_tags = ` <meta charset="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />`;
     // Inserisco i meta-tag
-    document.querySelector('head title').insertAdjacentHTML('beforebegin', meta_tags);
+    insert_meta(meta_tags);
 
     // Creo l'header e il footer
     create_header(links_list);
@@ -208,5 +208,156 @@ function create_footer(points_path, links_list) {
 
         // Aggiungo la section al footer
         footer.appendChild(section);
+    }
+}
+
+
+// Funzione per capire in che pagina sono e fare determinate cose
+function what_page(path) {
+
+    // Seleziono il tag 'title'
+    var title = document.querySelector('title');
+
+    // Seleziono il tag 'header'
+    var header_title = document.querySelector('h1.title');
+
+    switch (path) {
+
+        // Prova
+        case '/prova':
+            //navbar_header();
+            //creazione_header();
+            console.log('Ciao prova');
+
+            // Titolo
+            title.innerHTML = 'Prova';
+
+            // Header title
+            header_title.innerHTML = 'Prove';
+
+            break;
+
+        // Home
+        case '/':
+
+            //Titolo
+            title.innerHTML = 'Home';
+
+            // Header title
+            header_title.innerHTML = 'Home';
+
+            // Creo eventuali contenuti dei meta-tag
+            const contenuto_m_tag = 'Sito web personale di Gianluca Spendolini, contenente informazioni su progetti, utilità e altro.';
+            // Creo lista meta-tag
+            const m_tags = `<meta name="description" content="${contenuto_m_tag}" />`;
+            // Inserisco i meta tag
+            insert_meta(m_tags);
+
+            break;
+
+        // About
+        case '/about':
+
+            // Titolo
+            title.innerHTML = 'Contatti';
+
+            // Header title
+            header_title.innerHTML = 'About me';
+
+            // Prendo la classe Date per assegnarla da una variabile
+            const date = new Date();
+
+            // Calcolo la mia eta'
+            var my_age = date.getFullYear() - 2001;
+
+            // Se e' prima del mio compleanno -> vado in dietro di 1 anno
+            if (date.getDate() < 11 || (date.getMonth() + 1) < 9) {
+                my_age -= 1;
+            }
+
+            // Inserisco il mio anno nella presentazione
+            document.querySelector('#my-age').innerHTML = my_age;
+
+            break;
+
+        // Changes
+        case '/changes/':
+
+            // Titolo
+            title.innerHTML = 'Changes';
+
+            // Header title
+            header_title.innerHTML = 'Changes';
+
+            break;
+
+        // /changes_table
+        case '/changes/changes_table':
+
+            // Titolo
+            title.innerHTML = 'Changes table';
+
+            // Header title
+            header_title.innerHTML = 'Tabella dei cambiamenti';
+
+            break;
+
+        // Projects
+        case '/projects/':
+
+            // Titolo
+            title.innerHTML = 'Projects';
+
+            // Header title
+            header_title.innerHTML = 'Progetti';
+
+            break;
+
+        // /games/
+        case '/projects/games/':
+
+            // Titolo
+            title.innerHTML = 'Games';
+
+            // Header title
+            header_title.innerHTML = 'Games';
+
+            break;
+
+        // /games/scratch
+        case '/projects/games/scratch':
+
+            // Titolo
+            title.innerHTML = 'Scratch';
+
+            // Header title
+            header_title.innerHTML = 'Pagina di scratch';
+
+            break;
+
+        // /web/
+        case '/projects/web/':
+
+            // Titolo
+            title.innerHTML = 'Sites';
+
+            // Header title
+            header_title.innerHTML = 'Siti';
+
+            break;
+
+        // Utilities
+        case '/utilities/':
+
+            // Titolo
+            title.innerHTML = 'Utilities';
+
+            // Header title
+            header_title.innerHTML = 'Utilities';
+
+            break;
+
+        default:
+            // Non faccio nulla
     }
 }
