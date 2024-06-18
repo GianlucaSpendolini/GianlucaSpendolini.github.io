@@ -12,6 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
     var points = points_number(path);
     //console.log(points);
 
+    // Meta-tag
+    const meta_tags = ` <meta charset="utf-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />`;
+
+    // Inserisco i meta-tag
+    document.querySelector('head title').insertAdjacentHTML('beforebegin', meta_tags);
+
+
+
     // Elenco dei link che devo assegnare ai rispettivi bottoni
     var links_list = [
         `${points}`,
