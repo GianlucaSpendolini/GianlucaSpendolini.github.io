@@ -331,7 +331,28 @@ Aggiornamento
   - correzione "." con ":" per introduzione
   - correzione attributo name (introduzione - presentazione)
 - /css/style.css
-  - suddivisione file per parte generale/in comune/specifiche
+  - inizio suddivisione file per parte generale/in comune/specifiche
+ 
+## 18/06/2024
+
+Aggiunta
+- /Static/javascript/util_class.js
+  - file creato per contenere tutte le classi che posso importare ed usare in altri file js
+- /Static/javascript/util_function.js
+  - contiene le funzioni che posso importare ed usare anche in altri file js
+  - funzione per inserire in automatico file js e css
+  - funzione per capire in che pagina sono ed agire di conseguenza
+- /Static/css/media.css
+  - contiene tutte le '@media' query per tutti i file
+  - riadattamento parti codice in base a dimensione schermo
+ 
+Aggiornamento
+- /Static/javascript/scripts.js
+  - spostate funzioni what_page e points_number in util_function.js
+  - aggiunto inserimento automatico tag meta
+- /Static/css/style.css
+  - spostati codici css '@media' in media.css
+  - suddivisione file in base allo scopo del codice (maggiore ordine)
 
 # Altro
 
