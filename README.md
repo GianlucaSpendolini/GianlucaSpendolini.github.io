@@ -353,6 +353,9 @@ Aggiornamento
 - /Static/css/style.css
   - spostati codici css '@media' in media.css
   - suddivisione file in base allo scopo del codice (maggiore ordine)
+ 
+Sistemare footer nel riadattamento schermo cellulare quando è orizzontale (icone escono).
+Rendere non automatico l'overflow del nav in /about in modo da mettere la descrizione sopra e non a lato e sotto inserire la parte descrittiva (anch'essa non auto l'overflow): mettere flex-direction column?
 
 # Altro
 
