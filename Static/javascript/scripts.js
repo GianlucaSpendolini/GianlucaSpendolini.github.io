@@ -12,15 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     var points = points_number(path);
     //console.log(points);
 
-    // Meta-tag
-    const meta_tags = ` <meta charset="utf-8" />
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />`;
-
-    // Inserisco i meta-tag
-    document.querySelector('head title').insertAdjacentHTML('beforebegin', meta_tags);
-
-
-
     // Elenco dei link che devo assegnare ai rispettivi bottoni
     var links_list = [
         `${points}`,
@@ -32,7 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* Cose da fare inizialmente (inserire connessioni nei bottoni)*/
-    // add_css_js(points);
+
+    // Lista di meta tag da inserire
+    const meta_tags = ` <meta charset="utf-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />`;
+    // Inserisco i meta-tag
+    document.querySelector('head title').insertAdjacentHTML('beforebegin', meta_tags);
+
+    // Creo l'header e il footer
     create_header(links_list);
     create_footer(points, links_list);
 
