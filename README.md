@@ -341,14 +341,16 @@ Aggiunta
 - /Static/javascript/util_function.js
   - contiene le funzioni che posso importare ed usare anche in altri file js
   - funzione per inserire in automatico file js e css
-  - funzione per capire in che pagina sono ed agire di conseguenza
+  - funzione per inserire i meta tag
 - /Static/css/media.css
   - contiene tutte le '@media' query per tutti i file
   - riadattamento parti codice in base a dimensione schermo
  
 Aggiornamento
+- tutti i file html
+  - tolti tutti i meta-tag perchè inseriti automaticamente tramite js
 - /Static/javascript/scripts.js
-  - spostate funzioni what_page e points_number in util_function.js
+  - spostata funzione points_number in util_function.js
   - aggiunto inserimento automatico tag meta
 - /Static/css/style.css
   - spostati codici css '@media' in media.css
