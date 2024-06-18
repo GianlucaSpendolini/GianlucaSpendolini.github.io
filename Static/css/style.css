@@ -1,64 +1,21 @@
+/*
+    PARTI COMUNI A PIU' PAGINE
+*/
+
+/* Link per tornare indietro di 1+ pagine */
 .movement_into_pages {
     color: blue;
     text-align: right;
     text-decoration: none;
 }
 
-/* Decorazione per i link delle descrizioni */
-#parte-descrittiva a {
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-@media screen and (max-width: 600px) {
-    footer, section, section img, section ul {
-        flex-direction: column;
-        padding-inline-start: 0;
-    }
-}
-
-/* Consiglio di Chat GPT-4 */
-/*@media screen and (max-width: 768px) {*/
-    /*header nav {
-        justify-content: space-between;
-        padding-left: 10px;
-        padding-right: 10px;
-    }*/
-
-    /*header ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }*/
-
-    /*main div {
-        padding: 10px;
-    }
-
-    footer ul {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-}*/
-
-aside {
-    padding: 10px;
-}
-
-aside #contatti-cv ul {
-    list-style-type: none;
-    padding-inline-start: 0;
-}
-
-
-h1.title {
-    color: darkblue;
-    font-family: verdana, geneva, sans serif;
-    font-size: 16px;
-    text-align:center;
+/* Nav-bar dell'header */
+#nav-bar nav {
+    justify-content: space-between;
+    max-width: 750px;
+    min-width: 300px;
+    /*padding-left: 100px;
+    padding-right: 100px;*/
 }
 
 body {
@@ -97,7 +54,7 @@ footer, header, main {
 footer ul, header ul, nav ul, #nav-bar nav {
     align-items: center;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
     list-style-type: none;
 }
 
@@ -111,17 +68,64 @@ header {
     justify-content: center;
 }
 
-#nav-bar nav {
-    justify-content: space-between;
-    max-width: 750px;
-    min-width: 300px;
-    /*padding-left: 100px;
-    padding-right: 100px;*/
+/* Titolo in grassetto nell'header del body */
+h1.title {
+    color: darkblue;
+    font-family: verdana, geneva, sans serif;
+    font-size: 16px;
+    text-align:center;
 }
 
 /* Specifico l'altezza */
 header, footer {
     max-height: 25vh;
+}
+
+header ul, header nav ul {
+    padding: 0;
+}
+
+header ul li/*, nav ul li*/ {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Decorazione per ogni elenco di link */
+ul li a {
+    color: mediumblue;
+    text-decoration: none;
+}
+
+ul.contatti {
+    display: inline;
+    line-height: 7.5;
+}
+
+ul.contatti li {
+    display: inline;
+}
+
+
+/*
+    PAGINA PER INFO PERSONALI
+*/
+
+/* Decorazione per i link delle descrizioni */
+#parte-descrittiva a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+aside {
+    padding: 10px;
+}
+
+aside #contatti-cv ul {
+    list-style-type: none;
+    padding-inline-start: 0;
 }
 
 main#descrizione {
@@ -153,32 +157,11 @@ main#descrizione hr {
     margin: 0 2.5% 0 2.5%;
 }
 
+
+/*
+    ALTRO 
+*/
+
 /*nav button {
     margin: 0px 10px 0px 10px;
 }*/
-
-header ul, header nav ul {
-    padding: 0;
-}
-
-header ul li/*, nav ul li*/ {
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-/* Decorazione per ogni elenco di link */
-ul li a {
-    color: mediumblue;
-    text-decoration: none;
-}
-
-ul.contatti {
-    display: inline;
-    line-height: 7.5;
-}
-
-ul.contatti li {
-    display: inline;
-}

@@ -1,6 +1,47 @@
+// Importo funzioni da file esterni
+import { add_css_js, points_number, what_page } from './util_function.js';
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // Creazione variabili generali da usare
+
+    // Prendo il nome del percorso
+    var path = window.location.pathname;
+
+    // Prendo i punti da aggiungere per tornare indietro
+    var points = points_number(path);
+    //console.log(points);
+
+    // Elenco dei link che devo assegnare ai rispettivi bottoni
+    var links_list = [
+        `${points}`,
+        `${points}about`,
+        `${points}projects/`,
+        `${points}utilities/`,
+        `${points}generic/`
+    ];
+
+
+    /* Cose da fare inizialmente (inserire connessioni nei bottoni)*/
+    // add_css_js(points);
+    create_header(links_list);
+    create_footer(points, links_list);
+
+
+    /* Cose da fare successivamente */
+
+    // Aggiungo il CSS e il codice JavaScript
+    add_css_js(points);
+    
+    // Capisco in che pagina mi trovo
+    what_page(path);
+
+    // setTimeout(() => {console.log('fine');}, 0);
+});
+
+
+// Funzione per sistemare l'header
+function create_header(links_list) {
 
     // Elenco dei nomi dei bottoni
     var buttons_name = [
@@ -10,170 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'Utili',
         'Altro'
     ];
-
-    // Elenco dei link che devo assegnare ai rispettivi bottoni
-    var links_list = [
-        'https://gianlucaspendolini.github.io/',
-        'https://gianlucaspendolini.github.io/about',
-        'https://gianlucaspendolini.github.io/projects/',
-        'https://gianlucaspendolini.github.io/utilities/',
-        'https://gianlucaspendolini.github.io/generic/'
-    ];
-
-    // Cose da fare inizialmente (inserire connessioni nei bottoni)
-    create_header(buttons_name, links_list);
-    create_footer(links_list);
-
-    // In base alla sezione in cui mi trovo, faccio qualcosa
-    setTimeout(what_page(window.location.pathname), 0);
-});
-
-
-function what_page(path) {
-
-    // Seleziono il tag 'title'
-    var title = document.querySelector('title');
-
-    // Seleziono il tag 'header'
-    var header_title = document.querySelector('h1.title');
-
-    switch (path) {
-
-        // Prova
-        case '/prova':
-            //navbar_header();
-            //creazione_header();
-            console.log('Ciao prova');
-
-            // Titolo
-            title.innerHTML = 'Prova';
-
-            // Header title
-            header_title.innerHTML = 'Prove';
-
-            break;
-
-        // Home
-        case '/':
-
-            //Titolo
-            title.innerHTML = 'Home';
-
-            // Header title
-            header_title.innerHTML = 'Home';
-
-            break;
-
-        // About
-        case '/about':
-
-            // Titolo
-            title.innerHTML = 'Contatti';
-
-            // Header title
-            header_title.innerHTML = 'About me';
-
-            // Prendo la classe Date per assegnarla da una variabile
-            const date = new Date();
-
-            // Calcolo la mia età
-            var my_age = date.getFullYear() - 2001;
-
-            // Se è prima del mio compleanno -> vado in dietro di 1 anno
-            if (date.getDate() < 11 || (date.getMonth() + 1) < 9) {
-                my_age -= 1;
-            }
-
-            // Inserisco il mio anno nella presentazione
-            document.querySelector('#my-age').innerHTML = my_age;
-
-            break;
-
-        // Changes
-        case '/changes/':
-
-            // Titolo
-            title.innerHTML = 'Changes';
-
-            // Header title
-            header_title.innerHTML = 'Changes';
-
-            break;
-
-        // /changes_table
-        case '/changes/changes_table':
-
-            // Titolo
-            title.innerHTML = 'Changes table';
-
-            // Header title
-            header_title.innerHTML = 'Tabella dei cambiamenti';
-
-            break;
-
-        // Projects
-        case '/projects/':
-
-            // Titolo
-            title.innerHTML = 'Projects';
-
-            // Header title
-            header_title.innerHTML = 'Progetti';
-
-            break;
-
-        // /games/
-        case '/projects/games/':
-
-            // Titolo
-            title.innerHTML = 'Games';
-
-            // Header title
-            header_title.innerHTML = 'Games';
-
-            break;
-
-        // /games/scratch
-        case '/projects/games/scratch':
-
-            // Titolo
-            title.innerHTML = 'Scratch';
-
-            // Header title
-            header_title.innerHTML = 'Pagina di scratch';
-
-            break;
-
-        // /web/
-        case '/projects/web/':
-
-            // Titolo
-            title.innerHTML = 'Sites';
-
-            // Header title
-            header_title.innerHTML = 'Siti';
-
-            break;
-
-        // Utilities
-        case '/utilities/':
-
-            // Titolo
-            title.innerHTML = 'Utilities';
-
-            // Header title
-            header_title.innerHTML = 'Utilities';
-
-            break;
-
-        default:
-            // Non faccio nulla
-    }
-}
-
-
-// Funzione per sistemare l'header
-function create_header(buttons_name, links_list) {
 
     // Aggiungo header solo se non sono in /generic/
     if (!window.location.pathname.startsWith('/generic/')) {
@@ -218,7 +95,7 @@ function create_header(buttons_name, links_list) {
 
 
 // Funzione per sistemare il footer in automatico
-function create_footer(links_list) {
+function create_footer(points_path, links_list) {
 
     // Creo liste per link/immagini da inserire (section dx e sx)
 
@@ -248,12 +125,12 @@ function create_footer(links_list) {
         {
             alt: 'Logo LinkedIn',
             class: 'icona linkedin',
-            src: 'https://gianlucaspendolini.github.io/Static/images/LinkedIn-Logos/LI-In-Bug.png'
+            src: `${points_path}Static/images/LinkedIn-Logos/LI-In-Bug.png`
         },
         {
             alt: 'Logo Git Hub',
             class: 'github icona',
-            src: 'https://gianlucaspendolini.github.io/Static/images/github-mark/github-mark.png'
+            src: `${points_path}Static/images/github-mark/github-mark.png`
         },
         {
             alt: 'Logo Telegram',
@@ -265,8 +142,8 @@ function create_footer(links_list) {
     // Seleziono il footer
     var footer = document.querySelector('footer');
 
-    // Ciclo perchè i passaggi sono gli stessi ma ripetuti due volte
-    for (j = 0; j < 2; j++) {
+    // Ciclo perche' i passaggi sono gli stessi ma ripetuti due volte
+    for (var j = 0; j < 2; j++) {
 
         // Inserisco i link nella section di sx
         var ul = document.createElement('ul');
@@ -276,8 +153,8 @@ function create_footer(links_list) {
             // Aggiungo la classe all'ul
             ul.classList.add('sezioni');
 
-            // Inserisco ogni elemento della lista dei nomi (non uso .foreach perchè mi serve il 'n' + 1)
-            for (i = 0; i < links_name.length; i++) {
+            // Inserisco ogni elemento della lista dei nomi (non uso .foreach perchï¿½ mi serve il 'n' + 1)
+            for (var i = 0; i < links_name.length; i++) {
 
                 // Creo l'elemento 'li' della lista
                 var li = document.createElement('li');
@@ -319,7 +196,7 @@ function create_footer(links_list) {
         }
 
         // Aggiungo l'elenco 'ul' alla section
-        section = document.createElement('section');
+        var section = document.createElement('section');
         section.appendChild(ul);
 
         // Aggiungo la section al footer

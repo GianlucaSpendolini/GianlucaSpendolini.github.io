@@ -6,8 +6,8 @@
 
 footer li.link img {
     height: auto;
-    max-width: 30px;
-    min-width: 20px;
+    max-width: 2em;
+    min-width: 1em;
     padding: 10px;
 }
 

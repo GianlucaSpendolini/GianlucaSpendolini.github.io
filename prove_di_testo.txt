@@ -12,3 +12,84 @@ Ho trovato un impiego per un progetto di MSA presso la sede dell'azienda Sun Che
 In parallelo allo stage ho iniziato ad avvicinarmi sempre di più al mondo dell'informatica, realtà che mi è sempre interessata ma non ho mai avuto modo di approfondire. Terminato il periodo di stage ho iniziato a maturare l'idea di cambiare settore e di immergermi nell'ambito informatico ma rimanendo nel mondo sanitario. Ed è così che iniziai a studiare per poter entrare al corso di Informatica Biomedicale 4.0 dell'ITS Nuove Tecnologie Della Vita situato a Bergamo (BG). Riuscii ad entrare e frequentai il corso 2022/2024, con conseguente diploma di Tecnico Superiore. In questi anni ho approfondito aspetti elettronici/manutentivi di apparecchiature medicali, ambiti più sanitari come l'organizzazione sanitaria di un ospedale e le cartelle cliniche e, soprattutto, ambiti più informatici come linguaggi di programmazione e i linguaggi e la gestione di reti informatiche, approfondendo dal punto di vista teorico e pratico. In contemporanea alle lezioni, ho approfondito l'ambito della programmazione con i corsi di CS50, appassionandomi sempre più per quel lato dell'informatica. Per lo stage obbligatorio, ho scelto di svolgerlo presso l'Istituto Mario Negri, nel quale ho svolto diversi ambiti. Principalmente mi sono occupato della gestione del loro sistema applicativo "EMR", una cartella clinica a 360 gradi, utilizzata per la gestione delle visite per i pazienti e dei campioni per i laboratori, ma anche di help-desk. Qui ho approfondito l'ambito delle cartelle cliniche poiché, durante il periodo di stage, ho avuto a che fare con la crittazione dei dati (con le relative normative), la creazione di un referto medico tramite linguaggio XML e anche la relativa pubblicazione sul fascicolo sanitario elettronico.
 
 Il periodo di stage, però, non mi ha fermato dal voler approfondire ancora di più l'ambito dell'informatica, così mi sono deciso di affrontare il terzo anno facoltativo presso l'università telematica 'nome', nella facolta' di Ingegneria Informatica. Qui … [parlare di cosa ho fatto imparato].
+
+
+-->> COSE DA RICORDARE <<--
+
+sito per
+    - importazione file js 
+        - https://www.tempmail.us.com/it/javascript-modules/come-includere-un-file-javascript-in-un-altro
+
+EX /ABOUT
+        <!--div>
+            Non ho ancora pensato ad una presentazione ed a come suddividere la pagina.
+
+            <br />
+
+            Comunque la mia eta' e': <span id="my-age"></span> :)
+        </div-->
+        <!--div style="text-align: center;">
+            Di seguito lascio alcuni contatti e link:
+
+            <br />
+
+            <ul class="contatti">
+                <li>
+                    <a href="mailto:alpagi01@gmail.com">Mail</a>
+                    <img alt="Logo mail" class="mail" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" />
+                </li>
+                <li>
+                    <a href="https://linkedin.com/in/gianluca-spendolini-7b66b321b">Linkedin</a>
+                    <img alt="Logo LinkedIn" class="linkedin" src="./../../Static/images/LinkedIn-Logos/LI-In-Bug.png" />
+                </li>
+                <li>
+                    <a href="https://telegram.me/Gianlusp01">Telegram</a>
+                    <img alt="Logo Telegram" class="telegram" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" />
+                </li>
+                <li>
+                    <a href="https://github.com/GianlucaSpendolini">GitHub</a>
+                    <img alt="Logo Git Hub" class="github" src="./../../Static/images/github-mark/github-mark.png" />
+                </li>
+            </ul>
+
+            <table align="center" class="contatti">
+                <thead>
+                    <tr>
+                        <th>Contatti</th>
+                        <th></th>
+                        <th>Social</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="link">
+                            <a href="mailto:alpagi01@gmail.com">Mail</a>
+                        </td>
+                        <td class="icona">
+                            <img alt="Logo mail" class="mail" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" />
+                        </td>
+                        <td class="link">
+                            <a href="https://linkedin.com/in/gianluca-spendolini-7b66b321b">Linkedin</a>
+                        </td>
+                        <td class="icona">
+                            <img alt="Logo LinkedIn" class="linkedin" src="./../../Static/images/LinkedIn-Logos/LI-In-Bug.png" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="link">
+                            <a href="https://telegram.me/Gianlusp01">Telegram</a>
+                        </td>
+                        <td class="icona">
+                            <img alt="Logo Telegram" class="telegram" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" />
+                        </td>
+                        <td class="link">
+                            <a href="https://github.com/GianlucaSpendolini">GitHub</a>
+                        </td>
+                        <td class="icona">
+                            <img alt="Logo Git Hub" class="github" src="./../../Static/images/github-mark/github-mark.png" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div-->
