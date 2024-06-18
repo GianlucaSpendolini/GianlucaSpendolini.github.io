@@ -918,6 +918,116 @@
                         Inserire gioco di gruppo su /scratch.
                     </td>
                 </tr>
+                <tr>
+                    <td class="tData">
+                        16/06/2024
+                    </td>
+                    <td class="tDescrizione">
+                        Aggiornamento
+                        <ul>
+                            <li>
+                                /about
+                                <ul>
+                                    <li>
+                                        correzione elenco per introduzione aggiungendo punti laterali
+                                    </li>
+                                    <li>
+                                        correzione "." con ":" per introduzione
+                                    </li>
+                                    <li>
+                                        correzione attributo name (introduzione - presentazione)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                /css/style.css
+                                <ul>
+                                    <li>
+                                        inizio suddivisione file per parte generale/in comune/specifiche
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="tAggiunte">
+                        <strong>Niente da aggiungere</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tData">
+                        18/06/2024
+                    </td>
+                    <td class="tDescrizione">
+                        Aggiunta
+                        <ul>
+                            <li>
+                                /Static/javascript/util_class.js
+                                <ul>
+                                    <li>
+                                        file creato per contenere tutte le classi che posso importare ed usare in altri file js
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                /Static/javascript/util_function.js
+                                <ul>
+                                    <li>
+                                        contiene le funzioni che posso importare ed usare anche in altri file js
+                                    </li>
+                                    <li>
+                                        funzione per inserire in automatico file js e css
+                                    </li>
+                                    <li>
+                                        funzione per capire in che pagina sono ed agire di conseguenza
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                /Static/css/media.css
+                                <ul>
+                                    <li>
+                                        contiene tutte le '@media' query per tutti i file
+                                    </li>
+                                    <li>
+                                        riadattamento parti codice in base a dimensione schermo
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        Aggiornamento
+                        <ul>
+                            <li>
+                                /Static/javascript/scripts.js
+                                <ul>
+                                    <li>
+                                        spostate funzioni what_page e points_number in util_function.js
+                                    </li>
+                                    <li>
+                                        aggiunto inserimento automatico tag meta
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                /Static/css/style.css
+                                <ul>
+                                    <li>
+                                        spostati codici css '@media' in media.css
+                                    </li>
+                                    <li>
+                                        suddivisione file in base allo scopo del codice (maggiore ordine)
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="tAggiunte">
+                        Sistemare footer nel riadattamento schermo cellulare quando è orizzontale (icone escono).
+                        Rendere non automatico l'overflow del nav in /about in modo da mettere la descrizione sopra
+                        e non a lato e sotto inserire la parte descrittiva (anch'essa non auto l'overflow): mettere
+                        flex-direction column?
+                    </td>
+                </tr>
                 <!--
         Inserimento nuova riga della tabella
 
