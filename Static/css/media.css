@@ -1,0 +1,52 @@
+/*
+    MEDIA QUERY PER OGNI DISPOSITIVO
+    - Cellulari: 320-480px
+    - Tablet/iPad: 481-768px
+    - Schermi piccoli/laptop: 769-1024px
+    - Computer: 1025-1200px
+*/
+
+
+/* CELLULARE */
+@media screen and (min-width:320px) and (max-width: 480px) {
+    
+    /* GENERALE */
+
+    #nav-bar button {
+        max-height: auto;
+        max-width: auto;
+        font-size: 2em;
+    }
+
+    body {
+        font-size: 0.9em;
+    }
+
+    footer ul.sezioni {
+        font-size: 2em;
+        padding: 0 10px 0 10px;
+    }
+
+    header h1.title {
+        font-size: 2em;
+    }
+
+    table td {
+        font-size: 0.8em;
+    }
+
+    section, section img, section ul {
+        flex-direction: column;
+        /* justify-content: space-between; */
+        padding-inline-start: 0;
+    }
+
+    /* IMMAGINI */
+
+    footer li.link img {
+        height: auto;
+        max-width: 50px;
+        min-width: 40px;
+        padding: 0 30px 0 30px;
+    }
+}
