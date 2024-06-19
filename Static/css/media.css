@@ -23,7 +23,7 @@
     }
 
     footer {
-        height: auto;
+        align-items: center;
     }
 
     footer ul.sezioni {
