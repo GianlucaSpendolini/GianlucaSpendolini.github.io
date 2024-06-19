@@ -191,7 +191,9 @@ function create_footer(points_path, links_list) {
                     li.classList.add('link');
 
                     // Aggiungo il contenuto all'elemento 'li'
-                    li.innerHTML = `<a href='${links_4_icons[i]}'><img alt='${images_4_icons[i]['alt']}' class='${images_4_icons[i]['class']}' src='${images_4_icons[i]['src']}' /></a>`;
+                    li.innerHTML = `<a href='${links_4_icons[i]}'>
+                                        <img alt='${images_4_icons[i]['alt']}' class='${images_4_icons[i]['class']}' src='${images_4_icons[i]['src']}' />
+                                    </a>`;
 
                     // Aggiungo 'li' all'elenco 'ul'
                     ul.appendChild(li);
