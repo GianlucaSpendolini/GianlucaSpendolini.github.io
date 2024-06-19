@@ -48,7 +48,7 @@ export function add_css_js(points_path) {
         // CSS
         if (type === 'css') {
             for (const path of lista_generale[type]) {
-                // Creo il documento
+                // Creo l'elemento
                 var css = document.createElement('link');
                 // href
                 css.href = path;
@@ -66,7 +66,7 @@ export function add_css_js(points_path) {
         // JavaScript
         else if (type === 'js') {
             for (const path of lista_generale[type]) {
-                // Creo il documento
+                // Creo l'elemento
                 var js = document.createElement('script');
                 // src
                 js.src = path;
