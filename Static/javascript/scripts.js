@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
         `${points}generic/`
     ];
 
+    // Per le date
+    var date = new Date();
+
 
     /* Cose da fare inizialmente (inserire connessioni nei bottoni)*/
 
@@ -41,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     add_css_js(points);
     
     // Capisco in che pagina mi trovo
-    what_page(path);
+    what_page(path, svg(date.getMonth()));
 
     // setTimeout(() => {console.log('fine');}, 0);
 });
@@ -215,7 +218,7 @@ function create_footer(points_path, links_list) {
 
 
 // Funzione per capire in che pagina sono e fare determinate cose
-function what_page(path) {
+function what_page(path, month_svg) {
 
     // Seleziono il tag 'title'
     var title = document.querySelector('title');
@@ -232,7 +235,7 @@ function what_page(path) {
             console.log('Ciao prova');
 
             // Titolo
-            title.innerHTML = 'Prova';
+            title.innerHTML = svg.barrato + 'Prova';
 
             // Header title
             header_title.innerHTML = 'Prove';
