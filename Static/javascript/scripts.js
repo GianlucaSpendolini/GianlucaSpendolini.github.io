@@ -235,7 +235,7 @@ function what_page(path, month_svg) {
             console.log('Ciao prova');
 
             // Titolo
-            title.innerHTML = svg.barrato + 'Prova';
+            title.innerHTML = month_svg.barrato + 'Prova';
 
             // Header title
             header_title.innerHTML = 'Prove';
