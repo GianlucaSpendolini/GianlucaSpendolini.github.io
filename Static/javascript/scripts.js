@@ -1,5 +1,5 @@
 // Importo funzioni da file esterni
-import { add_css_js, points_number, insert_meta } from './util_function.js';
+import { add_css_js, points_number, insert_meta, svg } from './util_function.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
