@@ -1,12 +1,12 @@
 // Importo funzioni da file esterni
-import { add_css_js, points_number, insert_in_head, svg } from './util_function.js';
+import { add_css_js, insert_in_head, points_number, svg } from './util_function.js';
+
+// Importo variabili da file esterni
+import { date, path } from './util_function.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
     // Creazione variabili generali da usare
-
-    // Prendo il nome del percorso
-    var path = window.location.pathname;
 
     // Prendo i punti da aggiungere per tornare indietro
     var points = points_number(path);
@@ -20,9 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `${points}utilities/`,
         `${points}generic/`
     ];
-
-    // Per le date
-    var date = new Date();
 
 
     /* Cose da fare inizialmente (inserire connessioni nei bottoni)*/
@@ -219,7 +216,7 @@ function create_footer(points_path, links_list) {
 
 
 // Funzione per capire in che pagina sono e fare determinate cose
-function what_page(path) {
+function what_page(page_path) {
 
     // Seleziono il tag 'title'
     var title = document.querySelector('title');
@@ -227,7 +224,7 @@ function what_page(path) {
     // Seleziono il tag 'header'
     var header_title = document.querySelector('h1.title');
 
-    switch (path) {
+    switch (page_path) {
 
         // Prova
         case '/prova':
