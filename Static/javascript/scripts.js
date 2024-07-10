@@ -1,5 +1,5 @@
 // Importo funzioni da file esterni
-import { add_css_js, points_number, insert_meta, svg } from './util_function.js';
+import { add_css_js, points_number, insert_in_head, svg } from './util_function.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -27,11 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Cose da fare inizialmente (inserire connessioni nei bottoni)*/
 
-    // Lista di meta tag da inserire
-    const meta_tags = ` <meta charset="utf-8" />
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />`;
-    // Inserisco i meta-tag
-    insert_meta(meta_tags);
+    // Inserisco l'icona
+    insert_in_head(`<link href="${points}${svg(date.getMonth()).non_barrato}" rel="icon" type="image/svg+xml" >`);
+
+    // Inserisco i meta-tag comuni
+    insert_in_head(`<meta charset="utf-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />`);
 
     // Creo l'header e il footer
     create_header(links_list);
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     add_css_js(points);
     
     // Capisco in che pagina mi trovo
-    what_page(path, svg(date.getMonth()));
+    what_page(path);
 
     // setTimeout(() => {console.log('fine');}, 0);
 });
@@ -70,11 +71,11 @@ function create_header(links_list) {
 
         // Inserisco una struttura nell'header
         header.innerHTML = `<h1 class="title"></h1>
-                        <br />
-                        <div align="center" id="nav-bar">
-                            <nav></nav>
-                        </div>
-                        `;
+                            <br />
+                            <div align="center" id="nav-bar">
+                                <nav></nav>
+                            </div>
+                            `;
     }
 
     // Seleziono la navbar
@@ -218,7 +219,7 @@ function create_footer(points_path, links_list) {
 
 
 // Funzione per capire in che pagina sono e fare determinate cose
-function what_page(path, month_svg) {
+function what_page(path) {
 
     // Seleziono il tag 'title'
     var title = document.querySelector('title');
@@ -235,7 +236,7 @@ function what_page(path, month_svg) {
             console.log('Ciao prova');
 
             // Titolo
-            title.innerHTML = month_svg.barrato + 'Prova';
+            title.innerHTML = 'Prova';
 
             // Header title
             header_title.innerHTML = 'Prove';
@@ -256,7 +257,7 @@ function what_page(path, month_svg) {
             // Creo lista meta-tag
             const m_tags = `<meta name="description" content="${contenuto_m_tag}" />`;
             // Inserisco i meta tag
-            insert_meta(m_tags);
+            insert_in_head(m_tags);
 
             break;
 
