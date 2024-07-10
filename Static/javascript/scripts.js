@@ -2,7 +2,7 @@
 import { add_css_js, insert_in_head, points_number, svg } from './util_function.js';
 
 // Importo variabili da file esterni
-import { date, path } from './util_function.js';
+import { date, path } from './util_variable.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
