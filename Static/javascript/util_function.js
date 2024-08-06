@@ -121,7 +121,9 @@ export function svg(month) {
             break;
             
         // In caso sia estate
-        case 7 || 8:
+        case 6:
+        case 7:
+        case 8:
             
             svgs.favicon = `${icons_path}06_07_08_favicon.svg`;
             svgs.non_barrato = `${icons_path}06_07_08_nb.svg`;
