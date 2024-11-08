@@ -338,6 +338,28 @@ function what_page(page_path) {
 
             break;
 
+        // /socials/
+        case '/projects/socials/':
+
+            // Titolo
+            title.innerHTML = 'Socials';
+
+            // Header title
+            header_title.innerHTML = 'Socials';
+
+            break;
+
+        // /socials/telegram
+        case '/projects/socials/telegram':
+
+            // Titolo
+            title.innerHTML = 'Telegram';
+
+            // Header title
+            header_title.innerHTML = 'Pagina di Telegram';
+
+            break;
+
         // /web/
         case '/projects/web/':
 

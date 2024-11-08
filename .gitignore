@@ -24,3 +24,6 @@ generic
 
 # File di sincronizzazione (Free File Sync)
 sync.ffs_db
+
+# File di backup (Win Merge)
+*.bk 
