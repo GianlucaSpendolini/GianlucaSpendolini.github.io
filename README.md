@@ -5,11 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
-## 17/20/2024
-
-Modifica index.html
-- Aggiunta commento Alessia
-
 ## 20/02/2024
 
 Aggiornamento projects/index.html
