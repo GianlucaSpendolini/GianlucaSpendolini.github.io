@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("file di prova js");
 
-    fetch('./Static/json/prova.json')
+    fetch('./../Static/json/prova.json')
     .then(response => {
         if (!response.ok) {
             throw new Error(`Errore: ${response.status}`);
