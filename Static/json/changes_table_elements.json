@@ -1,0 +1,160 @@
+[
+
+    {
+        "tData": "14/02/2024",
+        "tDescrizione": {
+            "aggiunta": [
+                "./index.html",
+                {
+                    "Progetto Django": [
+                        "Prove se funziona",
+                        "Tolto perche' non funziona*"
+                    ],
+                    "file .php": [
+                        "Eliminati poiche' non funzionano*"
+                    ]
+                }
+            ],
+            "aggiornamento": [
+                {
+                    ".gitignore": [
+                        "Ignora cartelle",
+                        ".vs",
+                        "pycache (tolto)",
+                        "Ignora file",
+                        "README.md"
+                    ]
+                }
+            ]
+        },
+        "tAggiunta": "*poiche' posso creare solo siti statici e non dinamici"
+    },
+
+    {
+        "tData": "15/02/2024",
+        "tDescrizione": {
+            "aggiunta": [
+                "Games/",
+                "games.html -> games/index.html",
+                "scratch.html",
+                "Projects/",
+                "projects/index.html",
+                "Static/",
+                "css/style.css"
+            ],
+            "aggiornamento": [
+                "index.html",
+                "Tolta la parte \"di prova\" e tenuta solo parte vera e propria",
+                "Spostato la parte \"di prova\" in prova.html e messo link che punta a prova.html",
+                "Aggiunta immagine scratch.png + ridimensionamento"
+            ]
+        },
+        "tAggiunta": null
+    },
+
+    {
+        "tData": "16/02/2024",
+        "tDescrizione": {
+            "aggiunta": null,
+            "aggiornamento": [
+                "Descrizione migliore (con piu' commenti)"
+            ]
+        },
+        "tAggiunta": null
+    },
+
+    {
+        "tData": "17/02/2024",
+        "tDescrizione": {
+            "aggiunta": null,
+            "aggiornamento": [
+                "Aggiunta commento Alessia"
+            ]
+        },
+        "tAggiunta": null
+    },
+
+    {
+        "tData": "20/02/2024",
+        "tDescrizione": {
+            "aggiunta": null,
+            "aggiornamento": [
+                "Aggiunta collegamenti a canali instagram",
+                "Aggiunta commento indicativo per inserimento i successivi blocchi"
+            ]
+        },
+        "tAggiunta": null
+    },
+
+    {
+        "tData": "22/02/2024",
+        "tDescrizione": {
+            "aggiunta": {
+                "/changes/": {
+                    "index.html": [
+                        "Indica ogni file sotto questa cartella e una descrizione"
+                    ],
+                    "changes_table.html": [
+                        "Tabella contenente tutte le modifiche"
+                    ]
+                },
+                "/generic/": {
+                    "index.html": [
+                        "Inserimento link a progetti per i miei amici (cartella di prova, per questa sezione faro' una repo su GitHub condivisa)"
+                    ]
+                },
+                "/projects/web/": {
+                    "index.html": [
+                        "Indica i link ai vari siti che non fanno direttamente parte di questo progetto"
+                    ]
+                },
+                "about.html": [
+                    "Pagina in cui parlo di me e fornisco contatti per potermi scrivere"
+                ]
+            },
+            "aggiornamento": {
+                "style.css": [
+                    "Inserimento classe \"movement_into_pages\" per i link per \"viaggiare tra le pagine\"",
+                    "Inserimento classe \"tData\", \"tDescrizione\", \"tAggiunte\" per la tabella dei cambiamenti (in modo che prenda la pagina)"
+                ],
+                ".gitignore": [
+                    "Inserimento prova.html (perche' avro' una sezione per la prova ma piu' avanti)",
+                    "Inserimento generic/index.html (perche' avro' una nuova repo online che potro' accedere con il link in Home)"
+                ],
+                "index.html": [
+                    "Aggiunta parte dove parlo della pagina dove \"parlo\" di me"
+                ],
+                "/games/": [
+                    "Spostamento intera cartella sotto /projects/"
+                ]
+            }
+        },
+        "tAggiunta": null
+    },
+
+    {
+        "tData": "23/02/2024",
+        "tDescrizione": {
+            "aggiunta": [
+                ""
+            ],
+            "aggiornamento": [
+                ""
+            ]
+        },
+        "tAggiunta": null
+    },
+
+    {
+        "tData": "",
+        "tDescrizione": {
+            "aggiunta": [
+                ""
+            ],
+            "aggiornamento": [
+                ""
+            ]
+        },
+        "tAggiunta": null
+    }
+]
