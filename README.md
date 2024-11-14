@@ -4,16 +4,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 
 # -->> UPDATE <<--
-
-## 16/06/2024
-
-Aggiornamento
-- /about
-  - correzione elenco per introduzione aggiungendo punti laterali
-  - correzione "." con ":" per introduzione
-  - correzione attributo name (introduzione - presentazione)
-- /css/style.css
-  - inizio suddivisione file per parte generale/in comune/specifiche
  
 ## 18/06/2024
 
