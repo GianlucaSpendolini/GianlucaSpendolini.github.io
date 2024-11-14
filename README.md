@@ -4,18 +4,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 
 # -->> UPDATE <<--
- 
- ## 07/05/2024
-
- Aggiunta
- - /static/javascript/prova.js
-   - funzione prova()
-
-Aggiornamento
-- prova.html
-  - prova utilizzo funzione prova() con bottone "Cliccami"
- 
-Controlla perchè non riesce a importare file/la funzione js
 
 ## 16/05/2024
 
