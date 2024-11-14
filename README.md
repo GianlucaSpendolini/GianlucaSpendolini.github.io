@@ -1,12 +1,19 @@
 # GianlucaSpendolini.github.io
 
-Non so' cosa scrivere...però mi serviva una modifica :)
+### Actual version: 0.15.0
+
+### Languages
+- [English](#english)
+- [Italiano](#italiano)
 
 
-# Altro
+## English
 
 ...
 
-## Modifiche di prova
 
-25/03/2024
+## Italiano
+
+Questo è un sito molto sempliche che io uso per allenarmi con i linguaggi HTML, CSS, JavaScript.
+
+Al momento è in fase di sviluppo (infatti le versioni sono ancora allo 0 per il major).
