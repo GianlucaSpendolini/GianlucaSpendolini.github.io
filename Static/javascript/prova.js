@@ -10,6 +10,26 @@ document.addEventListener('DOMContentLoaded', () => {
     /*navbar_header();*/
 
     console.log("file di prova js");
+
+    fetch('./../json/prova.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Errore: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data=> {
+        const container = document.getElementById('to-fill');
+        data.forEach(element => {
+            const div = document.createElement('div');
+
+            div.innerHTML = element
+
+            container.appendChild(div);
+        });
+    }).catch(error => {
+        console.error('Errore nel caricamento del file JSON:', error)
+    })
 });
 
 

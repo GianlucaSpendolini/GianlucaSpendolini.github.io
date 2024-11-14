@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "Mario Rossi",
+        "eta": 30, 
+        "citta": "Roma"
+    },
+    {
+        "nome": "Gianluca Spendolini",
+        "eta": 23, 
+        "citta": "Milano"
+    },
+    {
+        "nome": "Sergio Verdi",
+        "eta": 45, 
+        "citta": "Bergamo"
+    }
+]
