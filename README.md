@@ -4,16 +4,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 
 # -->> UPDATE <<--
- 
-## 25/03/2024
-
-Aggiornamento
-- prova.html
-  - Tolti i punti nei tag "section" laterali
-    - Lasciati i tag laterali per permettere di metterli a 2/5 e 4/5
-  - Controllo funzionamento per monitor di diverse dimensioni
-- Applicazione modifiche tag "footer" a tutti gli script con sistemazione riferimenti nei tag "a"
-  - Anche per /generic/
 
 ## 27/03/2024
 
