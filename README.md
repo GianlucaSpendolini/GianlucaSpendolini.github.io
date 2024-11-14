@@ -5,18 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
-## 04/06/2024
-
-Aggiornamento
-- ogni file html
-  - sostituzione tag nav con tag 'div' (id = nav-bar) dentro il quale colloco la nav
-- /css/style.css
-  - centrata la nav e data una larghezza massima
-  - sostituito la display 'grid' con 'flex' (direction column)
-  - dato al footer la proptietà justify-content = space-evenly
- 
-Inserisci in automatico "section" o le cose dentro "section" dando ad entrambi degli id per riferimento.
-
 ## 13/06/2024
 
 Aggiornamento
