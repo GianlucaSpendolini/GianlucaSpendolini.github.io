@@ -5,15 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
-## 09/07/2024
-
-Aggiornamento
-- /Static/javascript/util_function.js
-  - aggiunte nuove funzioni per scambiare icona in base a vedo/non vedo la password
-  - aggiunta funzione per scegliere le icone in base al mese
-
-Sistema la funzione in modo che restituisca l'icona.
-
 ## 10/07/2024
 
 Aggiunta
