@@ -5,18 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
-## 03/06/2024
-
-Aggiornamento
-- ogni file html
-  - tolti i bottoni da nav per essere inseriti in automatico
-- /css/style.css
-  - dato alla nav justyfy-content: space-evenly
-- /javascript/scripts.js
-  - creata funzione per inserire in automatico i bottoni (inserita nel DOMContentLoaded)
- 
-Fare in modo di centrare i bottoni: prova ad inserire un div (con align center) dentro il quale mettere il nav (togli display grid e metti flex).
-
 ## 04/06/2024
 
 Aggiornamento
