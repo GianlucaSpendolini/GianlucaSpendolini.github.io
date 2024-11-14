@@ -5,14 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
-## 24/02/2024
-
-Aggiornamento
-- /css/image.css
-	- Ridimensionamento loghi (10% della cella)
-- /css/table.css
-	- Ridimensionamento tabella generale (50% della larghezza totale)
-
 ## 26/02/2024
 
 Aggiornamento
