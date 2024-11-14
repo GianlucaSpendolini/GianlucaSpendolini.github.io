@@ -5,13 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
-## 22/03/2024
-
-Aggiornamento
-- Applicazione modifiche "body" ai tag "header" e "main" a tutti gli altri script
-- Risoluzione problemi tag (in generale)
-  - Centralizzazione dei contenuti rispetto ai contenitori
-
 ## 23/03/2024
 
 Aggiornamento
