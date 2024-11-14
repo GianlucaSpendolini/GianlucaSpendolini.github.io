@@ -4,14 +4,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 
 # -->> UPDATE <<--
-
-## 27/03/2024
-
-Aggiornamento
-- index.html
-  - tolto il doppione del tag "hr"
-- /projects/web/index.html
-  - aggiornato il link che porta al sito del Mario Negri (da "clinicalweb-twin" tolto "-twin")
  
  ## 07/05/2024
 
