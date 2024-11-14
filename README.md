@@ -1,6 +1,6 @@
 # GianlucaSpendolini.github.io
 
-### Actual version: 0.15.0
+### Actual version: 0.16.2
 
 ### Languages
 - [English](#english)
@@ -9,7 +9,9 @@
 
 ## English
 
-...
+This is a very simple site that I use to train with HTML, CSS, JavaScript languages.
+
+It is currently in development (in fact the versions are still at 0 for the major).
 
 
 ## Italiano
