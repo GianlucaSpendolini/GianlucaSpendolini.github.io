@@ -5,28 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
-## 21/03/2024
-
-Aggiornamento
-- prova.html
-  - Suddivisione struttura pagina nei tag "header", "main" e "footer"
-  - Inserimento elenchi puntati come riga
-    - Applicazione distanziamento elementi (padding 10px)
-    - Posizionarlo nel centro del contenitore
-  - Inserimento elementi già presenti nel "body" in "main"
-    - Tolti i link che rimandano ad Home poiche' gia' inserito nel menu' dell'header
-- image.css
-  - Le icone inserite nei footer messe con massimo e minimo dimensionamento
-- style.css
-  - Modifiche a tag
-    - ul
-    - li
-    - footer
-    - section
-  - Colore al tag
-    - "h1" negli header
-    - "footer" come sfondo
-
 ## 22/03/2024
 
 Aggiornamento
