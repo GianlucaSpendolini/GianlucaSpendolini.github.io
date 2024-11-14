@@ -20,16 +20,41 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
     })
     .then(data=> {
-        const container = document.getElementById('to-fill');
+        // Container provvisorio da riempire (sostituire con il tag tbody)
+        const container = document.querySelector('tbody');
         data.forEach(element => {
-            const div = document.createElement('div');
+            // Creo la riga 
+            const tr = document.createElement('tr');
 
+            // Creo la casella per la data
+            let td_data = document.createElement('td');
+            td_data.className = 'tData';
+            td_data.innerHTML = element.tData;
+            tr.appendChild(td_data);
+
+            // Creo la casella per la descrizione
+            let td_escrizione = document.createElement('td');
+            td_escrizione.className = 'tDescrizione';
             for (let [k, v] of Object.entries(element.tDescrizione)) {
+                // Aggiungo il "titolo" dell'elenco
+                td_escrizione.append(k);
+                // Creo la lista iniziale
+                const ul = document.createElement('ul');
+                // Continuo con anche la funzione per prendere ogni elemento e farlo diventare un elenco
                 console.log(k, ":", v ? v : "only k");
-            }
-            div.innerHTML = element.tData
 
-            container.appendChild(div);
+                // Aggiungo uno spazio
+                td_escrizione.append('\n');
+            }
+
+            // Creo la casella per commenti aggiuntivi
+            let td_aggiunta = document.createElement('td');
+            td_aggiunta.className = 'tAggiunta';
+
+            // Controllo se c'è qualcosa
+            // Altrimenti inserisco, in grassetto, che non c'è nulla
+
+            container.appendChild(ul);
         });
     })
     .catch(error => {
@@ -40,6 +65,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function prova(messaggio) {
     console.log(messaggio);
+}
+
+function create_changes_table(elemento) {
+    // Se l'elemento è una stringa -> ritorno direttamente la stringa
+    if (typeof elemento === 'string') {
+        return elemento;
+    }
+    // Altrimenti
+    else {
+        // Creo una variabile per la linea
+        let ul = document.createElement('li');
+        if (Object.prototype.toString.call(elemento) === '[object Array]') {
+            elemento.forEach(e => {
+                // if 
+            });
+        }
+    }
 }
 
 
