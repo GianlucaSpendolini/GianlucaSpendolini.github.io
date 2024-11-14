@@ -5,31 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
-## 23/02/2024
-
-Aggiornamento
-- /projects/index.html
-  - Lettere accentate con "lettera'"
-- index.html
-  - Modifica al posto del link completo, uso "/generic/"
-- about.html
-  - Sistemati i linl per i social e per la mail
-  - Aggiunte foto per
-    - Mail
-    - Linkedin
-    - Git Hub
-    - Telegram
-- /web/index.html
-  - Aggiunti link per tornare a sezione precedente o alla home
-- Generale
-  - Cambio nome link da 'sito' a Home
- 
-Aggiunte
-- /Static/css/photo.css
-  - Contiene ogni cambiamento per ogni tipo di immagine (es icone o sfondi)
-- /Static/css/table.css
-  - Contiene ogni cambiamento per ogni tipo di tabelle (es generale o per contatti)
-
 ## 24/02/2024
 
 Aggiornamento
