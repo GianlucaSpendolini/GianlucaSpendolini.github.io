@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("file di prova js");
 
+    console.log(window.location.pathname);
+
     fetch('./../Static/json/prova.json')
     .then(response => {
         if (!response.ok) {
