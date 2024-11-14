@@ -5,17 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
- ## 01/06/2024
-
- Aggiornamento
- - /javascript/prova.js
-   - sistemato bottone "cliccami" per controllo codice js
-   - inserimento possibilità di aggiungere link a bottoni della nav
-- /css/style.css
-  - aggiunti i selettori per prendere anche nav e bottoni
-
-Bloccare ad una certa distanza i bottoni della navbar, in modo che, andando a rimpicciolire, si distanziano fino ad una distanza minima e, allargando, si allargano fino ad una certa e poi si bloccano.
-
 ## 02/06/2024
 
 Aggiunta
