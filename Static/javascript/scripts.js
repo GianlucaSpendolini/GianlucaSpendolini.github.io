@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     add_css_js(points);
     
     // Capisco in che pagina mi trovo
-    what_page(path);
+    what_page(path, points);
 
     // setTimeout(() => {console.log('fine');}, 0);
 });
@@ -216,7 +216,7 @@ function create_footer(points_path, links_list) {
 
 
 // Funzione per capire in che pagina sono e fare determinate cose
-function what_page(page_path) {
+function what_page(page_path, points_path) {
 
     // Seleziono il tag 'title'
     var title = document.querySelector('title');
@@ -302,6 +302,28 @@ function what_page(page_path) {
 
             // Header title
             header_title.innerHTML = 'Tabella dei cambiamenti';
+            
+            // Composizione automatica della tabella
+            fetch(`${points_path}Static/json/changes_table_elements.json`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Errore: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data=> {
+                const container = document.getElementById('to-fill');
+                data.forEach(element => {
+                    const div = document.createElement('div');
+        
+                    div.innerHTML = element.nome
+        
+                    container.appendChild(div);
+                });
+            })
+            .catch(error => {
+                console.error('Errore nel caricamento del file JSON:', error)
+            });
 
             break;
 

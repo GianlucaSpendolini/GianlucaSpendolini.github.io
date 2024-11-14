@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("file di prova js");
 
-    // fetch('./../Static/json/prova.json')
-    fetch('./Static/json/prova.json')
+    // fetch('./Static/json/prova.json')
+    fetch('./Static/json/changes_table_elements.json')
     .then(response => {
         if (!response.ok) {
             throw new Error(`Errore: ${response.status}`);
@@ -24,7 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
         data.forEach(element => {
             const div = document.createElement('div');
 
-            div.innerHTML = element.name
+            for (let [k, v] of Object.entries(element.tDescrizione)) {
+                console.log(k, ":", v ? v : "only k");
+            }
+            div.innerHTML = element.tData
 
             container.appendChild(div);
         });
