@@ -11,9 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("file di prova js");
 
-    console.log(window.location.pathname);
-
-    fetch('./../Static/json/prova.json')
+    // fetch('./../Static/json/prova.json')
+    fetch('./../json/prova.json')
     .then(response => {
         if (!response.ok) {
             throw new Error(`Errore: ${response.status}`);
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data.forEach(element => {
             const div = document.createElement('div');
 
-            div.innerHTML = element
+            div.innerHTML = element.name
 
             container.appendChild(div);
         });
