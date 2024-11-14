@@ -5,11 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
-## 16/02/2024
-
-Aggiornamento .gitignore
-- Descrizione migliore (con più commenti)
-
 ## 17/20/2024
 
 Modifica index.html
