@@ -29,9 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             container.appendChild(div);
         });
-    }).catch(error => {
-        console.error('Errore nel caricamento del file JSON:', error)
     })
+    .catch(error => {
+        console.error('Errore nel caricamento del file JSON:', error)
+    });
 });
 
 
