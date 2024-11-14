@@ -5,12 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
-## 20/02/2024
-
-Aggiornamento projects/index.html
-- Aggiunta collegamenti a canali instagram
-- Aggiunta commento indicativo per inserimento i successivi blocchi
-
 ## 22/02/2024
 
 Aggiunta pagine e sezioni
