@@ -4,14 +4,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 
 # -->> UPDATE <<--
-
-## 23/03/2024
-
-Aggiornamento
-- prova.html
-  - Maggiore padding ai lati degli elementi del tag "ul" in header
-- Applicazioni modifiche per avere url senza estensione dei file (NO /'file'.'estenzione' MA /'file')
-  - Anche per /generic/
  
 ## 25/03/2024
 
