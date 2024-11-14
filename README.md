@@ -5,21 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
-## 02/06/2024
-
-Aggiunta
-- /javascript/scripts.js
-  - aggiunta assegnazione automatica dei link ai bottoni tramite id
-  - aggiunto controllo in base all'url
-    - per parte di "/about" aggiunta l'età
-
-Aggiornamento
-- about.html
-  - file js generico
-  - contenitore dove inserire l'età
- 
-Fare in modo che i bottoni vengano inseriti in automatico ed aggiungere solo il blocco nav nei file html.
-
 ## 03/06/2024
 
 Aggiornamento
