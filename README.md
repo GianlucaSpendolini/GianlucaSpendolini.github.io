@@ -5,14 +5,6 @@ Non so' cosa scrivere...però mi serviva una modifica :)
 
 # -->> UPDATE <<--
 
-## 26/02/2024
-
-Aggiornamento
-- /css/table.css
-	- Larghezza colonne changes_table
-- readme.md
-	- Aggiornamento readme con data di oggi e 24/02/2024
-
 ## 27/02/2024
 
 Aggiornamento
