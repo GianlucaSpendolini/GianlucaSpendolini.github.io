@@ -33,18 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
             tr.appendChild(td_data);
 
             // Creo la casella per la descrizione
-            let td_escrizione = document.createElement('td');
-            td_escrizione.className = 'tDescrizione';
+            let td_descrizione = document.createElement('td');
+            td_descrizione.className = 'tDescrizione';
             for (let [k, v] of Object.entries(element.tDescrizione)) {
                 // Aggiungo il "titolo" dell'elenco
-                td_escrizione.append(k);
+                td_descrizione.append(k);
                 // Creo la lista iniziale
                 const ul = document.createElement('ul');
                 // Continuo con anche la funzione per prendere ogni elemento e farlo diventare un elenco
                 console.log(k, ":", v ? v : "only k");
 
                 // Aggiungo uno spazio
-                td_escrizione.append('\n');
+                td_descrizione.append('\n');
             }
 
             // Creo la casella per commenti aggiuntivi
@@ -54,7 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Controllo se c'è qualcosa
             // Altrimenti inserisco, in grassetto, che non c'è nulla
 
-            container.appendChild(ul);
+            // Aggiungo i dati alla riga
+            tr.appendChild(td_data);
+            tr.appendChild(td_descrizione);
+            tr.appendChild(td_aggiunta);
+
+            // Aggiungo la riga alla tabella
+            container.appendChild(tr);
         });
     })
     .catch(error => {
