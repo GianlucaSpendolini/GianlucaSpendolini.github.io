@@ -302,28 +302,6 @@ function what_page(page_path, points_path) {
 
             // Header title
             header_title.innerHTML = 'Tabella dei cambiamenti';
-            
-            // Composizione automatica della tabella
-            fetch(`${points_path}Static/json/changes_table_elements.json`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Errore: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data=> {
-                const container = document.getElementById('to-fill');
-                data.forEach(element => {
-                    const div = document.createElement('div');
-        
-                    div.innerHTML = element.nome
-        
-                    container.appendChild(div);
-                });
-            })
-            .catch(error => {
-                console.error('Errore nel caricamento del file JSON:', error)
-            });
 
             break;
 
