@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 td_descrizione.append(k);
 
                 // // Creo la lista di dettagli da inserire
-                // const ul = create_changes_table(v);
+                // const ul = json_to_ul(v);
 
                 // // Aggiungo la lista
                 // td_descrizione.appendChild(ul);
@@ -61,12 +61,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Controllo se è una stringa
                 if (typeof tAggiunte === 'string') {
-                    td_aggiunte.innerHTML = element.tAggiunte;
+                    td_aggiunte.innerHTML = tAggiunte;
                 }
                 // Altrimenti eseguo lo stesso procedimento usato per gli elenchi
-                // else {
-                //     td_aggiunte.appendChild(create_changes_table(tAggiunte));
-                // }
+                else {
+                    // Itero ogni componente
+                    for (let [k, v] of Object.entries(tAggiunte)) {
+
+                        // Controllo se ho una coppia chiave : valore o un array
+                        if (v || Object.prototype.toString.call(tAggiunte) === '[object Array]') {
+                            // Se ho una coppia chiave valore -> mando la v
+                            if (v) {
+                                td_aggiunte.appendChild(json_to_ul(v));
+                            }
+                            // Altrimenti invio l'array
+                            else {
+                                td_aggiunte.appendChild(json_to_ul(tAggiunte));
+                            }
+                        }
+                        // Se è una stringa -> la aggiungo normalmente
+                        else {
+                            td_aggiunte.append(k);
+                        }
+        
+                        // Aggiungo uno spazio
+                        td_aggiunte.append('\n');
+                    }
+                }
             }
             // Altrimenti inserisco, in grassetto, che non c'è nulla
             else {
@@ -92,7 +113,9 @@ function prova(messaggio) {
     console.log(messaggio);
 }
 
-function create_changes_table(elemento) {
+
+// Funzione ricorsiva per inserire in autormatico gli elementi della tabella nel giusto formato
+function json_to_ul(elemento) {
     // Se l'elemento è una stringa -> ritorno direttamente la stringa
     if (typeof elemento === 'string') {
         return elemento;
@@ -105,6 +128,9 @@ function create_changes_table(elemento) {
             elemento.forEach(e => {
                 // if 
             });
+        }
+        else {
+            //
         }
     }
 }
