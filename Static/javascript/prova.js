@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Creo la casella per commenti aggiuntivi
-            const td_aggiunte = document.createElement('td');
+            let td_aggiunte = document.createElement('td');
             td_aggiunte.className = 'tAggiunte';
             // Controllo se c'è qualcosa
             if (element.tAggiunte) {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Controllo se è una stringa
                 if (typeof tAggiunte === 'string') {
-                    td_aggiunte.innerHTML(element.tAggiunte);
+                    td_aggiunte.innerHTML = element.tAggiunte;
                 }
                 // Altrimenti eseguo lo stesso procedimento usato per gli elenchi
                 // else {
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             // Altrimenti inserisco, in grassetto, che non c'è nulla
             else {
-                td_aggiunte.innerHTML('<b>Niente da aggiungere</b>');
+                td_aggiunte.innerHTML = '<b>Niente da aggiungere</b>';
             }
 
             // Aggiungo i dati alla riga
