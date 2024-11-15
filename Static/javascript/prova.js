@@ -38,9 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let [k, v] of Object.entries(element.tDescrizione)) {
                 // Aggiungo il "titolo" dell'elenco
                 td_descrizione.append(k);
-                // Creo la lista iniziale
-                const ul = document.createElement('ul');
-                // Continuo con anche la funzione per prendere ogni elemento e farlo diventare un elenco
+
+                // // Creo la lista di dettagli da inserire
+                // const ul = create_changes_table(v);
+
+                // // Aggiungo la lista
+                // td_descrizione.appendChild(ul);
                 console.log(k, ":", v ? v : "only k");
 
                 // Aggiungo uno spazio
@@ -49,10 +52,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Creo la casella per commenti aggiuntivi
             let td_aggiunta = document.createElement('td');
-            td_aggiunta.className = 'tAggiunta';
-
+            td_aggiunta.className = 'tAggiunte';
             // Controllo se c'è qualcosa
+            if (element.tAggiunte) {
+
+                // Prendo il contenuto
+                const tAggiunte = element.tAggiunte;
+
+                // Controllo se è una stringa
+                if (typeof tAggiunte === 'string') {
+                    td_aggiunta.innerHTML(element.tAggiunte);
+                }
+                // Altrimenti eseguo lo stesso procedimento usato per gli elenchi
+                // else {
+                //     td_aggiunta.appendChild(create_changes_table(tAggiunte));
+                // }
+            }
             // Altrimenti inserisco, in grassetto, che non c'è nulla
+            else {
+                td_aggiunta.innerHTML('<b>Niente da aggiungere</b>');
+            }
 
             // Aggiungo i dati alla riga
             tr.appendChild(td_data);

@@ -27,7 +27,7 @@
                 }
             ]
         },
-        "tAggiunta": "*poiche' posso creare solo siti statici e non dinamici"
+        "tAggiunte": "*poiche' posso creare solo siti statici e non dinamici"
     },
 
     {
@@ -49,7 +49,7 @@
                 "Aggiunta immagine scratch.png + ridimensionamento"
             ]
         },
-        "tAggiunta": null
+        "tAggiunte": null
     },
 
     {
@@ -60,7 +60,7 @@
                 "Descrizione migliore (con piu' commenti)"
             ]
         },
-        "tAggiunta": null
+        "tAggiunte": null
     },
 
     {
@@ -71,7 +71,7 @@
                 "Aggiunta commento Alessia"
             ]
         },
-        "tAggiunta": null
+        "tAggiunte": null
     },
 
     {
@@ -83,7 +83,7 @@
                 "Aggiunta commento indicativo per inserimento i successivi blocchi"
             ]
         },
-        "tAggiunta": null
+        "tAggiunte": null
     },
 
     {
@@ -129,7 +129,7 @@
                 ]
             }
         },
-        "tAggiunta": null
+        "tAggiunte": null
     },
 
     {
@@ -142,7 +142,7 @@
                 ""
             ]
         },
-        "tAggiunta": null
+        "tAggiunte": null
     },
 
     {
@@ -155,6 +155,6 @@
                 ""
             ]
         },
-        "tAggiunta": null
+        "tAggiunte": null
     }
 ]
