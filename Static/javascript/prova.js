@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Creo la casella per commenti aggiuntivi
-            let td_aggiunta = document.createElement('td');
-            td_aggiunta.className = 'tAggiunte';
+            const td_aggiunte = document.createElement('td');
+            td_aggiunte.className = 'tAggiunte';
             // Controllo se c'è qualcosa
             if (element.tAggiunte) {
 
@@ -61,22 +61,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Controllo se è una stringa
                 if (typeof tAggiunte === 'string') {
-                    td_aggiunta.innerHTML(element.tAggiunte);
+                    td_aggiunte.innerHTML(element.tAggiunte);
                 }
                 // Altrimenti eseguo lo stesso procedimento usato per gli elenchi
                 // else {
-                //     td_aggiunta.appendChild(create_changes_table(tAggiunte));
+                //     td_aggiunte.appendChild(create_changes_table(tAggiunte));
                 // }
             }
             // Altrimenti inserisco, in grassetto, che non c'è nulla
             else {
-                td_aggiunta.innerHTML('<b>Niente da aggiungere</b>');
+                td_aggiunte.innerHTML('<b>Niente da aggiungere</b>');
             }
 
             // Aggiungo i dati alla riga
             tr.appendChild(td_data);
             tr.appendChild(td_descrizione);
-            tr.appendChild(td_aggiunta);
+            tr.appendChild(td_aggiunte);
 
             // Aggiungo la riga alla tabella
             container.appendChild(tr);
