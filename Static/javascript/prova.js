@@ -122,6 +122,9 @@ function json_to_element(element, json_part) {
         return json_part;
     }
 
+    // Creo la variabile nella quale inserire l'elemento definitivo
+    let element_to_return = null;
+
     // Altrimenti, controllo che elemento voglio
     switch (element) {
 
@@ -159,12 +162,18 @@ function json_to_element(element, json_part) {
                 }
             }
 
+            // Assegno l'elemento
+            element_to_return = ul;
+
             break;
 
         // Caso generico
         default:
             break;
     }
+
+    // Ritorno l'elemento
+    return element_to_return;
 }
 
 
