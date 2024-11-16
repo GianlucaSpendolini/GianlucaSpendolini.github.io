@@ -122,10 +122,10 @@ function json_to_element(element, json_part) {
         return json_part;
     }
 
-    // Creo la variabile nella quale inserire l'elemento definitivo
+    // Altrimenti, creo la variabile nella quale inserire l'elemento definitivo...
     let element_to_return = null;
 
-    // Altrimenti, controllo che elemento voglio
+    // ...e controllo che elemento voglio
     switch (element) {
 
         // caso 'ul'
@@ -141,7 +141,7 @@ function json_to_element(element, json_part) {
                     let li = document.createElement('li');
 
                     // Aggiungo ciò che ritorna dalla funzione alla linea
-                    li.innerHTML = json_to_element('ul', j);
+                    li.append(json_to_element('ul', j));
 
                     // Ogni elemento lo aggiungo come punto della lista
                     ul.appendChild(li)
@@ -155,7 +155,9 @@ function json_to_element(element, json_part) {
                     let li = document.createElement('li');
 
                     // Aggiungo la chiave e poi il contenuto che mi ritorna
-                    li.innerHTML = `${k}\n${json_to_element('ul', v)}`;
+                    li.append(k);
+                    li.append(json_to_element('ul', v));
+                    // li.innerHTML = `${k}\n${json_to_element('ul', v)}`;
 
                     // Aggiungo l'elemento alla lista
                     ul.appendChild(li);
