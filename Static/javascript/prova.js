@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 td_descrizione.append(k);
 
                 // // Creo la lista di dettagli da inserire
-                // const ul = json_to_ul(v);
+                // const ul = json_to_element('ul', v);
 
                 // // Aggiungo la lista
                 // td_descrizione.appendChild(ul);
@@ -72,11 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (v || Object.prototype.toString.call(tAggiunte) === '[object Array]') {
                             // Se ho una coppia chiave valore -> mando la v
                             if (v) {
-                                td_aggiunte.appendChild(json_to_ul(v));
+                                td_aggiunte.appendChild(json_to_element('ul', v));
                             }
                             // Altrimenti invio l'array
                             else {
-                                td_aggiunte.appendChild(json_to_ul(tAggiunte));
+                                td_aggiunte.appendChild(json_to_element('ul', tAggiunte));
                             }
                         }
                         // Se è una stringa -> la aggiungo normalmente
@@ -115,23 +115,36 @@ function prova(messaggio) {
 
 
 // Funzione ricorsiva per inserire in autormatico gli elementi della tabella nel giusto formato
-function json_to_ul(elemento) {
-    // Se l'elemento è una stringa -> ritorno direttamente la stringa
-    if (typeof elemento === 'string') {
-        return elemento;
-    }
-    // Altrimenti
-    else {
-        // Creo una variabile per la linea
-        let ul = document.createElement('li');
-        if (Object.prototype.toString.call(elemento) === '[object Array]') {
-            elemento.forEach(e => {
-                // if 
-            });
-        }
-        else {
-            //
-        }
+function json_to_element(element, json_part) {
+
+    // Controllo che elemento voglio
+    switch (element) {
+
+        // caso 'ul'
+        case 'ul':
+            // Se l'elemento è una stringa -> ritorno direttamente la stringa
+            if (typeof json_part === 'string') {
+                return json_part;
+            }
+            // Altrimenti
+            else {
+                // Creo una variabile per la linea
+                let ul = document.createElement('li');
+                if (Object.prototype.toString.call(json_part) === '[object Array]') {
+                    json_part.forEach(e => {
+                        // if 
+                    });
+                }
+                else {
+                    //
+                }
+            }
+
+            break;
+
+        // Caso generico
+        default:
+            break;
     }
 }
 
