@@ -39,12 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Aggiungo il "titolo" dell'elenco
                 td_descrizione.append(k);
 
-                // // Creo la lista di dettagli da inserire
-                // const ul = json_to_element('ul', v);
+                // Creo la lista di dettagli da inserire
+                const ul = json_to_element('ul', v);
 
-                // // Aggiungo la lista
-                // td_descrizione.appendChild(ul);
-                console.log(k, ":", v ? v : "only k");
+                // Aggiungo la lista
+                td_descrizione.appendChild(ul);
+                // console.log(k, ":", v ? v : "only k");
 
                 // Aggiungo uno spazio
                 td_descrizione.append('\n');
@@ -117,26 +117,45 @@ function prova(messaggio) {
 // Funzione ricorsiva per inserire in autormatico gli elementi della tabella nel giusto formato
 function json_to_element(element, json_part) {
 
-    // Controllo che elemento voglio
+    // Se l'elemento è una stringa -> ritorno direttamente la stringa
+    if (typeof json_part === 'string') {
+        return json_part;
+    }
+
+    // Altrimenti, controllo che elemento voglio
     switch (element) {
 
         // caso 'ul'
         case 'ul':
-            // Se l'elemento è una stringa -> ritorno direttamente la stringa
-            if (typeof json_part === 'string') {
-                return json_part;
+            // Creo una variabile per l'elenco
+            let ul = document.createElement('ul');
+
+            // Se l'elemento è un array -> voglio l'elenco puntato (fornisco una serie di punti)
+            if (Object.prototype.toString.call(json_part) === '[object Array]') {
+                // Per ogni elemento -> appendo ciò che ritorna dalla funzione (perchè ogni elemento della lista)
+                json_part.forEach(j => {
+                    // Creo la linea
+                    let li = document.createElement('li');
+
+                    // Aggiungo ciò che ritorna dalla funzione alla linea
+                    li.innerHTML = json_to_element('ul', j);
+
+                    // Ogni elemento lo aggiungo come punto della lista
+                    ul.appendChild(li)
+                });
             }
-            // Altrimenti
+            // Altrimenti voglio che da quel momento si inserisca un sottoinsieme (sotto la 'chiave' voglio il 'valore')
             else {
-                // Creo una variabile per la linea
-                let ul = document.createElement('li');
-                if (Object.prototype.toString.call(json_part) === '[object Array]') {
-                    json_part.forEach(e => {
-                        // if 
-                    });
-                }
-                else {
-                    //
+                // Itero su ogni coppia chiave:valore
+                for (let [k, v] of Object.entries(json_part)){
+                    // Creo la linea
+                    let li = document.createElement('li');
+
+                    // Aggiungo la chiave e poi il contenuto che mi ritorna
+                    li.innerHTML = `${k}\n${json_to_element('ul', v)}`;
+
+                    // Aggiungo l'elemento alla lista
+                    ul.appendChild(li);
                 }
             }
 
