@@ -36,18 +36,22 @@ document.addEventListener('DOMContentLoaded', () => {
             let td_descrizione = document.createElement('td');
             td_descrizione.className = 'tDescrizione';
             for (let [k, v] of Object.entries(element.tDescrizione)) {
-                // Aggiungo il "titolo" dell'elenco
-                td_descrizione.append(k);
 
-                // Creo la lista di dettagli da inserire
-                const ul = json_to_element('ul', v);
-
-                // Aggiungo la lista
-                td_descrizione.appendChild(ul);
-                // console.log(k, ":", v ? v : "only k");
-
-                // Aggiungo uno spazio
-                td_descrizione.append('\n');
+                // Se non ho il valore, inserisco quella parte
+                if (v) {
+                    // Aggiungo il "titolo" dell'elenco
+                    td_descrizione.append(k);
+    
+                    // Creo la lista di dettagli da inserire
+                    const ul = json_to_element('ul', v);
+    
+                    // Aggiungo la lista
+                    td_descrizione.appendChild(ul);
+                    // console.log(k, ":", v ? v : "only k");
+    
+                    // Aggiungo uno spazio
+                    td_descrizione.append('\n');
+                }
             }
 
             // Creo la casella per commenti aggiuntivi
