@@ -138,32 +138,32 @@ function json_to_element(element, json_part) {
                 // Per ogni elemento -> appendo ciò che ritorna dalla funzione (perchè ogni elemento della lista)
                 json_part.forEach(j => {
                     console.log('generale: ', j);
-                    // Creo la linea
-                    let li = document.createElement('li');
 
                     // Prendo ciò che mi ritorna la funzione
                     let j_to_ul = json_to_element('ul', j);
 
-                    // // Se stringa -> inserisco la stringa e basta
-                    // if (typeof j_to_ul === 'string' || j_to_ul.firstChild.nodeName === '#text') {
-                    //     console.log('if: ', j_to_ul);
-                    //     // Aggiungo ciò che ritorna dalla funzione alla linea
-                    //     li.append(j_to_ul);
+                    // Se stringa -> inserisco la stringa e basta
+                    if (typeof j_to_ul === 'string' || j_to_ul.firstChild.nodeName === '#text') {
+                        // Creo la linea
+                        let li = document.createElement('li');
+                        console.log('if: ', j_to_ul);
+                        // Aggiungo ciò che ritorna dalla funzione alla linea
+                        li.append(j_to_ul);
 
-                    //     // Ogni elemento lo aggiungo come punto della lista
-                    //     ul.appendChild(li)
-                    // }
-                    // // Altrimenti -> itero su ogni elemento e lo inserisco
-                    // else {
-                    //     console.log('else: ', j_to_ul);
-                    //     j_to_ul.childNodes.forEach(elemento => {
-                    //         // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
-                    //         ul.append(elemento);
-                    //     });
-                    // }
+                        // Ogni elemento lo aggiungo come punto della lista
+                        ul.appendChild(li)
+                    }
+                    // Altrimenti -> itero su ogni elemento e lo inserisco
+                    else {
+                        console.log('else: ', j_to_ul);
+                        j_to_ul.childNodes.forEach(elemento => {
+                            // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
+                            ul.append(elemento);
+                        });
+                    }
                     
-                    li.append(j_to_ul);
-                    ul.append(li);
+                    // li.append(j_to_ul);
+                    // ul.append(li);
                 });
             }
             // Altrimenti voglio che da quel momento si inserisca un sottoinsieme (sotto la 'chiave' voglio il 'valore')
