@@ -1,28 +1,18 @@
 /* 
     FUNZIONI UTILI 
+        - add_css_js
+            - Funzione per aggiungere i file js e css
+        - insert_in_head
+            - Funzione per inserire i meta-tag
+        - json_to_element
+            - Funzione ricorsiva per inserire in autormatico gli elementi della tabella nel giusto formato
         - points_number
+            - Creo un array di 'punti' per tornare sempre alla home (./../etc)
+        - svg
+            - Funzione per capire il mese e mettere l'SVG giusto
+        - togglePasswordVisibility
+            - Settare icona per vedere o meno password
 */
-
-// Creo un array di 'punti' per tornare sempre alla home (./../etc)
-export function points_number(path) {
-    // Faccio lo split
-    var s = path.split('/');
-
-    // Tolgo il primo e l'ultimo elemento
-    s.shift();
-    s.pop();
-
-    // Creo l'array al quale mettero' eventuali puntini doppi
-    var a = './';
-
-    // Itero per vedere se e quanti puntini devo aggiungere
-    for (const e in s) {
-        a += '../';
-    }
-
-    // Ritorno l'array
-    return a;
-}
 
 
 // Funzione per aggiungere i file js e css
@@ -88,17 +78,107 @@ export function insert_in_head(meta_tags) {
     document.querySelector('head title').insertAdjacentHTML('beforebegin', meta_tags);
 }
 
-// Settare icona per vedere o meno password
-export function togglePasswordVisibility(button, svgs) {
-    let passwordField = document.getElementById("passwordField");
 
-    if (passwordField.type === "password") {
-        passwordField.type = "text";
-        button.innerHTML = svgs.barrato;
-    } else {
-        passwordField.type = "password";
-        button.innerHTML = svgs.non_barrato;
+// Funzione ricorsiva per inserire in autormatico gli elementi della tabella nel giusto formato
+export function json_to_element(element, json_part) {
+
+    // Se l'elemento è una stringa -> ritorno direttamente la stringa
+    if (typeof json_part === 'string') {
+        return json_part;
     }
+
+    // Altrimenti, creo la variabile nella quale inserire l'elemento definitivo...
+    let element_to_return = null;
+
+    // ...e controllo che elemento voglio
+    switch (element) {
+
+        // caso 'ul'
+        case 'ul':
+            // Creo una variabile per l'elenco
+            let ul = document.createElement('ul');
+
+            // Se l'elemento è un array -> voglio l'elenco puntato (fornisco una serie di punti)
+            if (Array.isArray(json_part)) {
+                // Per ogni elemento -> appendo ciò che ritorna dalla funzione (perchè ogni elemento della lista)
+                json_part.forEach(j => {
+
+                    // Prendo ciò che mi ritorna la funzione
+                    let j_to_ul = json_to_element('ul', j);
+
+                    // Se stringa -> inserisco la stringa e basta
+                    if (typeof j_to_ul === 'string' || (j_to_ul && j_to_ul.firstChild && j_to_ul.firstChild.nodeType === Node.TEXT_NODE && j_to_ul.firstChild.nodeValue.trim() !== '')) {
+                        
+                        // Creo la linea
+                        let li = document.createElement('li');
+
+                        // Aggiungo ciò che ritorna dalla funzione alla linea
+                        li.append(j_to_ul);          
+
+                        // Ogni elemento lo aggiungo come punto della lista
+                        ul.appendChild(li);
+                    }
+                    // Altrimenti -> itero su ogni elemento e lo inserisco
+                    else {
+
+                        // Per ogni figlio dell'elemento -> lo aggiungo alla lista ul
+                        while (j_to_ul.firstChild) {
+                            ul.append(j_to_ul.firstChild);
+                        }
+                    }
+                });
+            }
+            // Altrimenti voglio che da quel momento si inserisca un sottoinsieme (sotto la 'chiave' voglio il 'valore')
+            else {
+                // Itero su ogni coppia chiave:valore
+                for (let [k, v] of Object.entries(json_part)) {
+                    
+                    // Creo la linea
+                    let li = document.createElement('li');
+
+                    // Aggiungo la chiave e poi il contenuto che mi ritorna
+                    li.append(k);
+                    li.append(json_to_element('ul', v));
+
+                    // Aggiungo l'elemento alla lista
+                    ul.appendChild(li);
+                }
+            }
+
+            // Assegno l'elemento
+            element_to_return = ul;
+
+            break;
+
+        // Caso generico
+        default:
+            break;
+    }
+
+    // Ritorno l'elemento
+    return element_to_return;
+}
+
+
+// Creo un array di 'punti' per tornare sempre alla home (./../etc)
+export function points_number(path) {
+    // Faccio lo split
+    var s = path.split('/');
+
+    // Tolgo il primo e l'ultimo elemento
+    s.shift();
+    s.pop();
+
+    // Creo l'array al quale mettero' eventuali puntini doppi
+    var a = './';
+
+    // Itero per vedere se e quanti puntini devo aggiungere
+    for (const e in s) {
+        a += '../';
+    }
+
+    // Ritorno l'array
+    return a;
 }
 
 // Funzione per capire il mese e mettere l'SVG giusto
@@ -162,4 +242,18 @@ export function svg(month) {
     // Ritorno gli svg che mi servono        
     return svgs;
         
+}
+
+
+// Settare icona per vedere o meno password
+export function togglePasswordVisibility(button, svgs) {
+    let passwordField = document.getElementById("passwordField");
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        button.innerHTML = svgs.barrato;
+    } else {
+        passwordField.type = "password";
+        button.innerHTML = svgs.non_barrato;
+    }
 }

@@ -1,5 +1,5 @@
 // Importo funzioni da file esterni
-import { add_css_js, insert_in_head, points_number, svg } from './util_function.js';
+import { add_css_js, insert_in_head, json_to_element, points_number, svg } from './util_function.js';
 
 // Importo variabili da file esterni
 import { date, path } from './util_variable.js';
@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Prendo i punti da aggiungere per tornare indietro
     var points = points_number(path);
-    //console.log(points);
 
     // Elenco dei link che devo assegnare ai rispettivi bottoni
     var links_list = [
@@ -303,6 +302,9 @@ function what_page(page_path, points_path) {
             // Header title
             header_title.innerHTML = 'Tabella dei cambiamenti';
 
+            // Inserisco gli elementi della tabella in automatico
+            insert_my_json('changes table');
+
             break;
 
         // Projects
@@ -384,5 +386,114 @@ function what_page(page_path, points_path) {
 
         default:
             // Non faccio nulla
+            break;
+    }
+}
+
+
+// Funzione per 
+function insert_my_json(file) {
+    switch (file) {
+
+        // In caso voglio inserire i dati nella tabella delle modifiche
+        case 'changes table':
+            fetch('./Static/json/changes_table_elements.json')
+            .then(response => response.json())
+            .then(data=> {
+                // Container provvisorio da riempire (sostituire con il tag tbody)
+                const tBody = document.querySelector('tbody');
+                data.forEach(element => {
+                    // Creo la riga 
+                    const tr = document.createElement('tr');
+
+                    // Creo la casella per la data
+                    let td_data = document.createElement('td');
+                    td_data.className = 'tData';
+                    td_data.innerHTML = element.tData;
+                    tr.appendChild(td_data);
+
+                    // Creo la casella per la descrizione
+                    let td_descrizione = document.createElement('td');
+                    td_descrizione.className = 'tDescrizione';
+                    for (let [k, v] of Object.entries(element.tDescrizione)) {
+
+                        // Se non ho il valore, inserisco quella parte
+                        if (v) {
+                            // Aggiungo il "titolo" dell'elenco
+                            td_descrizione.append(k);
+            
+                            // Creo la lista di dettagli da inserire
+                            const ul = json_to_element('ul', v);
+            
+                            // Aggiungo la lista
+                            td_descrizione.appendChild(ul);
+            
+                            // Aggiungo uno spazio
+                            td_descrizione.append('\n');
+                        }
+                    }
+
+                    // Creo la casella per commenti aggiuntivi
+                    let td_aggiunte = document.createElement('td');
+                    td_aggiunte.className = 'tAggiunte';
+                    // Controllo se c'è qualcosa
+                    if (element.tAggiunte) {
+
+                        // Prendo il contenuto
+                        const tAggiunte = element.tAggiunte;
+
+                        // Controllo se è una stringa
+                        if (typeof tAggiunte === 'string') {
+                            td_aggiunte.innerHTML = tAggiunte;
+                        }
+                        // Altrimenti eseguo lo stesso procedimento usato per gli elenchi
+                        else {
+                            // Itero ogni componente
+                            for (let [k, v] of Object.entries(tAggiunte)) {
+
+                                // Controllo se ho una coppia chiave : valore o un array
+                                if (v || Object.prototype.toString.call(tAggiunte) === '[object Array]') {
+                                    // Se ho una coppia chiave valore -> mando la v
+                                    if (v) {
+                                        td_aggiunte.appendChild(json_to_element('ul', v));
+                                    }
+                                    // Altrimenti invio l'array
+                                    else {
+                                        td_aggiunte.appendChild(json_to_element('ul', tAggiunte));
+                                    }
+                                }
+                                // Se è una stringa -> la aggiungo normalmente
+                                else {
+                                    td_aggiunte.append(k);
+                                }
+                
+                                // Aggiungo uno spazio
+                                td_aggiunte.append('\n');
+                            }
+                        }
+                    }
+                    // Altrimenti inserisco, in grassetto, che non c'è nulla
+                    else {
+                        td_aggiunte.innerHTML = '<b>Niente da aggiungere</b>';
+                    }
+
+                    // Aggiungo i dati alla riga
+                    tr.appendChild(td_data);
+                    tr.appendChild(td_descrizione);
+                    tr.appendChild(td_aggiunte);
+
+                    // Aggiungo la riga alla tabella
+                    tBody.appendChild(tr);
+                });
+            })
+            .catch(error => {
+                console.error('Errore nel caricamento del file JSON:', error)
+            });
+
+            break;
+
+        default:
+            // Non faccio nulla
+            break;
     }
 }
