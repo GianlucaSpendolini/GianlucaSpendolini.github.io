@@ -303,7 +303,7 @@ function what_page(page_path, points_path) {
             header_title.innerHTML = 'Tabella dei cambiamenti';
 
             // Inserisco gli elementi della tabella in automatico
-            insert_my_json('changes table');
+            insert_my_json('changes table', points_path);
 
             break;
 
@@ -392,12 +392,12 @@ function what_page(page_path, points_path) {
 
 
 // Funzione per 
-function insert_my_json(file) {
+function insert_my_json(file, points) {
     switch (file) {
 
         // In caso voglio inserire i dati nella tabella delle modifiche
         case 'changes table':
-            fetch('./Static/json/changes_table_elements.json')
+            fetch(`${points}Static/json/changes_table_elements.json`)
             .then(response => response.json())
             .then(data=> {
                 // Container provvisorio da riempire (sostituire con il tag tbody)
