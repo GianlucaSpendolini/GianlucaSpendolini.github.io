@@ -155,7 +155,7 @@ function json_to_element(element, json_part) {
                         li.append(j_to_ul);
 
                         // Ogni elemento lo aggiungo come punto della lista
-                        ul.appendChild(li)
+                        ul.appendChild(li);
                     }
                     // Altrimenti -> itero su ogni elemento e lo inserisco
                     else {
