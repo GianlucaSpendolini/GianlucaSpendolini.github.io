@@ -474,6 +474,8 @@ function insert_my_json(file_description, points) {
                                 if (v || Array.isArray(tAggiunte)) {
                                     // Se ho una coppia chiave valore -> mando la v
                                     if (v) {
+                                        td_aggiunte.append(k);
+                                        console.log('j2e: ', json_to_element('ul', v), 'k: ', k, 'type: ', typeof json_to_element('ul', v));
                                         td_aggiunte.appendChild(json_to_element('ul', v));
                                     }
                                     // Altrimenti invio l'array
