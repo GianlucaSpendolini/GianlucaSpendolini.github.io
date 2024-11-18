@@ -146,33 +146,37 @@ function json_to_element(element, json_part) {
                     let j_to_ul = json_to_element('ul', j);
                     console.log(j_to_ul);
 
-                    // // Se stringa -> inserisco la stringa e basta
-                    // if (typeof j_to_ul === 'string' || (j_to_ul && j_to_ul.firstChild && j_to_ul.firstChild.nodeType === Node.TEXT_NODE && j_to_ul.firstChild.nodeValue.trim() !== '')) {
+                    // Se stringa -> inserisco la stringa e basta
+                    if (typeof j_to_ul === 'string' || (j_to_ul && j_to_ul.firstChild && j_to_ul.firstChild.nodeType === Node.TEXT_NODE && j_to_ul.firstChild.nodeValue.trim() !== '')) {
                         
-                    //     // Creo la linea
-                    //     let li = document.createElement('li');
+                        // Creo la linea
+                        let li = document.createElement('li');
 
-                    //     // Aggiungo ciò che ritorna dalla funzione alla linea
-                    //     if (typeof j_to_ul === 'string') {
-                    //         li.append(j_to_ul);
-                    //     } else {
-                    //         li.appendChild(j_to_ul);
-                    //     }            
+                        // Aggiungo ciò che ritorna dalla funzione alla linea
+                        if (typeof j_to_ul === 'string') {
+                            li.append(j_to_ul);
+                        } else {
+                            li.appendChild(j_to_ul);
+                        }            
 
-                    //     // Ogni elemento lo aggiungo come punto della lista
-                    //     ul.appendChild(li);
-                    // }
-                    // // Altrimenti -> itero su ogni elemento e lo inserisco
-                    // else {
-                    //     j_to_ul.childNodes.forEach(elemento => {
-                    //         // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
-                    //         ul.append(elemento);
-                    //     });
-                    // }
+                        // Ogni elemento lo aggiungo come punto della lista
+                        ul.appendChild(li);
+                    }
+                    // Altrimenti -> itero su ogni elemento e lo inserisco
+                    else {
 
-                    li = document.createElement('li');
-                    li.append(j_to_ul);
-                    ul.appendChild(li);
+                        // Prendo il contenuto HTML
+                        let j_to_ul_content = j_to_ul.innerHTML;
+                        ul.innerHTML = j_to_ul_content;
+                        // j_to_ul.childNodes.forEach(elemento => {
+                        //     // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
+                        //     ul.append(elemento);
+                        // });
+                    }
+
+                    // li = document.createElement('li');
+                    // li.append(j_to_ul);
+                    // ul.appendChild(li);
                 });
             }
             // Altrimenti voglio che da quel momento si inserisca un sottoinsieme (sotto la 'chiave' voglio il 'valore')
