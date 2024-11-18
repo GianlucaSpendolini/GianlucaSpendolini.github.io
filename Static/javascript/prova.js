@@ -178,6 +178,7 @@ function json_to_element(element, json_part) {
                     // Aggiungo l'elemento alla lista
                     ul.appendChild(li);
                 }
+                console.log('ul: ', ul);
             }
 
             // Assegno l'elemento
