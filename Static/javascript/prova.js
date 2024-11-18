@@ -173,9 +173,9 @@ function json_to_element(element, json_part) {
             }
             // Altrimenti voglio che da quel momento si inserisca un sottoinsieme (sotto la 'chiave' voglio il 'valore')
             else {
-                console.log('pre ul: ', json_part)
+                console.log('pre ul: ', json_part);
                 // Itero su ogni coppia chiave:valore
-                for (let [k, v] of Object.entries(json_part)){
+                for (let [k, v] of Object.entries(json_part)) {
                     console.log('parti: ', 'k: ', k, 'v: ',  v);
                     // Creo la linea
                     let li = document.createElement('li');
@@ -187,7 +187,7 @@ function json_to_element(element, json_part) {
 
                     // Aggiungo l'elemento alla lista
                     ul.appendChild(li);
-                    console.log('ul dentro: ', ul);
+                    console.log('ul dentro: ', ul, 'k: ', k);
                 }
                 console.log('ul: ', ul);
             }
