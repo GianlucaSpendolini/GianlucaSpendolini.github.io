@@ -144,7 +144,7 @@ function json_to_element(element, json_part) {
                     let j_to_ul = json_to_element('ul', j);
 
                     // Se stringa -> inserisco la stringa e basta
-                    if (typeof j_to_ul === 'string') {
+                    if (typeof j_to_ul === 'string' || j_to_ul.firstChild.nodeName === '#text') {
                         // Aggiungo ciò che ritorna dalla funzione alla linea
                         li.append(j_to_ul);
 
@@ -153,31 +153,10 @@ function json_to_element(element, json_part) {
                     }
                     // Altrimenti -> itero su ogni elemento e lo inserisco
                     else {
-
-                        // Provo ad iterare
-                        try {
-                            console.log(j_to_ul);
-                            j_to_ul.forEach(elemento => {
-                                // Controllo se primo elemento è una stringa -> sto inserendo una sottostringa
-                                if (typeof elemento === 'string') {
-                                    // Aggiungo ciò che ritorna dalla funzione alla linea
-                                    li.append(j_to_ul);
-            
-                                    // Ogni elemento lo aggiungo come punto della lista
-                                    ul.appendChild(li);
-
-                                    throw new Error('Exception Find');
-                                }
-                                // Altrimenti sono solo una serie di 'ul'
-                                else{
-                                    // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
-                                    ul.append(elemento);
-                                }
-                            });
-                        //Se esce come una eccezione diversa da quella che ho creato -> me la stampa su console
-                        } catch (e) {
-                            console.log('Loop stopped: ', e);
-                        }
+                        j_to_ul.forEach(elemento => {
+                            // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
+                            ul.append(elemento);
+                        });
                     }
                 });
             }
