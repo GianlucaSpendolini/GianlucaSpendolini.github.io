@@ -396,6 +396,10 @@ function what_page(page_path, points_path) {
 
 // Funzione per 
 function insert_my_json(file_description, points) {
+
+    // Eventuale variabile numerica per tenere traccia di eventuali cicli
+    let count = 0;
+
     switch (file_description) {
 
         // In caso voglio inserire i dati nella tabella delle modifiche
@@ -403,9 +407,18 @@ function insert_my_json(file_description, points) {
             fetch(`${points}Static/json/changes_table_elements.json`)
             .then(response => response.json())
             .then(data=> {
-                // Container provvisorio da riempire (sostituire con il tag tbody)
+                // Corpo della tabella da riempire
                 const tBody = document.querySelector('tbody');
+
+                // Lunghezza degli elementi
+                let data_number = data.length - 1;
+
                 data.forEach(element => {
+                    // Se count == lunghezza della lista -> esco
+                    if (count === data_number) {
+                        return
+                    }
+
                     // Creo la riga 
                     const tr = document.createElement('tr');
 
@@ -487,6 +500,9 @@ function insert_my_json(file_description, points) {
 
                     // Aggiungo la riga alla tabella
                     tBody.appendChild(tr);
+
+                    // Aumento di uno il conteggio
+                    count += 1;
                 });
             })
             .catch(error => {
