@@ -134,11 +134,73 @@ function json_to_element(element, json_part) {
 
         // caso 'ul'
         case 'ul':
+            // // Creo una variabile per l'elenco
+            // let ul = document.createElement('ul');
+
+            // // Se l'elemento è un array -> voglio l'elenco puntato (fornisco una serie di punti)
+            // if (Array.isArray(json_part)) {
+            //     // Per ogni elemento -> appendo ciò che ritorna dalla funzione (perchè ogni elemento della lista)
+            //     json_part.forEach(j => {
+            //         console.log('generale: ', j);
+
+            //         // Prendo ciò che mi ritorna la funzione
+            //         let j_to_ul = json_to_element('ul', j);
+
+            //         // Se stringa -> inserisco la stringa e basta
+            //         if (typeof j_to_ul === 'string' || (j_to_ul && j_to_ul.firstChild && j_to_ul.firstChild.nodeType === Node.TEXT_NODE && j_to_ul.firstChild.nodeValue.trim() !== '')) {
+            //             // Creo la linea
+            //             let li = document.createElement('li');
+            //             console.log('if: ', j_to_ul);
+            //             // Aggiungo ciò che ritorna dalla funzione alla linea
+            //             // li.append(j_to_ul);
+            //             if (typeof j_to_ul === 'string') {
+            //                 li.append(j_to_ul);
+            //             } else {
+            //                 li.appendChild(j_to_ul);
+            //             }            
+
+            //             // Ogni elemento lo aggiungo come punto della lista
+            //             ul.appendChild(li);
+            //         }
+            //         // Altrimenti -> itero su ogni elemento e lo inserisco
+            //         else {
+            //             console.log('else: ', j_to_ul);
+            //             j_to_ul.childNodes.forEach(elemento => {
+            //                 // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
+            //                 ul.append(elemento);
+            //             });
+            //             // ul.append(j_to_ul.innerHTML);
+            //         }
+                    
+            //         // li.append(j_to_ul);
+            //         // ul.append(li);
+            //     });
+            // }
+            // // Altrimenti voglio che da quel momento si inserisca un sottoinsieme (sotto la 'chiave' voglio il 'valore')
+            // else {
+            //     console.log('pre ul: ', json_part);
+            //     // Itero su ogni coppia chiave:valore
+            //     for (let [k, v] of Object.entries(json_part)) {
+            //         console.log('parti: ', 'k: ', k, 'v: ',  v);
+            //         // Creo la linea
+            //         let li = document.createElement('li');
+
+            //         // Aggiungo la chiave e poi il contenuto che mi ritorna
+            //         li.append(k);
+            //         li.append(json_to_element('ul', v));
+            //         // li.innerHTML = `${k}\n${json_to_element('ul', v)}`;
+
+            //         // Aggiungo l'elemento alla lista
+            //         ul.appendChild(li);
+            //         console.log('ul dentro: ', ul, 'k: ', k);
+            //     }
+            //     console.log('ul: ', ul);
+            // }
             // Creo una variabile per l'elenco
             let ul = document.createElement('ul');
 
             // Se l'elemento è un array -> voglio l'elenco puntato (fornisco una serie di punti)
-            if (Object.prototype.toString.call(json_part) === '[object Array]') {
+            if (Array.isArray(json_part)) {
                 // Per ogni elemento -> appendo ciò che ritorna dalla funzione (perchè ogni elemento della lista)
                 json_part.forEach(j => {
                     console.log('generale: ', j);
@@ -147,12 +209,16 @@ function json_to_element(element, json_part) {
                     let j_to_ul = json_to_element('ul', j);
 
                     // Se stringa -> inserisco la stringa e basta
-                    if (typeof j_to_ul === 'string' || j_to_ul.firstChild.nodeName === '#text') {
+                    if (typeof j_to_ul === 'string' || (j_to_ul && j_to_ul.firstChild && j_to_ul.firstChild.nodeType === Node.TEXT_NODE && j_to_ul.firstChild.nodeValue.trim() !== '')) {
                         // Creo la linea
                         let li = document.createElement('li');
                         console.log('if: ', j_to_ul);
                         // Aggiungo ciò che ritorna dalla funzione alla linea
-                        li.append(j_to_ul);
+                        if (typeof j_to_ul === 'string') {
+                            li.append(j_to_ul);
+                        } else {
+                            li.appendChild(j_to_ul);
+                        }
 
                         // Ogni elemento lo aggiungo come punto della lista
                         ul.appendChild(li);
@@ -160,36 +226,39 @@ function json_to_element(element, json_part) {
                     // Altrimenti -> itero su ogni elemento e lo inserisco
                     else {
                         console.log('else: ', j_to_ul);
-                        j_to_ul.childNodes.forEach(elemento => {
-                            // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
-                            ul.append(elemento);
-                        });
-                        // ul.append(j_to_ul.innerHTML);
+                        if (j_to_ul && j_to_ul.childNodes) {
+                            j_to_ul.childNodes.forEach(elemento => {
+                                // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
+                                ul.appendChild(elemento);
+                            });
+                        }
                     }
-                    
-                    // li.append(j_to_ul);
-                    // ul.append(li);
                 });
-            }
-            // Altrimenti voglio che da quel momento si inserisca un sottoinsieme (sotto la 'chiave' voglio il 'valore')
-            else {
-                console.log('pre ul: ', json_part);
-                // Itero su ogni coppia chiave:valore
-                for (let [k, v] of Object.entries(json_part)) {
-                    console.log('parti: ', 'k: ', k, 'v: ',  v);
+            } else if (typeof json_part === 'object' && json_part !== null) {
+                // Se l'elemento è un oggetto -> voglio l'elenco puntato (fornisco una serie di punti)
+                Object.entries(json_part).forEach(([key, value]) => {
+                    console.log('generale: ', key, value);
+
+                    // Prendo ciò che mi ritorna la funzione
+                    let j_to_ul = json_to_element('ul', value);
+
                     // Creo la linea
                     let li = document.createElement('li');
+                    li.append(`${key}: `);
 
-                    // Aggiungo la chiave e poi il contenuto che mi ritorna
-                    li.append(k);
-                    li.append(json_to_element('ul', v));
-                    // li.innerHTML = `${k}\n${json_to_element('ul', v)}`;
+                    // Aggiungo ciò che ritorna dalla funzione alla linea
+                    if (typeof j_to_ul === 'string') {
+                        li.append(j_to_ul);
+                    } else {
+                        li.appendChild(j_to_ul);
+                    }
 
-                    // Aggiungo l'elemento alla lista
+                    // Ogni elemento lo aggiungo come punto della lista
                     ul.appendChild(li);
-                    console.log('ul dentro: ', ul, 'k: ', k);
-                }
-                console.log('ul: ', ul);
+                });
+            } else {
+                // Se è un valore semplice, lo restituisco come stringa
+                return document.createTextNode(json_part.toString());
             }
 
             // Assegno l'elemento
