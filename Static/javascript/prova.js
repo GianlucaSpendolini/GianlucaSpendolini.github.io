@@ -153,7 +153,7 @@ function json_to_element(element, json_part) {
                     }
                     // Altrimenti -> itero su ogni elemento e lo inserisco
                     else {
-                        j_to_ul.forEach(elemento => {
+                        j_to_ul.childNodes.forEach(elemento => {
                             // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
                             ul.append(elemento);
                         });
