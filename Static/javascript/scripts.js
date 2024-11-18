@@ -237,6 +237,9 @@ function what_page(page_path, points_path) {
             // Header title
             header_title.innerHTML = 'Prove';
 
+            // Inserisco gli elementi della tabella in automatico
+            insert_my_json('changes table', points_path);
+
             break;
 
         // Home
@@ -392,8 +395,8 @@ function what_page(page_path, points_path) {
 
 
 // Funzione per 
-function insert_my_json(file, points) {
-    switch (file) {
+function insert_my_json(file_description, points) {
+    switch (file_description) {
 
         // In caso voglio inserire i dati nella tabella delle modifiche
         case 'changes table':
