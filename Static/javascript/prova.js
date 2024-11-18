@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(data=> {
         // Container provvisorio da riempire (sostituire con il tag tbody)
-        const container = document.querySelector('tbody');
+        const tBody = document.querySelector('tbody');
         data.forEach(element => {
             // Creo la riga 
             const tr = document.createElement('tr');
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tr.appendChild(td_aggiunte);
 
             // Aggiungo la riga alla tabella
-            container.appendChild(tr);
+            tBody.appendChild(tr);
         });
     })
     .catch(error => {
@@ -141,62 +141,52 @@ function json_to_element(element, json_part) {
             if (Array.isArray(json_part)) {
                 // Per ogni elemento -> appendo ciò che ritorna dalla funzione (perchè ogni elemento della lista)
                 json_part.forEach(j => {
-                    console.log('generale: ', j);
 
                     // Prendo ciò che mi ritorna la funzione
                     let j_to_ul = json_to_element('ul', j);
 
-                    // Se stringa -> inserisco la stringa e basta
-                    if (typeof j_to_ul === 'string' || (j_to_ul && j_to_ul.firstChild && j_to_ul.firstChild.nodeType === Node.TEXT_NODE && j_to_ul.firstChild.nodeValue.trim() !== '')) {
-                        // Creo la linea
-                        let li = document.createElement('li');
-                        console.log('if: ', j_to_ul);
-                        // Aggiungo ciò che ritorna dalla funzione alla linea
-                        // li.append(j_to_ul);
-                        if (typeof j_to_ul === 'string') {
-                            li.append(j_to_ul);
-                        } else {
-                            li.appendChild(j_to_ul);
-                        }            
+                    // // Se stringa -> inserisco la stringa e basta
+                    // if (typeof j_to_ul === 'string' || (j_to_ul && j_to_ul.firstChild && j_to_ul.firstChild.nodeType === Node.TEXT_NODE && j_to_ul.firstChild.nodeValue.trim() !== '')) {
+                        
+                    //     // Creo la linea
+                    //     let li = document.createElement('li');
 
-                        // Ogni elemento lo aggiungo come punto della lista
-                        ul.appendChild(li);
-                    }
-                    // Altrimenti -> itero su ogni elemento e lo inserisco
-                    else {
-                        console.log('else: ', j_to_ul);
-                        j_to_ul.childNodes.forEach(elemento => {
-                            // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
-                            ul.append(elemento);
-                        });
-                        // ul.append(j_to_ul.innerHTML);
-                    }
-                    
-                    // li.append(j_to_ul);
-                    // ul.append(li);
+                    //     // Aggiungo ciò che ritorna dalla funzione alla linea
+                    //     if (typeof j_to_ul === 'string') {
+                    //         li.append(j_to_ul);
+                    //     } else {
+                    //         li.appendChild(j_to_ul);
+                    //     }            
+
+                    //     // Ogni elemento lo aggiungo come punto della lista
+                    //     ul.appendChild(li);
+                    // }
+                    // // Altrimenti -> itero su ogni elemento e lo inserisco
+                    // else {
+                    //     j_to_ul.childNodes.forEach(elemento => {
+                    //         // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
+                    //         ul.append(elemento);
+                    //     });
+                    // }
+
+                    ul.appendChild(document.createElement('li').append(j_to_ul));
                 });
             }
             // Altrimenti voglio che da quel momento si inserisca un sottoinsieme (sotto la 'chiave' voglio il 'valore')
             else {
-                console.log('pre ul: ', json_part);
                 // Itero su ogni coppia chiave:valore
                 for (let [k, v] of Object.entries(json_part)) {
-                    console.log('parti: ', 'k: ', k, 'v: ',  v);
+                    
                     // Creo la linea
                     let li = document.createElement('li');
 
                     // Aggiungo la chiave e poi il contenuto che mi ritorna
                     li.append(k);
                     li.append(json_to_element('ul', v));
-                    console.log('li prima di ul: ', li);
-                    console.log('ul prima di ul: ', ul);
-                    // li.innerHTML = `${k}\n${json_to_element('ul', v)}`;
 
                     // Aggiungo l'elemento alla lista
                     ul.appendChild(li);
-                    console.log('ul dentro: ', ul, 'k: ', k);
                 }
-                console.log('ul: ', ul);
             }
 
             // Assegno l'elemento
