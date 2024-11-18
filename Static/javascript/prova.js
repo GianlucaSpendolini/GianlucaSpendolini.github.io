@@ -165,7 +165,7 @@ function json_to_element(element, json_part) {
                                     // Ogni elemento lo aggiungo come punto della lista
                                     ul.appendChild(li);
 
-                                    throw ExceptionFind;
+                                    throw new Error('Exception Find');
                                 }
                                 // Altrimenti sono solo una serie di 'ul'
                                 else{
@@ -175,9 +175,7 @@ function json_to_element(element, json_part) {
                             });
                         //Se esce come una eccezione diversa da quella che ho creato -> me la stampa su console
                         } catch (e) {
-                            if (e !== ExceptionFind) {
-                                console.log('Exception: ', e);
-                            }
+                            console.log('Loop stopped: ', e);
                         }
                     }
                 });
