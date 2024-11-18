@@ -138,7 +138,15 @@ export function json_to_element(element, json_part) {
 
                     // Aggiungo la chiave e poi il contenuto che mi ritorna
                     li.append(k);
-                    li.append(json_to_element('ul', v));
+
+                    // Se è una stringa -> lo faccio diventare array
+                    if (typeof v === 'string') {
+                        li.append(json_to_element('ul', [v]));
+                    }
+                    // Altrimenti continuo come prima
+                    else {
+                        li.append(json_to_element('ul', v));
+                    }
 
                     // Aggiungo l'elemento alla lista
                     ul.appendChild(li);

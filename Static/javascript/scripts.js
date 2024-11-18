@@ -467,29 +467,49 @@ function insert_my_json(file_description, points) {
                         }
                         // Altrimenti eseguo lo stesso procedimento usato per gli elenchi
                         else {
-                            // Itero ogni componente
-                            for (let [k, v] of Object.entries(tAggiunte)) {
 
-                                // Controllo se ho una coppia chiave : valore o un array
-                                if (v || Array.isArray(tAggiunte)) {
-                                    // Se ho una coppia chiave valore -> mando la v
-                                    if (v) {
-                                        td_aggiunte.append(k);
-                                        console.log('j2e: ', json_to_element('ul', v), 'k: ', k, 'type: ', typeof json_to_element('ul', v));
-                                        td_aggiunte.appendChild(json_to_element('ul', v));
+                            // Controllo se la componente è un array
+                            if (Array.isArray(tAggiunte)) {
+                                // Iterare su ogni componente
+                                tAggiunte.forEach(e => {
+                                    // Controllo se l'elemento è una stringa
+                                    if (typeof e === 'string'){
+                                        // Aggiungo normalmente
+                                        td_aggiunte.append(e);
                                     }
-                                    // Altrimenti invio l'array
+                                    // Altrimenti lo aggiungo mandandolo in pasto alla funzione
                                     else {
-                                        td_aggiunte.appendChild(json_to_element('ul', tAggiunte));
+                                        // Itero ogni componente
+                                        for (let [k, v] of Object.entries(e)) {
+        
+                                            // Aggiungo la chiave
+                                            td_aggiunte.append(k);
+        
+                                            // Aggiungo la lista che ne esce
+                                            td_aggiunte.appendChild(json_to_element('ul', v));
+                            
+                                            // Aggiungo uno spazio
+                                            td_aggiunte.append('\n');
+                                        }
                                     }
-                                }
-                                // Se è una stringa -> la aggiungo normalmente
-                                else {
+                    
+                                    // Aggiungo uno spazio
+                                    td_aggiunte.append('\n');
+                                });
+                            }
+                            else {
+                                // Itero ogni componente
+                                for (let [k, v] of Object.entries(tAggiunte)) {
+
+                                    // Aggiungo la chiave
                                     td_aggiunte.append(k);
+
+                                    // Aggiungo la lista che ne esce
+                                    td_aggiunte.appendChild(json_to_element('ul', v));
+                    
+                                    // Aggiungo uno spazio
+                                    td_aggiunte.append('\n');
                                 }
-                
-                                // Aggiungo uno spazio
-                                td_aggiunte.append('\n');
                             }
                         }
                     }
