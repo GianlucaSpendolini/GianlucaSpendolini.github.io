@@ -144,6 +144,7 @@ function json_to_element(element, json_part) {
 
                     // Prendo ciò che mi ritorna la funzione
                     let j_to_ul = json_to_element('ul', j);
+                    console.log(j_to_ul);
 
                     // // Se stringa -> inserisco la stringa e basta
                     // if (typeof j_to_ul === 'string' || (j_to_ul && j_to_ul.firstChild && j_to_ul.firstChild.nodeType === Node.TEXT_NODE && j_to_ul.firstChild.nodeValue.trim() !== '')) {
