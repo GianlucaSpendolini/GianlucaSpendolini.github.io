@@ -136,7 +136,7 @@ function json_to_element(element, json_part) {
             // Se l'elemento è un array -> voglio l'elenco puntato (fornisco una serie di punti)
             if (Object.prototype.toString.call(json_part) === '[object Array]') {
                 // Per ogni elemento -> appendo ciò che ritorna dalla funzione (perchè ogni elemento della lista)
-                for (let [_, j] of Object.entries(json_part)) {
+                json_part.forEach(j => {
                     console.log('generale: ', j);
                     // Creo la linea
                     let li = document.createElement('li');
@@ -161,7 +161,7 @@ function json_to_element(element, json_part) {
                             ul.append(elemento);
                         });
                     }
-                };
+                });
             }
             // Altrimenti voglio che da quel momento si inserisca un sottoinsieme (sotto la 'chiave' voglio il 'valore')
             else {
