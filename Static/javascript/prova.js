@@ -137,6 +137,7 @@ function json_to_element(element, json_part) {
             if (Object.prototype.toString.call(json_part) === '[object Array]') {
                 // Per ogni elemento -> appendo ciò che ritorna dalla funzione (perchè ogni elemento della lista)
                 json_part.forEach(j => {
+                    console.log('generale: ', j);
                     // Creo la linea
                     let li = document.createElement('li');
 
@@ -144,7 +145,6 @@ function json_to_element(element, json_part) {
                     let j_to_ul = json_to_element('ul', j);
 
                     // Se stringa -> inserisco la stringa e basta
-                    console.log('generale: ', j_to_ul);
                     if (typeof j_to_ul === 'string' || j_to_ul.firstChild.nodeName === '#text') {
                         console.log('if: ', j_to_ul);
                         // Aggiungo ciò che ritorna dalla funzione alla linea
