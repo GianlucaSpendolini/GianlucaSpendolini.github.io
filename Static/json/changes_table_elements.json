@@ -9,11 +9,9 @@
                     "Progetto Django": [
                         "Prove se funziona",
                         "Tolto perche' non funziona*"
-                    ]
-                },
-                {
+                    ],
                     "file .php": [
-                    "Eliminati poiche' non funzionano*"
+                        "Eliminati poiche' non funzionano*"
                     ]
                 }
             ],
