@@ -160,10 +160,11 @@ function json_to_element(element, json_part) {
                     // Altrimenti -> itero su ogni elemento e lo inserisco
                     else {
                         console.log('else: ', j_to_ul);
-                        j_to_ul.childNodes.forEach(elemento => {
-                            // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
-                            ul.append(elemento);
-                        });
+                        // j_to_ul.childNodes.forEach(elemento => {
+                        //     // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
+                        //     ul.append(elemento);
+                        // });
+                        ul.append(j_to_ul.innerHTML);
                     }
                     
                     // li.append(j_to_ul);
