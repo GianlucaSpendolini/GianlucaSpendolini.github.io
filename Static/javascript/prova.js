@@ -165,9 +165,13 @@ function json_to_element(element, json_part) {
                     // Altrimenti -> itero su ogni elemento e lo inserisco
                     else {
 
+                        // Alternativa?
+                        while (j_to_ul.firstChild) {
+                            ul.append(j_to_ul.firstChild);
+                        }
                         // Prendo il contenuto HTML
-                        let j_to_ul_content = j_to_ul.innerHTML;
-                        ul.innerHTML = j_to_ul_content;
+                        // let j_to_ul_content = j_to_ul.innerHTML;
+                        // ul.innerHTML = j_to_ul_content;
                         // j_to_ul.childNodes.forEach(elemento => {
                         //     // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
                         //     ul.append(elemento);
