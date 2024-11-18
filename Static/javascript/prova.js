@@ -169,7 +169,9 @@ function json_to_element(element, json_part) {
                     //     });
                     // }
 
-                    ul.appendChild(document.createElement('li').append(j_to_ul));
+                    li = document.createElement('li');
+                    li.append(j_to_ul);
+                    ul.appendChild(li);
                 });
             }
             // Altrimenti voglio che da quel momento si inserisca un sottoinsieme (sotto la 'chiave' voglio il 'valore')
