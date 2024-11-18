@@ -175,6 +175,55 @@
     {
         "tData": "26/02/2024",
         "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "/css/table.css": "Larghezza colonne changes_table (10-60-20)",
+                "readme.md": "Aggiornamento readme con giorni di oggi e 24/02/2024"
+            }
+        },
+        "tAggiunte": null
+    },
+
+    {
+        "tData": "27/02/2024",
+        "tDescrizione": {
+            "Aggiunta": {
+                "/css/table.css": {
+                    "Classe \"change\" per diverse parti della tabella**": [
+                        "Righe",
+                        "Dati",
+                        "Header",
+                        "Tabella"
+                    ],
+                    "In modo da applicare le modifiche solo alla tabella dei cambiamenti*": "Quella dei contatti deve essere fatta in altro modo e con altre caratteristiche"
+                }
+            },
+            "Aggiornamento": {
+                "/css/table.css": [
+                    "Modifica dimensioni tabella contatti (25% con 30% e 20%)",
+                    "Aggiunto css \"text-align: center;\" per allineare il testo all'interno",
+                    "Tolti i bordi da tabella contatti (lasciati solo in /changes/changes_table.html)"
+                ],
+                "/css/image.css": "Modifica dimensioni (in scala) delle icone",
+                "about.html": "Inserito attributo \"align\" con valore \"center\" per allineare al centro la tabella"
+            }
+        },
+        "tAggiunte": [
+            {
+                "Provo con dimensioni": [
+                    "Tabella: 12.5%",
+                    "Icone: 80% (poiche' abbiamo diminuito di 1/8 la dimensione della tabella -> la incremento per 8 volte)"
+                ]
+            },
+            "*Non funziona, prova con altro approccio [FUNZIONA MA **]",
+            "<br />",
+            "** Tolta poiche' posso fare \"attributi a discesa\" usando: table.change 'tag'"
+        ]
+    },
+
+    {
+        "tData": "21/03/2024",
+        "tDescrizione": {
             "Aggiunta": [
                 ""
             ],

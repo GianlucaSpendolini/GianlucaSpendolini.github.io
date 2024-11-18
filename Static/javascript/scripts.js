@@ -413,11 +413,14 @@ function insert_my_json(file_description, points) {
                 // Lunghezza degli elementi
                 let data_number = data.length - 1;
 
+                // Tolgo l'ultimo elemento dell'array (lo "scheletro" di ogni riga della tabella)
+                data.pop();
+
                 data.forEach(element => {
-                    // Se count == lunghezza della lista -> esco
-                    if (count === data_number) {
-                        return
-                    }
+                    // // Se count == lunghezza della lista -> esco
+                    // if (count === data_number) {
+                    //     return
+                    // }
 
                     // Creo la riga 
                     const tr = document.createElement('tr');
@@ -468,7 +471,7 @@ function insert_my_json(file_description, points) {
                             for (let [k, v] of Object.entries(tAggiunte)) {
 
                                 // Controllo se ho una coppia chiave : valore o un array
-                                if (v || Object.prototype.toString.call(tAggiunte) === '[object Array]') {
+                                if (v || Array.isArray(tAggiunte)) {
                                     // Se ho una coppia chiave valore -> mando la v
                                     if (v) {
                                         td_aggiunte.appendChild(json_to_element('ul', v));
@@ -501,8 +504,8 @@ function insert_my_json(file_description, points) {
                     // Aggiungo la riga alla tabella
                     tBody.appendChild(tr);
 
-                    // Aumento di uno il conteggio
-                    count += 1;
+                    // // Aumento di uno il conteggio
+                    // count += 1;
                 });
             })
             .catch(error => {
