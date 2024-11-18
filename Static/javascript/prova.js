@@ -189,6 +189,7 @@ function json_to_element(element, json_part) {
                     li.append(k);
                     li.append(json_to_element('ul', v));
                     console.log('li prima di ul: ', li);
+                    console.log('ul prima di ul: ', ul);
                     // li.innerHTML = `${k}\n${json_to_element('ul', v)}`;
 
                     // Aggiungo l'elemento alla lista
