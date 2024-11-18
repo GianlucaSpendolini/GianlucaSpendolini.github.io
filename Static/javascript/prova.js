@@ -176,7 +176,7 @@ function json_to_element(element, json_part) {
                 console.log('pre ul: ', json_part)
                 // Itero su ogni coppia chiave:valore
                 for (let [k, v] of Object.entries(json_part)){
-                    console.log('parti: ', 'k: ', k, 'v: ',  v)
+                    console.log('parti: ', 'k: ', k, 'v: ',  v);
                     // Creo la linea
                     let li = document.createElement('li');
 
