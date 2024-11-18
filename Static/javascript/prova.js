@@ -140,11 +140,46 @@ function json_to_element(element, json_part) {
                     // Creo la linea
                     let li = document.createElement('li');
 
-                    // Aggiungo ciò che ritorna dalla funzione alla linea
-                    li.append(json_to_element('ul', j));
+                    // Prendo ciò che mi ritorna la funzione
+                    let j_to_ul = json_to_element('ul', j);
 
-                    // Ogni elemento lo aggiungo come punto della lista
-                    ul.appendChild(li)
+                    // Se stringa -> inserisco la stringa e basta
+                    if (typeof j_to_ul === 'string') {
+                        // Aggiungo ciò che ritorna dalla funzione alla linea
+                        li.append(j_to_ul);
+
+                        // Ogni elemento lo aggiungo come punto della lista
+                        ul.appendChild(li)
+                    }
+                    // Altrimenti -> itero su ogni elemento e lo inserisco
+                    else {
+
+                        // Provo ad iterare
+                        try {
+                            j_to_ul.forEach(elemento => {
+                                // Controllo se primo elemento è una stringa -> sto inserendo una sottostringa
+                                if (typeof elemento === 'string') {
+                                    // Aggiungo ciò che ritorna dalla funzione alla linea
+                                    li.append(j_to_ul);
+            
+                                    // Ogni elemento lo aggiungo come punto della lista
+                                    ul.appendChild(li);
+
+                                    throw ExceptionFind;
+                                }
+                                // Altrimenti sono solo una serie di 'ul'
+                                else{
+                                    // Aggiungo ogni elemento che contiene l'ul alla lista (so che sono una serie di 'li')
+                                    ul.append(elemento);
+                                }
+                            });
+                        //Se esce come una eccezione diversa da quella che ho creato -> me la stampa su console
+                        } catch (e) {
+                            if (e !== ExceptionFind) {
+                                console.log('Exception: ', e);
+                            }
+                        }
+                    }
                 });
             }
             // Altrimenti voglio che da quel momento si inserisca un sottoinsieme (sotto la 'chiave' voglio il 'valore')
