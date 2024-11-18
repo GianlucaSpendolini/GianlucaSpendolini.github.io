@@ -156,6 +156,7 @@ function json_to_element(element, json_part) {
 
                         // Provo ad iterare
                         try {
+                            console.log(j_to_ul);
                             j_to_ul.forEach(elemento => {
                                 // Controllo se primo elemento è una stringa -> sto inserendo una sottostringa
                                 if (typeof elemento === 'string') {
