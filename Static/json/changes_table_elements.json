@@ -224,14 +224,117 @@
     {
         "tData": "21/03/2024",
         "tDescrizione": {
-            "Aggiunta": [
-                ""
-            ],
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "prova.html": [
+                    "Suddivisione struttura pagina nei tag \"header\", \"main\" e \"footer\"",
+                    {
+                        "Inserimento elenchi puntati come riga": [
+                            "Applicazione distanziamento elementi (padding 10px)",
+                            "Posizionarlo nel centro del contenitore"
+                        ],
+                        "Inserimento elementi già presenti nel \"body\" in \"main\"": "Tolti i link che rimandano ad Home poiche' gia' inserito nel menu' dell'header"
+                    }
+                ],
+                "image.css": "Le icone inserite nei footer messe con massimo e minimo dimensionamento",
+                "style.css": {
+                    "Modifiche a tag": [
+                        "ul",
+                        "li",
+                        "footer",
+                        "section"
+                    ],
+                    "Colore al tag": [
+                        "\"h1\" negli header",
+                        "\"footer\" come sfondo"
+                    ]
+                }
+            }
+        },
+        "tAggiunte": "Controllare funzionamento e applicarle a tutti gli script."
+    },
+
+    {
+        "tData": "22/03/2024",
+        "tDescrizione": {
+            "Aggiunta": null,
             "Aggiornamento": [
-                ""
+                "Applicazione modifiche \"body\" ai tag \"header\" e \"main\" a tutti gli altri script",
+                {
+                    "Risoluzione problemi tag (in generale)": "Centralizzazione dei contenuti rispetto ai contenitori"
+                }
             ]
         },
+        "tAggiunte": "Controllare e sistemare footer"
+    },
+
+    {
+        "tData": "23/03/2024",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "prova.html": "Maggiore padding ai lati degli elementi del tag \"ul\" in header",
+                "Applicazioni modifiche per avere url senza estensione dei file (NO /'file'.'estenzione' MA /'file')": "Anche per /generic/"
+            }
+        },
         "tAggiunte": null
+    },
+
+    {
+        "tData": "25/03/2024",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "prova.html": [
+                    {
+                        "Tolti i punti nei tag \"section\" laterali": "Lasciati i tag laterali per permettere di metterli a 2/5 e 4/5"
+                    },
+                    "Controllo funzionamento per monitor di diverse dimensioni"
+                ],
+                "Applicazione modifiche tag \"footer\" a tutti gli script con sistemazione riferimenti nei tag \"a\"": "Anche per /generic/"
+            }
+        },
+        "tAggiunte": "Inserimento, dove possibile, del riferimento alla directory in cui si è (\"./\") evitando di tornare indietro inutilmente"
+    },
+
+    {
+        "tData": "27/03/2024",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "index.html": "tolto il doppione del tag \"hr\"",
+                "/projects/web/index.html": "aggiornato il link che porta al sito del Mario Negri (da \"clinicalweb-twin\" tolto \"-twin\")"
+            }
+        },
+        "tAggiunte": null
+    },
+
+    {
+        "tData": "07/05/2024",
+        "tDescrizione": {
+            "Aggiunta": {
+                "/static/javascript/prova.js": "funzione \"prova\""
+            },
+            "Aggiornamento": {
+                "prova.html": "bottone \"Cliccami\" con funzione JS se cliccato"
+            }
+        },
+        "tAggiunte": "Vedere perchè non riesce ad importare file JS \"prova.js\" e, di conseguenza, la funzione prova()"
+    },
+
+    {
+        "tData": "01/06/2024",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "/javascript/prova.js": [
+                    "sistemato bottone \"cliccami\" per controllo codice js",
+                    "inserimento possibilita' di aggiungere link ai bottoni della nav"
+                ],
+                "/css/style.css": "aggiunti i selettori per prendere anche nav e bottoni"
+            }
+        },
+        "tAggiunte": "Bloccare ad una certa distanza i bottoni della navbar, in modo che, andando a rimpicciolire, si distanziano fino ad una distanza minima e, allargando, si allargano fino ad una certa e poi si bloccano."
     },
 
     {
