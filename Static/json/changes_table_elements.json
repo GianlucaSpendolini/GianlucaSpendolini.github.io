@@ -56,9 +56,9 @@
         "tData": "16/02/2024",
         "tDescrizione": {
             "Aggiunta": null,
-            "Aggiornamento": [
-                "Descrizione migliore (con piu' commenti)"
-            ]
+            "Aggiornamento": {
+                ".gitignore": "Descrizione migliore (con piu' commenti)"
+            }
         },
         "tAggiunte": null
     },
@@ -80,7 +80,7 @@
             "Aggiunta": null,
             "Aggiornamento": [
                 "Aggiunta collegamenti a canali instagram",
-                "Aggiunta commento indicativo per inserimento i successivi blocchi"
+                "Aggiunta commento indicativo per inserimento per i successivi blocchi"
             ]
         },
         "tAggiunte": null
@@ -273,7 +273,7 @@
             "Aggiunta": null,
             "Aggiornamento": {
                 "prova.html": "Maggiore padding ai lati degli elementi del tag \"ul\" in header",
-                "Applicazioni modifiche per avere url senza estensione dei file (NO /'file'.'estenzione' MA /'file')": "Anche per /generic/"
+                "Applicazioni modifiche per avere url senza estensione dei file (NO /'file'.'estensione' MA /'file')": "Anche per /generic/"
             }
         },
         "tAggiunte": null
@@ -396,7 +396,7 @@
             "Aggiornamento": {
                 "ogni file html": "tolto contenuto main e footer per inserimento automatico tramite js (se url non inizia con /generic/)",
                 "/javascript/scripts.js": [
-                    "modifica a funzioni per header -> inserito in automatico il contenuto",
+                    "modifica funzioni per header -> inserito in automatico il contenuto",
                     "aggiunta funzione per inserimento automatico del footer",
                     "aggiunto switch-case per capire in che pagina ci troviamo e fare azioni di conseguenza"
                 ],
@@ -506,7 +506,7 @@
                     "cambiato nome per la funzione insert_meta -> insert_in_head"
                 ],
                 "/Static/javascript/scripts.js": [
-                    "inserito dell'icona favicon prima dei tag meta",
+                    "inserimento dell'icona favicon prima dei tag meta",
                     "importazione variabili globali utili da file esterno"
                 ]
             }

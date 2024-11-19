@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Cose da fare inizialmente (inserire connessioni nei bottoni)*/
 
     // Inserisco l'icona
-    insert_in_head(`<link href="${points}${svg(date.getMonth()).non_barrato}" rel="icon" type="image/svg+xml" >`);
+    insert_in_head(`<link href="${points}${svg(date.getMonth()).favicon}" rel="icon" type="image/svg+xml" >`);
 
     // Inserisco i meta-tag comuni
     insert_in_head(`<meta charset="utf-8" />
@@ -117,7 +117,7 @@ function create_footer(points_path, links_list) {
     // Elenco delle icone (section sx)
     var links_4_icons = [
         'mailto:alpagi01@gmail.com',
-        'https://linkedin.com/in/gianluca-spendolini-7b66b321b',
+        'https://linkedin.com/in/gianluca-spendolini',
         'https://github.com/GianlucaSpendolini',
         'https://telegram.me/Gianlusp01'
     ];
