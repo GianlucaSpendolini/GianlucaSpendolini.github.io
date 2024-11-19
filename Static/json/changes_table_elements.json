@@ -338,6 +338,98 @@
     },
 
     {
+        "tData": "02/06/2024",
+        "tDescrizione": {
+            "Aggiunta": {
+                "/javascript/scripts.js": [
+                    "aggiunta assegnazione automatica dei link ai bottoni tramite id",
+                    {
+                        "aggiunto controllo in base all'URL": "per parte di /about aggiunta l'eta'"
+                    }
+                ]
+            },
+            "Aggiornamento": {
+                "about.html": [
+                    "file js generico",
+                    "contenitore dove inserire l'eta'"
+                ]
+            }
+        },
+        "tAggiunte": "Fare in modo che i bottoni vengano inseriti in automatico ed aggiungere solo il blocco nav nei file html."
+    },
+
+    {
+        "tData": "03/06/2024",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "ogni file html": "tolti i bottoni da nav per essere inseriti in automatico",
+                "/css/style.css": "dato alla nav justify-content: space-evenly",
+                "/javascript/scripts.js": "creata funzione per inserire in automatico i bottoni (inserita nel DOMContentLoaded)"
+            }
+        },
+        "tAggiunte": "Fare in modo di centrare i bottoni: prova ad inserire un div (con align center) dentro il quale mettere il nav (togli display grid e metti flex)."
+    },
+
+    {
+        "tData": "04/06/2024",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "ogni file html": [
+                    "sostituzione tag nav con tag 'div' (id = nav-bar) dentro il quale colloco la nav",
+                    "tolti i 2 section vuoti"
+                ],
+                "/css/style.css": [
+                    "centrata la nav e data una larghezza massima",
+                    "sostituito la display \"grid\" con \"flex\" (direction column)",
+                    "dato al footer la proprietà justify-content = space-evenly"
+                ]
+            }
+        },
+        "tAggiunte": "Inserisci in automatico \"section\" o le cose dentro \"section\" dando ad entrambi degli id per riferimento."
+    },
+
+    {
+        "tData": "13/06/2024",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "ogni file html": "tolto contenuto main e footer per inserimento automatico tramite js (se url non inizia con /generic/)",
+                "/javascript/scripts.js": [
+                    "modifica a funzioni per header -> inserito in automatico il contenuto",
+                    "aggiunta funzione per inserimento automatico del footer",
+                    "aggiunto switch-case per capire in che pagina ci troviamo e fare azioni di conseguenza"
+                ],
+                "/css/style.css": "modifica padding di aside in 'about'"
+            }
+        },
+        "tAggiunte": "Fare in modo che, per schermo molto stretto, il footer non sbordi ma resti in colonna."
+    },
+
+    {
+        "tData": "15/06/2024",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "/projects/": "corretto riferimento nella pagina per #games",
+                "/projects/games/scratch": [
+                    "aggiunti quasi tutti i link per i giochi di scratch",
+                    "aggiunte le descrizioni dei giochi e relativi avvertimenti"
+                ],
+                "/about": [
+                    "inserimento link per riferimenti nella pagina delle varie sezioni",
+                    "aggiunti titoli per presentazione e contatti/cv"
+                ]
+            }
+        },
+        "tAggiunte": [
+            "Inserire un modo per inviare mail in changes o da qualche altra parte.",
+            "Inserire gioco di gruppo su /scratch."
+        ]
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": [

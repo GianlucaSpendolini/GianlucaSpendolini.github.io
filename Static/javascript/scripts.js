@@ -466,6 +466,9 @@ function insert_my_json(file_description, points) {
                                     if (typeof e === 'string'){
                                         // Aggiungo normalmente
                                         td_aggiunte.append(e);
+                    
+                                        // Aggiungo uno spazio
+                                        td_aggiunte.appendChild(document.createElement('br'));
                                     }
                                     // Altrimenti lo aggiungo mandandolo in pasto alla funzione
                                     else {
@@ -481,10 +484,10 @@ function insert_my_json(file_description, points) {
                                             // Aggiungo uno spazio
                                             td_aggiunte.append('\n');
                                         }
-                                    }
                     
-                                    // Aggiungo uno spazio
-                                    td_aggiunte.append('\n');
+                                        // Aggiungo uno spazio
+                                        td_aggiunte.append('\n');
+                                    }
                                 });
                             }
                             else {
@@ -515,9 +518,6 @@ function insert_my_json(file_description, points) {
 
                     // Aggiungo la riga alla tabella
                     tBody.appendChild(tr);
-
-                    // // Aumento di uno il conteggio
-                    // count += 1;
                 });
             })
             .catch(error => {
