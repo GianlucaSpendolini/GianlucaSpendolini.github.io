@@ -527,14 +527,107 @@
     },
 
     {
+        "tData": "08/11/2024",
+        "tDescrizione": {
+            "Aggiunta": {
+                "/projects/socials/": "Collegamento a pagina per ./telegram",
+                "/projects/socials/telegram": [
+                    "Aggiunta descrizione bot CashCommBot",
+                    "Aggiunto PDF specifiche progetto"
+                ], 
+                "/Static/javascript/scripts.js": "Sezione per inserimento titolo (pagina e main) in automatico per .../socials/ e .../telegram"
+            },
+            "Aggiornamento": null
+        },
+        "tAggiunte": null
+    },
+
+    {
+        "tData": "09/11/2024",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "/projects/socials/": "Riferimento a ./telegram",
+                "/projects/socials/telegram": "Tolto il riferimento alla documentazione CashCommBot"
+            }
+        },
+        "tAggiunte": null
+    },
+
+    {
+        "tData": "14/11/2024",
+        "tDescrizione": {
+            "Aggiunta": {
+                "/Static/json/": "Sezione per contenere file json utili (come quello della tabella dei cambiamenti)"
+            },
+            "Aggiornamento": {
+                "README.md": [
+                    "Tolte le date",
+                    "Creato una struttura più descrittiva"
+                ],
+                "/changes/": "Aggiunto <hr /> tra header e main",
+                "/changes/changes_table": [
+                    "Aggiunte modifiche readme",
+                    {
+                        "Aggiunta l'aggiunta della sezione": [
+                            "socials",
+                            "socials/telegram"
+                        ]
+                    }
+                ]
+            }
+        },
+        "tAggiunte": null
+    },
+
+    {
+        "tData": "18/11/2024",
+        "tDescrizione": {
+            "Aggiunta": {
+                "/Static/javascript/util_function.js": "Funzione per trasformazione json in elemento html",
+                "/Static/javascript/scripts.js": "Funzione per inserimento automatico dei dati del file json in tabella cambiamenti"
+            },
+            "Aggiornamento": {
+                "README.md": "Nuova versione (0.17.0)",
+                "/Static/javascript/scripts.js": "Sezione per inserimento nelle pagine specifiche (tabella cambiamenti e prova)",
+                "/Static/json/changes_table_elements.json": "Continuato aggiornamento elenco coi dati delle tabelle"
+            }
+        },
+        "tAggiunte": null
+    },
+
+    {
+        "tData": "19/11/2024",
+        "tDescrizione": {
+            "Aggiunta": {
+                "/Static/images/icons/": [
+                    "00_favicon.svg",
+                    "04_favicon.svg",
+                    "06_07_08_favicon.svg",
+                    "10_favicon.svg",
+                    "12_favicon.svg"
+                ],
+                "/Static/json/changes_table_elements.json": "Inserimento elementi dei giorni successivi al 06/08/2024 (oltre a quelli che mi mancavano da inserire)"
+            },
+            "Aggiornamento": {
+                "README.md": "Nuova versione (0.17.1)",
+                ".gitignore": "Commentata la possibilità di ignorare il README.md (mi serve aggiornato)",
+                "/Static/javascript/scripts.js": [
+                    "Correzione link LinkedIn (lasciato solo nome e cognome)",
+                    "Tolto riferimenti inserimenti automatici in tabella per la sezione \"prova\""
+                ],
+                "/Static/javascript/util_function.js": "Se, nella sezione aggiunte per l'inserimento dati della tabella delle modifiche, ho un elenco di stringhe, il separatore non è '\n' ma '<br />'",
+                "/changes/changes_table.html": "Tolti elementi (poichè inseriti in automatico)"
+            }
+        },
+        "tAggiunte": null
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
-            "Aggiunta": [
-                ""
-            ],
-            "Aggiornamento": [
-                ""
-            ]
+            "Aggiunta": null,
+            "Aggiornamento": null
         },
         "tAggiunte": null
     }
