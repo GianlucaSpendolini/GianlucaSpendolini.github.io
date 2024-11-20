@@ -103,7 +103,7 @@ export function clickable_path(path) {
     path_elements.pop();
 
     // Variabile per contare di quanto devo tornare indietro
-    let count = path_elements[path_elements.length - 1] === '' ? path_elements.length + 1 : path_elements.length + 1;
+    let count = path_elements[path_elements.length - 1] === '' ? path_elements.length + 1 : path_elements.length - 1;
 
     // Creo la variabile da restituire
     let path_to_move_into_pages = [];
