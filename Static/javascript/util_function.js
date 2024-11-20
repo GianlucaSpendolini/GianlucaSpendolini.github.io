@@ -88,12 +88,12 @@ export function clickable_path(path) {
     // Prendo gli elementi del percorso
     let path_elements = path.split('/');
 
+    // Creo una lista momentanea da usare (copiata dalla originale)
+    let elements_list_copy = path_elements;
+
     // Tolgo il primo e l'ultimo elemento
     path_elements.shift();
     path_elements.pop();
-
-    // Creo una lista momentanea da usare (copiata dalla originale)
-    let elements_list_copy = path_elements;
 
     // Variabile per contare di quanto devo tornare indietro
     let count = path_elements.length;
