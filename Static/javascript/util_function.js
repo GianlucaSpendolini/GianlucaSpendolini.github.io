@@ -117,6 +117,7 @@ export function clickable_path(path) {
 
         // Aggiungo il nome e l'attributo di riferimento
         a.innerHTML = e;
+        console.log(e);
         a.href = points_number(elements_list_copy.join('/'));
 
         // Inserisco l'elemento alla lista
@@ -124,6 +125,7 @@ export function clickable_path(path) {
 
         // Elimino il secondo elemento della lista 
         delete elements_list_copy[1];
+        console.log(elements_list_copy);
     }
 
     // Ritorno l'array
