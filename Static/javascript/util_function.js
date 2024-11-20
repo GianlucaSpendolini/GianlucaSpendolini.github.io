@@ -117,7 +117,7 @@ export function clickable_path(path) {
 
         // Aggiungo il nome e l'attributo di riferimento
         a.innerHTML = e;
-        a.href = points_number(elements_list_copy.concat('/'));
+        a.href = points_number(elements_list_copy.join('/'));
 
         // Inserisco l'elemento alla lista
         path_to_move_into_pages.push(a);
