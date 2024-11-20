@@ -37,6 +37,11 @@ export function add_css_js(points_path) {
 
         // CSS
         if (type === 'css') {
+
+            // Seleziono l'head
+            let head = document.querySelector('head');
+
+            // Itero su ogni componente da aggiungere
             for (const path of lista_generale[type]) {
                 // Creo l'elemento
                 var css = document.createElement('link');
@@ -49,12 +54,17 @@ export function add_css_js(points_path) {
                 // media
                 css.media = 'screen';
                 // Aggiungo l'elemento all'head
-                document.querySelector('head').appendChild(css);
+                head.appendChild(css);
             }
         }
 
         // JavaScript
         else if (type === 'js') {
+
+            // Seleziono il corpo 
+            let body = document.querySelector('body');
+
+            // Itero su ogni componente da aggiungere
             for (const path of lista_generale[type]) {
                 // Creo l'elemento
                 var js = document.createElement('script');
@@ -65,10 +75,59 @@ export function add_css_js(points_path) {
                 // media
                 js.media = 'screen';
                 // Aggiungo l'elemento al body
-                document.querySelector('body').appendChild(js);
+                body.appendChild(js);
             }
         }
     };
+}
+
+
+// Funzione per creare un percorso cliccabile da inserire nell'apposita sezione
+export function clickable_path(path) {
+
+    // Prendo gli elementi del percorso
+    let path_elements = path.split('/');
+
+    // Tolgo il primo e l'ultimo elemento
+    path_elements.shift();
+    path_elements.pop();
+
+    // Creo una lista momentanea da usare (copiata dalla originale)
+    let elements_list_copy = path_elements;
+
+    // Variabile per contare di quanto devo tornare indietro
+    let count = path_elements.length;
+
+    // Creo la variabile da restituire
+    let path_to_move_into_pages = [];
+
+    // Itero su ogni componente
+    for (let e of path_elements) {
+        
+        // // Creo l'array al quale mettero' eventuali puntini doppi
+        // let rif = './';
+    
+        // // Itero per vedere se e quanti puntini devo aggiungere
+        // for (let i = 0; i < count; i++) {
+        //     rif += '../';
+        // }
+
+        // Creo l'elemento in cui inserire il riferimento
+        let a = document.createElement('a');
+
+        // Aggiungo il nome e l'attributo di riferimento
+        a.innerHTML = e;
+        a.href = points_number(elements_list_copy.concat('/'));
+
+        // Inserisco l'elemento alla lista
+        path_to_move_into_pages.push(a);
+
+        // Elimino il secondo elemento della lista 
+        delete elements_list_copy[1];
+    }
+
+    // Ritorno l'array
+    return path_to_move_into_pages.concat(' / ') + ' /';
 }
 
 
@@ -181,7 +240,7 @@ export function points_number(path) {
     var a = './';
 
     // Itero per vedere se e quanti puntini devo aggiungere
-    for (const e in s) {
+    for (let e of s) {
         a += '../';
     }
 

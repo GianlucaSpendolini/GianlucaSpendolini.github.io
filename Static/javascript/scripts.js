@@ -2,7 +2,7 @@
 
 
 // Importo funzioni da file esterni
-import { add_css_js, insert_in_head, json_to_element, points_number, svg } from './util_function.js';
+import { add_css_js, clickable_path, insert_in_head, json_to_element, points_number, svg } from './util_function.js';
 
 // Importo variabili da file esterni
 import { date, path } from './util_variable.js';
@@ -10,6 +10,8 @@ import { date, path } from './util_variable.js';
 
 
 /* EVENTO ELEMENTI DOM CARICATI */
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // Creazione variabili generali da usare
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
 
-    /* Cose da fare inizialmente (inserire connessioni nei bottoni)*/
+    /* Cose da fare inizialmente */
 
     // Inserisco l'icona
     insert_in_head(`<link href="${points}${svg(date.getMonth()).favicon}" rel="icon" type="image/svg+xml" >`);
@@ -50,6 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
     what_page(path, points);
 
     // setTimeout(() => {console.log('fine');}, 0);
+    /* ALTRE COSE DA FARE */
+
+    // Cerco se voglio la lista delle pagine (per avere un minimo di percorso)
+    let movement_into_pages = document.querySelector('p.movement_into_pages');
+    if (movement_into_pages) {
+        // Inserisco la lista nell'apposita sezione
+        movement_into_pages.innerHTML = clickable_path(path);
+    }
 });
 
 
