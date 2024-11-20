@@ -229,6 +229,7 @@ export function json_to_element(element, json_part) {
 
 // Creo un array di 'punti' per tornare sempre alla home (./../etc)
 export function points_number(path) {
+    console.log(path);
     // Faccio lo split
     var s = path.split('/');
 
