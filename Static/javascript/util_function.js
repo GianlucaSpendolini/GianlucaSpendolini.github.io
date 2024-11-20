@@ -2,6 +2,8 @@
     FUNZIONI UTILI 
         - add_css_js
             - Funzione per aggiungere i file js e css
+        - clickable_path
+            - Funzione per creare un percorso cliccabile da inserire nell'apposita sezione
         - insert_in_head
             - Funzione per inserire i meta-tag
         - json_to_element
@@ -91,8 +93,9 @@ export function clickable_path(path) {
     // Creo una lista momentanea da usare (copiata dalla originale)
     let elements_list_copy = path_elements;
 
-    // Tolgo il primo e l'ultimo elemento
+    // Tolgo il primo e gli ultimi due elementi (non ha senso voler tornare sulla stessa pagina in cui si è)
     path_elements.shift();
+    path_elements.pop();
     path_elements.pop();
 
     // Variabile per contare di quanto devo tornare indietro
@@ -108,7 +111,7 @@ export function clickable_path(path) {
         let rif = './';
     
         // Itero per vedere se e quanti puntini devo aggiungere
-        for (let i = 0; i < count; i++) {
+        for (let i = 0; i < count - 1; i++) {
             rif += '../';
         }
 
@@ -126,6 +129,9 @@ export function clickable_path(path) {
         // // Elimino il secondo elemento della lista 
         // delete elements_list_copy[1];
         // console.log('elc: ', elements_list_copy);
+
+        // Diminuisco il conteggio
+        count -= 1;
     }
 
     // Ritorno l'array

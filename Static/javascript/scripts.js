@@ -57,6 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cerco se voglio la lista delle pagine (per avere un minimo di percorso)
     let movement_into_pages = document.querySelector('p.movement_into_pages');
     if (movement_into_pages) {
+        // Ripulisco il contenuto momentaneamente
+        movement_into_pages.innerHTML = '';
+        
         // Inserisco la lista nell'apposita sezione
         clickable_path(path).forEach(e => {
             // Inserisco l'elemento
