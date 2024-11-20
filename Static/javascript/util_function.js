@@ -93,17 +93,21 @@ export function clickable_path(path) {
     // Creo una lista momentanea da usare (copiata dalla originale)
     let elements_list_copy = path_elements;
 
+    // Variabile per capire se sono nell'index di una directory (URL finisce con '')
+    let is_index = false;
+
     // Tolgo il primo e gli ultimi due elementi (non ha senso voler tornare sulla stessa pagina in cui si è)
     path_elements.shift();
     // Tolgo l'ultimo ed il penultimo solo se sono nella index della sezione
-    console.assert(path_elements[path_elements.length - 1] === '');
+    console.log("path_elements[path_elements.length - 1] === ''? ", path_elements[path_elements.length - 1] === '', "perchè ", path_elements[path_elements.length - 1]);
     if (path_elements[path_elements.length - 1] === '') {
         path_elements.pop();
+        is_index = true;
     }
     path_elements.pop();
 
-    // Variabile per contare di quanto devo tornare indietro
-    let count = path_elements[path_elements.length - 1] === '' ? path_elements.length + 1 : path_elements.length - 1;
+    // Variabile per contare di quanto devo tornare indietro (+ 1 per mettere dir prima se non sono in index e + 1 per inserire riferimento  pagina stessa -> commenta ultimo pop)
+    let count = is_index ? path_elements.length + 1 : path_elements.length;
 
     // Creo la variabile da restituire
     let path_to_move_into_pages = [];
@@ -114,7 +118,7 @@ export function clickable_path(path) {
         // Creo l'array al quale mettero' eventuali puntini doppi
         let rif = './';
     
-        // Itero per vedere se e quanti puntini devo aggiungere (count + 1 per mettere dir prima se non sono in index e +1 per inserire riferimento  pagina stessa -> commenta ultimo pop)
+        // Itero per vedere se e quanti puntini devo aggiungere 
         for (let i = 0; i < count; i++) {
             rif += '../';
         }
