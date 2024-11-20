@@ -95,7 +95,10 @@ export function clickable_path(path) {
 
     // Tolgo il primo e gli ultimi due elementi (non ha senso voler tornare sulla stessa pagina in cui si è)
     path_elements.shift();
-    path_elements.pop();
+    // Tolgo l'ultimo ed il penultimo solo se sono nella index della sezione
+    if (path_elements[path_elements.length - 1] === '') {
+        path_elements.pop();
+    }
     path_elements.pop();
 
     // Variabile per contare di quanto devo tornare indietro
