@@ -114,7 +114,7 @@ export function clickable_path(path) {
         let rif = './';
     
         // Itero per vedere se e quanti puntini devo aggiungere (metti count + 1 se vuoi inserire anche il riferimento alla pagina stessa -> commenta l'ultimo pop)
-        for (let i = 0; i < count; i++) {
+        for (let i = 0; i < path_elements[path_elements.length - 1] !== '' ? count + 1 : count; i++) {
             rif += '../';
         }
 
