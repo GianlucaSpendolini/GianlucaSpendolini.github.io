@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let movement_into_pages = document.querySelector('p.movement_into_pages');
     if (movement_into_pages) {
 
-        // Inserisco la frase
-        movement_into_pages.innerHTML = 'Torna/vai a: ';
+        // // Inserisco la frase
+        // movement_into_pages.innerHTML = '';
 
         // Creo l'elemento per la home
         let a = document.createElement('a');
