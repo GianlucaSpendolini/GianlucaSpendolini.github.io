@@ -127,7 +127,7 @@ export function clickable_path(path) {
     }
 
     // Ritorno l'array
-    return path_to_move_into_pages.concat(' / ') + ' /';
+    return path_to_move_into_pages.join(' / ') + ' /';
 }
 
 
