@@ -102,7 +102,7 @@ export function clickable_path(path) {
     path_elements.pop();
 
     // Variabile per contare di quanto devo tornare indietro
-    let count = path_elements.length;
+    let count = path_elements[path_elements.length - 1] !== '' ? path_elements.length + 1 : path_elements.length;
 
     // Creo la variabile da restituire
     let path_to_move_into_pages = [];
@@ -114,7 +114,7 @@ export function clickable_path(path) {
         let rif = './';
     
         // Itero per vedere se e quanti puntini devo aggiungere (count + 1 per mettere dir prima se non sono in index e +1 per inserire riferimento  pagina stessa -> commenta ultimo pop)
-        for (let i = 0; i < path_elements[path_elements.length - 1] !== '' ? count + 1 : count; i++) {
+        for (let i = 0; i < count; i++) {
             rif += '../';
         }
 
