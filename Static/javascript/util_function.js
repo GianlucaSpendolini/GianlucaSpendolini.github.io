@@ -104,13 +104,13 @@ export function clickable_path(path) {
     // Itero su ogni componente
     for (let e of path_elements) {
         
-        // // Creo l'array al quale mettero' eventuali puntini doppi
-        // let rif = './';
+        // Creo l'array al quale mettero' eventuali puntini doppi
+        let rif = './';
     
-        // // Itero per vedere se e quanti puntini devo aggiungere
-        // for (let i = 0; i < count; i++) {
-        //     rif += '../';
-        // }
+        // Itero per vedere se e quanti puntini devo aggiungere
+        for (let i = 0; i < count; i++) {
+            rif += '../';
+        }
 
         // Creo l'elemento in cui inserire il riferimento
         let a = document.createElement('a');
@@ -118,14 +118,14 @@ export function clickable_path(path) {
         // Aggiungo il nome e l'attributo di riferimento
         a.innerHTML = e;
         console.log('e: ', e);
-        a.href = points_number(elements_list_copy.join('/'));
+        a.href = rif;//points_number(elements_list_copy.join('/'));
 
         // Inserisco l'elemento alla lista
         path_to_move_into_pages.push(a);
 
-        // Elimino il secondo elemento della lista 
-        delete elements_list_copy[1];
-        console.log('elc: ', elements_list_copy);
+        // // Elimino il secondo elemento della lista 
+        // delete elements_list_copy[1];
+        // console.log('elc: ', elements_list_copy);
     }
 
     // Ritorno l'array
