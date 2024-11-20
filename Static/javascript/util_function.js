@@ -90,24 +90,21 @@ export function clickable_path(path) {
     // Prendo gli elementi del percorso
     let path_elements = path.split('/');
 
-    // Creo una lista momentanea da usare (copiata dalla originale)
-    let elements_list_copy = path_elements;
-
     // Variabile per capire se sono nell'index di una directory (URL finisce con '')
     let is_index = false;
 
     // Tolgo il primo e gli ultimi due elementi (non ha senso voler tornare sulla stessa pagina in cui si è)
     path_elements.shift();
     // Tolgo l'ultimo ed il penultimo solo se sono nella index della sezione
-    console.log("path_elements[path_elements.length - 1] === ''? ", path_elements[path_elements.length - 1] === '', "perchè ", path_elements[path_elements.length - 1]);
     if (path_elements[path_elements.length - 1] === '') {
         path_elements.pop();
+        // Aggiorno la variabile se mi trovo in un index di una directory
         is_index = true;
     }
     path_elements.pop();
 
     // Variabile per contare di quanto devo tornare indietro (+ 1 per mettere dir prima se non sono in index e + 1 per inserire riferimento  pagina stessa -> commenta ultimo pop)
-    let count = is_index ? path_elements.length + 1 : path_elements.length;
+    let count = is_index ? path_elements.length : path_elements.length - 1;
 
     // Creo la variabile da restituire
     let path_to_move_into_pages = [];
@@ -128,8 +125,7 @@ export function clickable_path(path) {
 
         // Aggiungo il nome e l'attributo di riferimento
         a.innerHTML = e;
-        console.log('e: ', e);
-        a.href = rif;//points_number(elements_list_copy.join('/'));
+        a.href = rif; //points_number(elements_list_copy.join('/'));
 
         // Inserisco l'elemento alla lista
         path_to_move_into_pages.push(a);
@@ -245,7 +241,7 @@ export function json_to_element(element, json_part) {
 
 // Creo un array di 'punti' per tornare sempre alla home (./../etc)
 export function points_number(path) {
-    console.log('path: ', path);
+
     // Faccio lo split
     var s = path.split('/');
 
@@ -263,6 +259,7 @@ export function points_number(path) {
 
     // Ritorno l'array
     return a;
+
 }
 
 // Funzione per capire il mese e mettere l'SVG giusto
