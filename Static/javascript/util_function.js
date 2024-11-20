@@ -110,8 +110,8 @@ export function clickable_path(path) {
         // Creo l'array al quale mettero' eventuali puntini doppi
         let rif = './';
     
-        // Itero per vedere se e quanti puntini devo aggiungere
-        for (let i = 0; i < count - 1; i++) {
+        // Itero per vedere se e quanti puntini devo aggiungere (metti count + 1 se vuoi inserire anche il riferimento alla pagina stessa -> commenta l'ultimo pop)
+        for (let i = 0; i < count; i++) {
             rif += '../';
         }
 
