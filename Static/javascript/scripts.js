@@ -58,7 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let movement_into_pages = document.querySelector('p.movement_into_pages');
     if (movement_into_pages) {
         // Inserisco la lista nell'apposita sezione
-        movement_into_pages.innerHTML = clickable_path(path);
+        clickable_path(path).forEach(e => {
+            // Inserisco l'elemento
+            movement_into_pages.appendChild(e);
+            // Inserisco la barra spaziatrice
+            movement_into_pages.append(' / ');
+        });
     }
 });
 

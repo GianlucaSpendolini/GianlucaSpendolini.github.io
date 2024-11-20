@@ -117,7 +117,7 @@ export function clickable_path(path) {
 
         // Aggiungo il nome e l'attributo di riferimento
         a.innerHTML = e;
-        console.log(e);
+        console.log('e: ', e);
         a.href = points_number(elements_list_copy.join('/'));
 
         // Inserisco l'elemento alla lista
@@ -125,11 +125,11 @@ export function clickable_path(path) {
 
         // Elimino il secondo elemento della lista 
         delete elements_list_copy[1];
-        console.log(elements_list_copy);
+        console.log('elc: ', elements_list_copy);
     }
 
     // Ritorno l'array
-    return path_to_move_into_pages.join(' / ') + ' /';
+    return path_to_move_into_pages;
 }
 
 
@@ -231,7 +231,7 @@ export function json_to_element(element, json_part) {
 
 // Creo un array di 'punti' per tornare sempre alla home (./../etc)
 export function points_number(path) {
-    console.log(path);
+    console.log('path: ', path);
     // Faccio lo split
     var s = path.split('/');
 
