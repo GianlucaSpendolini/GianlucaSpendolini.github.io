@@ -624,6 +624,26 @@
     },
 
     {
+        "tData": "05/12/2024",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "Cambio colori icone SVG": [
+                    "Generale (default)",
+                    "Pasqua",
+                    "Estate",
+                    "Halloween",
+                    "Inverno"
+                ]
+            }
+        },
+        "tAggiunte": [
+            "Controllare, man mano, che vadano bene i colori scelti.",
+            "Applicarli, quando serviranno, anche alle icone per vedere o meno le parole (nel caso cambiare colore o tonalità)."
+        ]
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,
