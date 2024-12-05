@@ -628,13 +628,14 @@
         "tDescrizione": {
             "Aggiunta": null,
             "Aggiornamento": {
-                "Cambio colori icone SVG": [
-                    "Generale (default)",
-                    "Pasqua",
-                    "Estate",
-                    "Halloween",
-                    "Inverno"
-                ]
+                "Cambio colori icone SVG": {
+                    "Generale (default)": "Granite (#837E7C)",
+                    "Pasqua": "Neiper Green (#298200)",
+                    "Estate": "Red Berry (#8E0000)",
+                    "Halloween": "Bright Orange (#FF5B00)",
+                    "Inverno": "Aquamarine Blue (#70D2E6)"
+                },
+                "README.md": "Nuova versione (0.17.2)"
             }
         },
         "tAggiunte": [
