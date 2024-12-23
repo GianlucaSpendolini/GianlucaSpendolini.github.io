@@ -81,6 +81,10 @@
 /* PER NON RIPETERE LE STESSE COSE PER TROPPE MEDIA QUERY */
 
 @media screen and (max-width: 900px) {
+
+    /*
+        SEZIONE HOME
+    */
     
     /* 
         SEZIONE ABOUT

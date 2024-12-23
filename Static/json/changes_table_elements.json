@@ -645,6 +645,31 @@
     },
 
     {
+        "tData": "23/12/2024",
+        "tDescrizione": {
+            "Aggiunta": {
+                "/Static/javascript/scripts.js": "Funzione per inserimento automatico auguri in base alla festività corrente."
+            },
+            "Aggiornamento": {
+                "index.html": [
+                    "Cambiata descrizione generale della pagina;",
+                    "Aggiunta sezione per l'inserimento degli auguri personalizzati;"
+                ],
+                "/Static/css/style.css": [
+                    "Aggiunti stili per la nuova descrizione in Home;",
+                    "Modificati stili per portare a sinistra i titoli nella schermata home;"
+                ],
+                "/Static/css/media.css": [
+                    "Aggiunta sezione per modificare più stili da 0 ad una certa grandezza;",
+                    "Modificati stili per /about in modo che, fino a 900px di grandezza, sia in colonna e non abbia l'overflow;"
+                ],
+                "/Static/javascript/scripts.js": "Modificata funzione per inserire l'header (impedita la creazione per il bottone Generic)."
+            }
+        },
+        "tAggiunte": null
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,

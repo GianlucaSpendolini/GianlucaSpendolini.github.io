@@ -73,7 +73,7 @@ header {
     color: darkblue;
     font-family: verdana, geneva, sans serif;
     font-size: 16px;
-    text-align:center;
+    text-align: center;
 }
 
 /* Specifico l'altezza */
@@ -116,6 +116,9 @@ ul.contatti li {
     border: 1px dotted lightcoral;
     margin: 20px;
     padding: 10px;
+}
+.sub-title {
+    text-align: left;
 }
 #wishes {
     display: none;
