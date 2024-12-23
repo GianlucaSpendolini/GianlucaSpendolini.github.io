@@ -287,9 +287,9 @@ function what_page(page_path, points_path) {
             header_title.innerHTML = 'Home';
 
             // Creo eventuali contenuti dei meta-tag
-            const contenuto_m_tag = 'Sito web personale di Gianluca Spendolini, contenente informazioni su progetti, utilità e altro.';
+            let contenuto_m_tag = 'Sito web personale di Gianluca Spendolini, contenente informazioni su progetti, utilità e altro.';
             // Creo lista meta-tag
-            const m_tags = `<meta name="description" content="${contenuto_m_tag}" />`;
+            let m_tags = `<meta name="description" content="${contenuto_m_tag}" />`;
             // Inserisco i meta tag
             insert_in_head(m_tags);
 
@@ -570,10 +570,14 @@ function insert_my_json(file_description, points) {
 
 // Funzione per inserire gli auguri
 function wishes_function() {
+
+    // Seleziono la parte degli auguri
     let wishes = document.getElementById('wishes');
 
+    // Prendo il mese ed il giorno per confrontarli successivamente
     let day = date.getDate();
-    let actual_day = `${day < 10 ? '0' : ''}${day}/${date.getMonth() + 1}`;
+    let month = date.getMonth() + 1;
+    let actual_day = `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}`;
 
     switch (actual_day) {
 
@@ -591,19 +595,83 @@ function wishes_function() {
                 
                 Spero che questo ${date.getFullYear()} sia un anno pieno di novità...positive ovviamente :)
             `;
+            // Mostro l'elemento
+            wishes.style.display = 'block';
+
+            break;
+
+        // San valentino
+        case '14/02':
+            // Colore
+            wishes.style.color = 'pink';
+            // Background
+            wishes.style.backgroundColor = 'black';
+            // Testo
+            wishes.innerHTML = `
+                <h3>
+                    Buon San Valentino!
+                    <br /><br />
+                    Che questo giorno possa essere per te il più romantico di sempre.
+                </h3>
+            `;
+            // Mostro l'elemento
+            wishes.style.display = 'block';
+
+            break;
+
+        // Pesce d'aprile
+        case '01/04':
+            // Colore
+            wishes.style.color = 'transparent';
+            // Testo
+            wishes.innerHTML = `
+                <h3>
+                    Buon pesce d'aprile!
+                </h3>
+            `;
+            // Mostro l'elemento
+            wishes.style.display = 'block';
+            
+            // Cambio colore se passo sopra con il mouse
+            wishes.addEventListener('mouseover', () => {
+                wishes.style.backgroundColor = 'black';
+                wishes.style.color = 'yellow';
+            });
+            // Cambio colore se tolgo il mouse
+            wishes.addEventListener('mouseout', () => {
+                wishes.style.backgroundColor = 'transparent';
+                wishes.style.color = 'transparent';
+            });
 
             break;
 
         // Pasqua
-        case '31/10':
+        case '20/04':
             // Colore
             wishes.style.color = 'green';
             // Testo
             wishes.innerHTML = `
                 <h3>
-                    Buona Pasqua...e buona scorpacciata di uova!
+                    Buona Pasqua...e buona scorpacciata di cioccolato!
                 </h3>
             `;
+            // Mostro l'elemento
+            wishes.style.display = 'block';
+
+            break;
+
+        // Giornata del lavoratore
+        case '01/05':
+            // Colore
+            wishes.style.color = 'black';
+            // Testo
+            wishes.innerHTML = `
+                <h3>
+                    Buona giornata del lavoratore...anche se non lavori!
+                </h3>
+            `;
+            // Mostro l'elemento
+            wishes.style.display = 'block';
 
             break;
 
@@ -617,6 +685,8 @@ function wishes_function() {
                     Buon Halloween...che sia questo il più spaventoso di sempre!
                 </h3>
             `;
+            // Mostro l'elemento
+            wishes.style.display = 'block';
 
             break;
 
@@ -630,6 +700,8 @@ function wishes_function() {
                     Tantissimi auguri di buon Natale!
                 </h3>
             `;
+            // Mostro l'elemento
+            wishes.style.display = 'block';
 
             break;
 

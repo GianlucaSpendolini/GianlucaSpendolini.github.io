@@ -115,6 +115,7 @@ ul.contatti li {
 #page-description, #wishes {
     border: 1px dotted lightcoral;
     margin: 20px;
+    padding: 10px;
 }
 #wishes {
     display: none;
@@ -123,7 +124,7 @@ ul.contatti li {
 
 
 /*
-    PAGINA PER INFO PERSONALI
+    PAGINA PER INFO PERSONALI (ABOUT)
 */
 
 /* Decorazione per i link delle descrizioni */

@@ -45,7 +45,8 @@
         padding-inline-start: 0;
     }
 
-    /* IMMAGINI */
+
+    /* GENERALE - IMMAGINI */
 
     footer li.link img {
         height: auto;
@@ -74,4 +75,33 @@
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
     
     /* GENERALE */
+}
+
+
+/* PER NON RIPETERE LE STESSE COSE PER TROPPE MEDIA QUERY */
+
+@media screen and (max-width: 900px) {
+    
+    /* 
+        SEZIONE ABOUT
+    */
+    main#descrizione {
+        flex-direction: column;
+        min-height: max-content;
+    }
+    /* Gestione della colonna aside */
+    main#descrizione aside#contatti {
+        min-height: max-content;
+        min-width: 100%;
+    }
+    /* Gestione delle descrizioni */
+    main#descrizione div#parte-descrittiva {
+        align-content: center;
+        min-height: max-content;
+        min-width: 100%;
+    }
+    /* Tolgo lo spessore del divisorio */
+    main#descrizione hr {
+        display: none;
+    }
 }
