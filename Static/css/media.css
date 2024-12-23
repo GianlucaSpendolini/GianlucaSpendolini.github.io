@@ -80,6 +80,20 @@
 
 /* PER NON RIPETERE LE STESSE COSE PER TROPPE MEDIA QUERY */
 
+
+@media screen and (max-width: 768px) {
+
+    /*
+        SEZIONE HOME
+    */
+    /* Riadatto la lista su una colonna */
+    #page-description .no-points-list {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
+
+
 @media screen and (max-width: 900px) {
 
     /*

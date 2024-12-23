@@ -9,6 +9,12 @@
     text-decoration: none;
 }
 
+/* Togliere la lista puntata dall'ul */
+.no-points-list {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
 /* Nav-bar dell'header */
 #nav-bar nav {
     justify-content: space-between;
@@ -117,8 +123,17 @@ ul.contatti li {
     margin: 20px;
     padding: 10px;
 }
-.sub-title {
-    text-align: left;
+#page-description {
+    text-align: center;
+}
+/* Adatto la lista su una riga (dando un massimo per la lunghezza) */
+#page-description div:has(.no-points-list) {
+    justify-content: center;
+}
+#page-description .no-points-list {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 750px;
 }
 #wishes {
     display: none;
@@ -139,11 +154,6 @@ ul.contatti li {
 
 aside {
     padding: 10px;
-}
-
-aside #contatti-cv ul {
-    list-style-type: none;
-    padding-inline-start: 0;
 }
 
 main#descrizione {

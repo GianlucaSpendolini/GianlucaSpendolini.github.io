@@ -657,9 +657,11 @@
                     "Cambiata descrizione generale della pagina;",
                     "Aggiunta sezione per l'inserimento degli auguri personalizzati;"
                 ],
+                "about.html": "Aggiunta classe 'no-points-list' all'ul;",
                 "/Static/css/style.css": [
                     "Aggiunti stili per la nuova descrizione in Home;",
-                    "Modificati stili per portare a sinistra i titoli nella schermata home;"
+                    "Modificati stili per portare a sinistra i titoli nella schermata home;",
+                    "Aggiunta classe per togliere la lista puntata dagli elenchi ul"
                 ],
                 "/Static/css/media.css": [
                     "Aggiunta sezione per modificare più stili da 0 ad una certa grandezza;",
