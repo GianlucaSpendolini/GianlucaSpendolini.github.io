@@ -69,7 +69,7 @@ header {
 }
 
 /* Titolo in grassetto nell'header del body */
-h1.title {
+.title {
     color: darkblue;
     font-family: verdana, geneva, sans serif;
     font-size: 16px;
@@ -105,6 +105,20 @@ ul.contatti {
 
 ul.contatti li {
     display: inline;
+}
+
+
+/*
+    HOME
+*/
+
+#page-description, #wishes {
+    border: 1px dotted lightcoral;
+    margin: 20px;
+}
+#wishes {
+    display: none;
+    text-align: center;
 }
 
 

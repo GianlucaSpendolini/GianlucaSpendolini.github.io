@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `${points}about`,
         `${points}projects/`,
         `${points}utilities/`,
-        `${points}generic/`
+        // `${points}generic/`
     ];
 
 
@@ -94,7 +94,7 @@ function create_header(links_list) {
         'Info',
         'Progetti',
         'Utili',
-        'Altro'
+        // 'Altro'
     ];
 
     // Aggiungo header solo se non sono in /generic/
@@ -154,7 +154,7 @@ function create_footer(points_path, links_list) {
 
     // Elenco delle icone (section sx)
     var links_4_icons = [
-        'mailto:alpagi01@gmail.com',
+        'mailto:gianluca.spendolini.01@gmail.com',
         'https://linkedin.com/in/gianluca-spendolini',
         'https://github.com/GianlucaSpendolini',
         'https://telegram.me/Gianlusp01'
@@ -259,7 +259,7 @@ function what_page(page_path, points_path) {
     var title = document.querySelector('title');
 
     // Seleziono il tag 'header'
-    var header_title = document.querySelector('h1.title');
+    var header_title = document.querySelector('.title');
 
     switch (page_path) {
 
@@ -293,6 +293,9 @@ function what_page(page_path, points_path) {
             // Inserisco i meta tag
             insert_in_head(m_tags);
 
+            // Aggiungo gli auguri
+            wishes_function();
+
             break;
 
         // About
@@ -304,11 +307,8 @@ function what_page(page_path, points_path) {
             // Header title
             header_title.innerHTML = 'About me';
 
-            // Prendo la classe Date per assegnarla da una variabile
-            const date = new Date();
-
             // Calcolo la mia eta'
-            var my_age = date.getFullYear() - 2001;
+            let my_age = date.getFullYear() - 2001;
 
             // Se e' prima del mio compleanno -> vado in dietro di 1 anno
             if (date.getDate() < 11 || (date.getMonth() + 1) < 9) {
@@ -429,7 +429,7 @@ function what_page(page_path, points_path) {
 }
 
 
-// Funzione per 
+// Funzione per inserire dei contenuti dei miei file JSON in una determinata sezione
 function insert_my_json(file_description, points) {
 
     switch (file_description) {
@@ -563,6 +563,80 @@ function insert_my_json(file_description, points) {
 
         default:
             // Non faccio nulla
+            break;
+    }
+}
+
+
+// Funzione per inserire gli auguri
+function wishes_function() {
+    let wishes = document.getElementById('wishes');
+
+    let day = date.getDate();
+    let actual_day = `${day < 10 ? '0' : ''}${day}/${date.getMonth() + 1}`;
+
+    switch (actual_day) {
+
+        // Capodanno
+        case '01/01':
+            // Colore
+            wishes.style.color = 'black';
+            // Testo
+            wishes.innerHTML = `
+                <h3>
+                    Tanti auguri per questo nuovo anno!
+                </h3>
+                    
+                <br />
+                
+                Spero che questo ${date.getFullYear()} sia un anno pieno di novità...positive ovviamente :)
+            `;
+
+            break;
+
+        // Pasqua
+        case '31/10':
+            // Colore
+            wishes.style.color = 'green';
+            // Testo
+            wishes.innerHTML = `
+                <h3>
+                    Buona Pasqua...e buona scorpacciata di uova!
+                </h3>
+            `;
+
+            break;
+
+        // Halloween
+        case '31/10':
+            // Colore
+            wishes.style.color = 'orange';
+            // Testo
+            wishes.innerHTML = `
+                <h3>
+                    Buon Halloween...che sia questo il più spaventoso di sempre!
+                </h3>
+            `;
+
+            break;
+
+        // Natale
+        case '25/12':
+            // Colore
+            wishes.style.color = 'red';
+            // Testo
+            wishes.innerHTML = `
+                <h3>
+                    Tantissimi auguri di buon Natale!
+                </h3>
+            `;
+
+            break;
+
+        // Default -> elimino il div
+        default:
+            wishes.remove();
+
             break;
     }
 }

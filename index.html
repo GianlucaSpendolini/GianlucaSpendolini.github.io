@@ -18,38 +18,62 @@
 
     <main>
 
-        <div style="text-align: center;">
+        <div id="page-description">
 
-            <h2>Questa è una descrizione temporanea per permettere di navigare un minimo il sito</h2>
+            <h2 class="title">Benvenuto!</h2>
+            
+            <p>
+                Questo sito nasce con l'idea di allenarsi con i linguaggi HTML, JavaScript e CSS.
+            </p>
+            
+            <p>
+                Sarà suddiviso in più sezioni, ognuna delle quali conterrà una piccola legenda utile a trovare la sezione di proprio interesse (proprio come questa):
+                <ul>
+                    <li>
+                        <a href="#info">Informazioni personali</a>
+                    </li>
+                    <li>
+                        <a href="#progetti">Progetti</a>
+                    </li>
+                    <li>
+                        <a href="#utili">Cose utili</a>
+                    </li>
+                    <li>
+                        <a href="#altro">Altro</a>
+                    </li>
+                </ul>
+            </p>
 
-            Per allenamento sto provando a creare questo piccolo sito web statico, quindi al momento non ci sono molti contenuti.
+            <!-- INFO -->
+            <section name="info">
+                Contiene le mie informazioni personali. 
 
-            <br /><br />
+                In questa sezione è possibile trovare una breve descrizione della pagina prima della legenda.
 
-            <!-- other/generico -->
-            Prima di aggiungerle al sito vero e proprio, ho creato una
-            <a href="/generic/">pagina</a> in cui faccio diverse prove.
+                Oltre a ciò, si può trovare una mia breve presentazione, un elenco di riferimenti (CV, LinkedIn, etc) ed una descrizione del mio percorso formativo e lavorativo.
+            </section>
 
-            <br /><br />
+            <!-- PROGETTI -->
+            <section name="progetti">
+                Contiene le descrizioni delle sezioni che contengono i diversi progetti che ho fatto fino ad ora.
+            </section>
 
-            <!-- changes & utilities -->
-            Ci sara' una <a href="./changes/">sezione</a> dedicata alle modifiche in una tabella, (cosi' da avere un
-            resoconto di tutto cio' che viene fatto per questo piccolo sito) e <a href="./utilities/">una</a> che conduce alla
-            sezione di cose che possono essere "utili" per me e altri.
-
-            <br /><br />
-
-            <!-- projects -->
-            Inoltre, si possono trovare i link ai miei progetti al seguente <a href="./projects/">link</a>.
+            <!-- UTILI -->
+            <section name="utili">
+                Contiene...niente, per ora non contiene nulla.
+            </section>
+            
+            <!-- ALTRO -->
+            <section name="altro">
+                Da quì è possibile proseguire in una parte del sito che può contenere anche cose non create da me...al momento questa sezione è nascosta poichè vuota.
+            </section>
         </div>
 
         <!-- lux inter mess continum versus cielis - cit. Eliss -->
 
-        <div style="text-align:center">
-            <!-- about -->
-            Per le presentazioni, potete andare alla <a href="./about">seguente pagina</a> nella quale inseriro' una
-            presentazione di me e alcuni contatti.
-        </div>
+        <!-- Sezione per gli auguri -->
+        <div id="wishes"></div>
+
     </main>
 
     <hr />
