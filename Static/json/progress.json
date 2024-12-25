@@ -1,0 +1,20 @@
+{
+    "CS50 courses": {
+        "C": 11.9,
+        "CSS": 2.8,
+        "HTML": 17.9,
+        "JavaScript": 8.8,
+        "Makefile": 0.1,
+        "Python": 58.5
+    },
+    
+    "GianlucaSpendolini.github.io": {
+        "CSS": 9.8,
+        "HTML": 41.4,
+        "JavaScript": 48.8
+    },
+
+    "CashCommBot": {
+        "Python": 100.0
+    }
+}

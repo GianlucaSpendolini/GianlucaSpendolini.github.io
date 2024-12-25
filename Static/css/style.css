@@ -2,6 +2,13 @@
     PARTI COMUNI A PIU' PAGINE
 */
 
+.break-line {
+    border-style: dashed;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    max-width: 50%;
+}
+
 /* Link per tornare indietro di 1+ pagine */
 .movement_into_pages {
     color: blue;
@@ -118,17 +125,22 @@ ul.contatti li {
     HOME
 */
 
-#page-description, #wishes {
+#page-description {
     border: 1px dotted lightcoral;
+    text-align: center;
+}
+#page-description, #wishes {
     margin: 20px;
     padding: 10px;
-}
-#page-description {
-    text-align: center;
 }
 /* Adatto la lista su una riga (dando un massimo per la lunghezza) */
 #page-description div:has(.no-points-list) {
     justify-content: center;
+}
+#page-description .break-line {
+    border-color: lightcoral;
+    margin-bottom: 50px;
+    margin-top: 25px;
 }
 #page-description .no-points-list {
     display: flex;
@@ -136,6 +148,7 @@ ul.contatti li {
     max-width: 750px;
 }
 #wishes {
+    border: 1px dashed lightcoral;
     display: none;
     text-align: center;
 }
@@ -184,6 +197,11 @@ main#descrizione hr {
     border: solid;
     margin: 0 2.5% 0 2.5%;
 }
+
+
+/*
+    PROGETTI
+*/
 
 
 /*
