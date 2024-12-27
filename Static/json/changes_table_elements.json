@@ -667,7 +667,7 @@
                     "Modificati stili per /about in modo che, fino a 900px di grandezza, sia in colonna e non abbia l'overflow;"
                 ],
                 "/Static/javascript/scripts.js": "Modificata funzione per inserire l'header (impedita la creazione per il bottone Generic);",
-                "README.md": "Nuova versione (0.17.3)."
+                "README.md": "Nuova versione (0.18.0)."
             }
         },
         "tAggiunte": null
@@ -686,7 +686,7 @@
                     "Aggiunta break-line per separare legenda da elenco e da archivio finale;",
                     "Sistemate descrizioni delle varie sezioni;"
                 ],
-                "README.md": "Nuova versione (0.17.4)."
+                "README.md": "Nuova versione (0.18.1)."
             }
         },
         "tAggiunte": "Capire dove e creare tag HTML per visualizzazione progressi sottoforma di barre progresso (usando JavaScript per estrazione, elaborazione ed inserimento)."
@@ -696,7 +696,6 @@
         "tData": "26/12/2024 & 27/12/2024",
         "tDescrizione": {
             "Aggiunta": {
-                "/Static/css/media.css": "Aggiunta media query per gestire header quando schermo < 320px;",
                 "/Static/javascript/scripts.js": "Funzione per gestione tag details in Home;",
                 "index.html": "Aggiunti i tag details (sostituiscono lista di tag p per le sezioni)."
             },
@@ -705,9 +704,12 @@
                     "Aggiunta classe per gestire la lista di details;",
                     "Tolta altezza generale di header e footer;"
                 ],
-                "/Static/css/media.css": "Modificata altezza massima di header e footer solo in monitor > 481px;",
+                "/Static/css/media.css": [
+                    "Aggiunta media query per gestire header quando schermo < 320px;",
+                    "Modificata altezza massima di header e footer solo in monitor > 481px;"
+                ],
                 "index.html": "Tolto l'elenco di tag p per le descrizioni ed aggiunti tag details;",
-                "README.md": "Nuova versione (0.17.5)."
+                "README.md": "Nuova versione (0.19.0)."
             }
         },
         "tAggiunte": null

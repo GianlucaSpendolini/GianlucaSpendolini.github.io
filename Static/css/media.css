@@ -65,14 +65,11 @@
 @media screen and (min-width: 481px) and (max-width: 768px) {
     
     /* GENERALE */
-    header, footer {
-        max-height: 30vh;
-    }
 }
 
 
 /* SCHERMI PICCOLI/LAPTOP */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     
     /* GENERALE */
     header, footer {
