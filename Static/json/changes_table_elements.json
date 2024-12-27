@@ -689,7 +689,7 @@
                 ]
             }
         },
-        "tAggiunte": "Capire dove e creare tag HTML per visualizzazione progressi sottoforma di barre progresso."
+        "tAggiunte": "Capire dove e creare tag HTML per visualizzazione progressi sottoforma di barre progresso (usando JavaScript per estrazione, elaborazione ed inserimento)."
     },
 
     {
