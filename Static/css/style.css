@@ -9,6 +9,21 @@
     max-width: 50%;
 }
 
+/* Container per i tag details */
+.details-container {
+    display: flex; 
+    justify-content: space-evenly;
+}
+.details-container details {
+    color: blue;
+    flex: 1;
+    margin: 0 10px;
+}
+.details-container details > summary:first-of-type {
+    list-style: none;
+
+}
+
 /* Link per tornare indietro di 1+ pagine */
 .movement_into_pages {
     color: blue;
@@ -22,9 +37,17 @@
     padding-inline-start: 0;
 }
 
+/* Titolo in grassetto nell'header del body */
+.title {
+    color: darkblue;
+    font-family: verdana, geneva, sans serif;
+    font-size: 16px;
+    text-align: center;
+}
+
 /* Nav-bar dell'header */
 #nav-bar nav {
-    justify-content: space-between;
+    justify-content: space-evenly;
     max-width: 750px;
     min-width: 300px;
     /*padding-left: 100px;
@@ -81,18 +104,10 @@ header {
     justify-content: center;
 }
 
-/* Titolo in grassetto nell'header del body */
-.title {
-    color: darkblue;
-    font-family: verdana, geneva, sans serif;
-    font-size: 16px;
-    text-align: center;
-}
-
 /* Specifico l'altezza */
-header, footer {
+/* header, footer {
     max-height: 25vh;
-}
+} */
 
 header ul, header nav ul {
     padding: 0;
@@ -133,6 +148,10 @@ ul.contatti li {
     margin: 20px;
     padding: 10px;
 }
+/* Aggiungo un po' di spazio sotto alla lista dei dettagli */
+#page-description > div:has(.details-container) {
+    margin-bottom: 30px;
+}
 /* Adatto la lista su una riga (dando un massimo per la lunghezza) */
 #page-description div:has(.no-points-list) {
     justify-content: center;
@@ -141,6 +160,11 @@ ul.contatti li {
     border-color: lightcoral;
     margin-bottom: 50px;
     margin-top: 25px;
+}
+/* Regolo la larghezza massima e minima che può avere il container dei dettagli */
+#page-description > div > .details-container {
+    max-width: 750px;
+    /* min-width: 300px; */
 }
 #page-description .no-points-list {
     display: flex;

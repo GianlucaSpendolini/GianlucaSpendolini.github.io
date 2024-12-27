@@ -12,6 +12,10 @@
     
     /* GENERALE */
 
+    .details-container {
+        flex-direction: column;
+    }
+
     #nav-bar button {
         max-height: auto;
         max-width: auto;
@@ -31,7 +35,7 @@
         padding: 0 10px 0 10px;
     }
 
-    header h1.title {
+    header .title {
         font-size: 1.5em;
     }
 
@@ -61,6 +65,9 @@
 @media screen and (min-width: 481px) and (max-width: 768px) {
     
     /* GENERALE */
+    /* header, footer {
+        max-height: 25vh;
+    } */
 }
 
 
@@ -79,6 +86,48 @@
 
 
 /* PER NON RIPETERE LE STESSE COSE PER TROPPE MEDIA QUERY */
+
+
+@media screen and (max-width: 319px) {
+
+    /*
+        GENERALE
+    */
+    .details-container {
+        flex-direction: column;
+    }
+
+    #nav-bar {
+        max-width: 30%;
+    }
+    #nav-bar button {
+        margin: 5px 0px;
+        width: 100%;
+    }
+    #nav-bar nav:has(button) {
+        flex-direction: column;
+        min-width: 25%;
+    }
+
+    /* footer {
+        flex-direction: row;
+    }
+    footer section {
+        flex-direction: column;
+    } */
+
+    header {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+    header br {
+        display: none;
+    }
+    header h1 {
+        max-width: 30%;
+    }
+}
 
 
 @media screen and (max-width: 768px) {
