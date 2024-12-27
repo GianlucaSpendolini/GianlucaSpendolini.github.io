@@ -652,7 +652,6 @@
                 "/Static/documents/cv/": "Aggiunto CV in versione inglese ( - En)."
             },
             "Aggiornamento": {
-                "README.md": "Nuova versione (0.17.3);",
                 "index.html": [
                     "Cambiata descrizione generale della pagina;",
                     "Aggiunta sezione per l'inserimento degli auguri personalizzati;"
@@ -667,7 +666,8 @@
                     "Aggiunta sezione per modificare più stili da 0 ad una certa grandezza;",
                     "Modificati stili per /about in modo che, fino a 900px di grandezza, sia in colonna e non abbia l'overflow;"
                 ],
-                "/Static/javascript/scripts.js": "Modificata funzione per inserire l'header (impedita la creazione per il bottone Generic)."
+                "/Static/javascript/scripts.js": "Modificata funzione per inserire l'header (impedita la creazione per il bottone Generic);",
+                "README.md": "Nuova versione (0.17.3)."
             }
         },
         "tAggiunte": null
@@ -680,13 +680,13 @@
                 "/Static/json/progress.json": "File per tenere traccia delle % dei progressi nel tempo (ora per linguaggi usati nei progetti)."
             },
             "Aggiornamento": {
-                "README.md": "Nuova versione (0.17.4);",
                 "index.html": "Maggiore descrizione per le sezioni (soprattutto /projects/);",
                 "/projects/": [
                     "Cambio struttura della descrizione;",
                     "Aggiunta break-line per separare legenda da elenco e da archivio finale;",
-                    "Sistemate descrizioni delle varie sezioni."
-                ]
+                    "Sistemate descrizioni delle varie sezioni;"
+                ],
+                "README.md": "Nuova versione (0.17.4)."
             }
         },
         "tAggiunte": "Capire dove e creare tag HTML per visualizzazione progressi sottoforma di barre progresso (usando JavaScript per estrazione, elaborazione ed inserimento)."
@@ -700,13 +700,13 @@
                 "/Static/css/media.css": "Aggiunta media query per gestire header quando schermo < 320px."
             },
             "Aggiornamento": {
-                "README.md": "Nuova versione (0.17.5);",
                 "/Static/css/style.css": [
                     "Aggiunta classe per gestire la lista di details;",
                     "Tolta altezza generale di header e footer;"
                 ],
                 "/Static/css/media.css": "Modificata altezza massima di header e footer solo in monitor > 481px;",
-                "index.html": "Tolto l'elenco di tag p per le descrizioni ed aggiunti tag details;"
+                "index.html": "Tolto l'elenco di tag p per le descrizioni ed aggiunti tag details;",
+                "README.md": "Nuova versione (0.17.5)."
             }
         },
         "tAggiunte": null
