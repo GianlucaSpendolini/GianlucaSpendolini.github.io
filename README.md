@@ -1,6 +1,6 @@
 # GianlucaSpendolini.github.io
 
-### Actual version: 0.17.3
+### Actual version: 0.19.0
 
 ### Languages
 - [English](#english)
