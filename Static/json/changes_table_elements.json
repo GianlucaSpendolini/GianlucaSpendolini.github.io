@@ -696,8 +696,9 @@
         "tData": "26/12/2024 & 27/12/2024",
         "tDescrizione": {
             "Aggiunta": {
+                "/Static/css/media.css": "Aggiunta media query per gestire header quando schermo < 320px;",
                 "/Static/javascript/scripts.js": "Funzione per gestione tag details in Home;",
-                "/Static/css/media.css": "Aggiunta media query per gestire header quando schermo < 320px."
+                "index.html": "Aggiunti i tag details (sostituiscono lista di tag p per le sezioni)."
             },
             "Aggiornamento": {
                 "/Static/css/style.css": [
