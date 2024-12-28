@@ -716,6 +716,23 @@
     },
 
     {
+        "tData": "28/12/2024",
+        "tDescrizione": {
+            "Aggiunta": {
+                "about.html": [
+                    "Sezione per la descrizione dei vari corsi che ho fatto;",
+                    "Sezione per la visione dei vari linguaggi conosciuti e delle loro percentuali rispetto al totale."
+                ]
+            },
+            "Aggiornamento": null
+        },
+        "tAggiunte": [
+            "Aggiungere una descrizione generica e i vari corsi che ho frequentato (con breve descrizione per ognuno);",
+            "Aggiungere gli elementi HTML per visualizzare, tramite barra progresso e JavaScript per l'inserimento dal JSON, la percentuale del linguaggio nei vari progetti."
+        ]
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,
