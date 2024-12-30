@@ -171,7 +171,7 @@
         min-width: 100%;
     }
     /* Tolgo lo spessore del divisorio */
-    main#descrizione hr {
+    main#descrizione hr:not(.break-line) {
         display: none;
     }
 }

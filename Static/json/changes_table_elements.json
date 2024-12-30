@@ -724,12 +724,36 @@
                     "Sezione per la visione dei vari linguaggi conosciuti e delle loro percentuali rispetto al totale."
                 ]
             },
-            "Aggiornamento": null
+            "Aggiornamento": {
+                "README.md":"Nuova versione (0.20.0)."
+            }
         },
         "tAggiunte": [
             "Aggiungere una descrizione generica e i vari corsi che ho frequentato (con breve descrizione per ognuno);",
             "Aggiungere gli elementi HTML per visualizzare, tramite barra progresso e JavaScript per l'inserimento dal JSON, la percentuale del linguaggio nei vari progetti."
         ]
+    },
+
+    {
+        "tData": "30/12/2024",
+        "tDescrizione": {
+            "Aggiunta": {
+                "about.html": [
+                    "Aggiunta di tag hr per inserire dei separatori (classe break-line) tra le descrizioni maggiori (percorsi - corsi - linguaggi);",
+                    "Aggiunti i vari corsi di CS50 che ho frequentato;",
+                    "Inseriti i vari linguaggi in tag 'details' e i tag 'meter' per segnalarne la % (come voglio vengano rappresentati)."
+                ]
+            },
+            "Aggiornamento": {
+                "about.html": [
+                    "Continuata descrizione dei corsi svolti;"
+                ],
+                "/Static/css/media.css": "Modificato la selezione del tag hr per mettere il display none (ora è più specifica usando ':not()');",
+                "/Static/css/style.css": "Modificata la selezione del tag hr in /about per dare le caratteristiche specifiche (ora è più specifica usando ':not()');",
+                "README.md": "Nuova versione (0.20.1)"
+            }
+        },
+        "tAggiunte": "Fa fare la logica per inserimento automatico con JavaScript dei vari linguaggi nei tag 'details' in modo da non ripetere ma aggiornare solo il file 'progress'."
     },
 
     {

@@ -217,7 +217,7 @@ main#descrizione div#parte-descrittiva {
 }
 
 /* Rendo spesso il divisorio*/
-main#descrizione hr {
+main#descrizione hr:not(.break-line) {
     border: solid;
     margin: 0 2.5% 0 2.5%;
 }
@@ -235,3 +235,13 @@ main#descrizione hr {
 /*nav button {
     margin: 0px 10px 0px 10px;
 }*/
+
+
+/*
+    CHANGES TABLE
+*/
+
+/* .tData {
+    display: flex;
+    flex-direction: column;
+} */

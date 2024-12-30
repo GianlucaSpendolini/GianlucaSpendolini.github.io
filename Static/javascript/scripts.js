@@ -310,16 +310,22 @@ function what_page(page_path, points_path) {
             // Header title
             header_title.innerHTML = 'About me';
 
+            /*
+                Inserimento della mia età
+            */
             // Calcolo la mia eta'
             let my_age = date.getFullYear() - 2001;
-
             // Se e' prima del mio compleanno -> vado in dietro di 1 anno
             if (date.getDate() < 11 || (date.getMonth() + 1) < 9) {
                 my_age -= 1;
             }
-
             // Inserisco il mio anno nella presentazione
             document.querySelector('#my-age').innerHTML = my_age;
+
+            /*
+                Inserisco i linguaggi e le loro %
+            */
+            insert_my_json('about', points_path);
 
             break;
 
@@ -437,7 +443,18 @@ function insert_my_json(file_description, points) {
 
     switch (file_description) {
 
-        // In caso voglio inserire i dati nella tabella delle modifiche
+        // /about
+        case 'about':
+            fetch(`${points}Static/json/progress.json`)
+            .then(response => response.json())
+            .then(data => {
+                //
+                console.log("prova:, ", data);
+            });
+
+            break;
+
+        // /changes/changes_table (in caso voglio inserire i dati nella tabella delle modifiche)
         case 'changes table':
             fetch(`${points}Static/json/changes_table_elements.json`)
             .then(response => response.json())
