@@ -210,6 +210,7 @@ export function insert_my_json(file_description, points) {
 
                     // Creo il dettaglio 
                     let detail = document.createElement('details');
+                    detail.classList.add('no-points-list');
 
                     // Creo il sommario
                     let summary = document.createElement('summary');
