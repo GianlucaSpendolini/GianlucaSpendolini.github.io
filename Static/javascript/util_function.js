@@ -290,7 +290,7 @@ export function start_end_table() {
 
     // Inserisco gli elementi
     main.insertBefore(to_end, table);
-    main.insertBefore(to_end, table.nextElementSibling);
+    main.insertBefore(to_start, table.nextElementSibling);
 }
 
 
