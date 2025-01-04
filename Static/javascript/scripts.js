@@ -321,7 +321,7 @@ function what_page(points_path) {
                 E faccio in modo che, aprendo un tag details, tutti gli altri si chiudono
             */
             insert_my_json('about', points_path);
-            show_details(document.querySelector('div:has(details)'));
+            show_details(document.querySelector('div > div:has(details)'));
 
             break;
 
