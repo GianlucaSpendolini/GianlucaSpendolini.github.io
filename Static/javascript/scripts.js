@@ -288,7 +288,7 @@ function what_page(points_path) {
             insert_in_head(m_tags);
 
             // Sistemo i details per le descrizioni
-            show_details(document.querySelector('div > div:has(details)'));
+            show_details(document.querySelector('div > div:has(details)'), true);
 
             // Aggiungo gli auguri
             wishes_function(date);
@@ -318,8 +318,10 @@ function what_page(points_path) {
 
             /*
                 Inserisco i linguaggi e le loro %
+                E faccio in modo che, aprendo un tag details, tutti gli altri si chiudono
             */
             insert_my_json('about', points_path);
+            show_details(document.querySelector('div:has(details)'));
 
             break;
 

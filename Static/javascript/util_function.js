@@ -486,47 +486,54 @@ export function points_number(path) {
 
 
 // Funzione per mostrare la lista di dettagli e far apparire il contenuto in un div sottostante
-export function show_details(container) {
+export function show_details(container, to_see_in_another_block=false) {
 
     // Itero ogni dettaglio
     container.querySelectorAll('.details-container details').forEach((detail) => {
         // Aggiungo l'evento se clicco sopra
         detail.addEventListener('click', event => {
-            // Blocco l'apertura del tag
-            event.preventDefault();
 
-            // Itero nuovamente sui dettagli
-            // container.querySelectorAll('.details-container details').forEach((otherDetail) => {
-            //     // Chiudo ogni dettaglio diverso da quello cliccato
-            //     if (otherDetail !== detail) {
-            //         // Rimuovo l'attributo
-            //         otherDetail.removeAttribute('open');
-            //     }
-            // });
+            if (to_see_in_another_block) {
+                // Blocco l'apertura del tag
+                event.preventDefault();
 
-            if (container.lastElementChild.tagName !== 'DIV') {
-                // Tolgo l'ultimo elemento (quello vecchio)
-                container.removeChild(container.lastElementChild);
+                if (container.lastElementChild.tagName !== 'DIV') {
+                    // Tolgo l'ultimo elemento (quello vecchio)
+                    container.removeChild(container.lastElementChild);
+                }
+    
+                // Creo un elemento da inserire in coda al contenitore
+                let p = document.createElement('p');
+                p.innerHTML = detail.querySelector('p').innerHTML;
+                let p_style = p.style;
+                // p_style.marginTop = '20px';
+                // p_style.borderTop = '1px solid #ccc';
+                
+                // Inserisco il contenuto nel contenitore
+                container.appendChild(p);
             }
 
-            // Creo un elemento da inserire in coda al contenitore
-            let p = document.createElement('p');
-            p.innerHTML = detail.querySelector('p').innerHTML;
-            let p_style = p.style;
-            // p_style.marginTop = '20px';
-            // p_style.borderTop = '1px solid #ccc';
-            
-            // Inserisco il contenuto nel contenitore
-            container.appendChild(p);
-        });
-
-        // Aggiungo l'evento se clicco da altre parti
-        detail.addEventListener('mouseout', () => {
-            if (container.lastElementChild.tagName !== 'DIV') {
-                // Tolgo l'ultimo elemento (quello vecchio)
-                container.removeChild(container.lastElementChild);
+            else {
+                // Itero nuovamente sui dettagli
+                container.querySelectorAll('.details-container details').forEach((otherDetail) => {
+                    // Chiudo ogni dettaglio diverso da quello cliccato
+                    if (otherDetail !== detail) {
+                        // Rimuovo l'attributo
+                        otherDetail.removeAttribute('open');
+                    }
+                });
             }
         });
+
+        if (to_see_in_another_block) {
+            // Aggiungo l'evento se clicco da altre parti
+            detail.addEventListener('mouseout', () => {
+                if (container.lastElementChild.tagName !== 'DIV') {
+                    // Tolgo l'ultimo elemento (quello vecchio)
+                    container.removeChild(container.lastElementChild);
+                }
+            });
+        }
     });
 }
 
