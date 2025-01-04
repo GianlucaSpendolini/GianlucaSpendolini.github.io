@@ -160,7 +160,7 @@
         min-height: max-content;
     }
     /* Gestione della colonna aside */
-    main#descrizione aside#contatti {
+    main#descrizione aside#contatti, #introduzione, #presentazione, #contatti-cv {
         min-height: max-content;
         min-width: 100%;
     }
