@@ -178,7 +178,7 @@ export function insert_my_json(file_description, points) {
                 let frameworks = data['frameworks'];
 
                 // Prendo il totale della mia esperienza
-                let total_experience = projects.length * 100;
+                let total_experience = Object.keys(projects).length * 100;
 
                 //
                 console.log(
