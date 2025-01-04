@@ -180,12 +180,32 @@ export function insert_my_json(file_description, points) {
                 // Prendo il totale della mia esperienza
                 let total_experience = Object.keys(projects).length * 100;
 
+                // Creo una variabile per contenere ogni linguaggio inserito
+                let languages = {};
+
+                // Itero su ogni progetto
+                for (let [k, v] of Object.entries(projects)) {
+
+                    // Per ogni linguaggio inserito -> associo la %
+                    for (let [language, percentage] of Object.entries(v)) {
+
+                        // Se esisteva nell'oggetto -> prendo il numero e lo sommo con quello trovato ora
+                        if (Object.keys(languages).includes(language)) {
+                            languages[language] += percentage;
+                        }
+
+                        // Altrimenti aggiungo questo valore
+                        else {
+                            languages[language] = percentage;
+                        }
+
+                    }
+                }
+
                 //
                 console.log(
-                    "prova invio:, ", 
-                    projects, 
-                    frameworks,
-                    total_experience
+                    "prova invio:", 
+                    languages
                 );
             });
 
