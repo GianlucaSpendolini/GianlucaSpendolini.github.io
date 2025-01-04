@@ -10,10 +10,6 @@
 }
 
 /* Container per i tag details */
-.details-container {
-    display: flex; 
-    justify-content: space-evenly;
-}
 .details-container details {
     color: blue;
     flex: 1;
@@ -163,6 +159,8 @@ ul.contatti li {
 }
 /* Regolo la larghezza massima e minima che può avere il container dei dettagli */
 #page-description > div > .details-container {
+    display: flex; 
+    justify-content: space-evenly;
     max-width: 750px;
     /* min-width: 300px; */
 }
