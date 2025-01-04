@@ -229,11 +229,14 @@ export function insert_my_json(file_description, points) {
                     details_container.appendChild(detail);
                 }
 
+                // Aggiungo l'evento per vedere un dettaglio alla volta
+                show_details(details_container);
+
                 //
-                console.log(
-                    "prova invio:", 
-                    languages
-                );
+                // console.log(
+                //     "prova invio:", 
+                //     languages
+                // );
             });
 
             break;

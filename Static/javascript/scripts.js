@@ -317,11 +317,9 @@ function what_page(points_path) {
             document.querySelector('#my-age').innerHTML = my_age;
 
             /*
-                Inserisco i linguaggi e le loro %
-                E faccio in modo che, aprendo un tag details, tutti gli altri si chiudono
+                Inserisco i linguaggi e le loro % (faccio in modo che, aprendo un tag details, tutti gli altri si chiudono -> alla fine)
             */
             insert_my_json('about', points_path);
-            show_details(document.querySelector('div > div:has(details)'));
 
             break;
 
