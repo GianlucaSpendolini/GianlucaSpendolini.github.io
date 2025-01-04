@@ -285,13 +285,12 @@ export function start_end_table() {
     let to_start = document.createElement('div');
     to_start.style.margin = '10px 0px';
     // Creo il bottone
-    let button_to_start = `<a href="#table-start" name="table-end"><button>Vai all'inizio' della tabella</button></a>`;
+    let button_to_start = `<a href="#table-start" name="table-end"><button>Vai all'inizio della tabella</button></a>`;
     to_start.innerHTML = button_to_start;
 
     // Inserisco gli elementi
     main.insertBefore(to_end, table);
     main.insertBefore(to_end, table.nextElementSibling);
-    main.appendChild(to_start);
 }
 
 
