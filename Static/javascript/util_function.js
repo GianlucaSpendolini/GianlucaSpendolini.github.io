@@ -169,7 +169,24 @@ export function insert_my_json(file_description, points) {
             .then(response => response.json())
             .then(data => {
                 //
-                console.log("prova:, ", data);
+                // console.log("prova invio:, ", data);
+
+                // Prendo i progetti in cui ho usato i linguaggi
+                let projects = data['languages'];
+
+                // Prendo i frameworks
+                let frameworks = data['frameworks'];
+
+                // Prendo il totale della mia esperienza
+                let total_experience = projects.length * 100;
+
+                //
+                console.log(
+                    "prova invio:, ", 
+                    projects, 
+                    frameworks,
+                    total_experience
+                );
             });
 
             break;
