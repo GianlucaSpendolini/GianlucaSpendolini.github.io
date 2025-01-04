@@ -203,7 +203,7 @@ export function insert_my_json(file_description, points) {
                 }
 
                 // Prendo come riferimento il container
-                let details_container = document.getElementsByClassName('details-container');
+                let details_container = document.querySelector('.details-container');
 
                 // Itero ogni linguaggio
                 for (let [language, percentage] in languages) {
