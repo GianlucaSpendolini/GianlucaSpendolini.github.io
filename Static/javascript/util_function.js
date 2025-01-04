@@ -10,6 +10,8 @@
             - Funzione ricorsiva per inserire in autormatico gli elementi della tabella nel giusto formato
         - points_number
             - Creo un array di 'punti' per tornare sempre alla home (./../etc)
+        - start_end_table
+            - Aggiungo dei bottoni prima e dopo per andare in cima o in fondo ad una tabella
         - svg
             - Funzione per capire il mese e mettere l'SVG giusto
         - togglePasswordVisibility
@@ -261,6 +263,37 @@ export function points_number(path) {
     return a;
 
 }
+
+
+// Funzione per inserire bottoni per andare in cima o in fondo in una tabella più velocemente
+export function start_end_table() {
+
+    // Prendo il riferimento del main contenente la tabella
+    let main = document.querySelector('main');
+
+    // Prendo il riferimento della tabella
+    let table = document.querySelector('table');
+
+    // Creo il bottone ed il riferimento per andare in cima
+    let to_end = document.createElement('div');
+    to_end.style.margin = '10px 0px';
+    // Creo il bottone
+    let button_to_end = `<a href="#table-end" name="table-start"><button>Vai alla fine della tabella</button></a>`;
+    to_end.innerHTML = button_to_end;
+
+    // Creo il bottone ed il riferimento per andare in fondo
+    let to_start = document.createElement('div');
+    to_start.style.margin = '10px 0px';
+    // Creo il bottone
+    let button_to_start = `<a href="#table-start" name="table-end"><button>Vai all'inizio' della tabella</button></a>`;
+    to_start.innerHTML = button_to_start;
+
+    // Inserisco gli elementi
+    main.insertBefore(to_end, table);
+    main.insertBefore(to_end, table.nextElementSibling);
+    main.appendChild(to_start);
+}
+
 
 // Funzione per capire il mese e mettere l'SVG giusto
 export function svg(month) {

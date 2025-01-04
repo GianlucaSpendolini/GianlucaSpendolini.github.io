@@ -2,7 +2,7 @@
 
 
 // Importo funzioni da file esterni
-import { add_css_js, clickable_path, insert_in_head, json_to_element, points_number, svg } from './util_function.js';
+import { add_css_js, clickable_path, insert_in_head, json_to_element, points_number, start_end_table, svg } from './util_function.js';
 
 // Importo variabili da file esterni
 import { date, path } from './util_variable.js';
@@ -348,6 +348,9 @@ function what_page(page_path, points_path) {
 
             // Header title
             header_title.innerHTML = 'Tabella dei cambiamenti';
+
+            // Aggiungo i bottoni per andare in cima o in fondo alla tabella più velocemente
+            start_end_table();
 
             // Inserisco gli elementi della tabella in automatico
             insert_my_json('changes table', points_path);
