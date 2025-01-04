@@ -220,6 +220,8 @@ export function insert_my_json(file_description, points) {
 
                     // Creo il paragrafo per contenere il contenuto
                     let p = document.createElement('p');
+                    p.style.color = 'black';
+                    p.style.padding = '0px 10px';
                     // Se esisteva nell'oggetto -> aggiungo i frameworks per quel linguaggio
                     if (Object.keys(frameworks).includes(language)) {
                         p.appendChild(json_to_element('ul', frameworks[language]));
