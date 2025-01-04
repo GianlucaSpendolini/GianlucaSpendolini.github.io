@@ -206,7 +206,7 @@ export function insert_my_json(file_description, points) {
                 let details_container = document.querySelector('.details-container');
 
                 // Itero ogni linguaggio
-                for (let [language, percentage] in Object.entries(languages)) {
+                for (let [language, percentage] of Object.entries(languages)) {
 
                     // Creo il dettaglio 
                     let detail = document.createElement('details');
