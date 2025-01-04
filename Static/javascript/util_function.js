@@ -202,6 +202,33 @@ export function insert_my_json(file_description, points) {
                     }
                 }
 
+                // Prendo come riferimento il container
+                let details_container = document.getElementsByClassName('details-container');
+
+                // Itero ogni linguaggio
+                for (let [language, percentage] in languages) {
+
+                    // Creo il dettaglio 
+                    let detail = document.createElement('details');
+
+                    // Creo il sommario
+                    let summary = document.createElement('summary');
+                    summary.innerHTML = `
+                        <label for="${language}">${language}</label>
+                        <meter id="${language}" max="${total_experience}" min="0" value="${percentage}"></meter>
+                    `;
+
+                    // Creo il paragrafo per contenere il contenuto
+                    let p = document.createElement('p');
+
+                    // Aggiungo i figli al tag details
+                    detail.appendChild(summary);
+                    detail.appendChild(p);
+
+                    // Aggiungo il detail al container
+                    details_container.appendChild(detail);
+                }
+
                 //
                 console.log(
                     "prova invio:", 
