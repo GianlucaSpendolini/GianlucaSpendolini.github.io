@@ -2,10 +2,24 @@
 
 
 // Importo funzioni da file esterni
-import { add_css_js, clickable_path, insert_in_head, json_to_element, points_number, start_end_table, svg } from './util_function.js';
+import { 
+    add_css_js, 
+    clickable_path, 
+    insert_in_head, 
+    insert_my_json, 
+    json_to_element, 
+    points_number,
+    show_details,
+    start_end_table, 
+    svg,
+    wishes_function
+} from './util_function.js';
 
 // Importo variabili da file esterni
-import { date, path } from './util_variable.js';
+import { 
+    date, 
+    path 
+} from './util_variable.js';
 
 
 
@@ -52,32 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
     what_page(path, points);
 
     // setTimeout(() => {console.log('fine');}, 0);
+
+    
     /* ALTRE COSE DA FARE */
 
     // Cerco se voglio la lista delle pagine (per avere un minimo di percorso)
-    let movement_into_pages = document.querySelector('p.movement_into_pages');
-    if (movement_into_pages) {
-
-        // // Inserisco la frase
-        // movement_into_pages.innerHTML = '';
-
-        // Creo l'elemento per la home
-        let a = document.createElement('a');
-        a.innerText = 'Home';
-        a.href = points;
-
-        // Inserisco l'elemento per Home ed il primo separatore
-        movement_into_pages.appendChild(a);
-        movement_into_pages.append(' / ');
-        
-        // Inserisco la lista nell'apposita sezione
-        clickable_path(path).forEach(e => {
-            // Inserisco l'elemento
-            movement_into_pages.appendChild(e);
-            // Inserisco la barra spaziatrice
-            movement_into_pages.append(' / ');
-        });
-    }
+    movement_into_pages();
 });
 
 
@@ -350,7 +344,7 @@ function what_page(page_path, points_path) {
             header_title.innerHTML = 'Tabella dei cambiamenti';
 
             // Aggiungo i bottoni per andare in cima o in fondo alla tabella più velocemente
-            start_end_table();
+            start_end_table(document.querySelector('table'));
 
             // Inserisco gli elementi della tabella in automatico
             insert_my_json('changes table', points_path);
@@ -441,343 +435,31 @@ function what_page(page_path, points_path) {
 }
 
 
-// Funzione per inserire dei contenuti dei miei file JSON in una determinata sezione
-function insert_my_json(file_description, points) {
+// Funzione per capire se voglio la lista delle pagine (per avere un minimo di percorso)
+function movement_into_pages() {
 
-    switch (file_description) {
+    let p = document.querySelector('p.movement_into_pages');
 
-        // /about
-        case 'about':
-            fetch(`${points}Static/json/progress.json`)
-            .then(response => response.json())
-            .then(data => {
-                //
-                console.log("prova:, ", data);
-            });
-
-            break;
-
-        // /changes/changes_table (in caso voglio inserire i dati nella tabella delle modifiche)
-        case 'changes table':
-            fetch(`${points}Static/json/changes_table_elements.json`)
-            .then(response => response.json())
-            .then(data=> {
-                // Corpo della tabella da riempire
-                const tBody = document.querySelector('tbody');
-
-                // Tolgo l'ultimo elemento dell'array (lo "scheletro" di ogni riga della tabella)
-                data.pop();
-
-                data.forEach(element => {
-
-                    // Creo la riga 
-                    const tr = document.createElement('tr');
-
-                    // Creo la casella per la data
-                    let td_data = document.createElement('td');
-                    td_data.className = 'tData';
-                    td_data.innerHTML = element.tData;
-                    tr.appendChild(td_data);
-
-                    // Creo la casella per la descrizione
-                    let td_descrizione = document.createElement('td');
-                    td_descrizione.className = 'tDescrizione';
-                    for (let [k, v] of Object.entries(element.tDescrizione)) {
-
-                        // Se non ho il valore, inserisco quella parte
-                        if (v) {
-                            // Aggiungo il "titolo" dell'elenco
-                            td_descrizione.append(k);
-            
-                            // Creo la lista di dettagli da inserire
-                            const ul = json_to_element('ul', v);
-            
-                            // Aggiungo la lista
-                            td_descrizione.appendChild(ul);
-            
-                            // Aggiungo uno spazio
-                            td_descrizione.append('\n');
-                        }
-                    }
-
-                    // Creo la casella per commenti aggiuntivi
-                    let td_aggiunte = document.createElement('td');
-                    td_aggiunte.className = 'tAggiunte';
-                    // Controllo se c'è qualcosa
-                    if (element.tAggiunte) {
-
-                        // Prendo il contenuto
-                        const tAggiunte = element.tAggiunte;
-
-                        // Controllo se è una stringa
-                        if (typeof tAggiunte === 'string') {
-                            td_aggiunte.innerHTML = tAggiunte;
-                        }
-                        // Altrimenti eseguo lo stesso procedimento usato per gli elenchi
-                        else {
-
-                            // Controllo se la componente è un array
-                            if (Array.isArray(tAggiunte)) {
-                                // Iterare su ogni componente
-                                tAggiunte.forEach(e => {
-                                    // Controllo se l'elemento è una stringa
-                                    if (typeof e === 'string'){
-                                        // Aggiungo normalmente
-                                        td_aggiunte.append(e);
-                    
-                                        // Aggiungo uno spazio
-                                        td_aggiunte.appendChild(document.createElement('br'));
-                                    }
-                                    // Altrimenti lo aggiungo mandandolo in pasto alla funzione
-                                    else {
-                                        // Itero ogni componente
-                                        for (let [k, v] of Object.entries(e)) {
+    if (p) {
+    
+        // // Inserisco la frase
+        // p.innerHTML = '';
+    
+        // Creo l'elemento per la home
+        let a = document.createElement('a');
+        a.innerText = 'Home';
+        a.href = points;
+    
+        // Inserisco l'elemento per Home ed il primo separatore
+        p.appendChild(a);
+        p.append(' / ');
         
-                                            // Aggiungo la chiave
-                                            td_aggiunte.append(k);
-        
-                                            // Aggiungo la lista che ne esce
-                                            td_aggiunte.appendChild(json_to_element('ul', v));
-                            
-                                            // Aggiungo uno spazio
-                                            td_aggiunte.append('\n');
-                                        }
-                    
-                                        // Aggiungo uno spazio
-                                        td_aggiunte.append('\n');
-                                    }
-                                });
-                            }
-                            else {
-                                // Itero ogni componente
-                                for (let [k, v] of Object.entries(tAggiunte)) {
-
-                                    // Aggiungo la chiave
-                                    td_aggiunte.append(k);
-
-                                    // Aggiungo la lista che ne esce
-                                    td_aggiunte.appendChild(json_to_element('ul', v));
-                    
-                                    // Aggiungo uno spazio
-                                    td_aggiunte.append('\n');
-                                }
-                            }
-                        }
-                    }
-                    // Altrimenti inserisco, in grassetto, che non c'è nulla
-                    else {
-                        td_aggiunte.innerHTML = '<b>Niente da aggiungere</b>';
-                    }
-
-                    // Aggiungo i dati alla riga
-                    tr.appendChild(td_data);
-                    tr.appendChild(td_descrizione);
-                    tr.appendChild(td_aggiunte);
-
-                    // Aggiungo la riga alla tabella
-                    tBody.appendChild(tr);
-                });
-            })
-            .catch(error => {
-                console.error('Errore nel caricamento del file JSON:', error)
-            });
-
-            break;
-
-        default:
-            // Non faccio nulla
-            break;
-    }
-}
-
-
-// Funzione per inserire gli auguri
-function wishes_function() {
-
-    // Seleziono la parte degli auguri
-    let wishes = document.getElementById('wishes');
-
-    // Prendo il mese ed il giorno per confrontarli successivamente
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let actual_day = `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}`;
-
-    switch (actual_day) {
-
-        // Capodanno
-        case '01/01':
-            // Colore
-            wishes.style.color = 'black';
-            // Testo
-            wishes.innerHTML = `
-                <h3>
-                    Tanti auguri per questo nuovo anno!
-                </h3>
-                    
-                <br />
-                
-                Spero che questo ${date.getFullYear()} sia un anno pieno di novità...positive ovviamente :)
-            `;
-            // Mostro l'elemento
-            wishes.style.display = 'block';
-
-            break;
-
-        // San valentino
-        case '14/02':
-            // Colore
-            wishes.style.color = 'pink';
-            // Background
-            wishes.style.backgroundColor = 'black';
-            // Testo
-            wishes.innerHTML = `
-                <h3>
-                    Buon San Valentino!
-                    <br /><br />
-                    Che questo giorno possa essere per te il più romantico di sempre.
-                </h3>
-            `;
-            // Mostro l'elemento
-            wishes.style.display = 'block';
-
-            break;
-
-        // Pesce d'aprile
-        case '01/04':
-            // Colore
-            wishes.style.color = 'transparent';
-            // Testo
-            wishes.innerHTML = `
-                <h3>
-                    Buon pesce d'aprile!
-                </h3>
-            `;
-            // Mostro l'elemento
-            wishes.style.display = 'block';
-            
-            // Cambio colore se passo sopra con il mouse
-            wishes.addEventListener('mouseover', () => {
-                wishes.style.backgroundColor = 'black';
-                wishes.style.color = 'yellow';
-            });
-            // Cambio colore se tolgo il mouse
-            wishes.addEventListener('mouseout', () => {
-                wishes.style.backgroundColor = 'transparent';
-                wishes.style.color = 'transparent';
-            });
-
-            break;
-
-        // Pasqua
-        case '20/04':
-            // Colore
-            wishes.style.color = 'green';
-            // Testo
-            wishes.innerHTML = `
-                <h3>
-                    Buona Pasqua...e buona scorpacciata di cioccolato!
-                </h3>
-            `;
-            // Mostro l'elemento
-            wishes.style.display = 'block';
-
-            break;
-
-        // Giornata del lavoratore
-        case '01/05':
-            // Colore
-            wishes.style.color = 'black';
-            // Testo
-            wishes.innerHTML = `
-                <h3>
-                    Buona giornata del lavoratore...anche se non lavori!
-                </h3>
-            `;
-            // Mostro l'elemento
-            wishes.style.display = 'block';
-
-            break;
-
-        // Halloween
-        case '31/10':
-            // Colore
-            wishes.style.color = 'orange';
-            // Testo
-            wishes.innerHTML = `
-                <h3>
-                    Buon Halloween...che sia questo il più spaventoso di sempre!
-                </h3>
-            `;
-            // Mostro l'elemento
-            wishes.style.display = 'block';
-
-            break;
-
-        // Natale
-        case '25/12':
-            // Colore
-            wishes.style.color = 'red';
-            // Testo
-            wishes.innerHTML = `
-                <h3>
-                    Tantissimi auguri di buon Natale!
-                </h3>
-            `;
-            // Mostro l'elemento
-            wishes.style.display = 'block';
-
-            break;
-
-        // Default -> elimino il div
-        default:
-            wishes.remove();
-
-            break;
-    }
-}
-
-
-// Funzione per mostrare la lista di dettagli e far apparire il contenuto in un div sottostante
-function show_details(container) {
-
-    // Itero ogni dettaglio
-    container.querySelectorAll('.details-container details').forEach((detail) => {
-        // Aggiungo l'evento se clicco sopra
-        detail.addEventListener('click', event => {
-            // Blocco l'apertura del tag
-            event.preventDefault();
-
-            // Itero nuovamente sui dettagli
-            // container.querySelectorAll('.details-container details').forEach((otherDetail) => {
-            //     // Chiudo ogni dettaglio diverso da quello cliccato
-            //     if (otherDetail !== detail) {
-            //         // Rimuovo l'attributo
-            //         otherDetail.removeAttribute('open');
-            //     }
-            // });
-
-            if (container.lastElementChild.tagName !== 'DIV') {
-                // Tolgo l'ultimo elemento (quello vecchio)
-                container.removeChild(container.lastElementChild);
-            }
-
-            // Creo un elemento da inserire in coda al contenitore
-            let p = document.createElement('p');
-            p.innerHTML = detail.querySelector('p').innerHTML;
-            let p_style = p.style;
-            // p_style.marginTop = '20px';
-            // p_style.borderTop = '1px solid #ccc';
-            
-            // Inserisco il contenuto nel contenitore
-            container.appendChild(p);
+        // Inserisco la lista nell'apposita sezione
+        clickable_path(path).forEach(e => {
+            // Inserisco l'elemento
+            p.appendChild(e);
+            // Inserisco la barra spaziatrice
+            p.append(' / ');
         });
-
-        // Aggiungo l'evento se clicco da altre parti
-        detail.addEventListener('mouseout', () => {
-            if (container.lastElementChild.tagName !== 'DIV') {
-                // Tolgo l'ultimo elemento (quello vecchio)
-                container.removeChild(container.lastElementChild);
-            }
-        });
-    });
+    }
 }
