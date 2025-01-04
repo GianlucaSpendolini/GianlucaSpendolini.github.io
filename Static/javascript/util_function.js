@@ -220,6 +220,14 @@ export function insert_my_json(file_description, points) {
 
                     // Creo il paragrafo per contenere il contenuto
                     let p = document.createElement('p');
+                    // Se esisteva nell'oggetto -> aggiungo i frameworks per quel linguaggio
+                    if (Object.keys(frameworks).includes(language)) {
+                        p.appendChild(json_to_element('ul', frameworks[language]));
+                    }
+                    // Altrimenti avviso che non ci sono frameworks per quel linguaggio
+                    else {
+                        p.innerText = 'Non sono presenti framework per questo linguaggio.';
+                    }
 
                     // Aggiungo i figli al tag details
                     detail.appendChild(summary);
