@@ -210,10 +210,10 @@ export function insert_my_json(file_description, points) {
 
                     // Creo il dettaglio 
                     let detail = document.createElement('details');
-                    detail.classList.add('no-points-list');
 
                     // Creo il sommario
                     let summary = document.createElement('summary');
+                    summary.classList.add('no-points-list');
                     summary.innerHTML = `
                         <label for="${language}">${language}</label>
                         <meter id="${language}" max="${total_experience}" min="0" value="${percentage}"></meter>
