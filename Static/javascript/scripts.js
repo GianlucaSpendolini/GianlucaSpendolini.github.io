@@ -281,7 +281,7 @@ function what_page(points_path) {
             header_title.innerHTML = 'Home';
 
             // Creo eventuali contenuti dei meta-tag
-            let contenuto_m_tag = 'Sito web personale di Gianluca Spendolini, contenente informazioni su progetti, utilità e altro.';
+            let contenuto_m_tag = 'Sito web personale di Gianluca Spendolini, utilizzato principalmente per sperimentare i linguaggi CSS, HTML e JavaScript.';
             // Creo lista meta-tag
             let m_tags = `<meta name="description" content="${contenuto_m_tag}" />`;
             // Inserisco i meta tag
@@ -291,7 +291,7 @@ function what_page(points_path) {
             show_details(document.querySelector('div > div:has(details)'));
 
             // Aggiungo gli auguri
-            wishes_function();
+            wishes_function(date);
 
             break;
 

@@ -13,7 +13,6 @@
 .details-container details {
     color: blue;
     flex: 1;
-    margin: 0 10px;
 }
 .details-container details > summary:first-of-type {
     list-style: none;
@@ -162,6 +161,9 @@ ul.contatti li {
     justify-content: space-evenly;
     max-width: 750px;
     /* min-width: 300px; */
+}
+#page-description > div > .details-container > details {
+    margin: 0 10px;
 }
 #page-description .no-points-list {
     display: flex;

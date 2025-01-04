@@ -213,7 +213,6 @@ export function insert_my_json(file_description, points) {
 
                     // Creo il sommario
                     let summary = document.createElement('summary');
-                    summary.classList.add('no-points-list');
                     summary.innerHTML = `
                         <label for="${language}">${language}</label>
                         <meter id="${language}" max="${total_experience}" min="0" value="${percentage}"></meter>
@@ -640,7 +639,7 @@ export function togglePasswordVisibility(button, svgs) {
 
 
 // Funzione per inserire gli auguri
-export function wishes_function() {
+export function wishes_function(date) {
 
     // Seleziono la parte degli auguri
     let wishes = document.getElementById('wishes');
