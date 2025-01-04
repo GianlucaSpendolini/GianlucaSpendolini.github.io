@@ -63,15 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
     add_css_js(points);
     
     // Capisco in che pagina mi trovo
-    what_page(path, points);
+    what_page(points);
 
     // setTimeout(() => {console.log('fine');}, 0);
 
-    
+
     /* ALTRE COSE DA FARE */
 
     // Cerco se voglio la lista delle pagine (per avere un minimo di percorso)
-    movement_into_pages();
+    movement_into_pages(points);
 });
 
 
@@ -247,7 +247,7 @@ function create_footer(points_path, links_list) {
 
 
 // Funzione per capire in che pagina sono e fare determinate cose
-function what_page(page_path, points_path) {
+function what_page(points_path) {
 
     // Seleziono il tag 'title'
     var title = document.querySelector('title');
@@ -255,7 +255,7 @@ function what_page(page_path, points_path) {
     // Seleziono il tag 'header'
     var header_title = document.querySelector('.title');
 
-    switch (page_path) {
+    switch (path) {
 
         // Prova
         case '/prova':
@@ -436,7 +436,7 @@ function what_page(page_path, points_path) {
 
 
 // Funzione per capire se voglio la lista delle pagine (per avere un minimo di percorso)
-function movement_into_pages() {
+function movement_into_pages(points) {
 
     let p = document.querySelector('p.movement_into_pages');
 
