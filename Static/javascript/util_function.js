@@ -280,7 +280,7 @@ export function start_end_table() {
     // Creo il bottone
     let button_to_end = `<a href="#table-end" name="table-start"><button>Vai alla fine della tabella</button></a>`;
     to_end.innerHTML = button_to_end;
-    to_end.align = 'center';
+    to_end.style.justifyContent = 'center';
 
     // Creo il bottone ed il riferimento per andare in fondo
     let to_start = document.createElement('div');
