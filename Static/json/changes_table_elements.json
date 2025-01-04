@@ -753,7 +753,7 @@
                 "README.md": "Nuova versione (0.20.1)"
             }
         },
-        "tAggiunte": "Fa fare la logica per inserimento automatico con JavaScript dei vari linguaggi nei tag 'details' in modo da non ripetere ma aggiornare solo il file 'progress'."
+        "tAggiunte": "Fare la logica per inserimento automatico con JavaScript dei vari linguaggi nei tag 'details' in modo da non ripetere ma aggiornare solo il file 'progress'."
     },
 
     {
