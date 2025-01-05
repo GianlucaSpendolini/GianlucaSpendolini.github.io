@@ -19,6 +19,7 @@ I will update the versions with the following logic:
 - Patch
     - CSS changes to existing elements;
     - HTML changes (like moving a piece of code);
+    - JavaScript changes (such as fixing a function that wasn't working properly);
     - Corrections/additions of descriptions to improve understanding.
 
 It is currently in development (in fact the versions are still at 0 for the major).
@@ -36,6 +37,7 @@ Le versioni le aggiornerò con la seguente logica:
 - Patch
     - Modifiche al CSS di elementi già presenti;
     - Modifiche HTML (come lo spostamento di una parte di codice);
+    - Modifiche JavaScript (come il sistemare una funzione che non funzionava correttamente);
     - Correzioni/aggiunte di descrizioni per migliorare la comprensione.
 
 Al momento è in fase di sviluppo (infatti le versioni sono ancora allo 0 per il major).

@@ -178,7 +178,7 @@
             "Aggiunta": null,
             "Aggiornamento": {
                 "/css/table.css": "Larghezza colonne changes_table (10-60-20)",
-                "readme.md": "Aggiornamento readme con giorni di oggi e 24/02/2024"
+                "README.md": "Aggiornamento readme con giorni di oggi e 24/02/2024"
             }
         },
         "tAggiunte": null
@@ -520,7 +520,7 @@
             "Aggiunta": null,
             "Aggiornamento": {
                 "/about.html": "aggiornato URL di Linkedin (tolto numero alla fine del nome)",
-                "/Static/javascript/util_funcion.js": "sistemato switch-case per mesi 6/7/8 (tolto \"||\" e aggiunti più \"case\")"
+                "/Static/javascript/util_function.js": "sistemato switch-case per mesi 6/7/8 (tolto \"||\" e aggiunti più \"case\")"
             }
         },
         "tAggiunte": null
@@ -754,6 +754,30 @@
             }
         },
         "tAggiunte": "Fare la logica per inserimento automatico con JavaScript dei vari linguaggi nei tag 'details' in modo da non ripetere ma aggiornare solo il file 'progress'."
+    },
+
+    {
+        "tData": "04/01/2025",
+        "tDescrizione": {
+            "Aggiunta": {
+                "/Static/javascript/scripts.js": "Funzione per raggiungere più velocemente la fine o l'inizio di una tabella (in base alla pagina in cui si dice di inserirsi);",
+                "about.html": "Aggiunto div#details-container per l'inserimento automatico dei details dei linguaggi."
+            },
+            "Aggiornamento": {
+                "/Static/css/style.css": "Sistemati stili per tag details (il margin solo in Home + cambio colore dei p nei details + rientranza per il contenuto del p);",
+                "/Static/javascript/scripts.js": "Spostata in una funzione separata la logica per aggiornare il p.movement-into-pages;",
+                "/Static/javascript/util_function.js": [
+                    "Spostate tutte le funzioni da non inserire nel DOMContentLoaded precedentemente contenute in .../scripts.js;",
+                    "Aggiornata funzione insert_my_json con parte di about per inserire i progressi per i linguaggi e relativi framework (se presenti);",
+                    "Aggiornata funzione show_details in modo che se volevo vedere il contenuto sotto a tutti potevo farlo, come il vederlo sotto al singolo annullando le altre aperture;"
+                ],
+                "README.md": [
+                    "Descrizione logica major-minor-patch;",
+                    "Nuova versione (0.21.0)."
+                ]
+            }
+        },
+        "tAggiunte": null
     },
 
     {
