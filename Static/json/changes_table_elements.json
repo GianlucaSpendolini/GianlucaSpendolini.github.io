@@ -781,6 +781,22 @@
     },
 
     {
+        "tData": "07/01/2025",
+        "tDescrizione": {
+            "Aggiunta": {
+                "workflows/restrict_push.yml": "Workflow per controllo su chi può effettuare una push nel branch main."
+            },
+            "Aggiornamento": {
+                "README.md": [
+                    "Aggiornamento regole per 'patch notes' (anche quando creo o modifico workflow o regole);",
+                    "Nuova versione (0.21.1)."
+                ]
+            }
+        },
+        "tAggiunte": null
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,

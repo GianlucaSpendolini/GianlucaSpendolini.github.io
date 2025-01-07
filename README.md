@@ -1,6 +1,6 @@
 # GianlucaSpendolini.github.io
 
-### Actual version: 0.21.0
+### Actual version: 0.21.1
 
 ### Languages
 - [English](#english)
@@ -17,6 +17,7 @@ I will update the versions with the following logic:
 - Minor
     - Only if I add things (like new sections or functions to handle something);
 - Patch
+    - Adding back-end functionality (like workflows or rules);
     - CSS changes to existing elements;
     - HTML changes (like moving a piece of code);
     - JavaScript changes (such as fixing a function that wasn't working properly);
@@ -35,6 +36,7 @@ Le versioni le aggiornerò con la seguente logica:
 - Minor
     - Solo se aggiungo cose (come nuove sezioni o funzioni per gestire qualcosa);
 - Patch
+    - Aggiunta di funzionalità back-end (come worflows o rules);
     - Modifiche al CSS di elementi già presenti;
     - Modifiche HTML (come lo spostamento di una parte di codice);
     - Modifiche JavaScript (come il sistemare una funzione che non funzionava correttamente);
