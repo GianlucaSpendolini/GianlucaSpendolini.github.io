@@ -1,0 +1,17 @@
+name: Restrict Push Access
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  restrict-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Pusher
+        run: |
+          if [ "${{ github.actor }}" != "GianlucaSpendolini" ]; then
+            echo "Accesso negato: Solo username-autorizzato può effettuare il push."
+            exit 1
+          fi
