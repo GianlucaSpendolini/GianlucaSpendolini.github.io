@@ -267,7 +267,7 @@ function what_page(points_path) {
             title.innerHTML = 'Prova';
 
             // Header title
-            header_title.innerHTML = 'Prove';
+            header_title.innerHTML = 'Prove eee';
 
             break;
 
