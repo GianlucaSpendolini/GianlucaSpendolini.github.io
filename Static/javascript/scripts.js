@@ -143,7 +143,7 @@ function create_footer(points_path, links_list) {
         'Info su di me',
         'I miei progetti',
         'Cose utili',
-        'Altro'
+        // 'Altro'
     ]
 
     // Elenco delle icone (section sx)

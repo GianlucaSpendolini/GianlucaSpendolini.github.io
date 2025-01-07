@@ -2,6 +2,12 @@
     FUNZIONI UTILI 
         - add_css_js
             - Funzione per aggiungere i file js e css
+        - advertiment_capslock
+            - Funzione per avvisare se capslock è attivo
+        - check_anylock
+            - Funzione contenente tutti gli eventi per controllare se attivi alcuni blocchi
+        - advertiment_numlock
+            - Funzione per avvisare se blocco numerico non è attivo
         - clickable_path
             - Funzione per creare un percorso cliccabile da inserire nell'apposita sezione
         - insert_in_head
@@ -89,6 +95,62 @@ export function add_css_js(points_path) {
             }
         }
     };
+}
+
+
+// Funzione per avvisare se capslock è attivo
+export function advertiment_capslock(event) {
+                
+    // Dove inserire il messaggio
+    let caps_lock = document.getElementById('caps-lock');
+
+    if (event.getModifierState('CapsLock')) {
+        caps_lock.innerHTML = '<span class="Style2" style="color: red; font-size:18px;">Attenzione! Blocco maiuscole ATTIVO!</span>';
+    }
+    else {
+        caps_lock.innerHTML = '';
+    } 
+}
+
+
+// Funzione contenente eventi per controllare se qualche blocco è attivo
+export function check_anylock() {
+                
+    // Seleziono campo password
+    let password = document.getElementById('passwordField');
+    
+    // Eventi
+    password.addEventListener('click', event => {
+        advertiment_capslock(event);
+        advertiment_numlock(event);
+    });
+    password.addEventListener('keydown', event => {
+        advertiment_capslock(event);
+        advertiment_numlock(event);
+    });
+    password.addEventListener('keyup', event => {
+        advertiment_capslock(event);
+        advertiment_numlock(event);
+    });
+    password.addEventListener('mousemove', event => {
+        advertiment_capslock(event);
+        advertiment_numlock(event);
+    });
+}
+
+
+// Funzione per avvisare se blocco numerico non è attivo
+export function advertiment_numlock(event) {
+                
+    // Dove inserire il messaggio
+    let num_lock = document.getElementById('num-lock');
+
+    if (!event.getModifierState('NumLock')) {
+        num_lock.innerHTML = '<span class="Style2" style="color: red; font-size:18px;">Attenzione! Blocco numerico NON ATTIVO!</span>';
+    }
+    else {
+        num_lock.innerHTML = '';
+    } 
 }
 
 
