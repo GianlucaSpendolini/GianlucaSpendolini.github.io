@@ -86,7 +86,7 @@ function create_header(links_list) {
     console.log("header ll:", links_list);
 
     // Creo un array differente per poter togliere "altro"
-    let list_of_links = links_list;
+    let list_of_links = links_list.filter(item => item ==! links_list[4]);
     console.log("header lol:", list_of_links);
 
     // Vado a togliere il link del blog perchè non voglio venga inserito nell'header
