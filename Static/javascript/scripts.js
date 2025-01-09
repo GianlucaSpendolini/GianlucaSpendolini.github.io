@@ -115,7 +115,8 @@ function create_header(links_list) {
     let navbar = document.querySelector('header nav');
 
     // Controllo se la lunghezza non corrisponde e blocco nel caso
-    if (buttons_name.length != list_of_links.length - 1) {
+    if (buttons_name.length !== list_of_links.length - 1) {
+        console.log(buttons_name.length !== list_of_links.length - 1, buttons_name.length, list_of_links.length - 1)
         navbar.innerText = 'La lunghezza della lista dei bottoni e quella dei link non corrisponde';
     }
     else {
