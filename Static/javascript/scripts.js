@@ -85,7 +85,6 @@ function create_header(links_list) {
 
     // Creo un array filtrato in modo che non contenga il link per il blog
     let list_of_links = links_list.filter(item => item !== links_list[4]);
-    console.log("header lol:", list_of_links);
 
     // Elenco dei nomi dei bottoni
     let buttons_name = [
@@ -115,8 +114,7 @@ function create_header(links_list) {
     let navbar = document.querySelector('header nav');
 
     // Controllo se la lunghezza non corrisponde e blocco nel caso
-    if (buttons_name.length !== list_of_links.length - 1) {
-        console.log(buttons_name.length !== list_of_links.length - 1, buttons_name.length, list_of_links.length - 1)
+    if (buttons_name.length !== list_of_links.length) {
         navbar.innerText = 'La lunghezza della lista dei bottoni e quella dei link non corrisponde';
     }
     else {
@@ -141,7 +139,6 @@ function create_header(links_list) {
 
 // Funzione per sistemare il footer in automatico
 function create_footer(points_path, links_list) {
-    console.log("footer ll:", links_list);
 
     // Creo liste per link/immagini da inserire (section dx e sx)
 
