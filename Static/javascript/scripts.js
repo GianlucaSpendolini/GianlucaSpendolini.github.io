@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Creazione variabili generali da usare
 
     // Prendo i punti da aggiungere per tornare indietro
-    var points = points_number(path);
+    let points = points_number(path);
 
     // Elenco dei link che devo assegnare ai rispettivi bottoni
     let links_list = [
@@ -83,8 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // Funzione per sistemare l'header
 function create_header(links_list) {
 
+    // Creo un array differente per poter togliere "altro"
+    let list_of_links = links_list;
+
     // Vado a togliere il link del blog perchè non voglio venga inserito nell'header
-    links_list.splice(4, 1);
+    list_of_links.splice(4, 1);
 
     // Elenco dei nomi dei bottoni
     let buttons_name = [
@@ -114,7 +117,7 @@ function create_header(links_list) {
     let navbar = document.querySelector('header nav');
 
     // Controllo se la lunghezza non corrisponde e blocco nel caso
-    if (buttons_name.length != links_list.length - 1) {
+    if (buttons_name.length != list_of_links.length - 1) {
         navbar.innerText = 'La lunghezza della lista dei bottoni e quella dei link non corrisponde';
     }
     else {
@@ -127,7 +130,7 @@ function create_header(links_list) {
             element.innerText = buttons_name[i];
 
             element.addEventListener('click', function() {
-                window.location.href = links_list[i];
+                window.location.href = list_of_links[i];
             });
 
             navbar.appendChild(element);
