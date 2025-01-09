@@ -34,11 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     var points = points_number(path);
 
     // Elenco dei link che devo assegnare ai rispettivi bottoni
-    var links_list = [
+    let links_list = [
         `${points}`,
         `${points}about`,
         `${points}projects/`,
         `${points}utilities/`,
+        `${points}blog/`,
         // `${points}generic/`
     ];
 
@@ -82,8 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // Funzione per sistemare l'header
 function create_header(links_list) {
 
+    // Vado a togliere il link del blog perchè non voglio venga inserito nell'header
+    links_list.splice(4, 1);
+
     // Elenco dei nomi dei bottoni
-    var buttons_name = [
+    let buttons_name = [
         'Home',
         'Info',
         'Progetti',
@@ -107,11 +111,11 @@ function create_header(links_list) {
     }
 
     // Seleziono la navbar
-    var navbar = document.querySelector('header nav');
+    let navbar = document.querySelector('header nav');
 
     // Controllo se la lunghezza non corrisponde e blocco nel caso
-    if (buttons_name.length != links_list.length) {
-        navbar.append = 'La lunghezza della lista dei bottoni e quella dei link non corrisponde';
+    if (buttons_name.length != links_list.length - 1) {
+        navbar.innerText = 'La lunghezza della lista dei bottoni e quella dei link non corrisponde';
     }
     else {
 
@@ -143,6 +147,7 @@ function create_footer(points_path, links_list) {
         'Info su di me',
         'I miei progetti',
         'Cose utili',
+        'Blog',
         // 'Altro'
     ]
 
@@ -185,7 +190,7 @@ function create_footer(points_path, links_list) {
     for (var j = 0; j < 2; j++) {
 
         // Inserisco i link nella section di sx
-        var ul = document.createElement('ul');
+        let ul = document.createElement('ul');
 
         // Lavoro per la prima lista
         if (j === 0) {
@@ -217,7 +222,7 @@ function create_footer(points_path, links_list) {
                 for (i = 0; i < links_4_icons.length; i++) {
 
                     // Creo l'elemento 'li' della lista
-                    var li = document.createElement('li');
+                    let li = document.createElement('li');
 
                     // Aggiungo la classe 'link' al tag 'li'
                     li.classList.add('link');
@@ -237,7 +242,7 @@ function create_footer(points_path, links_list) {
         }
 
         // Aggiungo l'elenco 'ul' alla section
-        var section = document.createElement('section');
+        let section = document.createElement('section');
         section.appendChild(ul);
 
         // Aggiungo la section al footer
