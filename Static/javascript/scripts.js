@@ -82,12 +82,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Funzione per sistemare l'header
 function create_header(links_list) {
+    console.log(links_list);
 
     // Creo un array differente per poter togliere "altro"
     let list_of_links = links_list;
+    console.log(list_of_links);
 
     // Vado a togliere il link del blog perchè non voglio venga inserito nell'header
     list_of_links.splice(4, 1);
+    console.log(list_of_links);
 
     // Elenco dei nomi dei bottoni
     let buttons_name = [
@@ -142,6 +145,7 @@ function create_header(links_list) {
 
 // Funzione per sistemare il footer in automatico
 function create_footer(points_path, links_list) {
+    console.log(links_list);
 
     // Creo liste per link/immagini da inserire (section dx e sx)
 
