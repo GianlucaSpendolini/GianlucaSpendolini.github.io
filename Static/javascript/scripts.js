@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `${points}blog/`,
         // `${points}generic/`
     ];
-    console.log("DOMContentLoaded:", links_list);
 
 
     /* Cose da fare inizialmente */
@@ -83,15 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Funzione per sistemare l'header
 function create_header(links_list) {
-    console.log("header ll:", links_list);
 
-    // Creo un array differente per poter togliere "altro"
-    let list_of_links = links_list.filter(item => item ==! links_list[4]);
+    // Creo un array filtrato in modo che non contenga il link per il blog
+    let list_of_links = links_list.filter(item => item !== links_list[4]);
     console.log("header lol:", list_of_links);
-
-    // Vado a togliere il link del blog perchè non voglio venga inserito nell'header
-    list_of_links.splice(4, 1);
-    console.log("header lol splice:", list_of_links);
 
     // Elenco dei nomi dei bottoni
     let buttons_name = [
