@@ -802,7 +802,7 @@
             "Aggiunta": {
                 "/Static/javascript/scripts.js": [
                     "Link per il blog da aggiungere nel footer (rimpiazzerà 'Altro');",
-                    "Aggiunto un filtro nella funzione per aggiungere l'header (per non includere il link del blog);"
+                    "Aggiunto un filtro nella funzione per aggiungere l'header (per non includere il link del blog)."
                 ]
             },
             "Aggiornamento": {
