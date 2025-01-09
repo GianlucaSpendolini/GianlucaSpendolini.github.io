@@ -797,6 +797,22 @@
     },
 
     {
+        "tData": "09/01/2025",
+        "tDescrizione": {
+            "Aggiunta": {
+                "/Static/javascript/scripts.js": [
+                    "Link per il blog da aggiungere nel footer (rimpiazzerà 'Altro');",
+                    "Aggiunto un filtro nella funzione per aggiungere l'header (per non includere il link del blog);"
+                ]
+            },
+            "Aggiornamento": {
+                "README.md":"Nuova versione (0.22.0)."
+            }
+        },
+        "tAggiunte": "Non aggiungerò aggiornamenti nella tabella ogni volta che modifico il blog perchè cambierei piccolezze e aggiungerei post che riportano la data."
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,
