@@ -822,7 +822,7 @@
             }
         },
         "tAggiunte": [
-            "Aggiungere la sezione per i cambiamenti nel blog?.",
+            "Aggiungere la sezione per i cambiamenti nel blog?",
             {
                 "Se lo si fa": [
                     "Creare una pagina HTML nella cartella 'changes' (tipo 'changes_blog.html') in cui verrà inserita una tabella come in changes_table;",
