@@ -821,7 +821,29 @@
                 "README.md": "Nuova versione (0.22.1)."
             }
         },
-        "tAggiunte": null
+        "tAggiunte": [
+            "Aggiungere la sezione per i cambiamenti nel blog?.",
+            {
+                "Se lo si fa": [
+                    "Creare una pagina HTML nella cartella 'changes' (tipo 'changes_blog.html') in cui verrà inserita una tabella come in changes_table;",
+                    "Creare un nuovo file JSON dove segnare i cambiamenti come faccio per quello di questa tabella;",
+                    "Modificare la funzione insert_my_json, inserendo la parte per i cambiamenti del blog (tipo 'changes blog') e facendo la stessa cosa di 'changes table'."
+                ]
+            },
+            {
+                "Aggiungere la sezione per i cambiamenti nella sezione Altro?": [
+                    "Nel caso vedere in futuro in base a cosa si vuole inserire e come;",
+                    {
+                        "Magari": [
+                            "Va a prendere i JSON modificati dai vari utenti nei vari file JSON (uno per utente e che devono nominare come il loro nome su GitHub);",
+                            "Li va ad inserire, in base al giorno del dato, in un JSON e, per ogni giorno, avrò un elenco delle modifiche in base all'utente e in ordine alfabetico;",
+                            "Quel JSON che mi ritorna vado ad analizzarlo con la funzione insert_my_json per trasformare i contenuti nelle varie righe della tabella."
+                        ]
+                    }
+                ]
+            },
+            "In entrambi i casi devo aggiungere la funzione start_end_table per permettere una navigabilità maggiore."
+        ]
     },
 
     {
