@@ -260,6 +260,9 @@ function what_page(points_path) {
     // Seleziono il tag 'header'
     var header_title = document.querySelector('.title');
 
+    // Dichiaro la variabile per la meta-descrizione
+    let meta_descrizione;
+
     switch (path) {
 
         // Prova
@@ -274,6 +277,9 @@ function what_page(points_path) {
             // Header title
             header_title.innerHTML = 'Prove';
 
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Pagina di prova nella quale faccio i test di nuove funzionalità prima di inserirle ufficialmente nella pagina di destinazione.';
+
             break;
 
         // Home
@@ -285,12 +291,8 @@ function what_page(points_path) {
             // Header title
             header_title.innerHTML = 'Home';
 
-            // Creo eventuali contenuti dei meta-tag
-            let contenuto_m_tag = 'Sito web personale di Gianluca Spendolini, utilizzato principalmente per sperimentare i linguaggi CSS, HTML e JavaScript.';
-            // Creo lista meta-tag
-            let m_tags = `<meta name="description" content="${contenuto_m_tag}" />`;
-            // Inserisco i meta tag
-            insert_in_head(m_tags);
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Home page del mio sito. Illustro in breve ciò che si potrà trovare nelle varie parti del sito.';
 
             // Sistemo i details per le descrizioni
             show_details(document.querySelector('div > div:has(details)'), true);
@@ -308,6 +310,9 @@ function what_page(points_path) {
 
             // Header title
             header_title.innerHTML = 'About me';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Pagina in cui descrivo molto di me: chi sono, il mio percorso formativo e lavorativo e cose extra in ambito informatico.';
 
             /*
                 Inserimento della mia età
@@ -337,6 +342,9 @@ function what_page(points_path) {
             // Header title
             header_title.innerHTML = 'Changes';
 
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Index della sezione dei cambiamenti, nella quale registro ogni modifica effettuata.';
+
             break;
 
         // /changes_table
@@ -347,6 +355,9 @@ function what_page(points_path) {
 
             // Header title
             header_title.innerHTML = 'Tabella dei cambiamenti';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Tabella in cui sono contenuti i cambiamenti effettuati suddivisi per i vari giorni.';
 
             // Aggiungo i bottoni per andare in cima o in fondo alla tabella più velocemente
             start_end_table(document.querySelector('table'));
@@ -365,6 +376,9 @@ function what_page(points_path) {
             // Header title
             header_title.innerHTML = 'Progetti';
 
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Index della sezione dei progetti, nella quale inserisco ogni progetto. La pagina è suddivisa in base alle varie tipologie di progetti.';
+
             break;
 
         // /games/
@@ -375,6 +389,9 @@ function what_page(points_path) {
 
             // Header title
             header_title.innerHTML = 'Games';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Index della sezione dei giochi, nella quale inserisco i riferimenti alle pagine inerenti all\'ambiente di sviluppo nel quale ho sviluppato il gioco.';
 
             break;
 
@@ -387,6 +404,9 @@ function what_page(points_path) {
             // Header title
             header_title.innerHTML = 'Pagina di scratch';
 
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Pagina dei giochi sviluppati su Scratch.';
+
             break;
 
         // /socials/
@@ -397,6 +417,9 @@ function what_page(points_path) {
 
             // Header title
             header_title.innerHTML = 'Socials';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Index della sezione dei social, nella quale sono segnati i vari social per cui ho sviluppato qualcosa.';
 
             break;
 
@@ -409,6 +432,9 @@ function what_page(points_path) {
             // Header title
             header_title.innerHTML = 'Pagina di Telegram';
 
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Pagina di Telegram, nella quale descrivo e riporto i riferimenti ai progetti sviluppati per questo social media.';
+
             break;
 
         // /web/
@@ -419,6 +445,9 @@ function what_page(points_path) {
 
             // Header title
             header_title.innerHTML = 'Siti';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Index della sezione dei siti, nella quale registro ogni sito che ho sviluppato o che è in fase di sviluppo.';
 
             break;
 
@@ -431,12 +460,22 @@ function what_page(points_path) {
             // Header title
             header_title.innerHTML = 'Utilities';
 
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Index della sezione di strumenti utili a fare qualcosa, nella quale inserisco ogni strumento. Attualmente in fase di sviluppo (work in progress)!';
+
             break;
 
         default:
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Yestrday is history, tomorrow is a mistery, but today is a gift; that\' why they call it "present".';
+
             // Non faccio nulla
             break;
     }
+
+    // Inserisco la meta-descrizione (comune a tutte le pagine)
+    insert_in_head(`<meta name="description" content="${meta_descrizione}" />`);
 }
 
 

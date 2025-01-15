@@ -813,6 +813,18 @@
     },
 
     {
+        "tData": "15/01/2025",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "/Static/javascript/scripts.js": "Aggiunti meta-descrizioni personalizzate per ogni pagina del sito (prima era solo per la Home);",
+                "README.md": "Nuova versione (0.22.1)."
+            }
+        },
+        "tAggiunte": null
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,
