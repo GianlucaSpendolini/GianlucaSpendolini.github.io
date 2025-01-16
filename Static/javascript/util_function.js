@@ -4,10 +4,10 @@
             - Funzione per aggiungere i file js e css
         - advertiment_capslock
             - Funzione per avvisare se capslock è attivo
-        - check_anylock
-            - Funzione contenente tutti gli eventi per controllare se attivi alcuni blocchi
         - advertiment_numlock
             - Funzione per avvisare se blocco numerico non è attivo
+        - check_anylock
+            - Funzione contenente tutti gli eventi per controllare se attivi alcuni blocchi
         - clickable_path
             - Funzione per creare un percorso cliccabile da inserire nell'apposita sezione
         - insert_in_head
@@ -16,6 +16,8 @@
             - Inserire i dati salvati nei file json che creo
         - json_to_element
             - Funzione ricorsiva per inserire in autormatico gli elementi della tabella nel giusto formato
+        - movement_into_pages
+            - Funzione per capire se voglio la lista delle pagine (per avere un minimo di percorso)
         - points_number
             - Creo un array di 'punti' per tornare sempre alla home (./../etc)
         - show_details
@@ -113,6 +115,21 @@ export function advertiment_capslock(event) {
 }
 
 
+// Funzione per avvisare se blocco numerico non è attivo
+export function advertiment_numlock(event) {
+                
+    // Dove inserire il messaggio
+    let num_lock = document.getElementById('num-lock');
+
+    if (!event.getModifierState('NumLock')) {
+        num_lock.innerHTML = '<span class="Style2" style="color: red; font-size:18px;">Attenzione! Blocco numerico NON ATTIVO!</span>';
+    }
+    else {
+        num_lock.innerHTML = '';
+    } 
+}
+
+
 // Funzione contenente eventi per controllare se qualche blocco è attivo
 export function check_anylock() {
                 
@@ -136,21 +153,6 @@ export function check_anylock() {
         advertiment_capslock(event);
         advertiment_numlock(event);
     });
-}
-
-
-// Funzione per avvisare se blocco numerico non è attivo
-export function advertiment_numlock(event) {
-                
-    // Dove inserire il messaggio
-    let num_lock = document.getElementById('num-lock');
-
-    if (!event.getModifierState('NumLock')) {
-        num_lock.innerHTML = '<span class="Style2" style="color: red; font-size:18px;">Attenzione! Blocco numerico NON ATTIVO!</span>';
-    }
-    else {
-        num_lock.innerHTML = '';
-    } 
 }
 
 
@@ -533,6 +535,36 @@ export function json_to_element(element, json_part) {
 
     // Ritorno l'elemento
     return element_to_return;
+}
+
+
+// Funzione per capire se voglio la lista delle pagine (per avere un minimo di percorso)
+export function movement_into_pages(points) {
+
+    let p = document.querySelector('p.movement_into_pages');
+
+    if (p) {
+    
+        // // Inserisco la frase
+        // p.innerHTML = '';
+    
+        // Creo l'elemento per la home
+        let a = document.createElement('a');
+        a.innerText = 'Home';
+        a.href = points;
+    
+        // Inserisco l'elemento per Home ed il primo separatore
+        p.appendChild(a);
+        p.append(' / ');
+        
+        // Inserisco la lista nell'apposita sezione
+        clickable_path(path).forEach(e => {
+            // Inserisco l'elemento
+            p.appendChild(e);
+            // Inserisco la barra spaziatrice
+            p.append(' / ');
+        });
+    }
 }
 
 

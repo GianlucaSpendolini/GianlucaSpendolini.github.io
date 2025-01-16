@@ -477,33 +477,3 @@ function what_page(points_path) {
     // Inserisco la meta-descrizione (comune a tutte le pagine)
     insert_in_head(`<meta name="description" content="${meta_descrizione}" />`);
 }
-
-
-// Funzione per capire se voglio la lista delle pagine (per avere un minimo di percorso)
-function movement_into_pages(points) {
-
-    let p = document.querySelector('p.movement_into_pages');
-
-    if (p) {
-    
-        // // Inserisco la frase
-        // p.innerHTML = '';
-    
-        // Creo l'elemento per la home
-        let a = document.createElement('a');
-        a.innerText = 'Home';
-        a.href = points;
-    
-        // Inserisco l'elemento per Home ed il primo separatore
-        p.appendChild(a);
-        p.append(' / ');
-        
-        // Inserisco la lista nell'apposita sezione
-        clickable_path(path).forEach(e => {
-            // Inserisco l'elemento
-            p.appendChild(e);
-            // Inserisco la barra spaziatrice
-            p.append(' / ');
-        });
-    }
-}
