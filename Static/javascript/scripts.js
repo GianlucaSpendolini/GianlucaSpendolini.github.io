@@ -8,6 +8,7 @@ import {
     insert_in_head, 
     insert_my_json, 
     json_to_element, 
+    movement_into_pages,
     points_number,
     show_details,
     start_end_table, 
