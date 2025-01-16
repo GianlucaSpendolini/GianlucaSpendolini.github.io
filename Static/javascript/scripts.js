@@ -409,20 +409,6 @@ function what_page(points_path) {
 
             break;
 
-        // /gianluca/
-        case '/gianluca/':
-
-            // Titolo
-            title.innerHTML = 'Home sito PHP';
-
-            // Header title
-            header_title.innerHTML = 'Sito di prova in PHP';
-
-            // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Home del sito di prova creato in PHP.';
-
-            break;
-
         // /socials/
         case '/projects/socials/':
 
