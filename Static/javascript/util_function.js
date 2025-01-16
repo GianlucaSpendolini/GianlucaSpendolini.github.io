@@ -539,7 +539,7 @@ export function json_to_element(element, json_part) {
 
 
 // Funzione per capire se voglio la lista delle pagine (per avere un minimo di percorso)
-export function movement_into_pages(points) {
+export function movement_into_pages(points, path) {
 
     let p = document.querySelector('p.movement_into_pages');
 

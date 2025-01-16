@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ALTRE COSE DA FARE */
 
     // Cerco se voglio la lista delle pagine (per avere un minimo di percorso)
-    movement_into_pages(points);
+    movement_into_pages(points, path);
 });
 
 
