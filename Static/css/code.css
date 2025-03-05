@@ -1,6 +1,7 @@
 /*
 
     Stile generale per il contenitore del codice
+    - container per contenere sezione del codice
 
 */
 
@@ -16,21 +17,25 @@ div:has(>code) {
 /*
 
     Codice JavaScript
+    - comment
+    - initialize
+    - variable
+    - function
 
 */
 
-.javascript-comment {
+.js-comment {
     color: lightgreen;
 }
 
-.javascript-initialize {
+.js-init {
     color: blue;
 }
 
-.javascript-variable {
+.js-var {
     color: lightblue;
 }
 
-.javascript-function {
+.js-func {
     color: lightgoldenrodyellow;
 }
