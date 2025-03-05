@@ -442,6 +442,19 @@ export function insert_my_json(file_description, points) {
 
             break;
 
+        // /scripts/compilazione-automatica (per inserire le descrizioni)
+        case 'compilazione automatica':
+            fetch(`${points}Static/json/descriptions.json`)
+            .then(response => response.json())
+            .then(data => {
+                //
+                console.log('funziona per compilazione automatica');
+
+                // Prendo i dati che mi servono
+                let descriptions = data['scripts'];
+                console.log(descriptions);
+            });
+
         default:
             // Non faccio nulla
             break;

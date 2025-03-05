@@ -492,6 +492,11 @@ function what_page(points_path) {
             // Definisco il contenuto della meta-descrizione
             meta_descrizione = 'Pagina contenente script inerenti alla compilazione automatica di alcuni campi in base a diversi input.';
 
+            /*
+                Inserisco le descrizioni per ogni script di compilazione automatica
+            */
+            insert_my_json('compilazione automatica', points_path);
+
             break;
 
         default:
