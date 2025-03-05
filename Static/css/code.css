@@ -1,0 +1,36 @@
+/*
+
+    Stile generale per il contenitore del codice
+
+*/
+
+div:has(>code) {
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    min-width: 100%;
+    padding: 10px;
+}
+
+
+/*
+
+    Codice JavaScript
+
+*/
+
+.javascript-comment {
+    color: lightgreen;
+}
+
+.javascript-initialize {
+    color: blue;
+}
+
+.javascript-variable {
+    color: lightblue;
+}
+
+.javascript-function {
+    color: lightgoldenrodyellow;
+}
