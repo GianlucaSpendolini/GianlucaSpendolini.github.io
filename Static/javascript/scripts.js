@@ -481,7 +481,7 @@ function what_page(points_path) {
             break;
 
         // Utilities/scripts/compilazione-automatica
-        case '/utilities/scripts/compilazione-automatica':
+        case '/utilities/scripts/automatic-filling':
 
             // Titolo
             title.innerHTML = 'Compilazione automatica';
