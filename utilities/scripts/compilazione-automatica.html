@@ -102,49 +102,49 @@
             <span class="javascript-comment">
                 // Aggiungo l'evento'
             </span><br />
-            select.addEventListener('click', () => {<br /><br />
+            select.addEventListener('click', () => {<br /><br />&nbsp;
 
                 <span class="javascript-comment">
                     // Controllo quale elemento è stato scelto in base al valore restituito
-                </span><br />
-                switch (select.value) {<br /><br />
+                </span><br />&nbsp;
+                switch (select.value) {<br /><br />&nbsp;&nbsp;
 
                     <span class="javascript-comment">
                         // In caso del profilo 1
-                    </span><br />
-                    case 'profilo 1':<br /><br />
+                    </span><br />&nbsp;&nbsp;
+                    case 'profilo 1':<br /><br />&nbsp;&nbsp;&nbsp;
                     
-                        cb_profilo_1[1].checked = true;<br />
-                        cb_profilo_2[1].checked = false;<br /><br />
+                        cb_profilo_1[1].checked = true;<br />&nbsp;&nbsp;&nbsp;
+                        cb_profilo_2[1].checked = false;<br /><br />&nbsp;&nbsp;&nbsp;
                         
-                        break;<br /><br />
+                        break;<br /><br />&nbsp;&nbsp;
 
                     <span class="javascript-comment">
                         // In caso del profilo 2
-                    </span><br />
-                    case 'profilo 2':<br /><br />
+                    </span><br />&nbsp;&nbsp;
+                    case 'profilo 2':<br /><br />&nbsp;&nbsp;&nbsp;
                     
-                        cb_profilo_1[1].checked = false;<br />
-                        cb_profilo_2[1].checked = true;<br /><br />
+                        cb_profilo_1[1].checked = false;<br />&nbsp;&nbsp;&nbsp;
+                        cb_profilo_2[1].checked = true;<br /><br />&nbsp;&nbsp;&nbsp;
                         
-                        break;<br /><br />
+                        break;<br /><br />&nbsp;&nbsp;
 
                     <span class="javascript-comment">
                         // In caso non seleziono uno dei profili elencati
-                    </span><br />
-                    default:<br /><br />
+                    </span><br />&nbsp;&nbsp;
+                    default:<br /><br />&nbsp;&nbsp;&nbsp;
 
                         <span class="javascript-comment">
                             // Svuoto campi per abilitazione e non
-                        </span><br />
-                        document.getElementsByName('')[0].value = '';<br /><br />
+                        </span><br />&nbsp;&nbsp;&nbsp;
+                        document.getElementsByName('')[0].value = '';<br /><br />&nbsp;&nbsp;&nbsp;
 
                         <span class="javascript-comment">
                             // Svuoto campo note
-                        </span><br />
-                        document.getElementsByName('note')[0].innerHTML = '';<br /><br />
+                        </span><br />&nbsp;&nbsp;&nbsp;
+                        document.getElementsByName('note')[0].innerHTML = '';<br /><br />&nbsp;&nbsp;&nbsp;
                         
-                        break;<br /><br />
+                        break;<br /><br />&nbsp;
                 }<br />
             });`;//.replace('\n', '<br />');
 
