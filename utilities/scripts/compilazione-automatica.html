@@ -33,7 +33,7 @@
             <h2><a name="selezionando-un-elemento-da-una-lista-select">Selezionando un elemento da una lista select</a></h2>
 
             <style>
-                div:has(code) {
+                code {
                     background-color: black;
                     color: white;
                     min-width: 100%;
@@ -71,9 +71,11 @@
     <!-- File JavaScript generico -->
     <script src="./../../Static/javascript/scripts.js" type="module"></script>
 
+    <!-- Codice JavaScript per inserire i codici di esempio -->
     <script>
 
         // Inserimento dei pezzi di codice
+        console.log(document.querySelector('selezionando-un-elemento-da-una-lista-select code'));
         document.querySelector('selezionando-un-elemento-da-una-lista-select code').innerHTML = `
             <span class="javascript-comment">
                 /*
