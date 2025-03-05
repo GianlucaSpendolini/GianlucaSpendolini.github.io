@@ -16,6 +16,8 @@
 
     <main>
 
+        <p class="movement_into_pages"></p>
+
         <div>
 
             In questa pagina saranno presenti script per la compilazione automatica:
@@ -29,6 +31,100 @@
         <div id="selezionando-un-elemento-da-una-lista-select">
 
             <h2><a name="selezionando-un-elemento-da-una-lista-select">Selezionando un elemento da una lista select</a></h2>
+
+            <style>
+                code {
+                    background-color: black;
+                }
+                .javascript-comment {
+                    color: lightgreen;
+                }
+                .javascript-initialize {
+                    color: blue;
+                }
+                .javascript-variable {
+                    color: lightblue;
+                }
+                .javascript-function {
+                    color: lightgoldenrodyellow;
+                }
+            </style>
+
+            <code>
+
+                <span class="javascript-comment">
+                    /*
+                        Codice scritto in JavaScript
+                    */
+                </span>
+
+                <span class="javascript-comment">
+                    // Seleziono checkbox e radio
+                </span>
+                <span class="javascript-initialize">
+                    let
+                </span> <span class="javascript-variable">
+                    cb_profilo_1
+                </span> = document.<span class="javascript-function">
+                    getElementsByName
+                </span>('profilo-1');
+                let cb_profilo_2 = document.getElementsByName('profilo-2');
+
+                <span class="javascript-comment">
+                    // Selezione dell'elemento select
+                </span>
+                let select = document.getElementById('PROFILO');
+
+                <span class="javascript-comment">
+                    // Aggiungo l'evento'
+                </span>
+                select.addEventListener('click', () => {
+
+                    <span class="javascript-comment">
+                        // Controllo quale elemento è stato scelto in base al valore restituito
+                    </span>
+                    switch (select.value) {
+
+                        <span class="javascript-comment">
+                            // In caso del profilo 1
+                        </span>
+                        case 'profilo 1':
+                        
+                            cb_profilo_1[1].checked = true;
+                            cb_profilo_2[1].checked = false;
+                            
+                            break;
+
+                            <span class="javascript-comment">
+                                // In caso del profilo 2
+                            </span>
+                        case 'profilo 2':
+                        
+                            cb_profilo_1[1].checked = false;
+                            cb_profilo_2[1].checked = true;
+                            
+                            break;
+
+                            <span class="javascript-comment">
+                                // In caso non seleziono uno dei profili elencati
+                            </span>
+                        default:
+
+                            <span class="javascript-comment">
+                                // Svuoto campi per abilitazione e non
+                            </span>
+                            document.getElementsByName('')[0].value = '';
+
+                            <span class="javascript-comment">
+                                // Svuoto campo note
+                            </span>
+                            document.getElementsByName('note')[0].innerHTML = '';
+                            
+                            break;
+                    }
+                });
+
+            </code>
 
             Il codice funziona come segue:
 
