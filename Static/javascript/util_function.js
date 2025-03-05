@@ -40,6 +40,7 @@ export function add_css_js(points_path) {
     // Lista generale 
     var lista_generale = {
         css: [
+            `${points_path}Static/css/code.css`,
             `${points_path}Static/css/image.css`,
             `${points_path}Static/css/media.css`,
             `${points_path}Static/css/style.css`,
