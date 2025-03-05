@@ -467,7 +467,7 @@ function what_page(points_path) {
             break;
 
         // Utilities/scripts/
-        case '/utilities/scripts':
+        case '/utilities/scripts/':
 
             // Titolo
             title.innerHTML = 'Scripts';
