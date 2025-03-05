@@ -466,6 +466,34 @@ function what_page(points_path) {
 
             break;
 
+        // Utilities/scripts/
+        case '/utilities/scripts':
+
+            // Titolo
+            title.innerHTML = 'Scripts';
+
+            // Header title
+            header_title.innerHTML = 'Scripts';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Index della sezione di script utili a fare qualcosa, nella quale inserisco ogni riferimento alle pagine. WIP!';
+
+            break;
+
+        // Utilities/scripts/compilazione-automatica
+        case '/utilities/scripts/compilazione-automatica':
+
+            // Titolo
+            title.innerHTML = 'Compilazione automatica';
+
+            // Header title
+            header_title.innerHTML = 'Compilazione automatica';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Pagina contenente script inerenti alla compilazione automatica di alcuni campi in base a diversi input.';
+
+            break;
+
         default:
 
             // Definisco il contenuto della meta-descrizione
