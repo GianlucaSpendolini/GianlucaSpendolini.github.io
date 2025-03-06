@@ -10,6 +10,8 @@
             - Funzione contenente tutti gli eventi per controllare se attivi alcuni blocchi
         - clickable_path
             - Funzione per creare un percorso cliccabile da inserire nell'apposita sezione
+        - insert_examples
+            - Funzione per inserire esempi (di codice o di altro)
         - insert_in_head
             - Funzione per inserire i meta-tag
         - insert_my_json
@@ -213,6 +215,135 @@ export function clickable_path(path) {
 
     // Ritorno l'array
     return path_to_move_into_pages;
+}
+
+
+// Funzione per inserire esempi (di codice o di altro)
+export function insert_examples(reason, script_name) {
+    
+    // Controllo il motivo
+    switch (reason) {
+
+        // Code
+        case 'code':
+        
+            // Variabile per contenere i riferimenti ai vari div
+            let divs = [];
+
+            // Variabile per contenere tutti gli esempi di codice
+            let codes = [];
+
+            // In base a dove voglio, vado a prendere il nome dello script
+            switch (script_name) {
+
+                // Automatic Filling
+                case 'automatic filling':
+
+                    divs.push(document.querySelector('#selezionando-un-elemento-da-una-lista-select'));
+        
+                    codes.push(`
+                        <span class="js-comment">
+                            /*
+                                Codice scritto in JavaScript
+                            */
+                        </span><br /><br />
+                        
+                        <span class="js-comment">
+                            // Seleziono checkbox e radio
+                        </span><br />
+                        <span class="js-init">let</span> <span class="js-var">cb_profilo_1</span> = document.<span class="js-func">getElementsByName</span>('profilo-1');<br />            
+                        <span class="js-init">let</span> <span class="js-var">cb_profilo_2</span> = document.<span class="js-func">getElementsByName</span>('profilo-2');<br /><br />
+                        
+                        <span class="js-comment">
+                            // Selezione dell'elemento select
+                        </span><br />
+                        <span class="js-init">let</span> <span class="js-var">select</span> = document.<span class="js-func">getElementsById</span>('PROFILO');<br /><br />
+                        
+                        <span class="js-comment">
+                            // Aggiungo l'evento'
+                        </span><br />
+                        select.<span class="js-func">addEventListener</span>('click', () => {<br /><br />&nbsp;
+        
+                            <span class="js-comment">
+                                // Controllo quale elemento è stato scelto in base al valore restituito
+                            </span><br />&nbsp;
+                            switch (select.value) {<br /><br />&nbsp;&nbsp;
+        
+                                <span class="js-comment">
+                                    // In caso del profilo 1
+                                </span><br />&nbsp;&nbsp;
+                                case 'profilo 1':<br /><br />&nbsp;&nbsp;&nbsp;
+                                
+                                    cb_profilo_1[1].<span class="js-var">checked</span> = true;<br />&nbsp;&nbsp;&nbsp;
+                                    cb_profilo_2[1].<span class="js-var">checked</span> = false;<br /><br />&nbsp;&nbsp;&nbsp;
+                                    
+                                    break;<br /><br />&nbsp;&nbsp;
+        
+                                <span class="js-comment">
+                                    // In caso del profilo 2
+                                </span><br />&nbsp;&nbsp;
+                                case 'profilo 2':<br /><br />&nbsp;&nbsp;&nbsp;
+                                
+                                    cb_profilo_1[1].<span class="js-var">checked</span> = false;<br />&nbsp;&nbsp;&nbsp;
+                                    cb_profilo_2[1].<span class="js-var">checked</span> = true;<br /><br />&nbsp;&nbsp;&nbsp;
+                                    
+                                    break;<br /><br />&nbsp;&nbsp;
+        
+                                <span class="js-comment">
+                                    // In caso non seleziono uno dei profili elencati
+                                </span><br />&nbsp;&nbsp;
+                                default:<br /><br />&nbsp;&nbsp;&nbsp;
+        
+                                    <span class="js-comment">
+                                        // Svuoto campi per abilitazione e non
+                                    </span><br />&nbsp;&nbsp;&nbsp;
+                                    document.<span class="js-func">getElementsByName</span>('')[0].value = '';<br /><br />&nbsp;&nbsp;&nbsp;
+        
+                                    <span class="js-comment">
+                                        // Svuoto campo note
+                                    </span><br />&nbsp;&nbsp;&nbsp;
+                                    document.<span class="js-func">getElementsByName</span></span>('note')[0].innerHTML = '';<br /><br />&nbsp;&nbsp;&nbsp;
+                                    
+                                    break;<br /><br />&nbsp;
+                            }<br />
+                        });
+                    `);
+        
+                    break;
+                
+                // Default
+                default:
+                    break;
+            }
+        
+            // Vado a ciclare ogni elemento per poter aggiungere i codici dove voglio
+            for (let pos = 0; pos < divs.length; pos++) {
+                
+                // Creo la variabile per i dettagli
+                let details = document.createElement('details');
+
+                // Aggiungo del codice HTML
+                details.innerHTML = `
+                    <summary>Codice di esempio</summary>
+                    <div>
+                        <code></code>
+                    </div>
+                `;
+
+                // Aggiungo il codice
+                details.querySelector('code').innerHTML = codes[pos].replaceAll('&nbsp;', '&nbsp;&nbsp;');
+
+                // Inserisco i dettagli nel div
+                divs[pos].append(details);
+            }
+
+            break;
+
+        // Default
+        default:
+            break;
+
+     }
 }
 
 

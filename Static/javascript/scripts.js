@@ -5,6 +5,7 @@
 import { 
     add_css_js, 
     clickable_path, 
+    insert_examples,
     insert_in_head, 
     insert_my_json, 
     json_to_element, 
@@ -466,7 +467,7 @@ function what_page(points_path) {
 
             break;
 
-        // Utilities/scripts/
+        // /scripts/
         case '/utilities/scripts/':
 
             // Titolo
@@ -480,7 +481,7 @@ function what_page(points_path) {
 
             break;
 
-        // Utilities/scripts/compilazione-automatica
+        // /scripts/automatic-filling
         case '/utilities/scripts/automatic-filling':
 
             // Titolo
@@ -493,9 +494,12 @@ function what_page(points_path) {
             meta_descrizione = 'Pagina contenente script inerenti alla compilazione automatica di alcuni campi in base a diversi input.';
 
             /*
-                Inserisco le descrizioni per ogni script di compilazione automatica
+                Inserisco
+                - le descrizioni per ogni script di compilazione automatica
+                - il codice di esempio
             */
             insert_my_json('automatic filling', points_path);
+            insert_examples('code', 'automatic filling');
 
             break;
 
