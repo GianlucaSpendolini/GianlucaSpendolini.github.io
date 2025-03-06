@@ -1,19 +1,21 @@
 {
     "scripts": {
-        "selezionando-un-elemento-da-una-lista-select": {
-            "Nel codice": [
-                "Seleziono i vari campi che voglio compilare;",
-                "Prendo un riferimento per l'elemento select che, in base all'elemento selezionato, userò per compilare i campi;",
-                {
-                    "Aggiungo l'evento \"click\" all'elemento \"select\":": [
-                        ""
-                    ]
-                }
-            ],
-            "Lato interfaccia": [
-                "Seleziono un'opzione nella lista sel tag \"select\";",
-                "In automatico vengono compilati i vari campi che si vogliono compilare."
-            ]
+        "automatic filling": {
+            "selezionando-un-elemento-da-una-lista-select": {
+                "Nel codice": [
+                    "Seleziono i vari campi che voglio compilare;",
+                    "Prendo un riferimento per l'elemento select che, in base all'elemento selezionato, userò per compilare i campi;",
+                    {
+                        "Aggiungo l'evento \"click\" all'elemento \"select\":": [
+                            ""
+                        ]
+                    }
+                ],
+                "Lato interfaccia": [
+                    "Seleziono un'opzione nella lista sel tag \"select\";",
+                    "In automatico vengono compilati i vari campi che si vogliono compilare."
+                ]
+            }
         }
     }
 }

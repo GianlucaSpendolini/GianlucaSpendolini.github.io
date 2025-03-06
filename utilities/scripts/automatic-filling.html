@@ -32,17 +32,6 @@
 
             <h2><a name="selezionando-un-elemento-da-una-lista-select">Selezionando un elemento da una lista select</a></h2>
 
-            <style>
-            </style>
-
-            <div>
-                <code></code>
-            </div>
-
-            <br />
-
-            Il codice funziona come segue:
-
         </div>
 
     </main>
@@ -57,8 +46,12 @@
     <!-- Codice JavaScript per inserire i codici di esempio -->
     <script>
 
-        // Inserimento dei pezzi di codice
-        document.querySelector('#selezionando-un-elemento-da-una-lista-select code').innerHTML = `
+        let divs = [
+            document.querySelector('#selezionando-un-elemento-da-una-lista-select')
+        ];
+
+        let codes = [
+            `
             <span class="js-comment">
                 /*
                     Codice scritto in JavaScript
@@ -123,7 +116,28 @@
                         
                         break;<br /><br />&nbsp;
                 }<br />
-            });`.replaceAll('&nbsp;', '&nbsp;&nbsp;');
+            });`
+        ];
+
+        for (let pos = 0; pos < divs.length; pos++) {
+            
+            // Creo la variabile per i dettagli
+            let details = document.createElement('details');
+
+            // Aggiungo del codice HTML
+            details.innerHTML = `
+                <summary>Codice di esempio</summary>
+                <div>
+                    <code></code>
+                </div>
+            `;
+
+            // Aggiungo il codice
+            details.querySelector('code').innerHTML = codes[pos].replaceAll('&nbsp;', '&nbsp;&nbsp;');
+
+            // Inserisco i dettagli nel div
+            divs[pos].append(details);
+        }
 
     </script>
     

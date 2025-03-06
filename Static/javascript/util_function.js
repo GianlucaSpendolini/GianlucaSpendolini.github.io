@@ -444,7 +444,7 @@ export function insert_my_json(file_description, points) {
             break;
 
         // /scripts/compilazione-automatica (per inserire le descrizioni)
-        case 'compilazione automatica':
+        case 'automatic filling':
             fetch(`${points}Static/json/descriptions.json`)
             .then(response => response.json())
             .then(data => {
@@ -452,7 +452,15 @@ export function insert_my_json(file_description, points) {
                 console.log('funziona per compilazione automatica');
 
                 // Prendo i dati che mi servono
-                let descriptions = data['scripts'];
+                let descriptions = data['scripts']['automatic filling'];
+
+                // In un ciclo for prendo chiave e valore di ogni elemento
+
+                // Uso la chiave per cercare l'id (le chiavi hanno lo stesso nome degli id dei vari div contenenti i codici)
+
+                // Prendo il contenuto e creo l'elenco
+
+                // Appendo l'elenco in fondo allo script
                 console.log(descriptions);
             });
 

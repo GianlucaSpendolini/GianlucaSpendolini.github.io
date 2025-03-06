@@ -495,7 +495,7 @@ function what_page(points_path) {
             /*
                 Inserisco le descrizioni per ogni script di compilazione automatica
             */
-            insert_my_json('compilazione automatica', points_path);
+            insert_my_json('automatic filling', points_path);
 
             break;
 
