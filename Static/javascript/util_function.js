@@ -455,13 +455,16 @@ export function insert_my_json(file_description, points) {
                 let descriptions = data['scripts']['automatic filling'];
 
                 // In un ciclo for prendo chiave e valore di ogni elemento
+                for (let [div_id, description] of Object.entries(descriptions)) {
 
-                // Uso la chiave per cercare l'id (le chiavi hanno lo stesso nome degli id dei vari div contenenti i codici)
+                    // Uso la chiave per cercare l'id (le chiavi hanno lo stesso nome degli id dei vari div contenenti i codici)
+                    let ref = document.querySelector(`#${div_id}`);
+    
+                    // Prendo il contenuto, creo l'elenco e lo appendo all'elemento
+                    ref.append('Funzionamento:');
+                    ref.appendChild(json_to_element('ul', description))
 
-                // Prendo il contenuto e creo l'elenco
-
-                // Appendo l'elenco in fondo allo script
-                console.log(descriptions);
+                }
             });
 
         default:
