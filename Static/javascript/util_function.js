@@ -447,6 +447,31 @@ export function insert_my_json(file_description, points) {
 
             break;
 
+        // /scripts/automatic-filling (per inserire le descrizioni)
+        case 'automatic filling':
+            
+            fetch(`${points}Static/json/descriptions.json`)
+            .then(response => response.json())
+            .then(data => {
+
+                // Prendo i dati che mi servono
+                let descriptions = data['scripts']['automatic filling'];
+
+                // In un ciclo for prendo chiave e valore di ogni elemento
+                for (let [div_id, description] of Object.entries(descriptions)) {
+
+                    // Uso la chiave per cercare l'id (le chiavi hanno lo stesso nome degli id dei vari div contenenti i codici)
+                    let ref = document.querySelector(`#${div_id}`);
+    
+                    // Prendo il contenuto, creo l'elenco e lo appendo all'elemento
+                    ref.append('Funzionamento:');
+                    ref.appendChild(json_to_element('ul', description))
+
+                }
+            });
+
+            break;
+
         // /changes/changes_table (in caso voglio inserire i dati nella tabella delle modifiche)
         case 'changes table':
             fetch(`${points}Static/json/changes_table_elements.json`)
@@ -573,30 +598,6 @@ export function insert_my_json(file_description, points) {
             });
 
             break;
-
-        // /scripts/compilazione-automatica (per inserire le descrizioni)
-        case 'automatic filling':
-            fetch(`${points}Static/json/descriptions.json`)
-            .then(response => response.json())
-            .then(data => {
-                //
-                console.log('funziona per compilazione automatica');
-
-                // Prendo i dati che mi servono
-                let descriptions = data['scripts']['automatic filling'];
-
-                // In un ciclo for prendo chiave e valore di ogni elemento
-                for (let [div_id, description] of Object.entries(descriptions)) {
-
-                    // Uso la chiave per cercare l'id (le chiavi hanno lo stesso nome degli id dei vari div contenenti i codici)
-                    let ref = document.querySelector(`#${div_id}`);
-    
-                    // Prendo il contenuto, creo l'elenco e lo appendo all'elemento
-                    ref.append('Funzionamento:');
-                    ref.appendChild(json_to_element('ul', description))
-
-                }
-            });
 
         default:
             // Non faccio nulla
