@@ -499,7 +499,7 @@ function what_page(points_path) {
                 - il codice di esempio
             */
             insert_my_json('automatic filling', points_path);
-            insert_examples('code', 'automatic filling');
+            setTimeout(insert_examples('code', 'automatic filling'), 500);
 
             break;
 
