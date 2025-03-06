@@ -451,7 +451,7 @@ export async function insert_my_json(file_description, points) {
         // /scripts/automatic-filling (per inserire le descrizioni)
         case 'automatic filling':
 
-            return fetch(`${points}Static/json/descriptions.json`)
+            fetch(`${points}Static/json/descriptions.json`)
             .then(response => response.json())
             .then(data => {
 
