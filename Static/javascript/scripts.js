@@ -495,11 +495,11 @@ function what_page(points_path) {
 
             /*
                 Inserisco
-                - le descrizioni per ogni script di compilazione automatica
                 - il codice di esempio
+                - le descrizioni per ogni script di compilazione automatica
             */
+            insert_examples('code', 'automatic filling');
             insert_my_json('automatic filling', points_path);
-            setTimeout(insert_examples('code', 'automatic filling'), 500);
 
             break;
 
