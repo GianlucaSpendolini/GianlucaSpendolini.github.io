@@ -847,6 +847,29 @@
     },
 
     {
+        "tData": "05/03/2025 & 06/03/2025",
+        "tDescrizione": {
+            "Aggiunta": {
+                "Utilities/scripts/": "Sezione in cui inserire dei riferimenti a delle pagine in cui verranno inseriti pezzi di codice utili (con descrizione e l'eventuale esempio pratico);",
+                "Utilities/scripts/automatic-filling": "Inserisco gli script che permettono l'inserimento automatico dei dati in base a determinati eventi;",
+                "/Static/json/descriptions.json": "File contenente le descrizioni sottoforma di 'elenco puntato';",
+                "/Static/css/code.css": "File che contiene gli stili per le varie sezioni in cui inserisco frammenti di codice (comprese le classi delle parti del codice come var o func);",
+                "/Static/javascript/util_function.js": "Funzione per inserire in automatico i pezzi di codice in base alla sezione."
+            },
+            "Aggiornamento": {
+                "Utilities/": "Aggiunta descrizione per sezione /scripts/;",
+                "/Static/javascript/scripts.js": "Aggiunte parti per le nuove sezioni nella funzione 'what page';",
+                "/Static/javascript/util_function.js": "Nuova sezione nella funzione insert_my_json per la compilazione automatica dei campi;",
+                "README.md":"Nuova versione (0.23.0)."
+            }
+        },
+        "tAggiunte": [
+            "Aggiungere un progetto in utilities in cui, tramite le regex, si possono cercare (e sostituire nel caso) determinati pattern?",
+            "Nel caso, aggiornare la descrizione in Home (oltre ai progetti sarà possibile visualizzare parti di codice utile)."
+        ]
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,

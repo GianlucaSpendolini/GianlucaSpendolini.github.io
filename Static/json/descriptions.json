@@ -3,17 +3,19 @@
         "automatic filling": {
             "selezionando-un-elemento-da-una-lista-select": {
                 "Nel codice": [
-                    "Seleziono i vari campi che voglio compilare;",
-                    "Prendo un riferimento per l'elemento select che, in base all'elemento selezionato, userò per compilare i campi;",
+                    "Seleziono i vari campi che voglio compilare",
+                    "Prendo un riferimento per l'elemento select che, in base all'elemento selezionato, userò per compilare i campi",
                     {
                         "Aggiungo l'evento \"click\" all'elemento \"select\":": [
-                            ""
+                            "Prendo il valore",
+                            "Il valore viene passato allo switch-case",
+                            "Utilizzando il 'default' dello switch posso andare a svuotare i campi"
                         ]
                     }
                 ],
                 "Lato interfaccia": [
-                    "Seleziono un'opzione nella lista sel tag \"select\";",
-                    "In automatico vengono compilati i vari campi che si vogliono compilare."
+                    "Seleziono un'opzione nella lista sel tag \"select\"",
+                    "In automatico vengono compilati i vari campi che si vogliono compilare"
                 ]
             }
         }
