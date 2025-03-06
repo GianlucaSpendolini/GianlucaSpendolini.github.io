@@ -498,8 +498,10 @@ function what_page(points_path) {
                 - le descrizioni per ogni script di compilazione automatica
                 - il codice di esempio
             */
-            async () => await insert_my_json('automatic filling', points_path);
-            insert_examples('code', 'automatic filling');
+            async () => {
+                await insert_my_json('automatic filling', points_path);
+                insert_examples('code', 'automatic filling');
+            }
             
 
             break;
