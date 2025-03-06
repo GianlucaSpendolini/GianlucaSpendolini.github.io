@@ -355,7 +355,7 @@ export function insert_in_head(meta_tags) {
 
 
 // Funzione per inserire dei contenuti dei miei file JSON in una determinata sezione
-export function insert_my_json(file_description, points) {
+export async function insert_my_json(file_description, points) {
 
     switch (file_description) {
 
@@ -449,7 +449,7 @@ export function insert_my_json(file_description, points) {
 
         // /scripts/automatic-filling (per inserire le descrizioni)
         case 'automatic filling':
-            
+
             fetch(`${points}Static/json/descriptions.json`)
             .then(response => response.json())
             .then(data => {
