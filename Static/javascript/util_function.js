@@ -247,8 +247,8 @@ export function insert_examples(reason, script_name) {
                     html_examples.push([
                         `  
                         // Seleziono checkbox e radio
-                        let cb_profilo_1 = document.getElementsByName('profilo-1');            
-                        let cb_profilo_2 = document.getElementsByName('profilo-2');
+                        let cb_profilo_1 = document.getElementsByName('profilo-1')[0];            
+                        let cb_profilo_2 = document.getElementsByName('profilo-2')[0];
                         
                         // Selezione dell'elemento select
                         let select = document.getElementById('PROFILO');
@@ -313,8 +313,8 @@ export function insert_examples(reason, script_name) {
                         <span class="js-comment">
                             // Seleziono checkbox e radio
                         </span><br />
-                        <span class="js-init">let</span> <span class="js-var">cb_profilo_1</span> = document.<span class="js-func">getElementsByName</span>('profilo-1');<br />            
-                        <span class="js-init">let</span> <span class="js-var">cb_profilo_2</span> = document.<span class="js-func">getElementsByName</span>('profilo-2');<br /><br />
+                        <span class="js-init">let</span> <span class="js-var">cb_profilo_1</span> = document.<span class="js-func">getElementsByName</span>('profilo-1')[0];<br />            
+                        <span class="js-init">let</span> <span class="js-var">cb_profilo_2</span> = document.<span class="js-func">getElementsByName</span>('profilo-2')[0];<br /><br />
                         
                         <span class="js-comment">
                             // Selezione dell'elemento select
@@ -360,7 +360,7 @@ export function insert_examples(reason, script_name) {
                                         // Svuoto campi per abilitazione e non
                                     </span><br />&nbsp;&nbsp;&nbsp;
                                     cb_profilo_1[1].checked = false;<br />&nbsp;&nbsp;&nbsp;
-                                    cb_profilo_2[1].checked = false;<br />&nbsp;&nbsp;&nbsp;
+                                    cb_profilo_2[1].checked = false;<br /><br />&nbsp;&nbsp;&nbsp;
         
                                     <span class="js-comment">
                                         // Svuoto altri campi
