@@ -388,10 +388,10 @@ export function insert_examples(reason, script_name) {
 
                 // Creo lo script nel quale inserire la logica dell'esempio
                 let script = document.createElement('script');
-                // Aggiungo il l'attributo defer al tag
-                script.defer = true;
                 // Inserisco la logica (dentro un evendo che lo fa caricare solo quando il contenuto è caricato)
-                script.innerHTML = html_examples[pos][0];
+                script.innerHTML = `document.addEventListener('DOMContentLoaded', () => {
+                    ${html_examples[pos][0]}
+                });`;
 
                 // Aggiungo gli elementi al div
                 div.innerHTML = html_examples[pos][1];
