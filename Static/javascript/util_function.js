@@ -244,7 +244,54 @@ export function insert_examples(reason, script_name) {
 
                     divs.push(document.querySelector('#selezionando-un-elemento-da-una-lista-select'));
 
-                    html_examples.push(`
+                    html_examples.push([
+                        `  
+                        // Seleziono checkbox e radio
+                        let cb_profilo_1 = document.getElementsByName('profilo-1');            
+                        let cb_profilo_2 = document.getElementsByName('profilo-2');
+                        
+                        // Selezione dell'elemento select
+                        let select = document.getElementsById('PROFILO');
+                        
+                        // Aggiungo l'evento
+                        select.addEventListener('click', () => {
+                            
+                            // Controllo quale elemento è stato scelto in base al valore restituito
+                            switch (select.value) {
+                            
+                                // In caso del profilo 1
+                                case 'profilo 1':
+                                
+                                    cb_profilo_1[1].checked = true;
+                                    cb_profilo_2[1].checked = false;
+                                    
+                                    break;
+                                
+                                // In caso del profilo 2
+                                case 'profilo 2':
+                                
+                                    cb_profilo_1[1].checked = false;
+                                    cb_profilo_2[1].checked = true;
+                                    
+                                    break;
+                                
+                                // In caso non seleziono uno dei profili elencati
+                                default:
+                                    
+                                    // Svuoto campi per abilitazione e non
+                                    cb_profilo_1[1].checked = false;
+                                    cb_profilo_2[1].checked = false;
+        
+                                    
+                                    // Svuoto altri campi
+                                    // document.getElementsByName('')[0].value = '';
+                                    // document.getElementsByName('input')[0].innerHTML = '';
+                                    
+                                    break;
+                            }
+                        });
+                        `,
+                        `
                         <select id="PROFILO">
                             <option name="vuoto" value="...">...</option>
                             <option name="profilo-1" value="1">Profilo 1</option>
@@ -252,55 +299,8 @@ export function insert_examples(reason, script_name) {
                         </select>
                         
                         <input id="check-prova" type="checkbox">
-
-                        <script>
-                               
-                            // Seleziono checkbox e radio
-                            let cb_profilo_1 = document.getElementsByName('profilo-1');            
-                            let cb_profilo_2 = document.getElementsByName('profilo-2');
-                            
-                            // Selezione dell'elemento select
-                            let select = document.getElementsById('PROFILO');
-                            
-                            // Aggiungo l'evento
-                            select.addEventListener('click', () => {
-                                
-                                // Controllo quale elemento è stato scelto in base al valore restituito
-                                switch (select.value) {
-                                
-                                    // In caso del profilo 1
-                                    case 'profilo 1':
-                                    
-                                        cb_profilo_1[1].checked = true;
-                                        cb_profilo_2[1].checked = false;
-                                        
-                                        break;
-                                    
-                                    // In caso del profilo 2
-                                    case 'profilo 2':
-                                    
-                                        cb_profilo_1[1].checked = false;
-                                        cb_profilo_2[1].checked = true;
-                                        
-                                        break;
-                                    
-                                    // In caso non seleziono uno dei profili elencati
-                                    default:
-                                        
-                                        // Svuoto campi per abilitazione e non
-                                        cb_profilo_1[1].checked = false;
-                                        cb_profilo_2[1].checked = false;
-            
-                                        
-                                        // Svuoto altri campi
-                                        // document.getElementsByName('')[0].value = '';
-                                        // document.getElementsByName('input')[0].innerHTML = '';
-                                        
-                                        break;
-                                }
-                            });
-                        </script>
-                    `);
+                        `
+                    ]);
         
                     codes.push(`
                         <span class="js-comment">
@@ -385,10 +385,14 @@ export function insert_examples(reason, script_name) {
                 // Creo il div nel quale inserire l'esempio ed il codice associato
                 let div = document.createElement('div');
 
+                // Creo lo script nel quale inserire la logica dell'esempio
+                let script = document.createElement('script');
+                // Inserisco la logica
+                script.innerHTML = html_examples[pos][0]
+
                 // Aggiungo gli elementi al div
-                div.innerHTML = `
-                    <
-                `;
+                div.innerHTML = html_examples[pos][1];
+                div.appendChild(script);
                 
                 // Creo la variabile per i dettagli
                 let details = document.createElement('details');
