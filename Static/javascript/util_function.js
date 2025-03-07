@@ -251,7 +251,7 @@ export function insert_examples(reason, script_name) {
                         let cb_profilo_2 = document.getElementsByName('profilo-2');
                         
                         // Selezione dell'elemento select
-                        let select = document.getElementsById('PROFILO');
+                        let select = document.getElementById('PROFILO');
                         
                         // Aggiungo l'evento
                         select.addEventListener('click', () => {
@@ -293,12 +293,13 @@ export function insert_examples(reason, script_name) {
                         `,
                         `
                         <select id="PROFILO">
-                            <option name="vuoto" value="...">...</option>
-                            <option name="profilo-1" value="1">Profilo 1</option>
-                            <option name="profilo-2" value="2">Profilo 2</option>
+                            <option value="...">...</option>
+                            <option value="profilo 1">Profilo 1</option>
+                            <option value="profilo 2">Profilo 2</option>
                         </select>
                         
-                        <input id="check-prova" type="checkbox">
+                        <input name="profilo-1" type="checkbox">
+                        <input name="profilo-2" type="checkbox">
                         `
                     ]);
         
@@ -318,7 +319,7 @@ export function insert_examples(reason, script_name) {
                         <span class="js-comment">
                             // Selezione dell'elemento select
                         </span><br />
-                        <span class="js-init">let</span> <span class="js-var">select</span> = document.<span class="js-func">getElementsById</span>('PROFILO');<br /><br />
+                        <span class="js-init">let</span> <span class="js-var">select</span> = document.<span class="js-func">getElementById</span>('PROFILO');<br /><br />
                         
                         <span class="js-comment">
                             // Aggiungo l'evento
