@@ -254,7 +254,7 @@ export function insert_examples(reason, script_name) {
                         let select = document.getElementById('PROFILO');
                         
                         // Aggiungo l'evento
-                        select.addEventListener('click', () => {
+                        select.addEventListener('change', () => {
                             
                             // Controllo quale elemento è stato scelto in base al valore restituito
                             switch (select.value) {
