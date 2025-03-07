@@ -293,13 +293,13 @@ export function insert_examples(reason, script_name) {
                         `,
                         `
                         <select id="PROFILO">
-                            <option value="...">...</option>
+                            <option value="">...</option>
                             <option value="profilo 1">Profilo 1</option>
                             <option value="profilo 2">Profilo 2</option>
                         </select>
                         
-                        <input name="profilo-1" type="checkbox">
-                        <input name="profilo-2" type="checkbox">
+                        <input name="profilo-1" type="checkbox" />
+                        <input name="profilo-2" type="checkbox" />
                         `
                     ]);
         
@@ -388,6 +388,8 @@ export function insert_examples(reason, script_name) {
 
                 // Creo lo script nel quale inserire la logica dell'esempio
                 let script = document.createElement('script');
+                // Inserisco attributo defer
+                script.defer = true;
                 // Inserisco la logica (dentro un evendo che lo fa caricare solo quando il contenuto è caricato)
                 script.innerHTML = `document.addEventListener('DOMContentLoaded', () => {
                     ${html_examples[pos][0]}
