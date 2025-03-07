@@ -247,14 +247,14 @@ export function insert_examples(reason, script_name) {
                     html_examples.push([
                         `  
                         // Seleziono checkbox e radio
-                        let cb_profilo_1 = document.getElementsByName('profilo-1');            
-                        let cb_profilo_2 = document.getElementsByName('profilo-2');
+                        let cb_profilo_1 = document.getElementsByName('profilo-1')[0];            
+                        let cb_profilo_2 = document.getElementsByName('profilo-2')[0];
                         
                         // Selezione dell'elemento select
                         let select = document.getElementById('PROFILO');
                         
                         // Aggiungo l'evento
-                        select.addEventListener('change', () => {
+                        select.addEventListener('click', () => {
                             
                             // Controllo quale elemento è stato scelto in base al valore restituito
                             switch (select.value) {
@@ -262,16 +262,16 @@ export function insert_examples(reason, script_name) {
                                 // In caso del profilo 1
                                 case 'profilo 1':
                                 
-                                    cb_profilo_1[0].checked = true;
-                                    cb_profilo_2[0].checked = false;
+                                    cb_profilo_1.checked = true;
+                                    cb_profilo_2.checked = false;
                                     
                                     break;
                                 
                                 // In caso del profilo 2
                                 case 'profilo 2':
                                 
-                                    cb_profilo_1[0].checked = false;
-                                    cb_profilo_2[0].checked = true;
+                                    cb_profilo_1.checked = false;
+                                    cb_profilo_2.checked = true;
                                     
                                     break;
                                 
@@ -279,8 +279,8 @@ export function insert_examples(reason, script_name) {
                                 default:
                                     
                                     // Svuoto campi per abilitazione e non
-                                    cb_profilo_1[0].checked = false;
-                                    cb_profilo_2[0].checked = false;
+                                    cb_profilo_1.checked = false;
+                                    cb_profilo_2.checked = false;
         
                                     
                                     // Svuoto altri campi
