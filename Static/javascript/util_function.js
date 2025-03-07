@@ -388,8 +388,10 @@ export function insert_examples(reason, script_name) {
 
                 // Creo lo script nel quale inserire la logica dell'esempio
                 let script = document.createElement('script');
-                // Inserisco la logica
-                script.innerHTML = html_examples[pos][0]
+                // Inserisco la logica (dentro un evendo che lo fa caricare solo quando il contenuto è caricato)
+                script.innerHTML = `document.addEventListener('DOMContentLoaded', () => {
+                    ${html_examples[pos][0]}
+                });`;
 
                 // Aggiungo gli elementi al div
                 div.innerHTML = html_examples[pos][1];
