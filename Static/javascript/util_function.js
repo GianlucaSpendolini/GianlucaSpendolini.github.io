@@ -396,8 +396,8 @@ export function insert_examples(reason, script_name) {
                 });`;
 
                 // Aggiungo gli elementi al div
-                div.innerHTML = html_examples[pos][1];
-                div.appendChild(script);
+                // div.innerHTML = html_examples[pos][1];
+                // div.appendChild(script);
                 
                 // Creo la variabile per i dettagli
                 let details = document.createElement('details');
@@ -418,6 +418,9 @@ export function insert_examples(reason, script_name) {
 
                 // Inserisco i dettagli nel div
                 divs[pos].append(div);
+
+                // Appendo lo script al body
+                document.body.appendChild(script);
             }
 
             break;
