@@ -284,8 +284,8 @@ export function insert_examples(reason, script_name) {
         
                                     
                                     // Svuoto altri campi
-                                    // document.getElementsByName('')[0].value = '';
-                                    // document.getElementsByName('input')[0].innerHTML = '';
+                                    // document.getElementsByName('input-text')[0].value = '';
+                                    // document.getElementsByName('textarea')[0].innerHTML = '';
                                     
                                     break;
                             }
@@ -324,7 +324,7 @@ export function insert_examples(reason, script_name) {
                         <span class="js-comment">
                             // Aggiungo l'evento
                         </span><br />
-                        select.<span class="js-func">addEventListener</span>('click', () => {<br /><br />&nbsp;
+                        select.<span class="js-func">addEventListener</span>('change', () => {<br /><br />&nbsp;
         
                             <span class="js-comment">
                                 // Controllo quale elemento è stato scelto in base al valore restituito
@@ -336,8 +336,8 @@ export function insert_examples(reason, script_name) {
                                 </span><br />&nbsp;&nbsp;
                                 case 'profilo 1':<br /><br />&nbsp;&nbsp;&nbsp;
                                 
-                                    cb_profilo_1[1].<span class="js-var">checked</span> = true;<br />&nbsp;&nbsp;&nbsp;
-                                    cb_profilo_2[1].<span class="js-var">checked</span> = false;<br /><br />&nbsp;&nbsp;&nbsp;
+                                    cb_profilo_1.<span class="js-var">checked</span> = true;<br />&nbsp;&nbsp;&nbsp;
+                                    cb_profilo_2.<span class="js-var">checked</span> = false;<br /><br />&nbsp;&nbsp;&nbsp;
                                     
                                     break;<br /><br />&nbsp;&nbsp;
         
@@ -346,8 +346,8 @@ export function insert_examples(reason, script_name) {
                                 </span><br />&nbsp;&nbsp;
                                 case 'profilo 2':<br /><br />&nbsp;&nbsp;&nbsp;
                                 
-                                    cb_profilo_1[1].<span class="js-var">checked</span> = false;<br />&nbsp;&nbsp;&nbsp;
-                                    cb_profilo_2[1].<span class="js-var">checked</span> = true;<br /><br />&nbsp;&nbsp;&nbsp;
+                                    cb_profilo_1.<span class="js-var">checked</span> = false;<br />&nbsp;&nbsp;&nbsp;
+                                    cb_profilo_2.<span class="js-var">checked</span> = true;<br /><br />&nbsp;&nbsp;&nbsp;
                                     
                                     break;<br /><br />&nbsp;&nbsp;
         
@@ -359,14 +359,14 @@ export function insert_examples(reason, script_name) {
                                     <span class="js-comment">
                                         // Svuoto campi per abilitazione e non
                                     </span><br />&nbsp;&nbsp;&nbsp;
-                                    cb_profilo_1[1].checked = false;<br />&nbsp;&nbsp;&nbsp;
-                                    cb_profilo_2[1].checked = false;<br /><br />&nbsp;&nbsp;&nbsp;
+                                    cb_profilo_1.checked = false;<br />&nbsp;&nbsp;&nbsp;
+                                    cb_profilo_2.checked = false;<br /><br />&nbsp;&nbsp;&nbsp;
         
                                     <span class="js-comment">
                                         // Svuoto altri campi
                                     </span><br />&nbsp;&nbsp;&nbsp;
-                                    document.<span class="js-func">getElementsByName</span></span>('note')[0].innerHTML = '';<br />&nbsp;&nbsp;&nbsp;
-                                    document.<span class="js-func">getElementsByName</span>('')[0].value = '';<br /><br />&nbsp;&nbsp;&nbsp;
+                                    document.<span class="js-func">getElementsByName</span></span>('input-text')[0].value = '';<br />&nbsp;&nbsp;&nbsp;
+                                    document.<span class="js-func">getElementsByName</span>('textarea')[0].innerHTML = '';<br /><br />&nbsp;&nbsp;&nbsp;
                                     
                                     break;<br /><br />&nbsp;
                             }<br />
@@ -386,18 +386,8 @@ export function insert_examples(reason, script_name) {
                 // Creo il div nel quale inserire l'esempio ed il codice associato
                 let div = document.createElement('div');
 
-                // Creo lo script nel quale inserire la logica dell'esempio
-                let script = document.createElement('script');
-                // Inserisco attributo defer
-                // script.defer = true;
-                // Inserisco la logica (dentro un evendo che lo fa caricare solo quando il contenuto è caricato)
-                // script.textContent = `document.addEventListener('DOMContentLoaded', () => {
-                //     ${html_examples[pos][0]}
-                // });`;
-
                 // Aggiungo gli elementi al div
                 div.innerHTML = html_examples[pos][1];
-                // div.appendChild(script);
                 
                 // Creo la variabile per i dettagli
                 let details = document.createElement('details');
