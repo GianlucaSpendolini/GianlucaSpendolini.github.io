@@ -418,15 +418,9 @@ export function insert_examples(reason, script_name) {
 
                 // Inserisco i dettagli nel div
                 divs[pos].append(div);
-
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', () => {
-                        eval(html_examples[pos][0]);
-                    });
-                }
-                else {
-                    eval(html_examples[pos][0]);
-                }
+                
+                // Eseguo il codice javascript
+                eval(html_examples[pos][0]);
             }
 
             break;
