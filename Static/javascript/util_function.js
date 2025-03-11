@@ -391,7 +391,7 @@ export function insert_examples(reason, script_name) {
                 // Inserisco attributo defer
                 script.defer = true;
                 // Inserisco la logica (dentro un evendo che lo fa caricare solo quando il contenuto è caricato)
-                script.innerHTML = `document.addEventListener('DOMContentLoaded', () => {
+                script.textContent = `document.addEventListener('DOMContentLoaded', () => {
                     ${html_examples[pos][0]}
                 });`;
 
