@@ -389,11 +389,11 @@ export function insert_examples(reason, script_name) {
                 // Creo lo script nel quale inserire la logica dell'esempio
                 let script = document.createElement('script');
                 // Inserisco attributo defer
-                script.defer = true;
+                // script.defer = true;
                 // Inserisco la logica (dentro un evendo che lo fa caricare solo quando il contenuto è caricato)
-                script.textContent = `document.addEventListener('DOMContentLoaded', () => {
-                    ${html_examples[pos][0]}
-                });`;
+                // script.textContent = `document.addEventListener('DOMContentLoaded', () => {
+                //     ${html_examples[pos][0]}
+                // });`;
 
                 // Aggiungo gli elementi al div
                 div.innerHTML = html_examples[pos][1];
@@ -419,8 +419,14 @@ export function insert_examples(reason, script_name) {
                 // Inserisco i dettagli nel div
                 divs[pos].append(div);
 
-                // Appendo lo script al body
-                document.body.appendChild(script);
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => {
+                        eval(html_examples[pos][0]);
+                    });
+                }
+                else {
+                    eval(html_examples[pos][0]);
+                }
             }
 
             break;
