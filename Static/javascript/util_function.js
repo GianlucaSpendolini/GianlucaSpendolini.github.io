@@ -383,11 +383,23 @@ export function insert_examples(reason, script_name) {
             // Vado a ciclare ogni elemento per poter aggiungere i codici dove voglio
             for (let pos = 0; pos < divs.length; pos++) {
 
-                // Creo il div nel quale inserire l'esempio ed il codice associato
+                // Creo il div nel quale inserire l'esempio ed il codice associato (con gli stili)
                 let div = document.createElement('div');
+                div.style.borderStyle = 'solid';
+                div.style.borderColor = 'black';
+
+                // Creo il titolo della sezione
+                let h3 = document.createElement('h3');
+                h3.innerText = 'Esempio pratico + codice';
+
+                // Creo il div dell'esempio
+                let example_div = document.createElement('div');
 
                 // Aggiungo gli elementi al div
-                div.innerHTML = html_examples[pos][1];
+                example_div.innerHTML = html_examples[pos][1];
+
+                // Appendo il div di esempio
+                div.appendChild(example_div);
                 
                 // Creo la variabile per i dettagli
                 let details = document.createElement('details');
