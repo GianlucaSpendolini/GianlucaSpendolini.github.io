@@ -387,15 +387,15 @@ export function insert_examples(reason, script_name) {
                 let div = document.createElement('div');
                 div.style.borderStyle = 'solid';
                 div.style.borderColor = 'black';
+                div.style.padding = '10px';
 
-                // Creo il titolo della sezione
+                // Creo il titolo della sezione e lo inserisco nel div
                 let h3 = document.createElement('h3');
                 h3.innerText = 'Esempio pratico + codice';
+                div.appendChild(h3);
 
-                // Creo il div dell'esempio
+                // Creo il div dell'esempio e aggiungo gli elementi
                 let example_div = document.createElement('div');
-
-                // Aggiungo gli elementi al div
                 example_div.innerHTML = html_examples[pos][1];
 
                 // Appendo il div di esempio
