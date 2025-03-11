@@ -420,7 +420,7 @@ export function insert_examples(reason, script_name) {
                 divs[pos].append(div);
                 
                 // Eseguo il codice javascript
-                eval(html_examples[pos][0]);
+                (new Function(html_examples[pos][0]))();
             }
 
             break;
