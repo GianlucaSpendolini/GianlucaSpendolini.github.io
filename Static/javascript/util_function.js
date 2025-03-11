@@ -396,7 +396,7 @@ export function insert_examples(reason, script_name) {
                 });`;
 
                 // Aggiungo gli elementi al div
-                // div.innerHTML = html_examples[pos][1];
+                div.innerHTML = html_examples[pos][1];
                 // div.appendChild(script);
                 
                 // Creo la variabile per i dettagli
