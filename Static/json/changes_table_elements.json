@@ -850,14 +850,18 @@
         "tData": "05/03/2025 - 07/03/2025",
         "tDescrizione": {
             "Aggiunta": {
-                "Utilities/scripts/": "Sezione in cui inserire dei riferimenti a delle pagine in cui verranno inseriti pezzi di codice utili (con descrizione e l'eventuale esempio pratico);",
-                "Utilities/scripts/automatic-filling": "Inserisco gli script che permettono l'inserimento automatico dei dati in base a determinati eventi;",
+                "utilities/scripts/": [
+                    "Sezione in cui inserire dei riferimenti a delle pagine in cui verranno inseriti pezzi di codice utili (con descrizione e l'eventuale esempio pratico);",
+                    {
+                        "utilities/scripts/automatic-filling.html": "Inserisco gli script che permettono l'inserimento automatico dei dati in base a determinati eventi;"
+                    }
+                ],
                 "/Static/json/descriptions.json": "File contenente le descrizioni sottoforma di 'elenco puntato';",
                 "/Static/css/code.css": "File che contiene gli stili per le varie sezioni in cui inserisco frammenti di codice (comprese le classi delle parti del codice come var o func);",
-                "/Static/javascript/util_function.js": "Funzione per inserire in automatico i pezzi di codice in base alla sezione."
+                "/Static/javascript/util_function.js": "Funzione insert_examples per inserire in automatico i pezzi di codice in base alla sezione."
             },
             "Aggiornamento": {
-                "Utilities/": "Aggiunta descrizione per sezione /scripts/;",
+                "utilities/": "Aggiunta descrizione per sezione /scripts/;",
                 "/Static/javascript/scripts.js": "Aggiunte parti per le nuove sezioni nella funzione 'what page';",
                 "/Static/javascript/util_function.js": "Nuova sezione nella funzione insert_my_json per la compilazione automatica dei campi;",
                 "README.md":"Nuova versione (0.23.0)."
@@ -872,10 +876,33 @@
     {
         "tData": "12/03/2025",
         "tDescrizione": {
-            "Aggiunta": null,
-            "Aggiornamento": null
+            "Aggiunta": {
+                "utilities/scripts/page-references.html": "Aggiunta sezione per inserire script per prendere i riferimenti alle pagine."
+            },
+            "Aggiornamento": {
+                "utilities/":
+                "utilities/scripts/": "Inserimento richiamo e descrizione per sezione /page-references.html;",
+                "/Static/css/code.css": [
+                    "Aggiunti classi generali per parti codice;",
+                    "Aggiunti colori per linguaggi Python e PHP;"
+                ],
+                "/Static/javascript/util_function.js": [
+                    "Aggiornata funzione insert_my_json con parte di /page-references.html per inserire le descrizione;",
+                    "Aggiornata funzione insert_examples per inserire esempi anche in /page-references.html;"
+                ],
+                "/Static/json/descriptions.json": "Inserimento descrizione per sezione /page_references.html;",
+                "README.md": "Nuova versione (0.24.0)."
+            }
         },
-        "tAggiunte": null
+        "tAggiunte": [
+            {
+                "Inserire sezione per le password": [
+                    "Per farle vedere o meno con bottone;",
+                    "Per controllare la sicurezza (se sono forti o meno)."
+                ]
+            },
+            "In entrambe le occasioni, inserisci anche descrizione e le prove pratiche per entrambi (siccome si possono fare) per non metterle nella sezione utilities."
+        ]
     },
 
     {
