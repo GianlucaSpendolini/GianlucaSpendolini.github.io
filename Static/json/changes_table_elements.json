@@ -880,8 +880,12 @@
                 "utilities/scripts/page-references.html": "Aggiunta sezione per inserire script per prendere i riferimenti alle pagine."
             },
             "Aggiornamento": {
-                "utilities/":
-                "utilities/scripts/": "Inserimento richiamo e descrizione per sezione /page-references.html;",
+                "utilities/": [
+                    "Migliore descrizione per la sezione /utilities/scripts/;",
+                    {
+                        "utilities/scripts/": "Inserimento richiamo e descrizione per sezione /page-references.html;"
+                    }
+                ],
                 "/Static/css/code.css": [
                     "Aggiunti classi generali per parti codice;",
                     "Aggiunti colori per linguaggi Python e PHP;"
@@ -890,7 +894,10 @@
                     "Aggiornata funzione insert_my_json con parte di /page-references.html per inserire le descrizione;",
                     "Aggiornata funzione insert_examples per inserire esempi anche in /page-references.html;"
                 ],
-                "/Static/json/descriptions.json": "Inserimento descrizione per sezione /page_references.html;",
+                "/Static/json/": {
+                    "/descriptions.json": "Inserimento descrizione per sezione /page_references.html;",
+                    "progress.json": "Aggiornamento percentuali per progetto sito statico GitHub;"
+                },
                 "README.md": "Nuova versione (0.24.0)."
             }
         },
