@@ -368,9 +368,9 @@ export function insert_examples(reason, script_name) {
                 // div.className = 'details-container';
                 div.style.borderStyle = 'solid';
                 div.style.borderColor = 'black';
-                div.style.boxSizing = 'border-box';
-                div.style.maxWidth = '100%';
-                div.style.overflow = 'auto';
+                // div.style.boxSizing = 'border-box';
+                // div.style.maxWidth = '100%';
+                // div.style.overflow = 'auto';
                 div.style.padding = '10px';
 
                 // Creo il titolo della sezione e lo inserisco nel div
@@ -387,7 +387,7 @@ export function insert_examples(reason, script_name) {
                 
                 // Creo la variabile per i dettagli e aggiungo le caratteristiche
                 let details = document.createElement('details');
-                details.style.wordWrap = 'break-word';
+                // details.style.wordWrap = 'break-word';
 
                 // Aggiungo del codice HTML
                 details.innerHTML = `
@@ -398,11 +398,11 @@ export function insert_examples(reason, script_name) {
                 `;
 
                 // Aggiungo il codice
-                details.querySelector('code').innerHTML = codes[pos].replaceAll('&nbsp;', '&nbsp;&nbsp;');
+                // details.querySelector('code').innerHTML = codes[pos].replaceAll('&nbsp;', '&nbsp;&nbsp;');
                 details.querySelector('code').style.whiteSpace = 'pre-wrap';
 
                 // Aggiungo gli eventi al div dentro 'details'
-                let details_div = details.querySelector('div');
+                // let details_div = details.querySelector('div');
 
                 // Aggiungo i dettagli al div
                 div.appendChild(details);
