@@ -440,7 +440,7 @@ export function insert_examples(reason, script_name) {
                     
                     // Versione PHP
                    
-                    divs.push(document.querySelector('#'));
+                    divs.push(document.querySelector('#tornare-alla-home'));
 
                     html_examples.push({
                         'JavaScript': `/* Non ci sono codici di esempio da eseguire*/`,
