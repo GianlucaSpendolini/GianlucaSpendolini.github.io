@@ -375,25 +375,25 @@ export function insert_examples(reason, script_name) {
                             Codice scritto in JavaScript
                         */</span>
 
-                        let p = document.querySelector('p.movement_into_pages');
+                        <span class="init">let</span> <span class="var">p</span> = document.<span class="func">querySelector('p.movement_into_pages')</span>;
 
-                        if (p) {
+                        if (<span class="var">p</span>) {
                         
-                            // Creo l'elemento per la home
-                            let a = document.createElement('a');
+                            <span class="comment">// Creo l'elemento per la home</span>
+                            <span class="init">let</span> <span class="var">a</span> = document.<span class="func">createElement('a')</span>;
                             a.innerText = 'Home';
                             a.href = points;
                         
-                            // Inserisco l'elemento per Home ed il primo separatore
-                            p.appendChild(a);
-                            p.append(' / ');
+                            <span class="comment">// Inserisco l'elemento per Home ed il primo separatore</span>
+                            p.<span class="func">appendChild(a)</span>;
+                            p.<span class="func">append(' / ')</span>;
                             
-                            // Inserisco la lista nell'apposita sezione
-                            clickable_path(path).forEach(e => {
-                                // Inserisco l'elemento
-                                p.appendChild(e);
-                                // Inserisco la barra spaziatrice
-                                p.append(' / ');
+                            <span class="comment">// Inserisco la lista nell'apposita sezione</span>
+                            <span class"func">clickable_path(path)</span>.forEach(e => {
+                                <span class="comment">// Inserisco l'elemento</span>
+                                p.<span class="func">appendChild(<span class="var">e</span>)</span>;
+                                <span class="comment">// Inserisco la barra spaziatrice</span>
+                                p.<span class="func">append(' / ')</span>;
                             });
                         }
                     `);
@@ -453,29 +453,29 @@ export function insert_examples(reason, script_name) {
                         */</span>
     
                         <span class="comment">// Prendo il percorso attuale</span>
-                        $relative_path = $_SERVER['PHP_SELF'];
+                        <span class="php-var">$relative_path</span> = <span class="php-var">$_SERVER['PHP_SELF']</span>;
                         
                         <span class="comment">// Eventualmente tolgo la base al percorso</span>
-                        $relative_path_real = <span class="func">str_replace('/gianluca/', '/', <span class="var">$relative_path</span>)</span>;
+                        <span class="php-var">$relative_path_real</span> = <span class="func">str_replace('/gianluca/', '/', <span class="php-var">$relative_path</span>)</span>;
                         
                         <span class="comment">// Tolgo il nome dello script alla fine</span>
-                        $relative_path_real = <span class="func">explode('/', <span class="var">$relative_path_real</span>)</span>;
+                        <span class="php-var">$relative_path_real</span> = <span class="func">explode('/', <span class="php-var">$relative_path_real</span>)</span>;
                         
                         <span class="comment">// Tolgo ilprimo elemento</span>
-                        <span class="func">array_shift(<span class="var">$relative_path_real</span>)</span>;
+                        <span class="func">array_shift(<span class="php-var">$relative_path_real</span>)</span>;
                         
                         <span class="comment">// Tolgo l'ultimo elemento</span>
-                        <span class="func">array_pop(<span class="var">$relative_path_real</span>)</span>;
+                        <span class="func">array_pop(<span class="php-var">$relative_path_real</span>)</span>;
                         
                         <span class="comment">// Creo l'array per i punti</span>
-                        $a = './';
+                        <span class="php-var">$a</span> = './';
                         
                         foreach ($relative_path_real as $e) {
-                            $a .= '../';
+                            <span class="php-var">$a</span> .= '../';
                         }
                         
                         <span class="comment">// Ritorno il percorso</span>
-                        return $a;
+                        return <span class="php-var">$a</span>;
                     `);
         
                     break;
@@ -647,7 +647,7 @@ export async function insert_my_json(file_description, points) {
 
             break;
 
-        // /scripts/automatic-filling (per inserire le descrizioni)
+        // Utilities/scripts/automatic-filling (per inserire le descrizioni)
         case 'automatic filling':
 
             return fetch(`${points}Static/json/descriptions.json`)
@@ -795,6 +795,31 @@ export async function insert_my_json(file_description, points) {
             })
             .catch(error => {
                 console.error('Errore nel caricamento del file JSON:', error)
+            });
+
+            break;
+
+        // Utilities/scripts/page-references (per inserire le descrizioni)
+        case 'page references':
+
+            return fetch(`${points}Static/json/descriptions.json`)
+            .then(response => response.json())
+            .then(data => {
+
+                // Prendo i dati che mi servono
+                let descriptions = data['scripts']['page references'];
+
+                // In un ciclo for prendo chiave e valore di ogni elemento
+                for (let [div_id, description] of Object.entries(descriptions)) {
+
+                    // Uso la chiave per cercare l'id (le chiavi hanno lo stesso nome degli id dei vari div contenenti i codici)
+                    let ref = document.querySelector(`#${div_id}`);
+    
+                    // Prendo il contenuto, creo l'elenco e lo appendo all'elemento
+                    ref.append('Funzionamento:');
+                    ref.appendChild(json_to_element('ul', description))
+
+                }
             });
 
             break;
