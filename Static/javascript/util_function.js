@@ -244,8 +244,8 @@ export function insert_examples(reason, script_name) {
 
                     divs.push(document.querySelector('#selezionando-un-elemento-da-una-lista-select'));
 
-                    html_examples.push([
-                        `  
+                    html_examples.push({
+                        'JavaScript': `  
                         // Seleziono checkbox e radio
                         let cb_profilo_1 = document.getElementsByName('profilo-1')[0];            
                         let cb_profilo_2 = document.getElementsByName('profilo-2')[0];
@@ -291,7 +291,7 @@ export function insert_examples(reason, script_name) {
                             }
                         });
                         `,
-                        `
+                        'HTML': `
                         <select id="PROFILO">
                             <option value="">...</option>
                             <option value="profilo 1">Profilo 1</option>
@@ -301,7 +301,7 @@ export function insert_examples(reason, script_name) {
                         <input name="profilo-1" type="checkbox" />
                         <input name="profilo-2" type="checkbox" />
                         `
-                    ]);
+                    });
         
                     codes.push(`
                         <span class="js-comment">/*
@@ -354,9 +354,144 @@ export function insert_examples(reason, script_name) {
                     `);
         
                     break;
+
+                // Page References
+                case 'page references':
+
+                    /*
+                        Riferimento ad ogni pagina del percorso URL
+                        - JavaScript
+                    */
+                
+                    divs.push(document.querySelector('#percorso-cliccabile'));
+
+                    html_examples.push({
+                        'JavaScript': `/* Non ci sono codici di esempio da eseguire*/`,
+                        'HTML': `<div align="center">Non è presente alcun esempio pratico</div>`
+                    });
+        
+                    codes.push(`
+                        <span class="comment">/*
+                            Codice scritto in JavaScript
+                        */</span>
+
+                        let p = document.querySelector('p.movement_into_pages');
+
+                        if (p) {
+                        
+                            // Creo l'elemento per la home
+                            let a = document.createElement('a');
+                            a.innerText = 'Home';
+                            a.href = points;
+                        
+                            // Inserisco l'elemento per Home ed il primo separatore
+                            p.appendChild(a);
+                            p.append(' / ');
+                            
+                            // Inserisco la lista nell'apposita sezione
+                            clickable_path(path).forEach(e => {
+                                // Inserisco l'elemento
+                                p.appendChild(e);
+                                // Inserisco la barra spaziatrice
+                                p.append(' / ');
+                            });
+                        }
+                    `);
+                    
+
+                    /*
+                        Riferimento alla Home
+                        - JavaScript
+                        - PHP
+                    */
+
+                    // Versione JavaScript
+                   
+                    divs.push(document.querySelector('#tornare-alla-home'));
+
+                    html_examples.push({
+                        'JavaScript': `/* Non ci sono codici di esempio da eseguire*/`,
+                        'HTML': `<div align="center">Non è presente alcun esempio pratico</div>`
+                    });
+        
+                    codes.push(`
+                        <span class="comment">/*
+                            Codice scritto in JavaScript
+                        */</span>
+
+                        <span class="comment">// Faccio lo split</span>
+                        var s = path.split('/');
+
+                        <span class="comment">// Tolgo il primo e l'ultimo elemento</span>
+                        s.<span class="func">shift()</span>;
+                        s.<span class="func">pop()</span>;
+
+                        <span class="comment">// Creo l'array al quale mettero' eventuali puntini doppi</span>
+                        var a = './';
+
+                        <span class="comment">// Itero per vedere se e quanti puntini devo aggiungere</span>
+                        for (let e of s) {
+                            a += '../';
+                        }
+
+                        <span class="comment">// Ritorno l'array</span>
+                        return a;
+                    `);
+                    
+                    // Versione PHP
+                   
+                    divs.push(document.querySelector('#'));
+
+                    html_examples.push({
+                        'JavaScript': `/* Non ci sono codici di esempio da eseguire*/`,
+                        'HTML': `<div align="center">Non è presente alcun esempio pratico</div>`
+                    });
+        
+                    codes.push(`
+                        <span class="comment">/*
+                            Codice scritto in PHP
+                        */</span>
+    
+                        <span class="comment">// Prendo il percorso attuale</span>
+                        $relative_path = $_SERVER['PHP_SELF'];
+                        
+                        <span class="comment">// Eventualmente tolgo la base al percorso</span>
+                        $relative_path_real = <span class="func">str_replace('/gianluca/', '/', <span class="var">$relative_path</span>)</span>;
+                        
+                        <span class="comment">// Tolgo il nome dello script alla fine</span>
+                        $relative_path_real = <span class="func">explode('/', <span class="var">$relative_path_real</span>)</span>;
+                        
+                        <span class="comment">// Tolgo ilprimo elemento</span>
+                        <span class="func">array_shift(<span class="var">$relative_path_real</span>)</span>;
+                        
+                        <span class="comment">// Tolgo l'ultimo elemento</span>
+                        <span class="func">array_pop(<span class="var">$relative_path_real</span>)</span>;
+                        
+                        <span class="comment">// Creo l'array per i punti</span>
+                        $a = './';
+                        
+                        foreach ($relative_path_real as $e) {
+                            $a .= '../';
+                        }
+                        
+                        <span class="comment">// Ritorno il percorso</span>
+                        return $a;
+                    `);
+        
+                    break;
                 
                 // Default
                 default:
+
+                    divs.push(document.querySelector('#'));
+
+                    html_examples.push({
+                        'JavaScript': ``,
+                        'HTML': ``
+                    });
+        
+                    codes.push(``);
+
                     break;
             }
         
@@ -376,7 +511,7 @@ export function insert_examples(reason, script_name) {
 
                 // Creo il div dell'esempio e aggiungo gli elementi
                 let example_div = document.createElement('div');
-                example_div.innerHTML = html_examples[pos][1];
+                example_div.innerHTML = html_examples[pos].HTML;
 
                 // Appendo il div di esempio
                 div.appendChild(example_div);
@@ -404,7 +539,7 @@ export function insert_examples(reason, script_name) {
                 divs[pos].append(div);
                 
                 // Eseguo il codice javascript
-                (new Function(html_examples[pos][0]))();
+                (new Function(html_examples[pos].JavaScript))();
             }
 
             break;

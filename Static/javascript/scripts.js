@@ -506,6 +506,31 @@ function what_page(points_path) {
 
             break;
 
+        // /scripts/page-references
+        case '/utilities/scripts/page-references':
+
+            // Titolo
+            title.innerHTML = 'Riferimento alle pagine';
+
+            // Header title
+            header_title.innerHTML = 'Riferimento alle pagine';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Pagina contenente script che prendono come riferimento pagine specifiche.';
+
+            /*
+                Inserisco
+                - le descrizioni per ogni script di compilazione automatica
+                - il codice di esempio
+            */
+            (async () => {
+                await insert_my_json('page references', points_path);
+                insert_examples('code', 'page references');
+            })();
+            
+
+            break;
+
         default:
 
             // Definisco il contenuto della meta-descrizione

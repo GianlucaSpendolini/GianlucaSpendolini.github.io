@@ -18,6 +18,56 @@
                     "In automatico vengono compilati i vari campi che si vogliono compilare"
                 ]
             }
+        },
+        "page-references": {
+            "percorso-cliccabile": {
+                "Nel codice": [
+                    "Controlo se è presente il paragrafo nel quale mettere il percorso",
+                    {
+                        "Se presente": [
+                            "Creo l'elemento per la Home usando come riferimento i puntini ricevuti",
+                            "Inserisco l'elemento per la Home ed il primo separatore \"/\"",
+                            {
+                                "Tramite la mia funzione \"clickable_path\" mi viene restituito un percorso sempre più corto": [
+                                    "Viene usato per i riferimenti andando indietro ma non troppo",
+                                    {
+                                        "Per ogni elemento (già con il link alla pagina) dell'array restituito": [
+                                            "Inserisco l'elemento",
+                                            "Inserisco il separatore"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "Lato interfaccia": [
+                    "Clicco in uno dei link facenti parte del percorso attuale (in alto a sinistra)",
+                    "Si verrà indirizzati alla pagina corrispondente"
+                ]
+            },
+            "tornare-alla-home": {
+                "Nel codice": [
+                    "Faccio lo split del percorso URL usando \"/\" come riferimento per lo split",
+                    "Tolgo il primo ed ultimo elemento (nome del sito e '')",
+                    "Creo la stringa a cui appenderò eventuali altri punti per \"tornare indietro\"",
+                    {
+                        "Itero il percorso splittato per vedere se e quanti \"..\" devo inserire": [
+                            "Se ci sono -> aggiungo tanti doppi punti quanti elementi ho nell'URL splittato"
+                        ]
+                    },
+                    "Ritorno l'array",
+                    {
+                        "Differenze tra versioni": [
+                            "In quella di PHP, oltre a togliere primo ed ultimo elemento, devo prima togliere, se presente, il nome dello script finale",
+                            "In entrambe è possibile togliere anche pezzi del percorso che non si vogliono utilizzare per \"accorciare le distanze\" (usando altro come Home)"
+                        ]
+                    }
+                ],
+                "Lato interfaccia": [
+                    "Non succede nulla visivamente!"
+                ]
+            }
         }
     }
 }

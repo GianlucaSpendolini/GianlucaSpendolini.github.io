@@ -847,7 +847,7 @@
     },
 
     {
-        "tData": "05/03/2025 & 06/03/2025",
+        "tData": "05/03/2025 - 07/03/2025",
         "tDescrizione": {
             "Aggiunta": {
                 "Utilities/scripts/": "Sezione in cui inserire dei riferimenti a delle pagine in cui verranno inseriti pezzi di codice utili (con descrizione e l'eventuale esempio pratico);",
@@ -867,6 +867,15 @@
             "Aggiungere un progetto in utilities in cui, tramite le regex, si possono cercare (e sostituire nel caso) determinati pattern?",
             "Nel caso, aggiornare la descrizione in Home (oltre ai progetti sarà possibile visualizzare parti di codice utile)."
         ]
+    },
+
+    {
+        "tData": "12/03/2025",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": null
+        },
+        "tAggiunte": null
     },
 
     {

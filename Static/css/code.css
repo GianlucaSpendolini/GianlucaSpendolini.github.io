@@ -16,11 +16,44 @@
 
 /*
 
+    Stile generale per i vari linguaggi
+    - comment
+    - initialize
+    - variable
+    - function
+    - class
+
+*/
+
+.comment {
+    color: lightgreen;
+}
+
+.init {
+    color: blue;
+}
+
+.var {
+    color: lightblue;
+}
+
+.func {
+    color: lightgoldenrodyellow;
+}
+
+.class {
+    color: green;
+}
+
+
+/*
+
     Codice JavaScript
     - comment
     - initialize
     - variable
     - function
+    - class
 
 */
 
@@ -38,4 +71,26 @@
 
 .js-func {
     color: lightgoldenrodyellow;
+}
+
+.js-class {
+    color: green;
+}
+
+
+/*
+
+    Codice Python
+    - comment
+    - to initialize
+
+*/
+
+.py-comment {
+    color: #b20000;
+    /* color: #75151e; */
+}
+
+.py-init {
+    color: palevioletred;
 }
