@@ -233,7 +233,7 @@ export function insert_examples(reason, script_name) {
             // Variabile per contenere tutti gli esempi di codice
             let codes = [];
 
-            //
+            // Inserisco il codice js che verrà eseguito + il codice HTML dell'esempio
             let html_examples = [];
 
             // In base a dove voglio, vado a prendere il nome dello script
@@ -365,12 +365,8 @@ export function insert_examples(reason, script_name) {
 
                 // Creo il div nel quale inserire l'esempio ed il codice associato (con gli stili)
                 let div = document.createElement('div');
-                // div.className = 'details-container';
                 div.style.borderStyle = 'solid';
                 div.style.borderColor = 'black';
-                // div.style.boxSizing = 'border-box';
-                // div.style.maxWidth = '100%';
-                // div.style.overflow = 'auto';
                 div.style.padding = '10px';
 
                 // Creo il titolo della sezione e lo inserisco nel div
@@ -387,22 +383,19 @@ export function insert_examples(reason, script_name) {
                 
                 // Creo la variabile per i dettagli e aggiungo le caratteristiche
                 let details = document.createElement('details');
-                // details.style.wordWrap = 'break-word';
+                details.style.paddingTop = '10px';
 
                 // Aggiungo del codice HTML
                 details.innerHTML = `
                     <summary>Codice di esempio</summary>
-                    <p>
+                    <div>
                         <code></code>
-                    </p>
+                    </div>
                 `;
 
                 // Aggiungo il codice
-                details.querySelector('code').innerHTML = codes[pos];//.replaceAll('&nbsp;', '&nbsp;&nbsp;');
+                details.querySelector('code').innerHTML = codes[pos].replaceAll(/\n( {4}|\t){6}/g, '\n');
                 details.querySelector('code').style.whiteSpace = 'pre-wrap';
-
-                // Aggiungo gli eventi al div dentro 'details'
-                // let details_div = details.querySelector('div');
 
                 // Aggiungo i dettagli al div
                 div.appendChild(details);
@@ -412,9 +405,6 @@ export function insert_examples(reason, script_name) {
                 
                 // Eseguo il codice javascript
                 (new Function(html_examples[pos][0]))();
-
-                // Faccio in modo di vedere il contenuto fuori dal tag details
-                // show_details(div, true);
             }
 
             break;
