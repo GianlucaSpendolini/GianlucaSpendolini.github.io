@@ -385,6 +385,7 @@ export function insert_examples(reason, script_name) {
 
                 // Creo il div nel quale inserire l'esempio ed il codice associato (con gli stili)
                 let div = document.createElement('div');
+                div.className = 'details-container';
                 div.style.borderStyle = 'solid';
                 div.style.borderColor = 'black';
                 div.style.padding = '10px';
@@ -407,13 +408,16 @@ export function insert_examples(reason, script_name) {
                 // Aggiungo del codice HTML
                 details.innerHTML = `
                     <summary>Codice di esempio</summary>
-                    <div>
+                    <p>
                         <code></code>
-                    </div>
+                    </p>
                 `;
 
                 // Aggiungo il codice
                 details.querySelector('code').innerHTML = codes[pos].replaceAll('&nbsp;', '&nbsp;&nbsp;');
+
+                // Aggiungo gli eventi al div dentro 'details'
+                let details_div = details.querySelector('div');
 
                 // Aggiungo i dettagli al div
                 div.appendChild(details);
@@ -423,6 +427,9 @@ export function insert_examples(reason, script_name) {
                 
                 // Eseguo il codice javascript
                 (new Function(html_examples[pos][0]))();
+
+                // Faccio in modo di vedere il contenuto fuori dal tag details
+                show_details(div, true);
             }
 
             break;
@@ -526,12 +533,6 @@ export async function insert_my_json(file_description, points) {
 
                 // Aggiungo l'evento per vedere un dettaglio alla volta
                 show_details(details_container);
-
-                //
-                // console.log(
-                //     "prova invio:", 
-                //     languages
-                // );
             });
 
             break;
