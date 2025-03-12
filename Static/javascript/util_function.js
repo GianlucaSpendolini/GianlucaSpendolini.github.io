@@ -304,72 +304,52 @@ export function insert_examples(reason, script_name) {
                     ]);
         
                     codes.push(`
-                        <span class="js-comment">
-                            /*
-                                Codice scritto in JavaScript
-                            */
-                        </span><br /><br />
+                        <span class="js-comment">/*
+                            Codice scritto in JavaScript
+                        */</span>
                         
-                        <span class="js-comment">
-                            // Seleziono checkbox e radio
-                        </span><br />
-                        <span class="js-init">let</span> <span class="js-var">cb_profilo_1</span> = document.<span class="js-func">getElementsByName</span>('profilo-1')[0];<br />            
-                        <span class="js-init">let</span> <span class="js-var">cb_profilo_2</span> = document.<span class="js-func">getElementsByName</span>('profilo-2')[0];<br /><br />
+                        <span class="js-comment">// Seleziono checkbox e radio</span>
+                        <span class="js-init">let</span> <span class="js-var">cb_profilo_1</span> = document.<span class="js-func">getElementsByName</span>('profilo-1')[0];            
+                        <span class="js-init">let</span> <span class="js-var">cb_profilo_2</span> = document.<span class="js-func">getElementsByName</span>('profilo-2')[0];
                         
-                        <span class="js-comment">
-                            // Selezione dell'elemento select
-                        </span><br />
-                        <span class="js-init">let</span> <span class="js-var">select</span> = document.<span class="js-func">getElementById</span>('PROFILO');<br /><br />
+                        <span class="js-comment">// Selezione dell'elemento select</span>
+                        <span class="js-init">let</span> <span class="js-var">select</span> = document.<span class="js-func">getElementById</span>('PROFILO');
                         
-                        <span class="js-comment">
-                            // Aggiungo l'evento
-                        </span><br />
-                        select.<span class="js-func">addEventListener</span>('change', () => {<br /><br />&nbsp;
+                        <span class="js-comment">// Aggiungo l'evento</span>
+                        select.<span class="js-func">addEventListener</span>('change', () => {
         
-                            <span class="js-comment">
-                                // Controllo quale elemento è stato scelto in base al valore restituito
-                            </span><br />&nbsp;
-                            switch (select.value) {<br /><br />&nbsp;&nbsp;
+                            <span class="js-comment">// Controllo quale elemento è stato scelto in base al valore restituito</span>
+                            switch (select.value) {
         
-                                <span class="js-comment">
-                                    // In caso del profilo 1
-                                </span><br />&nbsp;&nbsp;
-                                case 'profilo 1':<br /><br />&nbsp;&nbsp;&nbsp;
+                                <span class="js-comment">// In caso del profilo 1</span>
+                                case 'profilo 1':
                                 
-                                    cb_profilo_1.<span class="js-var">checked</span> = true;<br />&nbsp;&nbsp;&nbsp;
-                                    cb_profilo_2.<span class="js-var">checked</span> = false;<br /><br />&nbsp;&nbsp;&nbsp;
+                                    cb_profilo_1.<span class="js-var">checked</span> = true;
+                                    cb_profilo_2.<span class="js-var">checked</span> = false;
                                     
-                                    break;<br /><br />&nbsp;&nbsp;
+                                    break;
         
-                                <span class="js-comment">
-                                    // In caso del profilo 2
-                                </span><br />&nbsp;&nbsp;
-                                case 'profilo 2':<br /><br />&nbsp;&nbsp;&nbsp;
+                                <span class="js-comment">// In caso del profilo 2</span>
+                                case 'profilo 2':
                                 
-                                    cb_profilo_1.<span class="js-var">checked</span> = false;<br />&nbsp;&nbsp;&nbsp;
-                                    cb_profilo_2.<span class="js-var">checked</span> = true;<br /><br />&nbsp;&nbsp;&nbsp;
+                                    cb_profilo_1.<span class="js-var">checked</span> = false;
+                                    cb_profilo_2.<span class="js-var">checked</span> = true;
                                     
-                                    break;<br /><br />&nbsp;&nbsp;
+                                    break;
         
-                                <span class="js-comment">
-                                    // In caso non seleziono uno dei profili elencati
-                                </span><br />&nbsp;&nbsp;
-                                default:<br /><br />&nbsp;&nbsp;&nbsp;
+                                <span class="js-comment">// In caso non seleziono uno dei profili elencati</span>
+                                default:
         
-                                    <span class="js-comment">
-                                        // Svuoto campi per abilitazione e non
-                                    </span><br />&nbsp;&nbsp;&nbsp;
-                                    cb_profilo_1.checked = false;<br />&nbsp;&nbsp;&nbsp;
-                                    cb_profilo_2.checked = false;<br /><br />&nbsp;&nbsp;&nbsp;
+                                    <span class="js-comment">// Svuoto campi per abilitazione e non</span>
+                                    cb_profilo_1.checked = false;
+                                    cb_profilo_2.checked = false;
         
-                                    <span class="js-comment">
-                                        // Svuoto altri campi
-                                    </span><br />&nbsp;&nbsp;&nbsp;
-                                    document.<span class="js-func">getElementsByName</span></span>('input-text')[0].value = '';<br />&nbsp;&nbsp;&nbsp;
-                                    document.<span class="js-func">getElementsByName</span>('textarea')[0].innerHTML = '';<br /><br />&nbsp;&nbsp;&nbsp;
+                                    <span class="js-comment">// Svuoto altri campi</span>
+                                    document.<span class="js-func">getElementsByName</span></span>('input-text')[0].value = '';
+                                    document.<span class="js-func">getElementsByName</span>('textarea')[0].innerHTML = '';
                                     
-                                    break;<br /><br />&nbsp;
-                            }<br />
+                                    break;
+                            }
                         });
                     `);
         
@@ -388,6 +368,9 @@ export function insert_examples(reason, script_name) {
                 // div.className = 'details-container';
                 div.style.borderStyle = 'solid';
                 div.style.borderColor = 'black';
+                div.style.boxSizing = 'border-box';
+                div.style.maxWidth = '100%';
+                div.style.overflow = 'auto';
                 div.style.padding = '10px';
 
                 // Creo il titolo della sezione e lo inserisco nel div
@@ -402,8 +385,9 @@ export function insert_examples(reason, script_name) {
                 // Appendo il div di esempio
                 div.appendChild(example_div);
                 
-                // Creo la variabile per i dettagli
+                // Creo la variabile per i dettagli e aggiungo le caratteristiche
                 let details = document.createElement('details');
+                details.style.wordWrap = 'break-word';
 
                 // Aggiungo del codice HTML
                 details.innerHTML = `
@@ -415,6 +399,7 @@ export function insert_examples(reason, script_name) {
 
                 // Aggiungo il codice
                 details.querySelector('code').innerHTML = codes[pos].replaceAll('&nbsp;', '&nbsp;&nbsp;');
+                details.querySelector('code').style.whiteSpace = 'pre-wrap';
 
                 // Aggiungo gli eventi al div dentro 'details'
                 let details_div = details.querySelector('div');
