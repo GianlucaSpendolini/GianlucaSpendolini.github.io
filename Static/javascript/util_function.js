@@ -385,7 +385,7 @@ export function insert_examples(reason, script_name) {
 
                 // Creo il div nel quale inserire l'esempio ed il codice associato (con gli stili)
                 let div = document.createElement('div');
-                div.className = 'details-container';
+                // div.className = 'details-container';
                 div.style.borderStyle = 'solid';
                 div.style.borderColor = 'black';
                 div.style.padding = '10px';
@@ -429,7 +429,7 @@ export function insert_examples(reason, script_name) {
                 (new Function(html_examples[pos][0]))();
 
                 // Faccio in modo di vedere il contenuto fuori dal tag details
-                show_details(div, true);
+                // show_details(div, true);
             }
 
             break;
