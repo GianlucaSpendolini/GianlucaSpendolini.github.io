@@ -398,7 +398,7 @@ export function insert_examples(reason, script_name) {
                 `;
 
                 // Aggiungo il codice
-                // details.querySelector('code').innerHTML = codes[pos].replaceAll('&nbsp;', '&nbsp;&nbsp;');
+                details.querySelector('code').innerHTML = codes[pos];//.replaceAll('&nbsp;', '&nbsp;&nbsp;');
                 details.querySelector('code').style.whiteSpace = 'pre-wrap';
 
                 // Aggiungo gli eventi al div dentro 'details'
