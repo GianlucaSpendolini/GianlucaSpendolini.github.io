@@ -461,7 +461,7 @@ export function insert_examples(reason, script_name) {
                         <span class="comment">// Tolgo il nome dello script alla fine</span>
                         <span class="php-var">$relative_path_real</span> = <span class="func">explode</span>(<span class="str">'/'</span>, <span class="php-var">$relative_path_real</span>);
                         
-                        <span class="comment">// Tolgo ilprimo elemento</span>
+                        <span class="comment">// Tolgo il primo elemento</span>
                         <span class="func">array_shift</span>(<span class="php-var">$relative_path_real</span>);
                         
                         <span class="comment">// Tolgo l'ultimo elemento</span>
