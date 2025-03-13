@@ -470,7 +470,7 @@ export function insert_examples(reason, script_name) {
                         <span class="comment">// Creo l'array per i punti</span>
                         <span class="php-var">$a</span> = <span class="str">'./'</span>;
                         
-                        foreach ($relative_path_real as $e) {
+                        foreach (<span class="php-var">$relative_path_real</span> as <span class="php-var">$e</span>) {
                             <span class="php-var">$a</span> .= <span class="str">'../'</span>;
                         }
                         
