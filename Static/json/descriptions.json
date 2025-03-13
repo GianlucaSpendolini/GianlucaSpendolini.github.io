@@ -58,7 +58,7 @@
                     },
                     "Ritorno l'array",
                     {
-                        "Differenze tra versioni": [
+                        "Differenze tra versioni in base al linguaggio": [
                             "In quella di PHP, oltre a togliere primo ed ultimo elemento, devo prima togliere, se presente, il nome dello script finale",
                             "In entrambe è possibile togliere anche pezzi del percorso che non si vogliono utilizzare per \"accorciare le distanze\" (usando altro come Home)"
                         ]
