@@ -309,31 +309,31 @@ export function insert_examples(reason, script_name) {
                         */</span>
                         
                         <span class="js-comment">// Seleziono checkbox e radio</span>
-                        <span class="js-init">let</span> <span class="js-var">cb_profilo_1</span> = document.<span class="js-func">getElementsByName</span>('profilo-1')[0];            
-                        <span class="js-init">let</span> <span class="js-var">cb_profilo_2</span> = document.<span class="js-func">getElementsByName</span>('profilo-2')[0];
+                        <span class="js-init">let</span> <span class="js-var">cb_profilo_1</span> = document.<span class="js-func">getElementsByName</span>(<span class="str">'profilo-1'</span>)[0];            
+                        <span class="js-init">let</span> <span class="js-var">cb_profilo_2</span> = document.<span class="js-func">getElementsByName</span>(<span class="str">'profilo-2'</span>)[0];
                         
                         <span class="js-comment">// Selezione dell'elemento select</span>
-                        <span class="js-init">let</span> <span class="js-var">select</span> = document.<span class="js-func">getElementById</span>('PROFILO');
+                        <span class="js-init">let</span> <span class="js-var">select</span> = document.<span class="js-func">getElementById</span>(<span class="str">'PROFILO'</span>);
                         
                         <span class="js-comment">// Aggiungo l'evento</span>
-                        select.<span class="js-func">addEventListener</span>('change', () => {
+                        select.<span class="js-func">addEventListener</span>(<span class="str">'change'</span>, () => {
         
                             <span class="js-comment">// Controllo quale elemento è stato scelto in base al valore restituito</span>
-                            switch (select.value) {
+                            switch (<span class="var">select</span>.<span class="var">value</span>) {
         
                                 <span class="js-comment">// In caso del profilo 1</span>
-                                case 'profilo 1':
+                                case <span class="str">'profilo 1'</span>:
                                 
-                                    cb_profilo_1.<span class="js-var">checked</span> = true;
-                                    cb_profilo_2.<span class="js-var">checked</span> = false;
+                                    <span class="js-var">cb_profilo_1</span>.<span class="js-var">checked</span> = true;
+                                    <span class="js-var">cb_profilo_2</span>.<span class="js-var">checked</span> = false;
                                     
                                     break;
         
                                 <span class="js-comment">// In caso del profilo 2</span>
-                                case 'profilo 2':
+                                case <span class="str">'profilo 2'</span>:
                                 
-                                    cb_profilo_1.<span class="js-var">checked</span> = false;
-                                    cb_profilo_2.<span class="js-var">checked</span> = true;
+                                    <span class="js-var">cb_profilo_1</span>.<span class="js-var">checked</span> = false;
+                                    <span class="js-var">cb_profilo_2</span>.<span class="js-var">checked</span> = true;
                                     
                                     break;
         
@@ -341,12 +341,12 @@ export function insert_examples(reason, script_name) {
                                 default:
         
                                     <span class="js-comment">// Svuoto campi per abilitazione e non</span>
-                                    cb_profilo_1.checked = false;
-                                    cb_profilo_2.checked = false;
+                                    <span class="js-var">cb_profilo_1</span>.<span class="js-var">checked</span> = false;
+                                    <span class="js-var">cb_profilo_2</span>.<span class="js-var">checked</span> = false;
         
                                     <span class="js-comment">// Svuoto altri campi</span>
-                                    document.<span class="js-func">getElementsByName</span></span>('input-text')[0].value = '';
-                                    document.<span class="js-func">getElementsByName</span>('textarea')[0].innerHTML = '';
+                                    <span class="js-var">document</span>.<span class="js-func">getElementsByName</span>(<span class="str">'input-text'</span>)[0].<span class="var">value</span> = <span class="str">''</span>;
+                                    <span class="js-var">document</span>.<span class="js-func">getElementsByName</span>(<span class="str">'textarea'</span>)[0].<span class="var">innerHTML</span> = <span class="str">''</span>;
                                     
                                     break;
                             }
@@ -375,25 +375,25 @@ export function insert_examples(reason, script_name) {
                             Codice scritto in JavaScript
                         */</span>
 
-                        <span class="init">let</span> <span class="var">p</span> = document.<span class="func">querySelector('p.movement_into_pages')</span>;
+                        <span class="init">let</span> <span class="var">p</span> = <span class="var">document</span>.<span class="func">querySelector</span>(<span class="str">'p.movement_into_pages'</span>);
 
                         if (<span class="var">p</span>) {
                         
                             <span class="comment">// Creo l'elemento per la home</span>
-                            <span class="init">let</span> <span class="var">a</span> = document.<span class="func">createElement('a')</span>;
-                            a.innerText = 'Home';
-                            a.href = points;
+                            <span class="init">let</span> <span class="var">a</span> = document.<span class="func">createElement</span>(<span class="str">'a'</span>);
+                            <span class="var">a</span>.<span class="var">innerText</span> = <span class="str">'Home'</span>;
+                            <span class="var">a</span>.<span class="var">href</span> = <span class="var">points</span>;
                         
                             <span class="comment">// Inserisco l'elemento per Home ed il primo separatore</span>
-                            p.<span class="func">appendChild(a)</span>;
-                            p.<span class="func">append(' / ')</span>;
+                            <span class="var">p</span>.<span class="func">appendChild</span>(a);
+                            <span class="var">p</span>.<span class="func">append</span>(<span class="str">' / '</span>);
                             
                             <span class="comment">// Inserisco la lista nell'apposita sezione</span>
-                            <span class"func">clickable_path(path)</span>.forEach(e => {
+                            <span class"func">clickable_path</span>(<span class="var">path</span>).<span class="func">forEach</span>(<span class="var">e</span> => {
                                 <span class="comment">// Inserisco l'elemento</span>
-                                p.<span class="func">appendChild(<span class="var">e</span>)</span>;
+                                <span class="var">p</span>.<span class="func">appendChild</span>(<span class="var">e</span>);
                                 <span class="comment">// Inserisco la barra spaziatrice</span>
-                                p.<span class="func">append(' / ')</span>;
+                                <span class="var">p</span>.<span class="func">append</span>(<span class="str">' / '</span>);
                             });
                         }
                     `);
@@ -420,22 +420,22 @@ export function insert_examples(reason, script_name) {
                         */</span>
 
                         <span class="comment">// Faccio lo split</span>
-                        var s = path.split('/');
+                        <span class="init">var</span> <span class="var">s</span> = <span class="var">path</span>.<span class="func">split</span>(<span class="str">'/'</span>);
 
                         <span class="comment">// Tolgo il primo e l'ultimo elemento</span>
-                        s.<span class="func">shift()</span>;
-                        s.<span class="func">pop()</span>;
+                        <span class="var">s</span>.<span class="func">shift</span>();
+                        <span class="var">s</span>.<span class="func">pop</span>();
 
                         <span class="comment">// Creo l'array al quale mettero' eventuali puntini doppi</span>
-                        var a = './';
+                        <span class="init">var</span> <span class="var">a</span> = <span class="var">'./'</span>;
 
                         <span class="comment">// Itero per vedere se e quanti puntini devo aggiungere</span>
-                        for (let e of s) {
-                            a += '../';
+                        for (<span class="init">let</span> <span class="var">e</span> of <span class="var">s</span>) {
+                            <span class="var">a</span> += <span class="str">'../'</span>;
                         }
 
                         <span class="comment">// Ritorno l'array</span>
-                        return a;
+                        return <span class="var">a</span>;
                     `);
                     
                     // Versione PHP
@@ -453,25 +453,25 @@ export function insert_examples(reason, script_name) {
                         */</span>
     
                         <span class="comment">// Prendo il percorso attuale</span>
-                        <span class="php-var">$relative_path</span> = <span class="php-var">$_SERVER['PHP_SELF']</span>;
+                        <span class="php-var">$relative_path</span> = <span class="php-var">$_SERVER</span>[<span class="str">'PHP_SELF'</span>];
                         
                         <span class="comment">// Eventualmente tolgo la base al percorso</span>
-                        <span class="php-var">$relative_path_real</span> = <span class="func">str_replace('/gianluca/', '/', <span class="php-var">$relative_path</span>)</span>;
+                        <span class="php-var">$relative_path_real</span> = <span class="func">str_replace</span>(<span class="str">'/gianluca/'</span>, <span class="str">'/'</span>, <span class="php-var">$relative_path</span>);
                         
                         <span class="comment">// Tolgo il nome dello script alla fine</span>
-                        <span class="php-var">$relative_path_real</span> = <span class="func">explode('/', <span class="php-var">$relative_path_real</span>)</span>;
+                        <span class="php-var">$relative_path_real</span> = <span class="func">explode</span>(<span class="str">'/'</span>, <span class="php-var">$relative_path_real</span>);
                         
                         <span class="comment">// Tolgo ilprimo elemento</span>
-                        <span class="func">array_shift(<span class="php-var">$relative_path_real</span>)</span>;
+                        <span class="func">array_shift</span>(<span class="php-var">$relative_path_real</span>);
                         
                         <span class="comment">// Tolgo l'ultimo elemento</span>
-                        <span class="func">array_pop(<span class="php-var">$relative_path_real</span>)</span>;
+                        <span class="func">array_pop</span>(<span class="php-var">$relative_path_real</span>);
                         
                         <span class="comment">// Creo l'array per i punti</span>
-                        <span class="php-var">$a</span> = './';
+                        <span class="php-var">$a</span> = <span class="str">'./'</span>;
                         
                         foreach ($relative_path_real as $e) {
-                            <span class="php-var">$a</span> .= '../';
+                            <span class="php-var">$a</span> .= <span class="str">'../'</span>;
                         }
                         
                         <span class="comment">// Ritorno il percorso</span>

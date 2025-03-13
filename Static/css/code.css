@@ -20,6 +20,7 @@
     - comment
     - initialize
     - variable
+    - str
     - function
     - class
 
@@ -35,6 +36,10 @@
 
 .var {
     color: lightblue;
+}
+
+.str {
+    color: #b20000;
 }
 
 .func {
