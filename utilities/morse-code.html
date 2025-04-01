@@ -1,0 +1,102 @@
+<!-- UTILITIES -->
+
+<!doctype html>
+
+<html>
+
+<head>
+    
+    <title></title>
+
+</head>
+
+<body>
+
+    <header></header>
+
+    <hr />
+
+    <main>
+
+        <p class="movement_into_pages"></p>
+
+		<div>
+
+			<textarea id="normale" placeholder="Inserire il testo normale"></textarea>
+
+			<textarea id="morse" placeholder="Inserire il codice Morse"></textarea>
+
+		</div>
+
+    </main>
+
+    <hr />
+
+    <footer></footer>
+
+    <!-- File JavaScript generico -->
+    <script src="./../Static/javascript/scripts.js" type="module"></script>
+    <script>
+
+        // Oggetto del codice morse
+        let morseChars = {
+            
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Prendo i text area
+            let normale = document.getElementById('normale');
+            let morse = document.getElementById('morse');
+
+            // Aggiungo l'evento al textarea col testo normale
+            normale.addEventListener('change', () => {
+                // Prendo il testo normale 
+                let content = normale.textContent;
+
+                // Converto in codice morse
+
+                // Inserisco nel textarea del codice morse
+                morse.innerText = content;
+            });
+
+            // Aggiungo l'evento al textarea col codice morse
+            morse.addEventListener('change', () => {
+                // Prendo il testo normale 
+                let content = morse.textContent;
+
+                // Converto in testo normale
+
+                // Inserisco nel textarea del testo normale
+                normale.innerText = content;
+            });
+
+        });
+
+
+        // Funzione per convertire il codice morse e viceversa
+        function morse_text(caratteri, cosa) {
+            
+            switch (cosa) {
+                // Codice Morse
+                case 'morse': 
+                    // 
+                    break;
+
+                // Testo normale
+                case 'normale': 
+                    //
+                    break;
+
+                // Default
+                default: 
+                    // Non faccio nulla
+                    break;
+            }
+        }
+
+    </script>
+    
+</body>
+
+</html>
