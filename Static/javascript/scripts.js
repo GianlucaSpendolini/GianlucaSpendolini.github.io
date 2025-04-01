@@ -468,7 +468,7 @@ function what_page(points_path) {
             break;
 
         // /morse-code
-        case '/morse-code':
+        case '/utilities/morse-code':
 
             // Titolo
             title.innerHTML = 'Codice morse';
