@@ -467,6 +467,20 @@ function what_page(points_path) {
 
             break;
 
+        // /morse-code
+        case '/morse-code':
+
+            // Titolo
+            title.innerHTML = 'Codice morse';
+
+            // Header title
+            header_title.innerHTML = 'Codice morse';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Pagina utile per convertire il testo normale in codice morse.';
+
+            break;
+
         // /scripts/
         case '/utilities/scripts/':
 
