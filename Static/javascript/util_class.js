@@ -71,6 +71,11 @@ export class UserText {
             {
                 '.': '.-.-.-', ',': '--..--', ':': '---...', '?': '..--..', '=': '-...-', '-': '-....-', '(': '-.--.',
                 ')': '-.--.-', '\"': '.-..-.', '\'': '.----.', '/': '-..-.', '_': '..--.-', '@': '.--.-.', '!': '-.-.--'
+            },
+
+            // Altri simboli
+            {
+                ' ': '/'
             }
         ]
 
@@ -84,7 +89,8 @@ export class UserText {
             // Se non è un 'a capo' lo converto
             if (char !== '\n') {
 
-                // Controllare se non è uno spazio (in caso sia testo normale)
+                // Variabile per capire se ho trovato il carattere tra quelli elencati o è estraneo dagli elenchi
+                let found = false;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group of chars) {
@@ -96,7 +102,7 @@ export class UserText {
                             // Controllo se è tra le chiavi
                             if (Object.keys(group).includes(char)) {
                                 converted_char = group[char];
-                                break;
+                                found = true;
                             }
                             // Altrimenti segnalo l'errore
                             else {
@@ -116,7 +122,7 @@ export class UserText {
                             // Controllo se è tra i valori
                             if (Object.values(group).includes(char)) {
                                 converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
-                                break;
+                                found = true;
                             }
                             // Altrimenti segnalo l'errore
                             else {
@@ -124,6 +130,10 @@ export class UserText {
                             }
 
                             break;
+                    }
+
+                    if (found) {
+                        break;
                     }
                 }
             }
@@ -146,42 +156,106 @@ export class UserText {
     // Testo semplice
     toText(from) {
 
-        // Variabile che conterrà il testo semplice
-        let simple_text;
+        // Testo convertito
+        let simple_text = [];
+        // let mmt = [];
 
-        // Cerco in base a cosa voglio trovare
-        switch (from) {
+        let chars = [
 
-            // Binario
-            case 'binary':
-                //
-                break;
+            // Lettere
+            {
+                'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.',
+                'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.',
+                'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-',
+                'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..'
+            },
 
-            // Esadecimale
-            case 'hexadecimal':
-                //
-                break;
+            // Numeri
+            {
+                '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
+                '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'
+            },
 
-            // Morse
-            case 'morse':
-                //
-                break;
+            // Simboli
+            {
+                '.': '.-.-.-', ',': '--..--', ':': '---...', '?': '..--..', '=': '-...-', '-': '-....-', '(': '-.--.',
+                ')': '-.--.-', '\"': '.-..-.', '\'': '.----.', '/': '-..-.', '_': '..--.-', '@': '.--.-.', '!': '-.-.--'
+            },
 
-            // Ottale
-            case 'octal':
-                //
-                break;
+            // Altri simboli
+            {
+                ' ': '/'
+            }
+        ]
 
-            // Default (text)
-            default:
+        // Converto ogni carattere
+        this.textUpper.split('').forEach(char => {
 
-                // Lascio il testo com'è
-                simple_text = this.text;
+            // Prendo il carattere
+            let converted_char = char;
 
-                break;
-        }
+            // Se non è un 'a capo' lo converto
+            if (char !== '\n') {
 
-        return simple_text;
+                // Variabile per capire se ho trovato il carattere tra quelli elencati o è estraneo dagli elenchi
+                let found = false;
+                
+                // Itero ogni oggetto cercando di trovare il carattere
+                for (let group of chars) {
+
+                    switch (from) {
+
+                        // Binario
+                        case 'binary':
+                            //
+                            break;
+            
+                        // Esadecimale
+                        case 'hexadecimal':
+                            //
+                            break;
+            
+                        // Morse
+                        case 'morse':
+                                        
+                            // Controllo se è tra i valori
+                            if (Object.values(group).includes(char)) {
+                                converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
+                                found = true;
+                            }
+                            // Altrimenti segnalo l'errore
+                            else {
+                                converted_char = '#';
+                            }
+            
+                            break;
+            
+                        // Ottale
+                        case 'octal':
+                            //
+                            break;
+            
+                        // Default (text)
+                        default:
+            
+                            // Lascio il testo com'è
+                            simple_text = this.text;
+            
+                            break;
+                    }
+
+                    if (found) {
+                        break;
+                    }
+                }
+            }
+
+            // Aggiungo l'elemento all'array
+            simple_text.push(converted_char);
+        });
+
+        // Ritorno l'array unito -> testo convertito
+        return simple_text.join('');
     }
 
 

@@ -93,20 +93,20 @@
             let type_left = select_left.value;
             let type_right = select_right.value;
 
-            console.log("tot:", type_left, type_right);
+            // console.log("tot:", type_left, type_right);
 
             // Aggiungo l'evento al select di sx
             select_left.addEventListener('change', () => {
                 type_left = select_left.value;
 
-                console.log("select l:", type_left);
+                // console.log("select l:", type_left);
             });
 
             // Aggiungo l'evento al select di dx
             select_right.addEventListener('change', () => {
                 type_right = select_right.value;
 
-                console.log("select r:", type_right);
+                // console.log("select r:", type_right);
             });
 
             // Variabile in cui inserire il valore convertito
@@ -126,6 +126,11 @@
                     // Morse
                     case 'morse': 
                         converted = to_convert.convert().toMorse(type_left);
+                        break;
+
+                    // Text
+                    case 'text': 
+                        converted = to_convert.convert().toText(type_left);
                         break;
 
                     default: 
@@ -152,6 +157,11 @@
                     // Morse
                     case 'morse': 
                         converted = to_convert.convert().toMorse(type_right);
+                        break;
+
+                    // Text
+                    case 'text': 
+                        converted = to_convert.convert().toText(type_left);
                         break;
 
                     default: 
