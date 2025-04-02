@@ -153,7 +153,7 @@ export class UserText {
 
         // Testo convertito
         let simple_text = [];
-        let mmt = [];
+        // let mmt = [];
 
         let chars = [
 
@@ -194,7 +194,7 @@ export class UserText {
 
                 // Variabile per capire se ho trovato il carattere tra quelli elencati o è estraneo dagli elenchi
                 let found = false;
-                let mmmt;
+                // let mmmt;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group of chars) {
@@ -239,8 +239,8 @@ export class UserText {
             
                             break;
                     }
-                    mmmt = [from, Object.values(group).includes(char), Object.values(group), group, converted_char, Object.entries(group).find(([k, v]) => v === char)?.[0]];
-                    mmt.push(mmmt);
+                    // mmmt = [from, Object.values(group).includes(char), Object.values(group), group, converted_char, Object.entries(group).find(([k, v]) => v === char)?.[0]];
+                    // mmt.push(mmmt);
 
                     if (found) {
                         break;
@@ -249,12 +249,12 @@ export class UserText {
             }
 
             // Aggiungo l'elemento all'array
-            // simple_text.push(converted_char);
+            simple_text.push(converted_char);
         });
 
         // Ritorno l'array unito -> testo convertito
-        // return simple_text.join('');
-        return mmt
+        return simple_text.join('');
+        // return mmt;
     }
 
 
