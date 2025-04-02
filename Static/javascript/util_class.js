@@ -150,8 +150,8 @@ export class UserText {
         });
 
         // Ritorno l'array unito -> testo convertito
-        return morse;
-        // return mmt;
+        // return morse;
+        return mmt;
     }
 
     // Ottale
