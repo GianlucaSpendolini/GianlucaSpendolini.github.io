@@ -85,14 +85,6 @@
     header, footer {
         max-height: 30vh;
     }
-    
-    /* 
-        SEZIONE UTILITIES CONVERTER
-    */
-    .left-container > textarea, .right-container > textarea {
-        margin-bottom: 10px;
-        max-width: 100%;
-    }
 }
 
 

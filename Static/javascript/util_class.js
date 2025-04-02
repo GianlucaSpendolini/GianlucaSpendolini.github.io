@@ -130,7 +130,7 @@ export class UserText {
                     }
                     // Controllo se è tra i valori
                     else if (Object.values(group).includes(char)) {
-                        converted_char = Object.entries(e).find(([k, v]) => v === char)?.[0];
+                        converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
                         break;
                     }
                     // Altrimenti segnalo l'errore
@@ -146,7 +146,7 @@ export class UserText {
         });
 
         // Ritorno l'array unito -> testo convertito
-        return morse;
+        return morse.join(' ');
         // return mmt;
     }
 
