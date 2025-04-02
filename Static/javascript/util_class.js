@@ -119,14 +119,14 @@ export class UserText {
                 // Controllare se non è uno spazio (in caso sia testo normale)
                 
                 // Itero ogni oggetto cercando di trovare il carattere
-                for (o of chars) {
+                for (let group of chars) {
 
                     // Controllo se è tra le chiavi
-                    if (Object.keys(o).includes(char)) {
-                        converted_char = o.char;
+                    if (Object.keys(group).includes(char)) {
+                        converted_char = group.char;
                     }
                     // Controllo se è tra i valori
-                    else if (Object.values(o).includes(char)) {
+                    else if (Object.values(group).includes(char)) {
                         converted_char = Object.entries(e).find(([k, v]) => v === char)?.[0];
                     }
                     // Altrimenti segnalo l'errore
