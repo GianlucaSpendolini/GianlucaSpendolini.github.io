@@ -183,16 +183,18 @@ export class UserText {
         ]
 
         // Converto ogni carattere
-        this.textUpper.split('').forEach(char => {
+        this.textUpper.split(' ').forEach(char => {
 
             // Prendo il carattere
             let converted_char = char;
+            let mmt = [];
 
             // Se non è un 'a capo' lo converto
             if (char !== '\n') {
 
                 // Variabile per capire se ho trovato il carattere tra quelli elencati o è estraneo dagli elenchi
                 let found = false;
+                let mmmt;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group of chars) {
@@ -237,19 +239,22 @@ export class UserText {
             
                             break;
                     }
+                    mmmt = [from, Object.values(group).includes(char), Object.values(group), group, converted_char];
 
                     if (found) {
+                        mmt.push(mmmt);
                         break;
                     }
                 }
             }
 
             // Aggiungo l'elemento all'array
-            simple_text.push(converted_char);
+            // simple_text.push(converted_char);
         });
 
         // Ritorno l'array unito -> testo convertito
-        return simple_text.join('');
+        // return simple_text.join('');
+        return mmt
     }
 
 
