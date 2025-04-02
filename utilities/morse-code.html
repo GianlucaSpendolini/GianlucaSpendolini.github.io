@@ -80,14 +80,16 @@
             // Aggiungo l'evento al select di sx
             select_left.addEventListener('change', () => {
                 type_left = select_left.value;
+
+                console.log("select l:", type_left);
             });
 
             // Aggiungo l'evento al select di dx
             select_right.addEventListener('change', () => {
                 type_right = select_right.value;
-            });
 
-            console.log(type_left, type_right);
+                console.log("select l:", type_right);
+            });
 
             // Aggiungo l'evento al textarea di sx
             left.addEventListener('input', () => {
