@@ -24,6 +24,11 @@
 
                 <select id="type-left">
                     <option value=""></option>
+                    <option value="binary">Binario</option>
+                    <option value="hexadecimal">Esadecimale</option>
+                    <option value="morse">Morse</option>
+                    <option value="octal">Ottale</option>
+                    <option value="text">Testo semplice</option>
                 </select>
                 
             </div>
@@ -34,6 +39,11 @@
 
                 <select id="type-right">
                     <option value=""></option>
+                    <option value="binary">Binario</option>
+                    <option value="hexadecimal">Esadecimale</option>
+                    <option value="morse">Morse</option>
+                    <option value="octal">Ottale</option>
+                    <option value="text">Testo semplice</option>
                 </select>
                 
             </div>
@@ -60,11 +70,26 @@
             let left = document.getElementById('left');
             let right = document.getElementById('right');
 
+            // Prendo i select
+            let select_left = document.getElementById('type-left');
+            let select_right = document.getElementById('type-right');
+
+            // Aggiungo l'evento al select di sx
+            select_left.addEventListener('change', () => {
+                var type_left = select_left.value;
+            });
+
+            // Aggiungo l'evento al select di dx
+            select_right.addEventListener('change', () => {
+                var type_left = select_left.value;
+            });
+
+            console.log(type_left, type_right);
+
             // Aggiungo l'evento al textarea di sx
             left.addEventListener('input', () => {
                 // Prendo il contenuto di sinistra 
                 let content = left.value;
-                console.log(content);
 
                 // Prendo la specifica dalla lista
 
@@ -74,7 +99,7 @@
                 console.log(to_convert);
 
                 // Inserisco nel textarea del codice morse
-                right.innerText = content;
+                right.value = content;
             });
 
             // Aggiungo l'evento al textarea di dx
@@ -90,7 +115,7 @@
                 console.log(to_convert);
 
                 // Inserisco nel textarea del testo normale
-                left.innerText = content;
+                left.value = content;
             });
 
         });
