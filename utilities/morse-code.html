@@ -93,6 +93,9 @@
                 console.log("select r:", type_right);
             });
 
+            // Variabile in cui inserire il valore convertito
+            let converted;
+
             // Aggiungo l'evento al textarea di sx
             left.addEventListener('input', () => {
                 // Prendo il contenuto di sinistra 
@@ -106,17 +109,17 @@
 
                     // Morse
                     case 'morse': 
-                        to_convert.convert().toMorse(type_left);
+                        converted = to_convert.convert().toMorse(type_left);
                         break;
 
                     default: 
                         break;
 
                 }
-                console.log(to_convert);
+                console.log(converted);
 
                 // Inserisco nel textarea del codice morse
-                right.value = to_convert;
+                right.value = converted;
             });
 
             // Aggiungo l'evento al textarea di dx
@@ -132,17 +135,17 @@
 
                     // Morse
                     case 'morse': 
-                        to_convert.convert().toMorse(type_right);
+                        converted = to_convert.convert().toMorse(type_right);
                         break;
 
                     default: 
                         break;
 
                 }
-                console.log(to_convert);
+                console.log(converted);
 
                 // Inserisco nel textarea del testo normale
-                left.value = to_convert;
+                left.value = converted;
             });
 
         });
