@@ -108,7 +108,7 @@ export class UserText {
         ]
 
         // Converto ogni carattere
-        this.textUpper.split('').forEach(char => {
+        this.textUpper.split(' ').forEach(char => {
 
             // Prendo il carattere
             let converted_char = char;

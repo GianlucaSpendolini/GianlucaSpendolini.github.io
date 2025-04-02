@@ -45,9 +45,9 @@
             let right = document.getElementById('right');
 
             // Aggiungo l'evento al textarea col testo normale
-            left.addEventListener('change', () => {
+            left.addEventListener('keypress', () => {
                 // Prendo il contenuto di sinistra 
-                let content = left.textContent;
+                let content = left.value;
                 console.log(content);
 
                 // Prendo la specifica dalla lista
@@ -62,9 +62,9 @@
             });
 
             // Aggiungo l'evento al textarea col codice morse
-            right.addEventListener('change', () => {
+            right.addEventListener('keypress', () => {
                 // Prendo il contenuto di destra 
-                let content = right.textContent;
+                let content = right.value;
 
                 // Prendo la specifica dalla lista
 
