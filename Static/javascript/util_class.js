@@ -49,7 +49,7 @@ export class UserText {
 
         // Testo convertito
         let morse = [];
-        // let mmt = [];
+        let mmt = [];
 
         let chars = [
 
@@ -113,7 +113,7 @@ export class UserText {
 
             // Prendo il carattere
             let converted_char = char;
-            // let mmmt;
+            let mmmt;
 
             // Se non è un 'a capo' lo converto
             if (char !== '\n') {
@@ -122,7 +122,7 @@ export class UserText {
                 
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group of chars) {
-                    // mmmt = [Object.keys(group).includes(char), Object.keys(group)];
+                    mmmt = [Object.keys(group).includes(char), Object.keys(group), char];
 
                     // Controllo se è tra le chiavi
                     if (Object.keys(group).includes(char)) {
@@ -138,7 +138,8 @@ export class UserText {
                     }
 
                     // Aggiungo l'elemento all'array
-                    morse.push(converted_char);
+                    // morse.push(converted_char);
+                    mmt.push(`'${mmmt}'`);
                 }
 
             }
