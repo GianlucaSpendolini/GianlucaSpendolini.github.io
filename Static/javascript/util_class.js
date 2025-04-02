@@ -49,7 +49,7 @@ export class UserText {
 
         // Testo convertito
         let morse = [];
-        let mmt = [];
+        // let mmt = [];
 
         let chars = [
 
@@ -113,7 +113,7 @@ export class UserText {
 
             // Prendo il carattere
             let converted_char = char;
-            let mmmt;
+            // let mmmt;
 
             // Se non è un 'a capo' lo converto
             if (char !== '\n') {
@@ -125,32 +125,29 @@ export class UserText {
 
                     // Controllo se è tra le chiavi
                     if (Object.keys(group).includes(char)) {
-                        converted_char = group.char;
-                        mmmt = [char, converted_char, group, group.char, group[char]];
+                        converted_char = group[char];
                         break;
                     }
                     // Controllo se è tra i valori
                     else if (Object.values(group).includes(char)) {
                         converted_char = Object.entries(e).find(([k, v]) => v === char)?.[0];
-                        mmmt = [char, converted_char, group, group.char, group[char]];
                         break;
                     }
                     // Altrimenti segnalo l'errore
                     else {
                         converted_char = '#';
-                        mmmt = [char, converted_char, group, group.char, group[char]];
                     }
                 }
             }
 
             // Aggiungo l'elemento all'array
-            // morse.push(converted_char);
-            mmt.push(mmmt);
+            morse.push(converted_char);
+            // mmt.push(mmmt);
         });
 
         // Ritorno l'array unito -> testo convertito
-        // return morse;
-        return mmt;
+        return morse;
+        // return mmt;
     }
 
     // Ottale
