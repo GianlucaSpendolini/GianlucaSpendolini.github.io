@@ -145,7 +145,7 @@ export class UserText {
 
             // Aggiungo l'elemento all'array
             // morse.push(converted_char);
-            mmt.push(`'${mmmt}'`);
+            mmt.push(mmmt);
         });
 
         // Ritorno l'array unito -> testo convertito
