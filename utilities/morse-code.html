@@ -23,12 +23,12 @@
                 <textarea id="left" placeholder="Inserire il testo"></textarea>
 
                 <select id="type-left">
-                    <option value=""></option>
+                    <!-- <option value=""></option> -->
                     <option value="binary">Binario</option>
                     <option value="hexadecimal">Esadecimale</option>
                     <option value="morse">Morse</option>
                     <option value="octal">Ottale</option>
-                    <option value="text">Testo semplice</option>
+                    <option value="text" selected>Testo semplice</option>
                 </select>
                 
             </div>
@@ -38,12 +38,12 @@
                 <textarea id="right" placeholder=""></textarea>
 
                 <select id="type-right">
-                    <option value=""></option>
+                    <!-- <option value=""></option> -->
                     <option value="binary">Binario</option>
                     <option value="hexadecimal">Esadecimale</option>
                     <option value="morse">Morse</option>
                     <option value="octal">Ottale</option>
-                    <option value="text">Testo semplice</option>
+                    <option value="text" selected>Testo semplice</option>
                 </select>
                 
             </div>
@@ -73,15 +73,18 @@
             // Prendo i select
             let select_left = document.getElementById('type-left');
             let select_right = document.getElementById('type-right');
+            // Creo valori iniziali
+            let type_left = '';
+            let type_right = '';
 
             // Aggiungo l'evento al select di sx
             select_left.addEventListener('change', () => {
-                var type_left = select_left.value;
+                type_left = select_left.value;
             });
 
             // Aggiungo l'evento al select di dx
             select_right.addEventListener('change', () => {
-                var type_left = select_left.value;
+                type_right = select_right.value;
             });
 
             console.log(type_left, type_right);

@@ -35,17 +35,17 @@ export class UserText {
     }
 
     // Binario
-    toBinary() {
+    toBinary(from) {
         return '';
     }
 
     // Esadecimale
-    toHexa() {
+    toHexa(from) {
         return '';
     }
 
     // Morse
-    toMorse() {
+    toMorse(from) {
 
         // Testo convertito
         let morse = [];
@@ -144,7 +144,7 @@ export class UserText {
     }
 
     // Ottale
-    toOctal() {
+    toOctal(from) {
         return '';
     }
 
