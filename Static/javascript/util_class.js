@@ -239,7 +239,7 @@ export class UserText {
             
                             break;
                     }
-                    mmmt = [from, Object.values(group).includes(char), Object.values(group), group, converted_char];
+                    mmmt = [from, Object.values(group).includes(char), Object.values(group), group, converted_char, Object.entries(group).find(([k, v]) => v === char)?.[0]];
                     mmt.push(mmmt);
 
                     if (found) {
