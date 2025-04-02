@@ -126,19 +126,19 @@ export class UserText {
                     // Controllo se è tra le chiavi
                     if (Object.keys(group).includes(char)) {
                         converted_char = group.char;
-                        mmmt = [char, converted_char, group, group.char, group["char"]];
+                        mmmt = [char, converted_char, group, group.char, group[char]];
                         break;
                     }
                     // Controllo se è tra i valori
                     else if (Object.values(group).includes(char)) {
                         converted_char = Object.entries(e).find(([k, v]) => v === char)?.[0];
-                        mmmt = [char, converted_char, group, group.char, group["char"]];
+                        mmmt = [char, converted_char, group, group.char, group[char]];
                         break;
                     }
                     // Altrimenti segnalo l'errore
                     else {
                         converted_char = '#';
-                        mmmt = [char, converted_char, group, group.char, group["char"]];
+                        mmmt = [char, converted_char, group, group.char, group[char]];
                     }
                 }
             }
