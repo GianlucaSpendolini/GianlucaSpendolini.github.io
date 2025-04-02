@@ -74,8 +74,8 @@
             let select_left = document.getElementById('type-left');
             let select_right = document.getElementById('type-right');
             // Creo valori iniziali
-            let type_left = '';
-            let type_right = '';
+            let type_left = select_left.value;
+            let type_right = select_right.value;
 
             // Aggiungo l'evento al select di sx
             select_left.addEventListener('change', () => {

@@ -247,7 +247,7 @@ main#descrizione hr:not(.break-line) {
     min-width: 30%;
 }
 
-textarea {
+.left-container > textarea, .right-container > textarea {
     min-height: 100px;
     min-width: 100%;
 }
