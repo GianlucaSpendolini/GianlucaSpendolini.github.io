@@ -236,9 +236,13 @@ main#descrizione hr:not(.break-line) {
     CONVERTER/TRANSFORMER 
 */
 
-.converter-container, .transformer {
+.converter-container, .transformer-container {
     display: flex;
     justify-content: space-evenly;
+}
+
+.converter-container > textarea {
+    min-width: 30%;
 }
 
 

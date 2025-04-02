@@ -18,9 +18,9 @@
 
 		<div class="converter-container">
 
-			<textarea id="normale" placeholder="Inserire il testo normale"></textarea>
+			<textarea id="left" placeholder="Inserire il testo"></textarea>
 
-			<textarea id="morse" placeholder="Inserire il codice Morse"></textarea>
+			<textarea id="right" placeholder=""></textarea>
 
 		</div>
 
@@ -34,62 +34,50 @@
     <script src="./../Static/javascript/scripts.js" type="module"></script>
     <script type="module">
 
-        // Oggetto del codice morse
-        let morseChars = {
-            
-        }
+        import {
+            UserText
+        } from 'https://GianlucaSpendolini.github.io/Static/javascript/util_class.js';
 
         document.addEventListener('DOMContentLoaded', () => {
 
             // Prendo i text area
-            let normale = document.getElementById('normale');
-            let morse = document.getElementById('morse');
+            let left = document.getElementById('left');
+            let right = document.getElementById('right');
 
             // Aggiungo l'evento al textarea col testo normale
-            normale.addEventListener('change', () => {
-                // Prendo il testo normale 
-                let content = normale.textContent;
+            left.addEventListener('change', () => {
+                // Prendo il contenuto di sinistra 
+                let content = left.textContent;
+                console.log(content);
 
-                // Converto in codice morse
+                // Prendo la specifica dalla lista
+
+                // Converto
+                let to_convert = new UserText(content);
+                to_convert.convert();
+                console.log(to_convert);
 
                 // Inserisco nel textarea del codice morse
-                morse.innerText = content;
+                right.innerText = content;
             });
 
             // Aggiungo l'evento al textarea col codice morse
-            morse.addEventListener('change', () => {
-                // Prendo il testo normale 
-                let content = morse.textContent;
+            right.addEventListener('change', () => {
+                // Prendo il contenuto di destra 
+                let content = right.textContent;
 
-                // Converto in testo normale
+                // Prendo la specifica dalla lista
+
+                // Converto
+                let to_convert = new UserText(content);
+                to_convert.convert();
+                console.log(to_convert);
 
                 // Inserisco nel textarea del testo normale
-                normale.innerText = content;
+                left.innerText = content;
             });
 
         });
-
-
-        // Funzione per convertire il codice morse e viceversa
-        function morse_text(caratteri, cosa) {
-            
-            switch (cosa) {
-                // Codice Morse
-                case 'morse': 
-                    // 
-                    break;
-
-                // Testo normale
-                case 'normale': 
-                    //
-                    break;
-
-                // Default
-                default: 
-                    // Non faccio nulla
-                    break;
-            }
-        }
 
     </script>
     

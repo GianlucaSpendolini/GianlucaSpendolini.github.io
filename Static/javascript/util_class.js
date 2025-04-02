@@ -28,7 +28,7 @@ export class UserText {
     convert() {
 
         // Converto in maiuscolo per ricercare le lettere meglio
-        this.converted = this.text.toUpperCase();
+        this.textUpper = this.text.toUpperCase();
 
         return this;
         
@@ -48,7 +48,7 @@ export class UserText {
     toMorse() {
 
         // Testo convertito
-        let converted = [];
+        let morse = [];
 
         let chars = [
 
@@ -108,7 +108,7 @@ export class UserText {
         ]
 
         // Converto ogni carattere
-        this.text.split('').forEach(char => {
+        this.textUpper.split('').forEach(char => {
 
             // Prendo il carattere
             let converted_char = char;
@@ -129,23 +129,64 @@ export class UserText {
                     }
                     // Altrimenti segnalo l'errore
                     else {
-                        converted_char = 'err';
+                        converted_char = '#';
                     }
                 }
 
             }
 
             // Aggiungo l'elemento all'array
-            converted.push(converted_char);
+            morse.push(converted_char);
         });
 
         // Ritorno l'array unito -> testo convertito
-        return converted.join('');
+        return morse.join(' ');
     }
 
     // Ottale
-    octal() {
+    toOctal() {
         return '';
+    }
+
+    // Testo semplice
+    toText(from) {
+
+        // Variabile che conterrà il testo semplice
+        let simple_text;
+
+        // Cerco in base a cosa voglio trovare
+        switch (from) {
+
+            // Binario
+            case 'binary':
+                //
+                break;
+
+            // Esadecimale
+            case 'hexadecimal':
+                //
+                break;
+
+            // Morse
+            case 'morse':
+                //
+                break;
+
+            // Ottale
+            case 'octal':
+                //
+                break;
+
+            // Default (text)
+            default:
+
+                // Lascio il testo com'è
+                simple_text = this.text;
+
+                break;
+        }
+
+        return simple_text;
     }
 
 
