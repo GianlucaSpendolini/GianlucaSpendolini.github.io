@@ -122,28 +122,28 @@ export class UserText {
                 
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group of chars) {
-                    mmmt = [Object.keys(group).includes(char), Object.keys(group), char];
+                    mmmt = [char, converted_char];
 
                     // Controllo se è tra le chiavi
                     if (Object.keys(group).includes(char)) {
                         converted_char = group.char;
+                        break;
                     }
                     // Controllo se è tra i valori
                     else if (Object.values(group).includes(char)) {
                         converted_char = Object.entries(e).find(([k, v]) => v === char)?.[0];
+                        break;
                     }
                     // Altrimenti segnalo l'errore
                     else {
                         converted_char = '#';
                     }
-                    mmmt = [Object.keys(group).includes(char), Object.keys(group), char], converted_char;
-
-                    // Aggiungo l'elemento all'array
-                    // morse.push(converted_char);
-                    mmt.push(`'${mmmt}'`);
                 }
-
             }
+
+            // Aggiungo l'elemento all'array
+            // morse.push(converted_char);
+            mmt.push(`'${mmmt}'`);
         });
 
         // Ritorno l'array unito -> testo convertito
