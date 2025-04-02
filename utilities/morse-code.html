@@ -77,6 +77,8 @@
             let type_left = select_left.value;
             let type_right = select_right.value;
 
+            console.log("tot:", type_left, type_right);
+
             // Aggiungo l'evento al select di sx
             select_left.addEventListener('change', () => {
                 type_left = select_left.value;
@@ -88,7 +90,7 @@
             select_right.addEventListener('change', () => {
                 type_right = select_right.value;
 
-                console.log("select l:", type_right);
+                console.log("select r:", type_right);
             });
 
             // Aggiungo l'evento al textarea di sx
@@ -96,15 +98,25 @@
                 // Prendo il contenuto di sinistra 
                 let content = left.value;
 
-                // Prendo la specifica dalla lista
-
                 // Converto
                 let to_convert = new UserText(content);
-                to_convert.convert();
+
+                // Prendo la specifica dalla lista
+                switch (type_right) {
+
+                    // Morse
+                    case 'morse': 
+                        to_convert.convert().toMorse(type_left);
+                        break;
+
+                    default: 
+                        break;
+
+                }
                 console.log(to_convert);
 
                 // Inserisco nel textarea del codice morse
-                right.value = content;
+                right.value = to_convert;
             });
 
             // Aggiungo l'evento al textarea di dx
@@ -112,15 +124,25 @@
                 // Prendo il contenuto di destra 
                 let content = right.value;
 
-                // Prendo la specifica dalla lista
-
                 // Converto
                 let to_convert = new UserText(content);
-                to_convert.convert();
+
+                // Prendo la specifica dalla lista
+                switch (type_left) {
+
+                    // Morse
+                    case 'morse': 
+                        to_convert.convert().toMorse(type_right);
+                        break;
+
+                    default: 
+                        break;
+
+                }
                 console.log(to_convert);
 
                 // Inserisco nel textarea del testo normale
-                left.value = content;
+                left.value = to_convert;
             });
 
         });

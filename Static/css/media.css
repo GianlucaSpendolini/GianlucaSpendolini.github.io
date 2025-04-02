@@ -89,8 +89,9 @@
     /* 
         SEZIONE UTILITIES CONVERTER
     */
-    .left-container, .right-container {
-        max-width: 30%;
+    .left-container > textarea, .right-container > textarea {
+        margin-bottom: 10px;
+        max-width: 100%;
     }
 }
 
@@ -188,5 +189,9 @@
     .converter-container {
         flex-direction: column;
         min-height: max-content;
+    }
+    /* Aggiungo il margin */
+    .left-container, .right-container {
+        margin: 10px 0;
     }
 }

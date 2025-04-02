@@ -115,6 +115,8 @@ export class UserText {
 
             // Se non è un 'a capo' lo converto
             if (char !== '\n') {
+
+                // Controllare se non è uno spazio (in caso sia testo normale)
                 
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (o of chars) {
