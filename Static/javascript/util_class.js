@@ -153,6 +153,7 @@ export class UserText {
 
         // Testo convertito
         let simple_text = [];
+        let mmt = [];
 
         let chars = [
 
@@ -187,7 +188,6 @@ export class UserText {
 
             // Prendo il carattere
             let converted_char = char;
-            let mmt = [];
 
             // Se non è un 'a capo' lo converto
             if (char !== '\n') {
@@ -240,9 +240,9 @@ export class UserText {
                             break;
                     }
                     mmmt = [from, Object.values(group).includes(char), Object.values(group), group, converted_char];
+                    mmt.push(mmmt);
 
                     if (found) {
-                        mmt.push(mmmt);
                         break;
                     }
                 }
