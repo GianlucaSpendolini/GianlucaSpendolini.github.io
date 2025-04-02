@@ -467,17 +467,17 @@ function what_page(points_path) {
 
             break;
 
-        // /morse-code
+        // /converter o /transformer
         case '/utilities/morse-code':
 
             // Titolo
-            title.innerHTML = 'Codice morse';
+            title.innerHTML = 'Converter';
 
             // Header title
-            header_title.innerHTML = 'Codice morse';
+            header_title.innerHTML = 'Converter';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Pagina utile per convertire il testo normale in codice morse.';
+            meta_descrizione = 'Pagina utile per convertire il testo normale in alcuni tipi di codice e viceversa.';
 
             break;
 

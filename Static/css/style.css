@@ -241,8 +241,19 @@ main#descrizione hr:not(.break-line) {
     justify-content: space-evenly;
 }
 
-.converter-container > textarea {
+.left-container, .right-container {
+    display: flex;
+    flex-direction: column;
     min-width: 30%;
+}
+
+textarea {
+    min-height: 100px;
+    min-width: 100%;
+}
+
+select {
+    min-width: 50%;
 }
 
 

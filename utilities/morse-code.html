@@ -18,9 +18,25 @@
 
 		<div class="converter-container">
 
-			<textarea id="left" placeholder="Inserire il testo"></textarea>
+            <div class="left-container">
+                
+                <textarea id="left" placeholder="Inserire il testo"></textarea>
 
-			<textarea id="right" placeholder=""></textarea>
+                <select id="type-left">
+                    <option value=""></option>
+                </select>
+                
+            </div>
+
+            <div class="right-container">
+                
+                <textarea id="right" placeholder=""></textarea>
+
+                <select id="type-right">
+                    <option value=""></option>
+                </select>
+                
+            </div>
 
 		</div>
 
@@ -44,8 +60,8 @@
             let left = document.getElementById('left');
             let right = document.getElementById('right');
 
-            // Aggiungo l'evento al textarea col testo normale
-            left.addEventListener('keypress', () => {
+            // Aggiungo l'evento al textarea di sx
+            left.addEventListener('input', () => {
                 // Prendo il contenuto di sinistra 
                 let content = left.value;
                 console.log(content);
@@ -61,8 +77,8 @@
                 right.innerText = content;
             });
 
-            // Aggiungo l'evento al textarea col codice morse
-            right.addEventListener('keypress', () => {
+            // Aggiungo l'evento al textarea di dx
+            right.addEventListener('input', () => {
                 // Prendo il contenuto di destra 
                 let content = right.value;
 
