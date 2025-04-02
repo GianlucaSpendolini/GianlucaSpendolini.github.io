@@ -106,12 +106,7 @@ export class UserText {
                             }
                             // Altrimenti segnalo l'errore
                             else {
-                                if (char === ' ') {
-                                    converted_char = '/';
-                                }
-                                else {
-                                    converted_char = '#';
-                                }
+                                converted_char = '#';
                             }
                             
                             break;
@@ -158,7 +153,6 @@ export class UserText {
 
         // Testo convertito
         let simple_text = [];
-        // let mmt = [];
 
         let chars = [
 
@@ -239,7 +233,7 @@ export class UserText {
                         default:
             
                             // Lascio il testo com'è
-                            simple_text = this.text;
+                            simple_text.push(this.text);
             
                             break;
                     }
