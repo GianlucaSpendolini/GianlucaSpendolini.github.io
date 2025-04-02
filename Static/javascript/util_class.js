@@ -49,6 +49,7 @@ export class UserText {
 
         // Testo convertito
         let morse = [];
+        let mmt = [];
 
         let chars = [
 
@@ -138,11 +139,13 @@ export class UserText {
             }
 
             // Aggiungo l'elemento all'array
-            morse.push(converted_char);
+            // morse.push(converted_char);
+            mmt.push(`'${char}'`);
         });
 
         // Ritorno l'array unito -> testo convertito
-        return morse;
+        // return morse;
+        return mmt;
     }
 
     // Ottale
