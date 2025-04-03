@@ -40,7 +40,7 @@ export class UserText {
 
             // Prendo i dati relativi al cosa voglio tradurre
             this.chars = data[to];
-            this.prova = [data, to, data[to], data.to];
+            this.prova = [data, to, this.chars];
 
         });
 
@@ -102,7 +102,7 @@ export class UserText {
                     //     converted_char = '#';
                     // }
 
-                    switch (this.from) {
+                    switch (from) {
                         // Testo normale
                         case 'text':
 
@@ -194,7 +194,7 @@ export class UserText {
                     //     converted_char = '#';
                     // }
 
-                    switch (this.from) {
+                    switch (from) {
 
                         // Binario
                         case 'binary':
