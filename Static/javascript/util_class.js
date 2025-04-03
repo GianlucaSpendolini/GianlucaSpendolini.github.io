@@ -90,52 +90,52 @@ export class UserText {
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group of this.chars) {
 
-                    // Controllo se è tra le chiavi
-                    if (Object.keys(group).includes(char)) {
-                        converted_char = group[char];
-                        // found = true;
-                        break;
-                    }
-                    // Altrimenti segnalo l'errore
-                    else {
-                        converted_char = '#';
-                    }
-
-                    // switch (this.from) {
-                    //     // Testo normale
-                    //     case 'text':
-
-                    //         // Controllo se è tra le chiavi
-                    //         if (Object.keys(group).includes(char)) {
-                    //             converted_char = group[char];
-                    //             found = true;
-                    //         }
-                    //         // Altrimenti segnalo l'errore
-                    //         else {
-                    //             converted_char = '#';
-                    //         }
-                            
-                    //         break;
-
-                    //     // Morse
-                    //     default:
-                            
-                    //         // Controllo se è tra i valori
-                    //         if (Object.values(group).includes(char)) {
-                    //             converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
-                    //             found = true;
-                    //         }
-                    //         // Altrimenti segnalo l'errore
-                    //         else {
-                    //             converted_char = '#';
-                    //         }
-
-                    //         break;
-                    // }
-
-                    // if (found) {
+                    // // Controllo se è tra le chiavi
+                    // if (Object.keys(group).includes(char)) {
+                    //     converted_char = group[char];
+                    //     // found = true;
                     //     break;
                     // }
+                    // // Altrimenti segnalo l'errore
+                    // else {
+                    //     converted_char = '#';
+                    // }
+
+                    switch (this.from) {
+                        // Testo normale
+                        case 'text':
+
+                            // Controllo se è tra le chiavi
+                            if (Object.keys(group).includes(char)) {
+                                converted_char = group[char];
+                                found = true;
+                            }
+                            // Altrimenti segnalo l'errore
+                            else {
+                                converted_char = '#';
+                            }
+                            
+                            break;
+
+                        // Morse
+                        default:
+                            
+                            // Controllo se è tra i valori
+                            if (Object.values(group).includes(char)) {
+                                converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
+                                found = true;
+                            }
+                            // Altrimenti segnalo l'errore
+                            else {
+                                converted_char = '#';
+                            }
+
+                            break;
+                    }
+
+                    if (found) {
+                        break;
+                    }
                 }
             }
 
@@ -182,63 +182,63 @@ export class UserText {
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group of this.chars) {
                                         
-                    // Controllo se è tra i valori
-                    if (Object.values(group).includes(char)) {
-                        converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
-                        // found = true;
-                        break;
-                    }
-                    // Altrimenti segnalo l'errore
-                    else {
-                        converted_char = '#';
-                    }
-
-                    // switch (this.from) {
-
-                    //     // Binario
-                    //     case 'binary':
-                    //         //
-                    //         break;
-            
-                    //     // Esadecimale
-                    //     case 'hexadecimal':
-                    //         //
-                    //         break;
-            
-                    //     // Morse
-                    //     case 'morse':
-                                        
-                    //         // Controllo se è tra i valori
-                    //         if (Object.values(group).includes(char)) {
-                    //             converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
-                    //             found = true;
-                    //         }
-                    //         // Altrimenti segnalo l'errore
-                    //         else {
-                    //             converted_char = '#';
-                    //         }
-            
-                    //         break;
-            
-                    //     // Ottale
-                    //     case 'octal':
-                    //         //
-                    //         break;
-            
-                    //     // Default (text)
-                    //     default:
-            
-                    //         // Lascio il testo com'è
-                    //         simple_text.push(this.text);
-            
-                    //         break;
+                    // // Controllo se è tra i valori
+                    // if (Object.values(group).includes(char)) {
+                    //     converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
+                    //     // found = true;
+                    //     break;
                     // }
+                    // // Altrimenti segnalo l'errore
+                    // else {
+                    //     converted_char = '#';
+                    // }
+
+                    switch (this.from) {
+
+                        // Binario
+                        case 'binary':
+                            //
+                            break;
+            
+                        // Esadecimale
+                        case 'hexadecimal':
+                            //
+                            break;
+            
+                        // Morse
+                        case 'morse':
+                                        
+                            // Controllo se è tra i valori
+                            if (Object.values(group).includes(char)) {
+                                converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
+                                found = true;
+                            }
+                            // Altrimenti segnalo l'errore
+                            else {
+                                converted_char = '#';
+                            }
+            
+                            break;
+            
+                        // Ottale
+                        case 'octal':
+                            //
+                            break;
+            
+                        // Default (text)
+                        default:
+            
+                            // Lascio il testo com'è
+                            simple_text.push(this.text);
+            
+                            break;
+                    }
                     // mmmt = [this.from, Object.values(group).includes(char), Object.values(group), group, converted_char, Object.entries(group).find(([k, v]) => v === char)?.[0]];
                     // mmt.push(mmmt);
 
-                    // if (found) {
-                    //     break;
-                    // }
+                    if (found) {
+                        break;
+                    }
                 }
             }
 
