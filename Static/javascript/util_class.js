@@ -4,7 +4,13 @@
             
 */
 
-import { points_number } from "./util_function.js";
+import { 
+    points_number 
+} from "./util_function.js";
+
+import { 
+    path 
+} from "./util_variable.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -25,62 +31,51 @@ export class UserText {
     /*
         Conversioni
     */
-    convert() {
+    convert(from) {
 
-        // Converto in maiuscolo per ricercare le lettere meglio
-        this.textUpper = this.text.toUpperCase();
+        // Richiamo il file JSON
+        fetch(`${points_number(path)}Static/json/encoding-map.json`)
+        .then(response => response.json())
+        .then(data => {
+
+            // Prendo i dati relativi al cosa voglio tradurre
+            this.chars = data[from];
+
+        });
 
         return this;
         
     }
 
     // Binario
-    toBinary(from) {
-        return '';
+    toBinary() {
+
+        // Testo convertito
+        let binary = [];
+
+        // Ritorno l'array unito -> testo convertito
+        return binary.join('');
     }
 
     // Esadecimale
-    toHexa(from) {
-        return '';
+    toHexa() {
+
+        // Testo convertito
+        let hexa = [];
+
+        // Ritorno l'array unito -> testo convertito
+        return hexa.join('');
     }
 
     // Morse
-    toMorse(from) {
+    toMorse() {
 
         // Testo convertito
         let morse = [];
         // let mmt = [];
 
-        let chars = [
-
-            // Lettere
-            {
-                'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.',
-                'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.',
-                'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-',
-                'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..'
-            },
-
-            // Numeri
-            {
-                '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
-                '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'
-            },
-
-            // Simboli
-            {
-                '.': '.-.-.-', ',': '--..--', ':': '---...', '?': '..--..', '=': '-...-', '-': '-....-', '(': '-.--.',
-                ')': '-.--.-', '\"': '.-..-.', '\'': '.----.', '/': '-..-.', '_': '..--.-', '@': '.--.-.', '!': '-.-.--'
-            },
-
-            // Altri simboli
-            {
-                ' ': '/'
-            }
-        ]
-
         // Converto ogni carattere
-        this.textUpper.split('').forEach(char => {
+        this.text.toUpperCase().split('').forEach(char => {
 
             // Prendo il carattere
             let converted_char = char;
@@ -90,46 +85,57 @@ export class UserText {
             if (char !== '\n') {
 
                 // Variabile per capire se ho trovato il carattere tra quelli elencati o è estraneo dagli elenchi
-                let found = false;
+                // let found = false;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
-                for (let group of chars) {
+                for (let group of this.chars) {
 
-                    switch (from) {
-                        // Testo normale
-                        case 'text':
-
-                            // Controllo se è tra le chiavi
-                            if (Object.keys(group).includes(char)) {
-                                converted_char = group[char];
-                                found = true;
-                            }
-                            // Altrimenti segnalo l'errore
-                            else {
-                                converted_char = '#';
-                            }
-                            
-                            break;
-
-                        // Morse
-                        default:
-                            
-                            // Controllo se è tra i valori
-                            if (Object.values(group).includes(char)) {
-                                converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
-                                found = true;
-                            }
-                            // Altrimenti segnalo l'errore
-                            else {
-                                converted_char = '#';
-                            }
-
-                            break;
-                    }
-
-                    if (found) {
+                    // Controllo se è tra le chiavi
+                    if (Object.keys(group).includes(char)) {
+                        converted_char = group[char];
+                        // found = true;
                         break;
                     }
+                    // Altrimenti segnalo l'errore
+                    else {
+                        converted_char = '#';
+                    }
+
+                    // switch (this.from) {
+                    //     // Testo normale
+                    //     case 'text':
+
+                    //         // Controllo se è tra le chiavi
+                    //         if (Object.keys(group).includes(char)) {
+                    //             converted_char = group[char];
+                    //             found = true;
+                    //         }
+                    //         // Altrimenti segnalo l'errore
+                    //         else {
+                    //             converted_char = '#';
+                    //         }
+                            
+                    //         break;
+
+                    //     // Morse
+                    //     default:
+                            
+                    //         // Controllo se è tra i valori
+                    //         if (Object.values(group).includes(char)) {
+                    //             converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
+                    //             found = true;
+                    //         }
+                    //         // Altrimenti segnalo l'errore
+                    //         else {
+                    //             converted_char = '#';
+                    //         }
+
+                    //         break;
+                    // }
+
+                    // if (found) {
+                    //     break;
+                    // }
                 }
             }
 
@@ -144,47 +150,24 @@ export class UserText {
     }
 
     // Ottale
-    toOctal(from) {
-        return '';
+    toOctal() {
+
+        // Testo convertito
+        let octal = [];
+
+        // Ritorno l'array unito -> testo convertito
+        return octal.join('');
     }
 
     // Testo semplice
-    toText(from) {
+    toText() {
 
         // Testo convertito
         let simple_text = [];
         // let mmt = [];
 
-        let chars = [
-
-            // Lettere
-            {
-                'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.',
-                'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.',
-                'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-',
-                'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..'
-            },
-
-            // Numeri
-            {
-                '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
-                '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'
-            },
-
-            // Simboli
-            {
-                '.': '.-.-.-', ',': '--..--', ':': '---...', '?': '..--..', '=': '-...-', '-': '-....-', '(': '-.--.',
-                ')': '-.--.-', '\"': '.-..-.', '\'': '.----.', '/': '-..-.', '_': '..--.-', '@': '.--.-.', '!': '-.-.--'
-            },
-
-            // Altri simboli
-            {
-                ' ': '/'
-            }
-        ]
-
         // Converto ogni carattere
-        this.textUpper.split(' ').forEach(char => {
+        this.text.split(' ').forEach(char => {
 
             // Prendo il carattere
             let converted_char = char;
@@ -193,58 +176,69 @@ export class UserText {
             if (char !== '\n') {
 
                 // Variabile per capire se ho trovato il carattere tra quelli elencati o è estraneo dagli elenchi
-                let found = false;
+                // let found = false;
                 // let mmmt;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
-                for (let group of chars) {
-
-                    switch (from) {
-
-                        // Binario
-                        case 'binary':
-                            //
-                            break;
-            
-                        // Esadecimale
-                        case 'hexadecimal':
-                            //
-                            break;
-            
-                        // Morse
-                        case 'morse':
+                for (let group of this.chars) {
                                         
-                            // Controllo se è tra i valori
-                            if (Object.values(group).includes(char)) {
-                                converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
-                                found = true;
-                            }
-                            // Altrimenti segnalo l'errore
-                            else {
-                                converted_char = '#';
-                            }
-            
-                            break;
-            
-                        // Ottale
-                        case 'octal':
-                            //
-                            break;
-            
-                        // Default (text)
-                        default:
-            
-                            // Lascio il testo com'è
-                            simple_text.push(this.text);
-            
-                            break;
-                    }
-                    // mmmt = [from, Object.values(group).includes(char), Object.values(group), group, converted_char, Object.entries(group).find(([k, v]) => v === char)?.[0]];
-                    // mmt.push(mmmt);
-
-                    if (found) {
+                    // Controllo se è tra i valori
+                    if (Object.values(group).includes(char)) {
+                        converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
+                        // found = true;
                         break;
                     }
+                    // Altrimenti segnalo l'errore
+                    else {
+                        converted_char = '#';
+                    }
+
+                    // switch (this.from) {
+
+                    //     // Binario
+                    //     case 'binary':
+                    //         //
+                    //         break;
+            
+                    //     // Esadecimale
+                    //     case 'hexadecimal':
+                    //         //
+                    //         break;
+            
+                    //     // Morse
+                    //     case 'morse':
+                                        
+                    //         // Controllo se è tra i valori
+                    //         if (Object.values(group).includes(char)) {
+                    //             converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
+                    //             found = true;
+                    //         }
+                    //         // Altrimenti segnalo l'errore
+                    //         else {
+                    //             converted_char = '#';
+                    //         }
+            
+                    //         break;
+            
+                    //     // Ottale
+                    //     case 'octal':
+                    //         //
+                    //         break;
+            
+                    //     // Default (text)
+                    //     default:
+            
+                    //         // Lascio il testo com'è
+                    //         simple_text.push(this.text);
+            
+                    //         break;
+                    // }
+                    // mmmt = [this.from, Object.values(group).includes(char), Object.values(group), group, converted_char, Object.entries(group).find(([k, v]) => v === char)?.[0]];
+                    // mmt.push(mmmt);
+
+                    // if (found) {
+                    //     break;
+                    // }
                 }
             }
 

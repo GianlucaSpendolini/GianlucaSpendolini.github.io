@@ -35,7 +35,7 @@
 
             <div class="right-container">
                 
-                <textarea id="right" placeholder=""></textarea>
+                <textarea id="right" placeholder="Inserire il testo"></textarea>
 
                 <select id="type-right">
                     <!-- <option value=""></option> -->
@@ -125,12 +125,12 @@
 
                     // Morse
                     case 'morse': 
-                        converted = to_convert.convert().toMorse(type_left);
+                        converted = to_convert.convert(type_left).toMorse();
                         break;
 
                     // Text
                     case 'text': 
-                        converted = to_convert.convert().toText(type_left);
+                        converted = to_convert.convert(type_left).toText();
                         break;
 
                     default: 
@@ -156,12 +156,12 @@
 
                     // Morse
                     case 'morse': 
-                        converted = to_convert.convert().toMorse(type_right);
+                        converted = to_convert.convert(type_right).toMorse();
                         break;
 
                     // Text
                     case 'text': 
-                        converted = to_convert.convert().toText(type_right);
+                        converted = to_convert.convert(type_right).toText();
                         break;
 
                     default: 
