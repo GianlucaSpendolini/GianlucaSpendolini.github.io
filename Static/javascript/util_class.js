@@ -31,7 +31,7 @@ export class UserText {
     /*
         Conversioni
     */
-    convert(from) {
+    convert(to) {
 
         // Richiamo il file JSON
         fetch(`${points_number(path)}Static/json/encoding-map.json`)
@@ -39,8 +39,8 @@ export class UserText {
         .then(data => {
 
             // Prendo i dati relativi al cosa voglio tradurre
-            this.chars = data[from];
-            this.prova = [data, from, data[from], data.from];
+            this.chars = data[to];
+            this.prova = [data, to, data[to], data.to];
 
         });
 
@@ -49,7 +49,7 @@ export class UserText {
     }
 
     // Binario
-    toBinary() {
+    toBinary(from) {
 
         // Testo convertito
         let binary = [];
@@ -59,7 +59,7 @@ export class UserText {
     }
 
     // Esadecimale
-    toHexa() {
+    toHexa(from) {
 
         // Testo convertito
         let hexa = [];
@@ -69,7 +69,7 @@ export class UserText {
     }
 
     // Morse
-    toMorse() {
+    toMorse(from) {
 
         // Testo convertito
         let morse = [];
@@ -151,7 +151,7 @@ export class UserText {
     }
 
     // Ottale
-    toOctal() {
+    toOctal(from) {
 
         // Testo convertito
         let octal = [];
@@ -161,7 +161,7 @@ export class UserText {
     }
 
     // Testo semplice
-    toText() {
+    toText(from) {
 
         // Testo convertito
         let simple_text = [];

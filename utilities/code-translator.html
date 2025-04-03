@@ -119,19 +119,19 @@
 
                 // Converto
                 let to_convert = new UserText(content);
-                console.log(to_convert.convert(type_left));
+                console.log(to_convert.convert(type_right));
 
                 // Prendo la specifica dalla lista
                 switch (type_right) {
 
                     // Morse
                     case 'morse': 
-                        converted = to_convert.convert(type_left).toMorse();
+                        converted = to_convert.convert(type_right).toMorse(type_left);
                         break;
 
                     // Text
                     case 'text': 
-                        converted = to_convert.convert(type_left).toText();
+                        converted = to_convert.convert(type_right).toText(type_left);
                         break;
 
                     default: 
@@ -157,12 +157,12 @@
 
                     // Morse
                     case 'morse': 
-                        converted = to_convert.convert(type_right).toMorse();
+                        converted = to_convert.convert(type_left).toMorse(type_right);
                         break;
 
                     // Text
                     case 'text': 
-                        converted = to_convert.convert(type_right).toText();
+                        converted = to_convert.convert(type_left).toText(type_right);
                         break;
 
                     default: 
