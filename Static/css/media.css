@@ -176,7 +176,7 @@
     }
     
     /* 
-        SEZIONE UTILITIES CONVERTER
+        SEZIONE UTILITIES CODE TRANSLATOR
     */
     .converter-container {
         flex-direction: column;
@@ -185,5 +185,19 @@
     /* Aggiungo il margin */
     .left-container, .right-container {
         margin: 10px 0;
+        max-width: 30%;
+    }
+}
+
+
+@media screen and (min-width: 901px) {
+    
+    /* 
+        SEZIONE UTILITIES CODE TRANSLATOR
+    */
+    /* Aggiungo il margin */
+    .left-container, .right-container {
+        margin: 10px 5px;
+        max-width: 30%;
     }
 }
