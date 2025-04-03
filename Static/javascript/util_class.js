@@ -40,7 +40,7 @@ export class UserText {
 
             // Prendo i dati relativi al cosa voglio tradurre
             this.chars = data[from];
-            this.prova = data;
+            this.prova = [data, from, data[from], data.from];
 
         });
 
