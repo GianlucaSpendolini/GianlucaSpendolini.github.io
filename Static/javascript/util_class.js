@@ -31,6 +31,11 @@ export class UserText {
         Conversioni
     */
     async convert(to) {
+        /*
+            Di norma in questa funzione viene passato il "in cosa" si vuole tradurre.
+            Se si vuole tradurre qualcosa in testo bisogna passare il "da cosa" si vuole tradurre:
+                - Avendo la funzione ribaltata -> vado a vedere i valori per capire la chiave (il testo) associato
+        */
 
         // Richiamo il file JSON
         let response = await fetch(`${points_number(path)}Static/json/encoding-map.json`);

@@ -133,8 +133,8 @@
                         to_convert.convert(type_right).then( data => {
                             // Inserisco nel textarea di destra
                             console.log("data:", data);
-                            console.log("morse:", data.toMorse(type_left));
-                            right.value = data.toText(type_left);
+                            console.log("morse:", data.toMorse(type_right));
+                            right.value = data.toText(type_right);
                         });
                         break;
 
@@ -169,7 +169,7 @@
                     case 'text': 
                         to_convert.convert(type_left).then( data => {
                             // Inserisco nel textarea di sinistra
-                            left.value = data.toText(type_right);
+                            left.value = data.toText(type_left);
                         });
                         break;
 
