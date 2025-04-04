@@ -89,7 +89,7 @@ export class UserText {
                 // let found = false;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
-                this.chars.forEach( group => {
+                for (let group of this.chars) {
 
                     // // Controllo se è tra le chiavi
                     // if (Object.keys(group).includes(char)) {
@@ -137,7 +137,7 @@ export class UserText {
                     if (found) {
                         break;
                     }
-                });
+                };
             }
 
             // Aggiungo l'elemento all'array
