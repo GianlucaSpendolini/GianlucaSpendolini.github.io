@@ -90,27 +90,28 @@ export class UserText {
 
             // Se non è un 'a capo' lo converto
             if (char !== '\n') {
-                converted_char = 'dentro';
 
                 // Variabile per capire se ho trovato il carattere tra quelli elencati o è estraneo dagli elenchi
-                // let found = false;
+                let found = false;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group in this.chars) {
+                    converted_char = 'dentro for';
 
-                    // Controllo se è tra le chiavi
-                    if (Object.keys(group).includes(char)) {
-                        // converted_char = group[char];
-                        converted_char = [group, char, group[char]];
-                        // found = true;
-                    }
-                    // Altrimenti segnalo l'errore
-                    else {
-                        converted_char = '#';
-                    }
-                    break;
+                    // // Controllo se è tra le chiavi
+                    // if (Object.keys(group).includes(char)) {
+                    //     // converted_char = group[char];
+                    //     converted_char = [group, char, group[char]];
+                    //     // found = true;
+                    // }
+                    // // Altrimenti segnalo l'errore
+                    // else {
+                    //     converted_char = '#';
+                    // }
+                    // break;
 
                     switch (from) {
+
                         // Testo normale
                         case 'text':
 
@@ -140,6 +141,7 @@ export class UserText {
                             }
 
                             break;
+
                     }
 
                     if (found) {
