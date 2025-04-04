@@ -43,7 +43,7 @@ export class UserText {
 
             // Controllo se è un array -> se non: trasformo (prendo solo valori dell'oggetto ['num': 'array'])
             if (!Array.isArray(array)) {
-                this.array = Object.values(array);
+                this.chars = Object.values(array);
             }
             this.prova = [data, to, this.chars];
 
