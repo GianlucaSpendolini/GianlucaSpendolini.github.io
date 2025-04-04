@@ -57,7 +57,7 @@ export class UserText {
         let binary = [];
 
         // Ritorno l'array unito -> testo convertito
-        return binary.join('');
+        return binary.join(' ');
     }
 
     // Esadecimale
@@ -67,7 +67,7 @@ export class UserText {
         let hexa = [];
 
         // Ritorno l'array unito -> testo convertito
-        return hexa.join('');
+        return hexa.join(' ');
     }
 
     // Morse
@@ -126,7 +126,6 @@ export class UserText {
                             break;
 
                     }
-                    converted_char = [group, char, group[char]];
 
                     if (found) {
                         break;
@@ -151,7 +150,7 @@ export class UserText {
         let octal = [];
 
         // Ritorno l'array unito -> testo convertito
-        return octal.join('');
+        return octal.join(' ');
     }
 
     // Testo semplice
