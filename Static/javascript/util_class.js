@@ -34,24 +34,17 @@ export class UserText {
     /*
         Conversioni
     */
-    convert(to) {
+    async convert(to) {
 
         // Richiamo il file JSON
-        fetch(`${points_number(path)}Static/json/encoding-map.json`)
-        .then(response => response.json())
-        .then(data => {
+        let response = fetch(`${points_number(path)}Static/json/encoding-map.json`);
 
-            // // Prendo i dati che mi servono
-            // let array = data[to];
-            this.chars = data[to];
+        // Prendo i dati
+        let data = await response.json();
 
-            // // Controllo se è un array -> se non: trasformo (prendo solo valori dell'oggetto ['num': 'array'])
-            // if (!Array.isArray(array)) {
-            //     this.chars = Object.values(array);
-            // }
-            this.prova = ['prova', data, to, this.chars];
-
-        });
+        // Prendo i dati che mi servono
+        this.chars = data[to];
+        this.prova = ['prova', data, to, this.chars];
 
         return this;
         
@@ -95,25 +88,10 @@ export class UserText {
             if (char !== '\n') {
 
                 // Variabile per capire se ho trovato il carattere tra quelli elencati o è estraneo dagli elenchi
-                // let found = false;
-                converted_char = this.chars;
+                let found = false;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group in this.chars) {
-                    converted_char = 'dentro for';
-                    // converted_char = [group, char, group[char]];
-
-                    // // Controllo se è tra le chiavi
-                    // if (Object.keys(group).includes(char)) {
-                    //     // converted_char = group[char];
-                    //     converted_char = [group, char, group[char]];
-                    //     // found = true;
-                    // }
-                    // // Altrimenti segnalo l'errore
-                    // else {
-                    //     converted_char = '#';
-                    // }
-                    break;
 
                     switch (from) {
 
@@ -162,7 +140,7 @@ export class UserText {
         });
 
         // Ritorno l'array unito -> testo convertito
-        return morse;//.join(' ');
+        return morse.join(' ');
         // return mmt;
     }
 
@@ -193,22 +171,11 @@ export class UserText {
             if (char !== '\n') {
 
                 // Variabile per capire se ho trovato il carattere tra quelli elencati o è estraneo dagli elenchi
-                // let found = false;
+                let found = false;
                 // let mmmt;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group in this.chars) {
-                                        
-                    // // Controllo se è tra i valori
-                    // if (Object.values(group).includes(char)) {
-                    //     converted_char = Object.entries(group).find(([k, v]) => v === char)?.[0];
-                    //     // found = true;
-                    //     break;
-                    // }
-                    // // Altrimenti segnalo l'errore
-                    // else {
-                    //     converted_char = '#';
-                    // }
 
                     switch (from) {
 

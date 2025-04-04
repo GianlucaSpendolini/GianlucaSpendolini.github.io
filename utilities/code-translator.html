@@ -126,12 +126,18 @@
 
                     // Morse
                     case 'morse': 
-                        converted = to_convert.convert(type_right).toMorse(type_left);
+                        converted = to_convert.convert(type_right);
+                        converted.then( data => {
+                            data.toMorse(type_left);
+                        });
                         break;
 
                     // Text
                     case 'text': 
-                        converted = to_convert.convert(type_right).toText(type_left);
+                        converted = to_convert.convert(type_right);
+                        converted.then( data => {
+                            data.toMorse(type_left);
+                        });
                         break;
 
                     default: 
@@ -157,12 +163,18 @@
 
                     // Morse
                     case 'morse': 
-                        converted = to_convert.convert(type_left).toMorse(type_right);
+                        converted = to_convert.convert(type_left);
+                        converted.then( data => {
+                            data.toMorse(type_right);
+                        });
                         break;
 
                     // Text
                     case 'text': 
-                        converted = to_convert.convert(type_left).toText(type_right);
+                        converted = to_convert.convert(type_left);
+                        converted.then( data => {
+                            data.toMorse(type_right);
+                        });
                         break;
 
                     default: 
