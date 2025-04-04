@@ -126,17 +126,19 @@
 
                     // Morse
                     case 'morse': 
-                        to_convert.convert(type_right).then( data => {
-                            console.log("data:", data, "morse:", data.toMorse(type_left));
-                            converted = data.toMorse(type_left);
-                        });
+                        (async () => {
+                            await to_convert.convert(type_right);
+                            console.log("data:", to_convert, "morse:", to_convert.toMorse(type_left));
+                            converted = to_convert.toMorse(type_left);
+                        })();
                         break;
 
                     // Text
                     case 'text': 
-                        to_convert.convert(type_right).then( data => {
-                            converted = data.toMorse(type_left);
-                        });
+                        (async () => {
+                            await to_convert.convert(type_right);
+                            converted = to_convert.toMorse(type_left);
+                        })();
                         break;
 
                     default: 
@@ -162,16 +164,18 @@
 
                     // Morse
                     case 'morse': 
-                        to_convert.convert(type_left).then( data => {
-                            converted = data.toMorse(type_right);
-                        });
+                        (async () => {
+                            await to_convert.convert(type_left);
+                            converted = to_convert.toMorse(type_right);
+                        })();
                         break;
 
                     // Text
                     case 'text': 
-                        to_convert.convert(type_left).then( data => {
-                            converted = data.toMorse(type_right);
-                        });
+                        (async () => {
+                            await to_convert.convert(type_left);
+                            converted = to_convert.toMorse(type_right);
+                        })();
                         break;
 
                     default: 
