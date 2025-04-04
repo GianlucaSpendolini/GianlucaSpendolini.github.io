@@ -45,7 +45,7 @@ export class UserText {
             if (!Array.isArray(array)) {
                 this.chars = Object.values(array);
             }
-            this.prova = [data, to, this.chars];
+            this.prova = [data, to, this.chars, Array.isArray(array), Object.values(array)];
 
         });
 
