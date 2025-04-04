@@ -40,11 +40,12 @@ export class UserText {
 
             // Prendo i dati che mi servono
             let array = data[to];
+            this.chars = Object.values(data[to]);
 
-            // Controllo se è un array -> se non: trasformo (prendo solo valori dell'oggetto ['num': 'array'])
-            if (!Array.isArray(array)) {
-                this.chars = Object.values(array);
-            }
+            // // Controllo se è un array -> se non: trasformo (prendo solo valori dell'oggetto ['num': 'array'])
+            // if (!Array.isArray(array)) {
+            //     this.chars = Object.values(array);
+            // }
             this.prova = [data, to, this.chars, Array.isArray(array), Object.values(array)];
 
         });
