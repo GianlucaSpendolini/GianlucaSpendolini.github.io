@@ -1,6 +1,7 @@
 /* 
     CLASSI UTILI
-        - ...
+        - UserText
+            - Classe per la manipolazione del testo inserito dall'utente
             
 */
 
@@ -11,11 +12,6 @@ import {
 import { 
     path 
 } from "./util_variable.js";
-
-document.addEventListener('DOMContentLoaded', () => {
-    
-    console.log("ciao: ", points_number(window.location.pathname));
-});
 
 
 // Classe per la manipolazione del testo inserito dall'utente
@@ -28,7 +24,7 @@ export class UserText {
         this.text = text;
 
         // Variabile per la lista di caratteri
-        this.chars;
+        // this.chars;
     }
 
     /*
