@@ -122,7 +122,7 @@
                         to_convert.convert(type_right).then( data => {
                             // Inserisco nel textarea di destra
                             console.log("data:", data, "morse:", data.toMorse(type_left));
-                            left.value = data.toMorse(type_left);
+                            right.value = data.toMorse(type_left);
                         });
                         break;
 
@@ -130,7 +130,7 @@
                     case 'text': 
                         to_convert.convert(type_right).then( data => {
                             // Inserisco nel textarea di destra
-                            left.value = data.toMorse(type_left);
+                            right.value = data.toMorse(type_left);
                         });
                         break;
 
@@ -156,7 +156,7 @@
                     case 'morse': 
                         to_convert.convert(type_left).then( data => {
                             // Inserisco nel textarea di sinistra
-                            right.value = data.toMorse(type_right);
+                            left.value = data.toMorse(type_right);
                         });
                         break;
 
@@ -164,7 +164,7 @@
                     case 'text': 
                         to_convert.convert(type_left).then( data => {
                             // Inserisco nel textarea di sinistra
-                            right.value = data.toMorse(type_right);
+                            left.value = data.toMorse(type_right);
                         });
                         break;
 
