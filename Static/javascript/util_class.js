@@ -91,7 +91,7 @@ export class UserText {
                 let found = false;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
-                for (let group in this.chars) {
+                for (let group of this.chars) {
 
                     switch (from) {
 
@@ -175,7 +175,7 @@ export class UserText {
                 // let mmmt;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
-                for (let group in this.chars) {
+                for (let group of this.chars) {
 
                     switch (from) {
 
