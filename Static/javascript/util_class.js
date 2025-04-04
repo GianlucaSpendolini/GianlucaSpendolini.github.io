@@ -95,7 +95,7 @@ export class UserText {
                 // let found = false;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
-                for (let group of this.chars) {
+                for (let [_, group] of Object.entries(this.chars)) {
 
                     // // Controllo se è tra le chiavi
                     // if (Object.keys(group).includes(char)) {
