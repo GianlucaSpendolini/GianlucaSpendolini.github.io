@@ -55,10 +55,10 @@
 
             <br />
 
-            Ognuno può convertire tutte le lettere (minuscole e maiuscole), tutti i numeri MA un numero limitato di simboli:
+            Ognuno può convertire tutte le lettere (minuscole e maiuscole), tutti i numeri MA un numero limitato di simboli (oltre alle spaziature):
             <ul>
                 <li>
-                    Da testo a Morse
+                    Morse - testo
                     <ul>
                         <li>. , : ; ? ! " ' = _ @ ) ( /</li>
                     </ul>
@@ -111,36 +111,43 @@
                 // Prendo il contenuto di sinistra 
                 let content = left.value;
 
-                // Converto
-                let to_convert = new UserText(content);
+                // Se sto traducendo tra due tipi uguali -> restituisco la stessa cosa
+                if (type_left === type_right) {
+                    left.value = content;
+                }
+                // Altrimenti converto
+                else {
+                    // Converto
+                    let to_convert = new UserText(content);
 
-                // Prendo la specifica dalla lista
-                console.log(`from ${type_left} to ${type_right}`);
-                switch (type_right) {
+                    // Prendo la specifica dalla lista
+                    console.log(`from ${type_left} to ${type_right}`);
+                    switch (type_right) {
 
-                    // Morse
-                    case 'morse': 
-                        to_convert.convert(type_right).then( data => {
-                            // Inserisco nel textarea di destra
-                            console.log("data:", data);
-                            console.log("morse:", data.toMorse(type_left));
-                            right.value = data.toMorse(type_left);
-                        });
-                        break;
+                        // Morse
+                        case 'morse': 
+                            to_convert.convert(type_right).then( data => {
+                                // Inserisco nel textarea di destra
+                                console.log("data:", data);
+                                console.log("morse:", data.toMorse(type_left));
+                                right.value = data.toMorse(type_left);
+                            });
+                            break;
 
-                    // Text
-                    case 'text': 
-                        to_convert.convert(type_left).then( data => {
-                            // Inserisco nel textarea di destra
-                            console.log("data:", data);
-                            console.log("morse:", data.toText(type_left));
-                            right.value = data.toText(type_left);
-                        });
-                        break;
+                        // Text
+                        case 'text': 
+                            to_convert.convert(type_left).then( data => {
+                                // Inserisco nel textarea di destra
+                                console.log("data:", data);
+                                console.log("morse:", data.toText(type_left));
+                                right.value = data.toText(type_left);
+                            });
+                            break;
 
-                    default: 
-                        break;
+                        default: 
+                            break;
 
+                    }
                 }
             });
 
@@ -150,32 +157,39 @@
                 // Prendo il contenuto di destra 
                 let content = right.value;
 
-                // Converto
-                let to_convert = new UserText(content);
+                // Se sto traducendo tra due tipi uguali -> restituisco la stessa cosa
+                if (type_left === type_right) {
+                    left.value = content;
+                }
+                // Altrimenti converto
+                else {
+                    // Converto
+                    let to_convert = new UserText(content);
 
-                // Prendo la specifica dalla lista
-                console.log(`from ${type_right} to ${type_left}`);
-                switch (type_left) {
+                    // Prendo la specifica dalla lista
+                    console.log(`from ${type_right} to ${type_left}`);
+                    switch (type_left) {
 
-                    // Morse
-                    case 'morse': 
-                        to_convert.convert(type_left).then( data => {
-                            // Inserisco nel textarea di sinistra
-                            left.value = data.toMorse(type_right);
-                        });
-                        break;
+                        // Morse
+                        case 'morse': 
+                            to_convert.convert(type_left).then( data => {
+                                // Inserisco nel textarea di sinistra
+                                left.value = data.toMorse(type_right);
+                            });
+                            break;
 
-                    // Text
-                    case 'text': 
-                        to_convert.convert(type_right).then( data => {
-                            // Inserisco nel textarea di sinistra
-                            left.value = data.toText(type_right);
-                        });
-                        break;
+                        // Text
+                        case 'text': 
+                            to_convert.convert(type_right).then( data => {
+                                // Inserisco nel textarea di sinistra
+                                left.value = data.toText(type_right);
+                            });
+                            break;
 
-                    default: 
-                        break;
+                        default: 
+                            break;
 
+                    }
                 }
             });
 
