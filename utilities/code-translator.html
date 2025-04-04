@@ -110,7 +110,7 @@
             });
 
             // Variabile in cui inserire il valore convertito
-            let converted;
+            // let converted;
 
             // Aggiungo l'evento al textarea di sx
             left.addEventListener('input', () => {
@@ -126,29 +126,25 @@
 
                     // Morse
                     case 'morse': 
-                        (async () => {
-                            await to_convert.convert(type_right);
-                            console.log("data:", to_convert, "morse:", to_convert.toMorse(type_left));
-                            converted = to_convert.toMorse(type_left);
-                        })();
+                        to_convert.convert(type_right).then( data => {
+                            // Inserisco nel textarea di destra
+                            console.log("data:", data, "morse:", data.toMorse(type_left));
+                            right.value = data.toMorse(type_left);
+                        });
                         break;
 
                     // Text
                     case 'text': 
-                        (async () => {
-                            await to_convert.convert(type_right);
-                            converted = to_convert.toMorse(type_left);
-                        })();
+                        to_convert.convert(type_right).then( data => {
+                            // Inserisco nel textarea di destra
+                            right.value = data.toMorse(type_left);
+                        });
                         break;
 
                     default: 
                         break;
 
                 }
-                console.log(converted);
-
-                // Inserisco nel textarea del codice morse
-                right.value = converted;
             });
 
             // Aggiungo l'evento al textarea di dx
@@ -164,28 +160,24 @@
 
                     // Morse
                     case 'morse': 
-                        (async () => {
-                            await to_convert.convert(type_left);
-                            converted = to_convert.toMorse(type_right);
-                        })();
+                        to_convert.convert(type_left).then( data => {
+                            // Inserisco nel textarea di sinistra
+                            right.value = data.toMorse(type_right);
+                        });
                         break;
 
                     // Text
                     case 'text': 
-                        (async () => {
-                            await to_convert.convert(type_left);
-                            converted = to_convert.toMorse(type_right);
-                        })();
+                        to_convert.convert(type_left).then( data => {
+                            // Inserisco nel textarea di sinistra
+                            right.value = data.toMorse(type_right);
+                        });
                         break;
 
                     default: 
                         break;
 
                 }
-                console.log(converted);
-
-                // Inserisco nel textarea del testo normale
-                left.value = converted;
             });
 
         });
