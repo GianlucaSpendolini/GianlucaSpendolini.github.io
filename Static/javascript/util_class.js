@@ -97,16 +97,18 @@ export class UserText {
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group in this.chars) {
 
-                    // // Controllo se è tra le chiavi
-                    // if (Object.keys(group).includes(char)) {
-                    //     converted_char = group[char];
-                    //     // found = true;
-                    //     break;
-                    // }
-                    // // Altrimenti segnalo l'errore
-                    // else {
-                    //     converted_char = '#';
-                    // }
+                    // Controllo se è tra le chiavi
+                    if (Object.keys(group).includes(char)) {
+                        // converted_char = group[char];
+                        converted_char = [group, char, group[char]];
+                        // found = true;
+                        break;
+                    }
+                    // Altrimenti segnalo l'errore
+                    else {
+                        converted_char = '#';
+                    }
+                    break;
 
                     switch (from) {
                         // Testo normale
