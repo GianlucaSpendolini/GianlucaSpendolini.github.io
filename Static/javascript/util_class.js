@@ -143,6 +143,7 @@ export class UserText {
                             break;
 
                     }
+                    converted_char = [group, char, group[char]];
 
                     if (found) {
                         break;
