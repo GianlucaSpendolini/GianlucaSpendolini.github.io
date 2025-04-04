@@ -98,28 +98,21 @@
             // Aggiungo l'evento al select di sx
             select_left.addEventListener('change', () => {
                 type_left = select_left.value;
-
-                // console.log("select l:", type_left);
             });
 
             // Aggiungo l'evento al select di dx
             select_right.addEventListener('change', () => {
                 type_right = select_right.value;
-
-                // console.log("select r:", type_right);
             });
-
-            // Variabile in cui inserire il valore convertito
-            // let converted;
 
             // Aggiungo l'evento al textarea di sx
             left.addEventListener('input', () => {
+
                 // Prendo il contenuto di sinistra 
                 let content = left.value;
 
                 // Converto
                 let to_convert = new UserText(content);
-                console.log(to_convert.convert(type_right));
 
                 // Prendo la specifica dalla lista
                 switch (type_right) {
@@ -129,7 +122,7 @@
                         to_convert.convert(type_right).then( data => {
                             // Inserisco nel textarea di destra
                             console.log("data:", data, "morse:", data.toMorse(type_left));
-                            right.value = data.toMorse(type_left);
+                            left.value = data.toMorse(type_left);
                         });
                         break;
 
@@ -137,7 +130,7 @@
                     case 'text': 
                         to_convert.convert(type_right).then( data => {
                             // Inserisco nel textarea di destra
-                            right.value = data.toMorse(type_left);
+                            left.value = data.toMorse(type_left);
                         });
                         break;
 
@@ -149,6 +142,7 @@
 
             // Aggiungo l'evento al textarea di dx
             right.addEventListener('input', () => {
+
                 // Prendo il contenuto di destra 
                 let content = right.value;
 
