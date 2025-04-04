@@ -90,6 +90,7 @@ export class UserText {
 
             // Se non è un 'a capo' lo converto
             if (char !== '\n') {
+                converted_char = 'dentro';
 
                 // Variabile per capire se ho trovato il carattere tra quelli elencati o è estraneo dagli elenchi
                 // let found = false;
@@ -102,7 +103,6 @@ export class UserText {
                         // converted_char = group[char];
                         converted_char = [group, char, group[char]];
                         // found = true;
-                        break;
                     }
                     // Altrimenti segnalo l'errore
                     else {
