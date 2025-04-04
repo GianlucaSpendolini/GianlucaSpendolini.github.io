@@ -153,7 +153,7 @@ export class UserText {
                     if (found) {
                         break;
                     }
-                };
+                }
             }
 
             // Aggiungo l'elemento all'array
