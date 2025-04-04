@@ -38,8 +38,13 @@ export class UserText {
         .then(response => response.json())
         .then(data => {
 
-            // Prendo i dati relativi al cosa voglio tradurre
-            this.chars = data[to];
+            // Prendo i dati che mi servono
+            let array = data[to];
+
+            // Controllo se è un array -> se non: trasformo (prendo solo valori dell'oggetto ['num': 'array'])
+            if (!Array.isArray(array)) {
+                this.array = Object.values(array);
+            }
             this.prova = [data, to, this.chars];
 
         });
