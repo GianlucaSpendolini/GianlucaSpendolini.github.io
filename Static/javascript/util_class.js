@@ -92,11 +92,12 @@ export class UserText {
             if (char !== '\n') {
 
                 // Variabile per capire se ho trovato il carattere tra quelli elencati o è estraneo dagli elenchi
-                let found = false;
+                // let found = false;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group in this.chars) {
                     converted_char = 'dentro for';
+                    // converted_char = [group, char, group[char]];
 
                     // // Controllo se è tra le chiavi
                     // if (Object.keys(group).includes(char)) {
@@ -108,7 +109,7 @@ export class UserText {
                     // else {
                     //     converted_char = '#';
                     // }
-                    // break;
+                    break;
 
                     switch (from) {
 
