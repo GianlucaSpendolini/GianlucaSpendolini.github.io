@@ -31,29 +31,39 @@ export class UserText {
     /*
         Conversioni
     */
-    convert(to) {
+    // convert(to) {
 
-        (async () => {
+    //     (async () => {
 
-            // Richiamo il file JSON
-            await fetch(`${points_number(path)}Static/json/encoding-map.json`)
-            .then(response => response.json())
-            .then(data => {
+    //         // Richiamo il file JSON
+    //         await fetch(`${points_number(path)}Static/json/encoding-map.json`)
+    //         .then(response => response.json())
+    //         .then(data => {
     
-                // // Prendo i dati che mi servono
-                // let array = data[to];
-                this.chars = data[to];
+    //             // // Prendo i dati che mi servono
+    //             // let array = data[to];
+    //             this.chars = data[to];
     
-                // // Controllo se è un array -> se non: trasformo (prendo solo valori dell'oggetto ['num': 'array'])
-                // if (!Array.isArray(array)) {
-                //     this.chars = Object.values(array);
-                // }
-                this.prova = [data, to, this.chars];
+    //             // // Controllo se è un array -> se non: trasformo (prendo solo valori dell'oggetto ['num': 'array'])
+    //             // if (!Array.isArray(array)) {
+    //             //     this.chars = Object.values(array);
+    //             // }
+    //             this.prova = [data, to, this.chars];
     
-            });
+    //         });
 
-            return this;
-        })();
+    //         return this;
+    //     })();
+        
+    // }
+    async convert(to) {
+
+        // Richiamo il file JSON
+        const response = await fetch(`${points_number(path)}Static/json/encoding-map.json`);
+        const data = await response.json();
+        this.array = Array.isArray(data) ? data : Object.values(data);
+
+        return this;
         
     }
 
