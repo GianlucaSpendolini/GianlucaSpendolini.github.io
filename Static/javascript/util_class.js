@@ -78,7 +78,7 @@ export class UserText {
     toMorse(from) {
 
         // Caratteri
-        chars = this.charsGroup;
+        let chars = this.charsGroup;
 
         // Testo convertito
         let morse = [];
