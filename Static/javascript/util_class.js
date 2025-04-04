@@ -80,6 +80,7 @@ export class UserText {
         // Testo convertito
         let morse = [];
         // let mmt = [];
+        return this;
 
         // Converto ogni carattere
         this.text.toUpperCase().split('').forEach(char => {
@@ -95,7 +96,7 @@ export class UserText {
                 // let found = false;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
-                for (let [_, group] of Object.entries(this.chars)) {
+                for (let group in this.chars) {
 
                     // // Controllo se è tra le chiavi
                     // if (Object.keys(group).includes(char)) {
@@ -187,7 +188,7 @@ export class UserText {
                 // let mmmt;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
-                for (let [_, group] of Object.entries(this.chars)) {
+                for (let group in this.chars) {
                                         
                     // // Controllo se è tra i valori
                     // if (Object.values(group).includes(char)) {
