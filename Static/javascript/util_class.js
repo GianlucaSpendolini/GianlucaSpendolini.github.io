@@ -154,7 +154,7 @@ export class UserText {
         });
 
         // Ritorno l'array unito -> testo convertito
-        return morse.join(' ');
+        return morse;//.join(' ');
         // return mmt;
     }
 
