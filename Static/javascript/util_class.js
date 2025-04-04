@@ -31,27 +31,24 @@ export class UserText {
     /*
         Conversioni
     */
-    convert(to) {
+    async convert(to) {
 
-        (async () => {
+        // Richiamo il file JSON
+        await fetch(`${points_number(path)}Static/json/encoding-map.json`)
+        .then(response => response.json())
+        .then(data => {
 
-            // Richiamo il file JSON
-            await fetch(`${points_number(path)}Static/json/encoding-map.json`)
-            .then(response => response.json())
-            .then(data => {
-    
-                // // Prendo i dati che mi servono
-                // let array = data[to];
-                this.chars = data[to];
-    
-                // // Controllo se è un array -> se non: trasformo (prendo solo valori dell'oggetto ['num': 'array'])
-                // if (!Array.isArray(array)) {
-                //     this.chars = Object.values(array);
-                // }
-                this.prova = [data, to, this.chars];
-    
-            });
-        })();
+            // // Prendo i dati che mi servono
+            // let array = data[to];
+            this.chars = data[to];
+
+            // // Controllo se è un array -> se non: trasformo (prendo solo valori dell'oggetto ['num': 'array'])
+            // if (!Array.isArray(array)) {
+            //     this.chars = Object.values(array);
+            // }
+            this.prova = [data, to, this.chars];
+
+        });
 
         return this;
         
