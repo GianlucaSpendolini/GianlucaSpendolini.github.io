@@ -26,6 +26,9 @@ export class UserText {
 
         // Testo da convertire
         this.text = text;
+
+        // Variabile per la lista di caratteri
+        this.chars;
     }
 
     /*
