@@ -47,6 +47,20 @@ export class UserText {
         this.chars = data[to];
         this.prova = ['prova', data, to, this.chars];
 
+        /*
+            Modificare il metodo per fare in modo di usare solo il metodo convert per convertire in base ad input ed output
+            - in caso di due codici diversi
+                - codice di input -> prendo il relativo insieme 
+                - traduco in testo normale
+                    - traduzione "inversa"
+                - codice di output -> prendo il relativo insieme
+                - traduco il testo normale tradotto nel codice di output
+                    - traduzione "normale"
+            - in caso di testo - codice e viceversa
+                - prendo solo l'insieme di caratteri relativo al codice NON di testo
+                - traduco "normale"/"inverso" -> testo a codice/codice a testo
+        */
+
         return this;
         
     }
