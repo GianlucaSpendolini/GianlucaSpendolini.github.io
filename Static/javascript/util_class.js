@@ -31,11 +31,6 @@ export class UserText {
         Conversione
     */
     async convert(from, to) {
-        /*
-            Di norma in questa funzione viene passato il "in cosa" si vuole tradurre.
-            Se si vuole tradurre qualcosa in testo bisogna passare il "da cosa" si vuole tradurre:
-                - Avendo la funzione ribaltata -> vado a vedere i valori per capire la chiave (il testo) associato
-        */
 
         // Richiamo il file JSON
         let response = await fetch(`${points_number(path)}Static/json/encoding-map.json`);
@@ -44,7 +39,17 @@ export class UserText {
         let data = await response.json();
 
         // Prendo i dati che mi servono
-        this.charsTo = data[to];
+        /*
+            Di norma in questa funzione viene passato il "in cosa" si vuole tradurre.
+            Se si vuole tradurre qualcosa in testo bisogna passare il "da cosa" si vuole tradurre:
+                - Avendo la funzione ribaltata -> vado a vedere i valori per capire la chiave (il testo) associato
+        */
+        if (to === 'text') {
+            this.charsTo = data[from];
+        }
+        else {
+            this.charsTo = data[to];
+        }
         this.prova = ['prova', data, to, this.charsTo];
 
         /*
@@ -159,6 +164,7 @@ export class UserText {
 
                     }
 
+                    // Se è stato trovato il carattere -> esco dal ciclo
                     if (found) {
                         break;
                     }
@@ -174,9 +180,15 @@ export class UserText {
         });
 
         // Ritorno l'array unito -> testo convertito
-        return converted.join(' ');
-
-        // return this;
+        if (to === 'text') {
+            // Se testo -> non devo aggiungere spazi altrimenti "inquino"/"altero" l'originale
+            return converted.join('');
+        }
+        // Altrimenti
+        else {
+            // Riporto caratteri a blocchi (se non metto spazi -> unisco -> non capibili) -> aggiungo lo spazio
+            return converted.join(' ');
+        }
         
     }
 
