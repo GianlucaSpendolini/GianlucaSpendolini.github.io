@@ -31,37 +31,24 @@ export class UserText {
     /*
         Conversioni
     */
-    // convert(to) {
-
-    //     (async () => {
-
-    //         // Richiamo il file JSON
-    //         await fetch(`${points_number(path)}Static/json/encoding-map.json`)
-    //         .then(response => response.json())
-    //         .then(data => {
-    
-    //             // // Prendo i dati che mi servono
-    //             // let array = data[to];
-    //             this.chars = data[to];
-    
-    //             // // Controllo se è un array -> se non: trasformo (prendo solo valori dell'oggetto ['num': 'array'])
-    //             // if (!Array.isArray(array)) {
-    //             //     this.chars = Object.values(array);
-    //             // }
-    //             this.prova = [data, to, this.chars];
-    
-    //         });
-
-    //         return this;
-    //     })();
-        
-    // }
-    async convert(to) {
+    convert(to) {
 
         // Richiamo il file JSON
-        const response = await fetch(`${points_number(path)}Static/json/encoding-map.json`);
-        const data = await response.json();
-        this.array = Array.isArray(data) ? data : Object.values(data);
+        fetch(`${points_number(path)}Static/json/encoding-map.json`)
+        .then(response => response.json())
+        .then(data => {
+
+            // // Prendo i dati che mi servono
+            // let array = data[to];
+            this.charsGroup = data[to];
+
+            // // Controllo se è un array -> se non: trasformo (prendo solo valori dell'oggetto ['num': 'array'])
+            // if (!Array.isArray(array)) {
+            //     this.chars = Object.values(array);
+            // }
+            this.prova = [data, to, this.charsGroup];
+
+        });
 
         return this;
         
@@ -90,6 +77,9 @@ export class UserText {
     // Morse
     toMorse(from) {
 
+        // Caratteri
+        chars = this.charsGroup;
+
         // Testo convertito
         let morse = [];
         // let mmt = [];
@@ -108,7 +98,7 @@ export class UserText {
                 // let found = false;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
-                for (let group of this.chars) {
+                for (let group of chars) {
 
                     // // Controllo se è tra le chiavi
                     // if (Object.keys(group).includes(char)) {
@@ -182,6 +172,9 @@ export class UserText {
     // Testo semplice
     toText(from) {
 
+        // Caratteri
+        let chars = this.charsGroup;
+
         // Testo convertito
         let simple_text = [];
         // let mmt = [];
@@ -200,7 +193,7 @@ export class UserText {
                 // let mmmt;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
-                for (let group of this.chars) {
+                for (let group of chars) {
                                         
                     // // Controllo se è tra i valori
                     // if (Object.values(group).includes(char)) {
