@@ -120,7 +120,14 @@
                     // Converto
                     let to_convert = new UserText(content);
 
-                    // Prendo la specifica dalla lista
+                    // PROVA
+                    console.log(`from ${type_left} to ${type_right}`);
+                    to_convert.convert(type_left, type_right).then( data => {
+                        // Inserisco nel textarea di destra
+                        right.value = data;
+                    });
+
+                    /*// Prendo la specifica dalla lista
                     console.log(`from ${type_left} to ${type_right}`);
                     switch (type_right) {
 
@@ -171,7 +178,7 @@
                         default: 
                             break;
 
-                    }
+                    }*/
                 }
             });
 
@@ -190,7 +197,14 @@
                     // Converto
                     let to_convert = new UserText(content);
 
-                    // Prendo la specifica dalla lista
+                    // PROVA
+                    console.log(`from ${type_right} to ${type_left}`);
+                    to_convert.convert(type_right, type_left).then( data => {
+                        // Inserisco nel textarea di sinistra
+                        left.value = data;
+                    });
+
+                    /*// Prendo la specifica dalla lista
                     console.log(`from ${type_right} to ${type_left}`);
                     switch (type_left) {
 
@@ -237,7 +251,7 @@
                         default: 
                             break;
 
-                    }
+                    }*/
                 }
             });
 
