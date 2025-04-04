@@ -93,6 +93,7 @@ export class UserText {
 
                 // Variabile per capire se ho trovato il carattere tra quelli elencati o è estraneo dagli elenchi
                 // let found = false;
+                converted_char = this.chars;
                 
                 // Itero ogni oggetto cercando di trovare il carattere
                 for (let group in this.chars) {
