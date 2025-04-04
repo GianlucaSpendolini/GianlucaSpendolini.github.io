@@ -37,7 +37,7 @@ export class UserText {
     async convert(to) {
 
         // Richiamo il file JSON
-        let response = fetch(`${points_number(path)}Static/json/encoding-map.json`);
+        let response = await fetch(`${points_number(path)}Static/json/encoding-map.json`);
 
         // Prendo i dati
         let data = await response.json();
