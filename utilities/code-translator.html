@@ -127,6 +127,7 @@
                     // Morse
                     case 'morse': 
                         to_convert.convert(type_right).then( data => {
+                            console.log("data:", data, "morse:", data.toMorse(type_left));
                             converted = data.toMorse(type_left);
                         });
                         break;
