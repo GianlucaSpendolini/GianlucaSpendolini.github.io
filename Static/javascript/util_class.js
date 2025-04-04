@@ -80,7 +80,6 @@ export class UserText {
         // Testo convertito
         let morse = [];
         // let mmt = [];
-        return this;
 
         // Converto ogni carattere
         this.text.toUpperCase().split('').forEach(char => {
