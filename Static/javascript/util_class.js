@@ -52,7 +52,7 @@ export class UserText {
         }
 
         // Tolgo eventuali spazi prima e dopo (se metto 'lettera ', se traduzione code-code, avrò '' come carattere da tradurre -> non trovato -> undefined)
-        this.charsTo = this.charsTo.trim();
+        this.text = this.text.trim();
         this.prova = ['prova', data, to, this.charsTo];
 
         /*
