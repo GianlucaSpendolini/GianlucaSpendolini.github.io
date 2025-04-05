@@ -53,6 +53,11 @@ export class UserText {
 
         // Tolgo eventuali spazi prima e dopo (se metto 'lettera ', se traduzione code-code, avrò '' come carattere da tradurre -> non trovato -> undefined)
         this.text = this.text.trim();
+
+        // Se traduco in morse -> rendo upper tutti i caratteri
+        if (to === 'morse') {
+            this.text = this.text.toUpperCase();
+        }
         this.prova = ['prova', data, to, this.charsTo];
 
         /*
@@ -130,14 +135,14 @@ export class UserText {
 
                                 //Prendo quello da cui proviene e faccio una conversione inversa
                                 for (let otherGroup of this.charsFrom) {
+                                    // PROVA
+                                    text_char = ['prova', otherGroup, char, Object.values(otherGroup), Object.values(otherGroup).includes(char)];
                                     // Traduco in testo -> conversione inversa
                                     if (Object.values(otherGroup).includes(char)) {
                                         text_char = Object.entries(otherGroup).find(([k, v]) => v === char)?.[0];
                                         break;
                                     }
                                 }
-                                // PROVA
-                                text_char = 'a';
                                 
                                 // Se il "to" è il morse -> devo rendere ogni carattere
                                 if (to === 'morse') {

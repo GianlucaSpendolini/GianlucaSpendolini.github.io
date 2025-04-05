@@ -125,6 +125,7 @@
                     to_convert.convert(type_left, type_right).then( data => {
                         // Inserisco nel textarea di destra
                         right.value = data;
+                        console.log(data);
                     });
                 }
             });
@@ -149,6 +150,7 @@
                     to_convert.convert(type_right, type_left).then( data => {
                         // Inserisco nel textarea di sinistra
                         left.value = data;
+                        console.log(data);
                     });
                 }
             });
