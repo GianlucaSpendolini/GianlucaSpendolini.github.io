@@ -136,6 +136,8 @@ export class UserText {
                                         break;
                                     }
                                 }
+                                // PROVA
+                                text_char = 'a';
                                 
                                 // Se il "to" è il morse -> devo rendere ogni carattere
                                 if (to === 'morse') {
