@@ -136,7 +136,7 @@ export class UserText {
                                 //Prendo quello da cui proviene e faccio una conversione inversa
                                 for (let otherGroup of this.charsFrom) {
                                     // PROVA
-                                    text_char = ['prova', this.charsFrom, char, Object.values(otherGroup), Object.values(otherGroup).includes(char)];
+                                    converted_char = ['prova', this.charsFrom, char, Object.values(otherGroup), Object.values(otherGroup).includes(char)];
                                     // Traduco in testo -> conversione inversa
                                     if (Object.values(otherGroup).includes(char)) {
                                         text_char = Object.entries(otherGroup).find(([k, v]) => v === char)?.[0];
