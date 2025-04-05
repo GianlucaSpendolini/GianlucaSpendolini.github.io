@@ -136,13 +136,15 @@ export class UserText {
                                 //Prendo quello da cui proviene e faccio una conversione inversa
                                 for (let otherGroup of this.charsFrom) {
                                     // PROVA
-                                    text_char = ['prova', otherGroup, char, Object.values(otherGroup), Object.values(otherGroup).includes(char)];
+                                    text_char = ['prova', this.charsFrom, char, Object.values(otherGroup), Object.values(otherGroup).includes(char)];
                                     // Traduco in testo -> conversione inversa
                                     if (Object.values(otherGroup).includes(char)) {
                                         text_char = Object.entries(otherGroup).find(([k, v]) => v === char)?.[0];
                                         break;
                                     }
                                 }
+                                // PROVA
+                                found = true;
                                 
                                 // // Se il "to" è il morse -> devo rendere ogni carattere
                                 // if (to === 'morse') {
@@ -154,20 +156,12 @@ export class UserText {
                                 // Assegno a char il valore del carattere trovato
                                 char = text_char;
                             }
-                            // // Altrimenti
-                            // else {
-                            //     // Controllo se è tra le chiavi
-                            //     if (Object.keys(group).includes(char)) {
-                            //         converted_char = group[char];
-                            //         found = true;
-                            //     }
-                            // }
 
                             // Venendo dal testo -> faccio una conversione semplice (in base alla chiave trovo il valore)
-                            if (Object.keys(group).includes(char)) {
-                                converted_char = group[char];
-                                found = true;
-                            }
+                            // if (Object.keys(group).includes(char)) {
+                            //     converted_char = group[char];
+                            //     found = true;
+                            // }
 
                             break;
 
