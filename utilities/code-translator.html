@@ -126,59 +126,6 @@
                         // Inserisco nel textarea di destra
                         right.value = data;
                     });
-
-                    /*// Prendo la specifica dalla lista
-                    console.log(`from ${type_left} to ${type_right}`);
-                    switch (type_right) {
-
-                        // Binario
-                        case 'binary': 
-                            to_convert.convert(type_right).then( data => {
-                                // Inserisco nel textarea di destra
-                                right.value = data.toBinary(type_left);
-                            });
-                            break;
-
-                        // Esadecimale
-                        case 'hexadecimal': 
-                            to_convert.convert(type_right).then( data => {
-                                // Inserisco nel textarea di destra
-                                right.value = data.toHexa(type_left);
-                            });
-                            break;
-
-                        // Morse
-                        case 'morse': 
-                            to_convert.convert(type_right).then( data => {
-                                // Inserisco nel textarea di destra
-                                console.log("data:", data);
-                                console.log("morse:", data.toMorse(type_left));
-                                right.value = data.toMorse(type_left);
-                            });
-                            break;
-
-                        // Ottale
-                        case 'octal': 
-                            to_convert.convert(type_right).then( data => {
-                                // Inserisco nel textarea di destra
-                                right.value = data.toOctal(type_left);
-                            });
-                            break;
-
-                        // Text
-                        case 'text': 
-                            to_convert.convert(type_left).then( data => {
-                                // Inserisco nel textarea di destra
-                                console.log("data:", data);
-                                console.log("morse:", data.toText(type_left));
-                                right.value = data.toText(type_left);
-                            });
-                            break;
-
-                        default: 
-                            break;
-
-                    }*/
                 }
             });
 
@@ -203,55 +150,6 @@
                         // Inserisco nel textarea di sinistra
                         left.value = data;
                     });
-
-                    /*// Prendo la specifica dalla lista
-                    console.log(`from ${type_right} to ${type_left}`);
-                    switch (type_left) {
-
-                        // Binario
-                        case 'binary': 
-                            to_convert.convert(type_left).then( data => {
-                                // Inserisco nel textarea di sinistra
-                                left.value = data.toBinary(type_right);
-                            });
-                            break;
-
-                        // Esadecimale
-                        case 'hexadecimal': 
-                            to_convert.convert(type_left).then( data => {
-                                // Inserisco nel textarea di sinistra
-                                left.value = data.toHexa(type_right);
-                            });
-                            break;
-
-                        // Morse
-                        case 'morse': 
-                            to_convert.convert(type_left).then( data => {
-                                // Inserisco nel textarea di sinistra
-                                left.value = data.toMorse(type_right);
-                            });
-                            break;
-
-                        // Ottale
-                        case 'octal': 
-                            to_convert.convert(type_left).then( data => {
-                                // Inserisco nel textarea di sinistra
-                                left.value = data.toOctal(type_right);
-                            });
-                            break;
-
-                        // Testo
-                        case 'text': 
-                            to_convert.convert(type_right).then( data => {
-                                // Inserisco nel textarea di sinistra
-                                left.value = data.toText(type_right);
-                            });
-                            break;
-
-                        default: 
-                            break;
-
-                    }*/
                 }
             });
 
