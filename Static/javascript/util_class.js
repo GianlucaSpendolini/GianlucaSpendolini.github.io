@@ -144,10 +144,10 @@ export class UserText {
                                     }
                                 }
                                 
-                                // Se il "to" è il morse -> devo rendere ogni carattere
-                                if (to === 'morse') {
-                                    text_char = text_char.toUpperCase();
-                                }
+                                // // Se il "to" è il morse -> devo rendere ogni carattere
+                                // if (to === 'morse') {
+                                //     text_char = text_char.toUpperCase();
+                                // }
 
                                 // Da testo a codice -> conversione semplice
 
