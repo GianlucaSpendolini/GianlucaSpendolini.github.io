@@ -182,16 +182,17 @@ export class UserText {
             converted.push(converted_char);
         });
 
-        // Ritorno l'array unito -> testo convertito
-        if (to === 'text') {
-            // Se testo -> non devo aggiungere spazi altrimenti "inquino"/"altero" l'originale
-            return converted.join('');
-        }
-        // Altrimenti
-        else {
-            // Riporto caratteri a blocchi (se non metto spazi -> unisco -> non capibili) -> aggiungo lo spazio
-            return converted.join(' ');
-        }
+        // // Ritorno l'array unito -> testo convertito
+        // if (to === 'text') {
+        //     // Se testo -> non devo aggiungere spazi altrimenti "inquino"/"altero" l'originale
+        //     return converted.join('');
+        // }
+        // // Altrimenti
+        // else {
+        //     // Riporto caratteri a blocchi (se non metto spazi -> unisco -> non capibili) -> aggiungo lo spazio
+        //     return converted.join(' ');
+        // }
+        return converted;
         
     }
 
