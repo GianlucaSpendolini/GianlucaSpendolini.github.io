@@ -145,6 +145,8 @@ export class UserText {
                                     // Traduco in testo -> conversione inversa
                                     if (Object.values(otherGroup).includes(char)) {
                                         text_char = Object.entries(otherGroup).find(([k, v]) => v === char)?.[0];
+                                        // PROVA
+                                        converted_char = [text_char];
                                         break;
                                     }
                                 }
@@ -155,8 +157,6 @@ export class UserText {
                                 }
 
                                 // Assegno a char il valore del carattere SE trovato
-                                // PROVA
-                                converted_char.push(text_char);
                                 if (text_char) {
                                     char = text_char;
                                     permissionToTranslate = true;
