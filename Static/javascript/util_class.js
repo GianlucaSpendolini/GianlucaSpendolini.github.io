@@ -156,8 +156,8 @@ export class UserText {
                                     text_char = text_char.toUpperCase();
                                 }
 
-                                // Assegno a char il valore del carattere SE trovato
-                                if (text_char) {
+                                // Assegno a char il valore del carattere SE trovato E SE è incluso nel gruppo di "TO"
+                                if (Object.keys(group).includes(text_char)) {
                                     char = text_char;
                                     permissionToTranslate = true;
                                 }
@@ -165,10 +165,10 @@ export class UserText {
                             
                             // Venendo dal testo -> faccio una conversione semplice (in base alla chiave trovo il valore)
                             // PROVA
-                            converted_char.push(permissionToTranslate);
+                            converted_char.push(`Permission: ${permissionToTranslate}`);
                             if (Object.keys(group).includes(char) && permissionToTranslate) {
                                 // PROVA
-                                converted_char.push(group[char]);
+                                converted_char.push(`group[char]: ${group[char]}`);
                                 // converted_char = group[char];
                                 found = true;
                             }
@@ -179,7 +179,7 @@ export class UserText {
 
                     // Se è stato trovato il carattere -> esco dal ciclo
                     // PROVA
-                    converted_char.push(found);
+                    converted_char.push(`Found: ${found}`);
                     if (found) {
                         break;
                     }
