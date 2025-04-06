@@ -178,6 +178,8 @@ export class UserText {
                     }
 
                     // Se è stato trovato il carattere -> esco dal ciclo
+                    // PROVA
+                    converted_char.push(found);
                     if (found) {
                         break;
                     }
