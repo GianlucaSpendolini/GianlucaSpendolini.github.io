@@ -161,6 +161,8 @@ export class UserText {
                                 converted_char.push(group[char]);
                                 // converted_char = group[char];
                                 found = true;
+                                // PROVA
+                                converted_char.push(found);
                             }
 
                             break;
