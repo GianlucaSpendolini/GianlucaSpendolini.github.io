@@ -125,8 +125,14 @@ export class UserText {
                         // Se voglio il codice
                         default:
 
+                            // Variabile per indicare il permesso di tradurre -> se da testo lo lascio sempre possibile
+                            let permissionToTranslate = true;
+
                             // Se non viene dal testo -> converto in testo -> continuo con la conversione nell'altro codice
                             if (from !== 'text') {
+
+                                // Al momento tolgo il permesso fino a quando non trovo il carattere
+                                permissionToTranslate = false;
                                 
                                 // Prendo i dati che mi servono
                                 this.charsFrom = data[from];
@@ -151,11 +157,12 @@ export class UserText {
                                 // Assegno a char il valore del carattere SE trovato
                                 if (text_char) {
                                     char = text_char;
+                                    permissionToTranslate = true;
                                 }
                             }
                             
                             // Venendo dal testo -> faccio una conversione semplice (in base alla chiave trovo il valore)
-                            if (Object.keys(group).includes(char)) {
+                            if (Object.keys(group).includes(char) && permissionToTranslate) {
                                 converted_char = group[char];
                                 found = true;
                             }
