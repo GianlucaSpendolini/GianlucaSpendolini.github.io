@@ -127,6 +127,7 @@ export class UserText {
 
                             // Se non viene dal testo -> converto in testo -> continuo con la conversione nell'altro codice
                             if (from !== 'text') {
+                                
                                 // Prendo i dati che mi servono
                                 this.charsFrom = data[from];
 
@@ -151,8 +152,10 @@ export class UserText {
                                     // text_char = text_char.toUpperCase();
                                 }
 
-                                // Assegno a char il valore del carattere trovato
-                                char = text_char;
+                                // Assegno a char il valore del carattere SE trovato
+                                if (text_char) {
+                                    char = text_char;
+                                }
                             }
 
                             // PROVA
