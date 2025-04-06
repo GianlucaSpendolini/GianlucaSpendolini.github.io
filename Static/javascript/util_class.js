@@ -135,8 +135,6 @@ export class UserText {
 
                                 //Prendo quello da cui proviene e faccio una conversione inversa
                                 for (let otherGroup of this.charsFrom) {
-                                    // // PROVA
-                                    // converted_char = ['prova', this.charsFrom, char, Object.values(otherGroup), Object.values(otherGroup).includes(char)];
                                     // Traduco in testo -> conversione inversa
                                     if (Object.values(otherGroup).includes(char)) {
                                         // PROVA
@@ -148,12 +146,12 @@ export class UserText {
                                 // PROVA
                                 found = true;
                                 
-                                // // Se il "to" è il morse -> devo rendere ogni carattere
-                                // if (to === 'morse') {
-                                //     text_char = text_char.toUpperCase();
-                                // }
-
-                                // Da testo a codice -> conversione semplice
+                                // Se il "to" è il morse -> devo rendere ogni carattere
+                                if (to === 'morse') {
+                                    // PROVA
+                                    converted_char.push(text_char);
+                                    // text_char = text_char.toUpperCase();
+                                }
 
                                 // Assegno a char il valore del carattere trovato
                                 char = text_char;
