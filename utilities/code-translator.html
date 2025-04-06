@@ -51,14 +51,29 @@
 		</div>
 
         <p>
-            Questa sezione è attualmente in fase di sviluppo ma è possibile usufruire di alcuni traduttori.
-
-            <br />
-
-            Ognuno può convertire tutte le lettere (minuscole e maiuscole), tutti i numeri MA un numero limitato di simboli (oltre alle spaziature):
+            Ogni tipo di codice, se non per ulteriori specifiche, può convertire lettere (minuscole e maiuscole), numeri e simboli (comprese le spaziature):
             <ul>
                 <li>
-                    Morse - testo
+                    Binario
+                    <ul>
+                        <li>. , : ; ? ! " ' = _ @ ) ( /</li>
+                        <li>Durante la conversione, rende le minuscole in maiuscole</li>
+                    </ul>
+                </li>
+                <li>
+                    Esadecimale
+                    <ul>
+                        <li>. , : ; ? ! " ' = _ @ ) ( /</li>
+                    </ul>
+                </li>
+                <li>
+                    Morse
+                    <ul>
+                        <li>. , : ; ? ! " ' = _ @ ) ( /</li>
+                    </ul>
+                </li>
+                <li>
+                    Ottale
                     <ul>
                         <li>. , : ; ? ! " ' = _ @ ) ( /</li>
                     </ul>
@@ -119,13 +134,10 @@
                 else {
                     // Converto
                     let to_convert = new UserText(content);
-
-                    // PROVA
-                    console.log(`from ${type_left} to ${type_right}`);
+                    
                     to_convert.convert(type_left, type_right).then( data => {
                         // Inserisco nel textarea di destra
                         right.value = data;
-                        console.log(data);
                     });
                 }
             });
@@ -144,13 +156,10 @@
                 else {
                     // Converto
                     let to_convert = new UserText(content);
-
-                    // PROVA
-                    console.log(`from ${type_right} to ${type_left}`);
+                    
                     to_convert.convert(type_right, type_left).then( data => {
                         // Inserisco nel textarea di sinistra
                         left.value = data;
-                        console.log(data);
                     });
                 }
             });
