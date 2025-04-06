@@ -138,8 +138,6 @@ export class UserText {
                                 for (let otherGroup of this.charsFrom) {
                                     // Traduco in testo -> conversione inversa
                                     if (Object.values(otherGroup).includes(char)) {
-                                        // PROVA
-                                        converted_char = ['prova', this.charsFrom, char, Object.entries(otherGroup), Object.entries(otherGroup).find(([k, v]) => v === char)?.[0]];
                                         text_char = Object.entries(otherGroup).find(([k, v]) => v === char)?.[0];
                                         break;
                                     }
@@ -147,9 +145,7 @@ export class UserText {
                                 
                                 // Se il "to" è il morse -> devo rendere ogni carattere
                                 if (to === 'morse') {
-                                    // PROVA
-                                    converted_char.push(text_char);
-                                    // text_char = text_char.toUpperCase();
+                                    text_char = text_char.toUpperCase();
                                 }
 
                                 // Assegno a char il valore del carattere SE trovato
@@ -157,21 +153,11 @@ export class UserText {
                                     char = text_char;
                                 }
                             }
-
-                            // PROVA
-                            converted_char.push(`fuori: ${char}`);
-                            // PROVA
-                            converted_char.push([Object.keys(group), Object.keys(group).includes(char), char]);
+                            
                             // Venendo dal testo -> faccio una conversione semplice (in base alla chiave trovo il valore)
                             if (Object.keys(group).includes(char)) {
-                                // PROVA
-                                converted_char.push(`dentro: ${char}`);
-                                // PROVA
-                                converted_char.push(group[char]);
-                                // converted_char = group[char];
+                                converted_char = group[char];
                                 found = true;
-                                // PROVA
-                                converted_char.push(found);
                             }
 
                             break;
@@ -184,9 +170,7 @@ export class UserText {
                     }
                     // Altrimenti assegno il valore non trovato
                     else {
-                        // PROVA
-                        converted_char.push('#');
-                        // converted_char = '#';
+                        converted_char = '#';
                     }
                 }
             }
@@ -195,17 +179,16 @@ export class UserText {
             converted.push(converted_char);
         });
 
-        // // Ritorno l'array unito -> testo convertito
-        // if (to === 'text') {
-        //     // Se testo -> non devo aggiungere spazi altrimenti "inquino"/"altero" l'originale
-        //     return converted.join('');
-        // }
-        // // Altrimenti
-        // else {
-        //     // Riporto caratteri a blocchi (se non metto spazi -> unisco -> non capibili) -> aggiungo lo spazio
-        //     return converted.join(' ');
-        // }
-        return converted;
+        // Ritorno l'array unito -> testo convertito
+        if (to === 'text') {
+            // Se testo -> non devo aggiungere spazi altrimenti "inquino"/"altero" l'originale
+            return converted.join('');
+        }
+        // Altrimenti
+        else {
+            // Riporto caratteri a blocchi (se non metto spazi -> unisco -> non capibili) -> aggiungo lo spazio
+            return converted.join(' ');
+        }
         
     }
 
