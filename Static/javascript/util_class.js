@@ -145,8 +145,6 @@ export class UserText {
                                     // Traduco in testo -> conversione inversa
                                     if (Object.values(otherGroup).includes(char)) {
                                         text_char = Object.entries(otherGroup).find(([k, v]) => v === char)?.[0];
-                                        // PROVA
-                                        converted_char = [text_char];
                                         break;
                                     }
                                 }
@@ -164,12 +162,8 @@ export class UserText {
                             }
                             
                             // Venendo dal testo -> faccio una conversione semplice (in base alla chiave trovo il valore)
-                            // PROVA
-                            converted_char.push(`Permission: ${permissionToTranslate}`);
                             if (Object.keys(group).includes(char) && permissionToTranslate) {
-                                // PROVA
-                                converted_char.push(`group[char]: ${group[char]}`);
-                                // converted_char = group[char];
+                                converted_char = group[char];
                                 found = true;
                             }
 
@@ -178,16 +172,12 @@ export class UserText {
                     }
 
                     // Se è stato trovato il carattere -> esco dal ciclo
-                    // PROVA
-                    converted_char.push(`Found: ${found}`);
                     if (found) {
                         break;
                     }
                     // Altrimenti assegno il valore non trovato
                     else {
-                        // PROVA
-                        converted_char.push('#');
-                        // converted_char = '#';
+                        converted_char = '#';
                     }
                 }
             }
@@ -196,18 +186,16 @@ export class UserText {
             converted.push(converted_char);
         });
 
-        // // Ritorno l'array unito -> testo convertito
-        // if (to === 'text') {
-        //     // Se testo -> non devo aggiungere spazi altrimenti "inquino"/"altero" l'originale
-        //     return converted.join('');
-        // }
-        // // Altrimenti
-        // else {
-        //     // Riporto caratteri a blocchi (se non metto spazi -> unisco -> non capibili) -> aggiungo lo spazio
-        //     return converted.join(' ');
-        // }
-        // PROVA
-        return converted;
+        // Ritorno l'array unito -> testo convertito
+        if (to === 'text') {
+            // Se testo -> non devo aggiungere spazi altrimenti "inquino"/"altero" l'originale
+            return converted.join('');
+        }
+        // Altrimenti
+        else {
+            // Riporto caratteri a blocchi (se non metto spazi -> unisco -> non capibili) -> aggiungo lo spazio
+            return converted.join(' ');
+        }
         
     }
 
