@@ -157,6 +157,8 @@ export class UserText {
 
                             // PROVA
                             converted_char.push(`fuori: ${char}`);
+                            // PROVA
+                            converted_char.push([Object.keys(group), Object.keys(group).includes(char), char]);
                             // Venendo dal testo -> faccio una conversione semplice (in base alla chiave trovo il valore)
                             if (Object.keys(group).includes(char)) {
                                 // PROVA
