@@ -155,6 +155,8 @@ export class UserText {
                                 }
 
                                 // Assegno a char il valore del carattere SE trovato
+                                // PROVA
+                                converted_char.push(text_char);
                                 if (text_char) {
                                     char = text_char;
                                     permissionToTranslate = true;
@@ -162,8 +164,12 @@ export class UserText {
                             }
                             
                             // Venendo dal testo -> faccio una conversione semplice (in base alla chiave trovo il valore)
+                            // PROVA
+                            converted_char.push(permissionToTranslate);
                             if (Object.keys(group).includes(char) && permissionToTranslate) {
-                                converted_char = group[char];
+                                // PROVA
+                                converted_char.push(group[char]);
+                                // converted_char = group[char];
                                 found = true;
                             }
 
@@ -177,7 +183,9 @@ export class UserText {
                     }
                     // Altrimenti assegno il valore non trovato
                     else {
-                        converted_char = '#';
+                        // PROVA
+                        converted_char.push('#');
+                        // converted_char = '#';
                     }
                 }
             }
@@ -186,16 +194,18 @@ export class UserText {
             converted.push(converted_char);
         });
 
-        // Ritorno l'array unito -> testo convertito
-        if (to === 'text') {
-            // Se testo -> non devo aggiungere spazi altrimenti "inquino"/"altero" l'originale
-            return converted.join('');
-        }
-        // Altrimenti
-        else {
-            // Riporto caratteri a blocchi (se non metto spazi -> unisco -> non capibili) -> aggiungo lo spazio
-            return converted.join(' ');
-        }
+        // // Ritorno l'array unito -> testo convertito
+        // if (to === 'text') {
+        //     // Se testo -> non devo aggiungere spazi altrimenti "inquino"/"altero" l'originale
+        //     return converted.join('');
+        // }
+        // // Altrimenti
+        // else {
+        //     // Riporto caratteri a blocchi (se non metto spazi -> unisco -> non capibili) -> aggiungo lo spazio
+        //     return converted.join(' ');
+        // }
+        // PROVA
+        return converted;
         
     }
 
