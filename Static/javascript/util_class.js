@@ -22,9 +22,7 @@ export class UserText {
 
         // Testo da convertire
         this.text = text;
-
-        // Variabile per la lista di caratteri
-        // this.chars;
+        
     }
 
     /*
@@ -58,7 +56,6 @@ export class UserText {
         if (to === 'morse') {
             this.text = this.text.toUpperCase();
         }
-        this.prova = ['prova', data, to, this.charsTo];
 
         /*
             Modificare il metodo per fare in modo di usare solo il metodo convert per convertire in base ad input ed output

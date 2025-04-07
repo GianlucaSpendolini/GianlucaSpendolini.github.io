@@ -1241,6 +1241,26 @@ export function wishes_function(date) {
 
             break;
 
+        // Anniversario Betta-Me
+        case '22/10':
+            // Colore
+            wishes.style.color = '#00BFFF';
+            wishes.style.backgroundColor = '#1F305E';
+            // Anni di sopportazione
+            let as = date.getFullYear() - 2023;
+            // Testo
+            wishes.innerHTML = `
+                <h3>
+                    Buon anniversario!
+                    <br /><br />
+                    Sono quì per ricordarti che ${as === 1 ? 'è un' : 'sono'} ${as} ann${as === 1 ? 'o' : 'i'} che ci sopportiamo :)
+                </h3>
+            `;
+            // Mostro l'elemento
+            wishes.style.display = 'block';
+
+            break;
+
         // Halloween
         case '31/10':
             // Colore
