@@ -1145,9 +1145,6 @@ export function wishes_function(date) {
     let month = date.getMonth() + 1;
     let actual_day = `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}`;
 
-    // PROVA
-    actual_day = '22/10';
-
     switch (actual_day) {
 
         // Capodanno
