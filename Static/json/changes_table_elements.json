@@ -896,7 +896,7 @@
                 ],
                 "/Static/json/": {
                     "/descriptions.json": "Inserimento descrizione per sezione /page_references.html;",
-                    "progress.json": "Aggiornamento percentuali per progetto sito statico GitHub;"
+                    "/progress.json": "Aggiornamento percentuali per progetto sito statico GitHub;"
                 },
                 "README.md": "Nuova versione (0.24.0)."
             }
@@ -910,6 +910,44 @@
             },
             "In entrambe le occasioni, inserisci anche descrizione e le prove pratiche per entrambi (siccome si possono fare) per non metterle nella sezione utilities."
         ]
+    },
+
+    {
+        "tData": "01/04/2025 - 07/04/2025",
+        "tDescrizione": {
+            "Aggiunta": {
+                "utilities/code-translator": "Aggiunta pagina per la conversione di codici;",
+                "/Static/": {
+                    "/javascript/util_class.js": {
+                        "UserText": "Classe per manipolare il testo dell'utente (ora può convertire codici);"
+                    },
+                    "/json/encoding-map.json": "Contiene le mappature dei vari caratteri usati quando si vuole decodificare."
+                }
+            },
+            "Aggiornamento": {
+                "index.html": "Aggiornata descrizione della sezione utilities/;",
+                "utilities/": "Aggiunte sezione, descrizione ed il riferimento per code-translator;",
+                "/Static/": {
+                    "/css/": {
+                        "/media.css": "Stili per adattare la pagina code-translator;",
+                        "/style.css": [
+                            "Aggiunti stili per la pagina delle conversioni;",
+                            "Aggiunto border-radius a div nella Home per non farli \"spigolosi\";"
+                        ]
+                    },
+                    "/javascript/": {
+                        "/scripts.js": {
+                            "what_page": "Aggiunta sezione per code-translator;"
+                        },
+                        "/util_function.js": {
+                            "wishes_function": "Aggiunto augurio per 20/10 (\"nostro\");"
+                        }
+                    }
+                },
+                "README.md":"Nuova versione (0.25.0)."
+            }
+        },
+        "tAggiunte": "Da fare sezione per far usare le regex all'utente e, nel caso, permettere di sostituire le corrispondenze (/.../g) con una stringa di testo (fare il controllo)."
     },
 
     {

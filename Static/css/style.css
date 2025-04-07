@@ -139,6 +139,7 @@ ul.contatti li {
     text-align: center;
 }
 #page-description, #wishes {
+    border-radius: 10px;
     margin: 20px;
     padding: 10px;
 }

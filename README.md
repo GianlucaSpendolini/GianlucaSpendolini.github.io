@@ -1,6 +1,6 @@
 # GianlucaSpendolini.github.io
 
-### Actual version: 0.24.0
+### Actual version: 0.25.0
 
 ### Languages
 - [English](#english)
@@ -21,7 +21,7 @@ I will update the versions with the following logic:
     - CSS changes to existing elements;
     - HTML changes (like moving a piece of code);
     - JavaScript changes like
-      - Fixing a function that wasn't working properly);
+      - Fixing a function that wasn't working properly;
       - Adding new parts to some functions (like functions where there is switch-case and I insert additional cases);
     - Corrections/additions of descriptions to improve understanding.
 
