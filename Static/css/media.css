@@ -179,12 +179,14 @@
         SEZIONE UTILITIES CODE TRANSLATOR
     */
     .converter-container {
+        align-items: center;
         flex-direction: column;
         min-height: max-content;
     }
     /* Aggiungo il margin */
     .left-container, .right-container {
         margin: 10px 0;
+        min-width: 100%;
     }
 }
 
@@ -194,9 +196,13 @@
     /* 
         SEZIONE UTILITIES CODE TRANSLATOR
     */
+    .converter-container {
+        align-items: center;
+    }
     /* Aggiungo il margin */
     .left-container, .right-container {
         margin: 10px 5px;
-        max-width: 30%;
+        /* max-width: 30%; */
+        min-width: 100%;
     }
 }

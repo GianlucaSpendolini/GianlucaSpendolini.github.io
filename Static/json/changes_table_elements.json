@@ -954,14 +954,24 @@
         "tData": "13/04/2025",
         "tDescrizione": {
             "Aggiunta": {
-                "utilities/code-translator": "Aggiunta bottone (con logica) per lo swap dei testi tra i textarea."
+                "utilities/code-translator": [
+                    "Aggiunta bottone (con logica) per lo swap dei testi tra i textarea;",
+                    "Aggiunta evento 'click';"
+                ],
+                "/Static/css/style.css": "Stile per il bottone per il text-swap;"
             },
             "Aggiornamento": {
                 "utilities/code-translator": [
-                    "Funzioni per contenere le azioni da fare in base da dove voglio tradurre;",
-                    "Aggiunta evento 'click';"
+                    "Descrizione migliore per descrivere i caratteri supportati ed i comportamenti dei traduttori in determinate circostanze;",
+                    "Funzioni per contenere le azioni da fare in base da dove voglio tradurre;"
                 ],
-                "/Static/json/encoding-map.json": "Aggiunto carattere ’ (apostrofo della Apple) e tradotto come apostrofo normale;",
+                "/Static/": {
+                    "/css/media.css": [
+                        "Rendere la larghezza dei textarea la massima possibile (se nel cell);",
+                        "Allineare gli elementi al centro (poter allineare il bottone al centro);"
+                    ],
+                    "/json/encoding-map.json": "Aggiunto carattere ’ (apostrofo della Apple) e tradotto come apostrofo normale;"
+                },
                 "README.md":"Nuova versione (0.26.0)."
             }
         },
