@@ -951,6 +951,24 @@
     },
 
     {
+        "tData": "13/04/2025",
+        "tDescrizione": {
+            "Aggiunta": {
+                "utilities/code-translator": "Aggiunta bottone (con logica) per lo swap dei testi tra i textarea."
+            },
+            "Aggiornamento": {
+                "utilities/code-translator": [
+                    "Funzioni per contenere le azioni da fare in base da dove voglio tradurre;",
+                    "Aggiunta evento 'click';"
+                ],
+                "/Static/json/encoding-map.json": "Aggiunto carattere ’ (apostrofo della Apple) e tradotto come apostrofo normale;",
+                "README.md":"Nuova versione (0.26.0)."
+            }
+        },
+        "tAggiunte": null
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,

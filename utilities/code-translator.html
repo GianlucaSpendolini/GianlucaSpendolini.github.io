@@ -34,6 +34,14 @@
                 
             </div>
 
+            <button id="text-swap">
+                <!-- From: https://icons.getbootstrap.com/icons/arrow-repeat/ -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+                </svg>
+            </button>
+
             <div class="right-container">
                 
                 <textarea id="right" placeholder="Inserire il testo"></textarea>
@@ -53,37 +61,42 @@
 		</div>
 
         <p>
-            Ogni tipo di codice, se non per ulteriori specifiche, supporta lettere (minuscole e maiuscole), numeri e simboli (comprese le spaziature):
+            Ogni tipo di codice, se non per ulteriori specifiche, supporta lettere (minuscole e maiuscole), numeri e simboli (comprese le spaziature).
+            In caso non vengano riconosciuti dei caratteri, verranno inseriti '#'.
+
+            <br /><br />
+
+            Tutti supportano i seguenti caratteri
+            <ul>
+                <li>. , : ; ? ! " ' = _ @ ) ( /</li>
+            </ul>
+
+            <br />
+
+            Oltre ai precedenti:
             <ul>
                 <li>
-                    Binario
+                    Binario, decimale, esadecimale e ottale
                     <ul>
-                        <li>. , : ; ? ! " ' = _ @ ) ( / \ |</li>
-                    </ul>
-                </li>
-                <li>
-                    Decimale
-                    <ul>
-                        <li>. , : ; ? ! " ' = _ @ ) ( / \ |</li>
-                    </ul>
-                </li>
-                <li>
-                    Esadecimale
-                    <ul>
-                        <li>. , : ; ? ! " ' = _ @ ) ( / \ |</li>
+                        <li>\ |</li>
                     </ul>
                 </li>
                 <li>
                     Morse
                     <ul>
-                        <li>. , : ; ? ! " ' = _ @ ) ( /</li>
                         <li>Durante la conversione, rende le minuscole in maiuscole</li>
                     </ul>
                 </li>
+            </ul>
+
+            <br />
+
+            Alcune decodifiche hanno delle caratteristiche a livello di codice:
+            <ul>
                 <li>
-                    Ottale
+                    Morse
                     <ul>
-                        <li>. , : ; ? ! " ' = _ @ ) ( / \ |</li>
+                        <li>Per la conversione, rende le minuscole in maiuscole</li>
                     </ul>
                 </li>
             </ul>
@@ -128,14 +141,15 @@
                 type_right = select_right.value;
             });
 
-            // Aggiungo l'evento al textarea di sx
-            left.addEventListener('input', () => {
+            /*
+                FUNZIONI
+            */
 
-                // Prendo il contenuto di sinistra 
-                let content = left.value;
+            // Funzione per il textaera di sx
+            function left_input(content) {
 
                 // Se sto traducendo tra due tipi uguali -> restituisco la stessa cosa
-                if (type_left === type_right) {
+                if (type_left === type_right || content === '') {
                     right.value = content;
                 }
                 // Altrimenti converto
@@ -148,16 +162,14 @@
                         right.value = data;
                     });
                 }
-            });
 
-            // Aggiungo l'evento al textarea di dx
-            right.addEventListener('input', () => {
+            }
 
-                // Prendo il contenuto di destra 
-                let content = right.value;
+            // Funzione per il textaera di dx
+            function right_input(content) {
 
                 // Se sto traducendo tra due tipi uguali -> restituisco la stessa cosa
-                if (type_left === type_right) {
+                if (type_left === type_right || content === '') {
                     left.value = content;
                 }
                 // Altrimenti converto
@@ -170,7 +182,68 @@
                         left.value = data;
                     });
                 }
+
+            }
+
+            /*
+                EVENTI
+            */
+
+            // Aggiungo l'evento al textarea di sx
+            left.addEventListener('input', () => {
+
+                // Prendo il contenuto di sinistra 
+                let content = left.value;
+
+                // Eseguo la funzione
+                left_input(content);
+
             });
+            left.addEventListener('click', () => {
+
+                // Prendo il contenuto di sinistra 
+                let content = left.value;
+
+                // Eseguo la funzione
+                left_input(content);
+
+            });
+
+            // Aggiungo l'evento al textarea di dx
+            right.addEventListener('input', () => {
+
+                // Prendo il contenuto di destra 
+                let content = right.value;
+
+                // Eseguo la funzione
+                right_input(content);
+                
+            });
+            right.addEventListener('click', () => {
+
+                // Prendo il contenuto di destra 
+                let content = right.value;
+
+                // Eseguo la funzione
+                right_input(content);
+                
+            });
+
+            // Aggiungo l'evento per il bottone
+            document.getElementById('text-swap').addEventListener('click', event => {
+
+                // Evito qualsiasi azione di default
+                event.preventDefault();
+
+                // Prendo i valori dei textarea
+                let left_content = left.value;
+                let right_content = right.value;
+
+                // Inverto i valori
+                left.value = right_content;
+                right.value = left_content;
+                
+            })
 
         });
 
