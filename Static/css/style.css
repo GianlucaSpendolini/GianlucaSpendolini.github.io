@@ -246,7 +246,7 @@ main#descrizione hr:not(.break-line) {
     display: flex;
     flex-direction: column;
     max-width: 30%;
-    min-width: 30%;
+    /* min-width: 30%; */
 }
 
 .left-container > textarea, .right-container > textarea {
