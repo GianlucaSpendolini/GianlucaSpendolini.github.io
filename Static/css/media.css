@@ -186,7 +186,7 @@
     /* Aggiungo il margin */
     .left-container, .right-container {
         margin: 10px 0;
-        min-width: 100%;
+        min-width: 75%;
     }
 }
 
@@ -202,7 +202,7 @@
     /* Aggiungo il margin */
     .left-container, .right-container {
         margin: 10px 5px;
-        /* max-width: 30%; */
-        min-width: 100%;
+        max-width: 30%;
+        /* min-width: 100%; */
     }
 }
