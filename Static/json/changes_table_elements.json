@@ -961,12 +961,16 @@
                 ],
                 "/Static/": {
                     "/css/style.css": "Stile per il bottone per il text-swap;",
-                    "/json/encoding-map.json": "Aggiunti gruppi dei caratteri accentati (maiuscoli e minuscoli);"
+                    "/json/encoding-map.json": [
+                        "Aggiunti gruppi dei caratteri accentati (maiuscoli e minuscoli);",
+                        "Aggiunti ulteriori simboli di uso \"comune\";"
+                    ]
                 }
             },
             "Aggiornamento": {
                 "utilities/code-translator": [
                     "Descrizione migliore per descrivere i caratteri supportati ed i comportamenti dei traduttori in determinate circostanze;",
+                    "Ulteriori caratteri alla lista dei simboli supportati dai vari codici;",
                     "Funzioni per contenere le azioni da fare in base da dove voglio tradurre;",
                     "Migliore gestione del carattere '' (ora non entra nella traduzione ma copia il contenuto '' nell'altro) in modo che non esca '#' perchè non presente nella mappatura;"
                 ],
