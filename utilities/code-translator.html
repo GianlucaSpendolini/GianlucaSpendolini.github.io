@@ -143,6 +143,12 @@
             // Funzione per il textaera di sx
             function left_input(content) {
 
+                // In base al tipo di codice -> suddivido in più parti
+                if (type_left === 'binary' && content.match(/(0|1)+/g)) {
+                    // Suddivido in gruppi da 8 caratteri massimo
+                    content = content.match(/(0|1){1,8}/g).join(' ');
+                }
+
                 // Se sto traducendo tra due tipi uguali -> restituisco la stessa cosa
                 if (type_left === type_right || content === '') {
                     right.value = content;
@@ -162,6 +168,12 @@
 
             // Funzione per il textaera di dx
             function right_input(content) {
+
+                // In base al tipo di codice -> suddivido in più parti
+                if (type_right === 'binary' && content.match(/(0|1)+/g)) {
+                    // Suddivido in gruppi da 8 caratteri massimo
+                    content = content.match(/(0|1){1,8}/g).join(' ');
+                }
 
                 // Se sto traducendo tra due tipi uguali -> restituisco la stessa cosa
                 if (type_left === type_right || content === '') {

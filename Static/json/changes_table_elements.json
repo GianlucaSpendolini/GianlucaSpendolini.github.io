@@ -956,7 +956,8 @@
             "Aggiunta": {
                 "utilities/code-translator": [
                     "Aggiunta bottone (con logica) per lo swap dei testi tra i textarea;",
-                    "Aggiunta evento 'click' sui textarea per dire di tradurre 'quello' nell'altro (se i valori non sono '' o i tipi di conversioni sono uguali);"
+                    "Aggiunta evento 'click' sui textarea per dire di tradurre 'quello' nell'altro (se i valori non sono '' o i tipi di conversioni sono uguali);",
+                    "Nelle funzioni left_ right_ per l'input, aggiunta gestione del codice binario (se scritto tutto attaccato viene suddiviso in multipli di max 8 caratteri);"
                 ],
                 "/Static/": {
                     "/css/style.css": "Stile per il bottone per il text-swap;",
