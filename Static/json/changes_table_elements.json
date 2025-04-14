@@ -966,7 +966,8 @@
             "Aggiornamento": {
                 "utilities/code-translator": [
                     "Descrizione migliore per descrivere i caratteri supportati ed i comportamenti dei traduttori in determinate circostanze;",
-                    "Funzioni per contenere le azioni da fare in base da dove voglio tradurre;"
+                    "Funzioni per contenere le azioni da fare in base da dove voglio tradurre;",
+                    "Migliore gestione del carattere '' (ora non entra nella traduzione ma copia il contenuto '' nell'altro) in modo che non esca '#' perchè non presente nella mappatura;"
                 ],
                 "/Static/": {
                     "/css/media.css": [
