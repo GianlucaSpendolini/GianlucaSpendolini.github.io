@@ -951,14 +951,17 @@
     },
 
     {
-        "tData": "13/04/2025",
+        "tData": "13/04/2025 - 14/04/2025",
         "tDescrizione": {
             "Aggiunta": {
                 "utilities/code-translator": [
                     "Aggiunta bottone (con logica) per lo swap dei testi tra i textarea;",
                     "Aggiunta evento 'click';"
                 ],
-                "/Static/css/style.css": "Stile per il bottone per il text-swap;"
+                "/Static/": {
+                    "/css/style.css": "Stile per il bottone per il text-swap;",
+                    "/json/encoding-map.json": "Aggiunti gruppi dei caratteri accentati (maiuscoli e minuscoli);"
+                }
             },
             "Aggiornamento": {
                 "utilities/code-translator": [
@@ -970,12 +973,17 @@
                         "Rendere la larghezza dei textarea la massima possibile (se nel cell);",
                         "Allineare gli elementi al centro (poter allineare il bottone al centro);"
                     ],
-                    "/json/encoding-map.json": "Aggiunto carattere ’ (apostrofo della Apple) e tradotto come apostrofo normale;"
+                    "/json/encoding-map.json": "Aggiunto carattere particolare '’' (apostrofo della Apple) e tradotto come apostrofo normale;"
                 },
                 "README.md":"Nuova versione (0.26.0)."
             }
         },
-        "tAggiunte": null
+        "tAggiunte": {
+            "Aggiungere la possibilità di tradurre i codici (esadecimale ...) in formato 0x... e simili per gli altri?": [
+                "Check per disabilitare quelli che non hanno la versione \"(code)\" nel nome e/o prendere solo i caratteri esadecimale ma solo un secondo gruppo;",
+                "Inserirli nel json come gruppo nuovo di caratteri (non accoppiandoli con il corrispettivo gruppo esistente ma differenziarli richiamandoli in altro modo nel codice."
+            ]
+        }
     },
 
     {
