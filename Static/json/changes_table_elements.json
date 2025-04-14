@@ -981,7 +981,7 @@
         "tAggiunte": {
             "Aggiungere la possibilità di tradurre i codici (esadecimale ...) in formato 0x... e simili per gli altri?": [
                 "Check per disabilitare quelli che non hanno la versione \"(code)\" nel nome e/o prendere solo i caratteri esadecimale ma solo un secondo gruppo;",
-                "Inserirli nel json come gruppo nuovo di caratteri (non accoppiandoli con il corrispettivo gruppo esistente ma differenziarli richiamandoli in altro modo nel codice."
+                "Inserirli nel json come gruppo nuovo di caratteri (non accoppiandoli con il corrispettivo gruppo esistente ma differenziarli richiamandoli in altro modo nel codice)."
             ]
         }
     },
