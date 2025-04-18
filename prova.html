@@ -121,13 +121,14 @@
 
             // Prendo i campi
             let div = document.querySelector('div.try-func');
+            div.style.border = 'block';
             let input_checkbox = document.querySelector('input.try-func[type="checkbox"]');
             let input_text = document.querySelector('input.try-func[type="text"]');
             let pattern = document.querySelector('input.pattern');
 
-            let text = new UserText(input_text.value);
-
             pattern.addEventListener('input', () => {
+
+                let text = new UserText(input_text.value);
 
                 div.innerHTML = text.find(pattern, input_checkbox.checked).join('<=>');
 
