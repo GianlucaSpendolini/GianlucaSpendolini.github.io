@@ -34,7 +34,8 @@ export class UserText {
         let response = await fetch(`${points_number(path)}Static/json/encoding-map.json`);
 
         // Prendo i dati
-        let data = await response.json()["encode"];
+        let data = await response.json();
+        data = data['encode'];
 
         // Prendo i dati che mi servono
         /*
@@ -205,7 +206,8 @@ export class UserText {
         
         // Prendo i caratteri dal json
         let response = await fetch(`${points_number(path)}Static/json/encoding-map.json`);
-        let data = await response.json()['formatting'];
+        let data = await response.json();
+        data = data['formatting'];
 
         // Passo gli elementi attraverso map
         this.text = this.text.split('').map(function(c) {
