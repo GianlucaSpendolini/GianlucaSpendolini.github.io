@@ -63,6 +63,18 @@
             </thead>
             <tbody></tbody>
         </table>
+
+        <div>
+
+            <input class="pattern" placeholder="Inserire il pattern" type="text" />
+
+            <input class="try-func" placeholder="Inserire il testo" type="text" />
+
+            <input class="try-func" type="checkbox" />
+
+            <div align="center" class="try-func"></div>
+
+        </div>
     </main>
 
     <hr />
@@ -94,11 +106,36 @@
         </section>-->
     </footer>
 
-    <!-- File JavaScript per le prove-->
-    <script src="./Static/javascript/prova.js"></script>
-
     <!-- File JavaScript generico -->
     <script src="./Static/javascript/scripts.js" type="module"></script>
+
+    <!-- File JavaScript per le prove-->
+    <script src="./Static/javascript/prova.js"></script>
+    <script type="module">
+
+        import {
+            UserText
+        } from 'https://GianlucaSpendolini.github.io/Static/javascript/util_class.js';
+
+        document.addEventListener('DOMContendLoaded', () => {
+
+            // Prendo i campi
+            let div = document.querySelector('div.try-func');
+            let input_checkbox = document.querySelector('input.try-func[type="checkbox"]');
+            let input_text = document.querySelector('input.try-func[type="text"]');
+            let pattern = document.querySelector('input.pattern');
+
+            let text = new UserText(input_text.value);
+
+            pattern.addEventListener('input', () => {
+
+                div.innerHTML = text.find(pattern, input_checkbox.checked).join('<=>');
+
+            });
+
+        });
+
+    </script>
 </body>
 
 </html>

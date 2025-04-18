@@ -27,6 +27,7 @@ export class UserText {
 
     /*
         Conversione
+        - In base da e a cosa vuoi convertire
     */
     async convert(from, to) {
 
@@ -199,7 +200,7 @@ export class UserText {
 
 
     /*
-        Formato corretto
+        Formattazione corretta
         - Sostituisce eventuali caratteri speciali trovati con il corrispettivo 'normale'
     */
     async correctFormatting() {
@@ -224,11 +225,18 @@ export class UserText {
 
 
     /*
-        Ricerca
+        Ricerca [NON SO SE FUNZIONA]
+        - Cerca il pattern inserito nel testo specificato all'inizio e restituisce le corrispondenze
     */
+    find(pattern, isRegex=false) {
 
-    find(pattern) {
+        // Se cerco una RegEx
+        if (isRegex) {
+            return this.text.match(new RegExp(pattern, "g"));
+        }
 
-        //
+        // Cerco il pattern e restituisco l'array
+        return this.text.match(pattern);
+
     }
 }
