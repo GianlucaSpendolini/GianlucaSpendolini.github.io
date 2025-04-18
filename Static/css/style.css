@@ -251,9 +251,9 @@ main#descrizione hr:not(.break-line) {
 
 .left-container > textarea, .right-container > textarea {
     margin-bottom: 10px;
-    max-width: 100%;
+    max-width: 99%;
     min-height: 100px;
-    min-width: 100%;
+    min-width: 99%;
 }
 
 #text-swap {
@@ -264,7 +264,7 @@ main#descrizione hr:not(.break-line) {
     min-height: 30px;
 }
 
-select {
+#type-left, #type-right {
     min-width: 50%;
 }
 

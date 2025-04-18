@@ -20,7 +20,7 @@ export class UserText {
     // Prendo le variabili
     constructor(text) {
 
-        // Testo da convertire
+        // Testo dell'utente
         this.text = text;
         
     }
@@ -34,7 +34,7 @@ export class UserText {
         let response = await fetch(`${points_number(path)}Static/json/encoding-map.json`);
 
         // Prendo i dati
-        let data = await response.json();
+        let data = await response.json()["encode"];
 
         // Prendo i dati che mi servono
         /*
@@ -194,6 +194,30 @@ export class UserText {
             return converted.join(' ');
         }
         
+    }
+
+
+    /*
+        Formato corretto
+        - Sostituisce eventuali caratteri speciali trovati con il corrispettivo 'normale'
+    */
+    async correctFormatting() {
+        
+        // Prendo i caratteri dal json
+        let response = await fetch(`${points_number(path)}Static/json/encoding-map.json`);
+        let data = await response.json()['formatting'];
+
+        // Passo gli elementi attraverso map
+        this.text = this.text.split('').map(function(c) {
+
+            // Se carattere appartiene ai caratteri speciali -> lo converto
+            return Object.keys(data).includes(c) ? data[c] : c;
+
+        }).join('');
+
+        // Ritorno il testo eventualmente corretto
+        return this
+
     }
 
 

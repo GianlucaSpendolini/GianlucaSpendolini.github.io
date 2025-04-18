@@ -1,6 +1,6 @@
 # GianlucaSpendolini.github.io
 
-### Actual version: 0.26.0
+### Actual version: 0.27.0
 
 ### Languages
 - [English](#english)
@@ -14,6 +14,9 @@ This is a very simple site that I use to train with HTML, CSS, JavaScript langua
 I will update the versions with the following logic:
 - Major
     - Only in case of important logical changes;
+    - Creation and/or entry into function of a new section
+        - At root level;
+        - Ex: for v1.0.0 all the sections thought at the beginning must be introduced;
 - Minor
     - Only if I add things (like new sections or functions to handle something);
 - Patch
@@ -35,6 +38,9 @@ Questo è un sito molto sempliche che io uso per allenarmi con i linguaggi HTML,
 Le versioni le aggiornerò con la seguente logica:
 - Major
     - Solo in caso di modifiche logiche importanti;
+    - Creazione e/o entrata in funzione di una nuova sezione
+        - A livello della root;
+        - Es: per la v1.0.0 tutte le sezioni pensate all'inizio devono essere introdotte;
 - Minor
     - Solo se aggiungo cose (come nuove sezioni o funzioni per gestire qualcosa);
 - Patch
