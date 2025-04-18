@@ -117,34 +117,30 @@
             UserText
         } from 'https://GianlucaSpendolini.github.io/Static/javascript/util_class.js';
 
-        document.addEventListener('DOMContendLoaded', () => {
 
-            // Prendo i campi
-            let div = document.querySelector('div.try-func');
-            div.style.border = 'block';
-            let input_checkbox = document.querySelector('input.try-func[type="checkbox"]');
-            let input_text = document.querySelector('input.try-func[type="text"]');
-            let pattern = document.querySelector('input.pattern');
+        // Prendo i campi
+        let div = document.querySelector('div.try-func');
+        let input_checkbox = document.querySelector('input.try-func[type="checkbox"]');
+        let input_text = document.querySelector('input.try-func[type="text"]');
+        let pattern = document.querySelector('input.pattern');
 
-            console.log(div, input_checkbox, input_text, pattern);
+        console.log(div, input_checkbox, input_text, pattern);
 
-            pattern.addEventListener('input', () => {
+        pattern.addEventListener('input', () => {
 
-                let text = new UserText(input_text.value);
+            let text = new UserText(input_text.value);
 
-                console.log(
-                    div, '\n',
-                    input_checkbox, '\n',
-                    input_text, '\n',
-                    pattern, '\n',
-                    pattern.value, '\n',
-                    text, '\n',
-                    text.find(pattern.value, input_checkbox.checked)
-                );
+            console.log(
+                div, '\n',
+                input_checkbox, '\n',
+                input_text, '\n',
+                pattern, '\n',
+                pattern.value, '\n',
+                text, '\n',
+                text.find(pattern.value, input_checkbox.checked)
+            );
 
-                div.innerHTML = text.find(pattern, input_checkbox.checked).join('<=>');
-
-            });
+            div.innerHTML = text.find(pattern, input_checkbox.checked).join('<=>');
 
         });
 
