@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title></title>
+    
+</head>
+
+<body>
+
+    <header></header>
+
+    <hr />
+
+    <main>
+
+        <div class="matcher-container">
+
+            <p>
+                Numero corrispondenze trovate: <span id="corr">0</span>.
+            </p>
+
+            <textarea id="pattern" placeholder="Inserire il pattern desiderato (in caso di regex non mettere / ad inizio e fine pattern)"></textarea>
+
+            <div class="checkbox-container">
+                <div>
+                    <input type="checkbox" id="is-regex" />
+                    RegEx
+                </div>
+                <div>
+                    <input type="checkbox" id="to-replace" />
+                    Sostituire
+                </div>
+            </div>
+
+            <textarea id="replacement" placeholder="Inserire il testo che si vuole inserire ad ogni corrispondenza."></textarea>
+
+            <div>
+                <code id="result"></code>
+            </div>
+
+        </div>
+
+        <p>
+
+            ...
+
+        </p>
+        
+    </main>
+
+    <hr />
+
+    <footer></footer>
+
+    <!-- File JavaScript generico -->
+    <script src="./Static/javascript/scripts.js" type="module"></script>
+    
+    <script type="module">
+
+        import {
+            UserText
+        } from 'https://GianlucaSpendolini.github.io/Static/javascript/util_class.js';
+
+
+        // Prendo i campi
+        let div = document.querySelector('div.try-func');
+        let input_checkbox = document.querySelector('input.try-func[type="checkbox"]');
+        let input_text = document.querySelector('input.try-func[type="text"]');
+        let pattern = document.querySelector('input.pattern');
+
+        pattern.addEventListener('input', () => {
+
+            let text = new UserText(input_text.value);
+
+            console.log(
+                pattern.value,
+                text,
+                text.find(pattern.value, input_checkbox.checked)
+            );
+
+            div.innerText = text.find(pattern, input_checkbox.checked).join(' <=> ');
+
+        });
+
+    </script>
+</body>
+
+</html>

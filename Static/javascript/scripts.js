@@ -481,6 +481,20 @@ function what_page(points_path) {
 
             break;
 
+        // /pattern-matcher
+        case '/utilities/pattern-matcher':
+
+            // Titolo
+            title.innerHTML = 'Smart Pattern Matcher';
+
+            // Header title
+            header_title.innerHTML = 'Smart Pattern Matcher';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = 'Pagina utile per cercare un determinato pattern in un testo inserito dall\'utente. Se si vuole, c\'è anche la possibilità di sostituire le corrispondenze.';
+
+            break;
+
         // /scripts/
         case '/utilities/scripts/':
 

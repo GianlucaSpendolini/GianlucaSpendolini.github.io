@@ -225,7 +225,7 @@ export class UserText {
 
 
     /*
-        Ricerca [NON SO SE FUNZIONA]
+        Ricerca
         - Cerca il pattern inserito nel testo specificato all'inizio e restituisce le corrispondenze
     */
     find(pattern, isRegex=false) {
