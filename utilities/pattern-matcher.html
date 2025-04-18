@@ -19,12 +19,12 @@
         <div class="matcher-container">
 
             <p>
-                Numero di corrispondenze trovate: <span id="corr">0</span>.
+                Numero di corrispondenze trovate: <span id="corr">0</span>
             </p>
 
-            <textarea id="pattern" placeholder="Inserire il pattern desiderato (in caso di regex non mettere / ad inizio e fine pattern)"></textarea>
+            <textarea id="pattern" placeholder="Inserire il pattern (in caso di regex inserisci solo il contenuto che metteresti tra //)"></textarea>
 
-            <textarea id="text_to_search" placeholder="Inserire il testo in cui si vogliono cercare le corrispondenze"></textarea>
+            <textarea id="text-to-search" placeholder="Inserire il testo in cui si vogliono cercare le corrispondenze"></textarea>
 
             <div class="checkbox-container">
                 <div>
@@ -39,15 +39,28 @@
 
             <textarea id="replacement" placeholder="Inserire il testo che si vuole inserire ad ogni corrispondenza."></textarea>
 
-            <div>
-                <code id="result"></code>
-            </div>
+            <textarea disabled id="result" placeholder="Quì verrà inserito il risultato ottenuto"></textarea>
 
         </div>
 
         <p>
 
-            ...
+            Il primo campo di testo serve per inserire un pattern che verrà usato per cercare quello che ti serve nel testo inserito nel secondo campo di testo.
+
+            <br />
+
+            Nel caso si vogliano usare le espressioni regolari, si può usare la modalità "RegEx" mettendo il check nel box apposito.
+            Si possono usare le espressioni regolari anche senza usare la modalità, ma la ricerca del pattern non è globale.
+
+            <br />
+
+            C'è anche una modalità che permette di sostituire ogni occorrenza trovata con un testo che puoi inserire.
+            Per usarla, non devi fare altro che selezionare il check "Sostituire".
+            Un campo di testo comparirà nella sezione sottostante, nel quale è possibile inserire il testo da inserire al posto di ogni occorrenza.
+
+            <br />
+
+            Alla fine è presente un campo di testo disabilitato che conterrà il risultato delle operazioni.
 
         </p>
         
@@ -68,9 +81,9 @@
 
 
         // Prendo i campi
-        let correspondence_field = document.getElementById('corr');
+        let correspondence = document.getElementById('corr');
         let pattern_field = document.getElementById('pattern');
-        let text_to_search_field = document.getElementById('text_to_search');
+        let text_to_search_field = document.getElementById('text-to-search');
         let is_regex_field = document.getElementById('is-regex');
         let to_replace_field = document.getElementById('to-replace');
         let replacement_field = document.getElementById('replacement');
@@ -89,29 +102,60 @@
             // Creo l'istanza
             let text = new UserText(text_to_search);
 
-            // Cerco il pattern
-            return text.find(pattern, is_regex);
+            // Eseguo la ricerca
+            let find_pattern = text.find(pattern, is_regex);
+            console.log(find_pattern);
+
+            // Creo la variabile per prendere il testo da inserire successivamente
+            let text_to_insert;
+
+            // Se voglio rimpiazzare
+            if (to_replace) {
+                // Utilizzo le regex per rimpiazzare ovunque c'è corrispondenza
+                text_to_insert = text_to_search.replace(new RegExp(pattern, 'g'), replacement);
+            }
+            // Altrimenti inserisco normalmente
+            else {
+                // Unisco l'array restituito
+                text_to_insert = find_pattern ? find_pattern.join(' ') : '';
+            }
+
+            // Dico quante corrispondenze ho trovato
+            correspondence.innerText = pattern && text_to_search && text_to_insert ? find_pattern.length : 0;
+
+            // Inserisco ciò che mi serve
+            result_field.innerText = text_to_insert;
 
         }
 
         // Aggiungo gli eventi ai campi
-        pattern.addEventListener('input', () => {
-
-            console.log(
-                pattern.value,
-                text,
-                text.find(pattern.value, input_checkbox.checked)
-            );
-
-            // Eseguo la ricerca
-            let find_pattern = search_pattern();
-
-            // Inserisco il risultato unito
-            result_field.innerText = find_pattern.join(' ');
-
-            // Dico quante corrispondenze ho trovato
-            correspondence_field.innerText = find_pattern.length;
-
+        pattern_field.addEventListener('input', () => {
+            // Cerco il pattern
+            search_pattern();
+        });
+        text_to_search_field.addEventListener('input', () => {
+            // Cerco il pattern
+            search_pattern();
+        });
+        is_regex_field.addEventListener('click', () => {
+            // Cerco il pattern
+            search_pattern();
+        });
+        to_replace_field.addEventListener('click', () => {
+            // Se voglio rimpiazzare -> mostro il blocco
+            if (to_replace_field.checked) {
+                replacement_field.style.display = 'block';
+            }
+            // Altrimenti lo nascondo
+            else {
+                replacement_field.style.display = 'none';
+            }
+            // Cerco il pattern
+            search_pattern();
+        });
+        replacement_field.addEventListener('input', () => {
+            // Cerco il pattern
+            search_pattern();
         });
 
     </script>

@@ -270,6 +270,49 @@ main#descrizione hr:not(.break-line) {
 
 
 /*
+    PATTERN MATCHER 
+*/
+
+.checkbox-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.matcher-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    min-width: 100%;
+    text-align: center;
+}
+
+.matcher-container > textarea {
+    align-self: center;
+    margin: 10px 0px;
+    max-width: 75%;
+    min-width: 75%;
+}
+
+#pattern {
+    min-height: 50px;
+}
+
+#text-to-search, #replacement,#result {
+    min-height: 100px;
+}
+
+/* Di default non è mostrato */
+#replacement {
+    display: none;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/*
     ALTRO 
 */
 
