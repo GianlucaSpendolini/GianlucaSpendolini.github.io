@@ -126,9 +126,21 @@
             let input_text = document.querySelector('input.try-func[type="text"]');
             let pattern = document.querySelector('input.pattern');
 
+            console.log(div, input_checkbox, input_text, pattern);
+
             pattern.addEventListener('input', () => {
 
                 let text = new UserText(input_text.value);
+
+                console.log(
+                    div, '\n',
+                    input_checkbox, '\n',
+                    input_text, '\n',
+                    pattern, '\n',
+                    pattern.value, '\n',
+                    text, '\n',
+                    text.find(pattern.value, input_checkbox.checked)
+                );
 
                 div.innerHTML = text.find(pattern, input_checkbox.checked).join('<=>');
 
