@@ -168,10 +168,22 @@
                     // Converto
                     let to_convert = new UserText(content);
                     
-                    to_convert.convert(type_left, type_right).then( data => {
-                        // Inserisco nel textarea di destra
-                        right.value = data;
-                    });
+                    // to_convert.convert(type_left, type_right).then( data => {
+                    //     // Inserisco nel textarea di destra
+                    //     right.value = data;
+                    // });
+                    (async () => {
+
+                        // Trasformo nel formato corretto
+                        to_convert = await to_convert.correctFormatting();
+                        
+                        // Converto ed inserisco il valore
+                        to_convert.convert(type_left, type_right).then( data => {
+                            // Inserisco nel textarea di destra
+                            right.value = data;
+                        });
+
+                    })();
                 }
 
             }
@@ -194,10 +206,22 @@
                     // Converto
                     let to_convert = new UserText(content);
                     
-                    to_convert.convert(type_right, type_left).then( data => {
-                        // Inserisco nel textarea di sinistra
-                        left.value = data;
-                    });
+                    // to_convert.convert(type_right, type_left).then( data => {
+                    //     // Inserisco nel textarea di sinistra
+                    //     left.value = data;
+                    // });
+                    (async () => {
+
+                        // Trasformo nel formato corretto
+                        to_convert = await to_convert.correctFormatting();
+                        
+                        // Converto ed inserisco il valore
+                        to_convert.convert(type_right, type_left).then( data => {
+                            // Inserisco nel textarea di sinistra
+                            left.value = data;
+                        });
+
+                    })();
                 }
 
             }
