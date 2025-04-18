@@ -19,10 +19,12 @@
         <div class="matcher-container">
 
             <p>
-                Numero corrispondenze trovate: <span id="corr">0</span>.
+                Numero di corrispondenze trovate: <span id="corr">0</span>.
             </p>
 
             <textarea id="pattern" placeholder="Inserire il pattern desiderato (in caso di regex non mettere / ad inizio e fine pattern)"></textarea>
+
+            <textarea id="text_to_search" placeholder="Inserire il testo in cui si vogliono cercare le corrispondenze"></textarea>
 
             <div class="checkbox-container">
                 <div>
@@ -66,14 +68,34 @@
 
 
         // Prendo i campi
-        let div = document.querySelector('div.try-func');
-        let input_checkbox = document.querySelector('input.try-func[type="checkbox"]');
-        let input_text = document.querySelector('input.try-func[type="text"]');
-        let pattern = document.querySelector('input.pattern');
+        let correspondence_field = document.getElementById('corr');
+        let pattern_field = document.getElementById('pattern');
+        let text_to_search_field = document.getElementById('text_to_search');
+        let is_regex_field = document.getElementById('is-regex');
+        let to_replace_field = document.getElementById('to-replace');
+        let replacement_field = document.getElementById('replacement');
+        let result_field = document.getElementById('result');
 
+        // Funzione per elaborare il testo ed inserirlo nel div
+        let search_pattern = function() {
+
+            // Prendo i dati
+            let pattern = pattern_field.value;
+            let text_to_search = text_to_search_field.value;
+            let is_regex = is_regex_field.checked;
+            let to_replace = to_replace_field.checked;
+            let replacement = replacement_field?.value;
+
+            // Creo l'istanza
+            let text = new UserText(text_to_search);
+
+            // Cerco il pattern
+            return text.find(pattern, is_regex);
+
+        }
+
+        // Aggiungo gli eventi ai campi
         pattern.addEventListener('input', () => {
-
-            let text = new UserText(input_text.value);
 
             console.log(
                 pattern.value,
@@ -81,7 +103,14 @@
                 text.find(pattern.value, input_checkbox.checked)
             );
 
-            div.innerText = text.find(pattern, input_checkbox.checked).join(' <=> ');
+            // Eseguo la ricerca
+            let find_pattern = search_pattern();
+
+            // Inserisco il risultato unito
+            result_field.innerText = find_pattern.join(' ');
+
+            // Dico quante corrispondenze ho trovato
+            correspondence_field.innerText = find_pattern.length;
 
         });
 
