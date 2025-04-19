@@ -120,12 +120,7 @@
             let to_replace = to_replace_field.checked;
             let replacement = replacement_field?.value;
 
-            // Se non ho ne pattern e ne testo da cercare -> interrompo
-            if (!pattern || !text_to_search) {
-                return;
-            }
-
-            // Sostituisco eventuali caratteri
+            // Sostituisco eventuali caratteri (solo se ho selezionato l'opzione ed ho qualcosa almeno un carattere che voglio inserire)
             if (to_replace && replacement) {
                 Object.entries({
                     "\\n": "\n"
@@ -138,12 +133,10 @@
             let text = new UserText(text_to_search);
 
             // Eseguo la ricerca
-            let find_pattern = text.find(pattern, is_global, {
+            let find_pattern = text.findReplace(pattern, is_global, {
                 '?': to_replace,
                 'replacement': replacement
             });
-            console.log("try: ", {'?': false} ? 'k' : 'no');
-            console.log("fp: ", find_pattern, to_replace, to_replace ? '\'' + replacement + '\'' : null);
 
             // Creo la variabile per prendere il testo da inserire successivamente E il numero di corrispondenze trovate
             let text_to_insert;
@@ -154,7 +147,7 @@
                 // Se voglio rimpiazzare
                 if (to_replace) {
                     text_to_insert = find_pattern;
-                    corr_number = text.find(pattern, is_global)?.length;
+                    corr_number = text.findReplace(pattern, is_global)?.length;
                 }
                 // Altrimenti inserisco normalmente
                 else {

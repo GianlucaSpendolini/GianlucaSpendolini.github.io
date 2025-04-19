@@ -230,7 +230,7 @@ export class UserText {
         - Se cerco per sostituire -> vado a sostituire
             - Se ho selezionato anche isRegex non c'è alcuna differenza
     */
-    find(pattern, isRegex=false, toReplace={'?': false}) {
+    findReplace(pattern, isRegex=false, toReplace={'?': false}) {
 
         // Se devo sostituire
         if (toReplace['?']) {
