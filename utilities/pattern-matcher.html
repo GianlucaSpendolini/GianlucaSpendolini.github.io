@@ -16,48 +16,6 @@
 
     <main>
 
-        <style>
-
-            .checkbox-container {
-                display: flex;
-                justify-content: space-evenly;
-            }
-
-            .matcher-container {
-                display: flex;
-                flex-direction: column;
-                max-width: 100%;
-                min-width: 100%;
-                text-align: center;
-            }
-
-            .matcher-container > textarea {
-                align-self: center;
-                margin: 10px 0px;
-                max-width: 75%;
-                min-width: 75%;
-            }
-
-            #pattern {
-                min-height: 50px;
-            }
-
-            #text-to-search, #replacement,#result {
-                min-height: 100px;
-            }
-
-            /* Di default non è mostrato */
-            #replacement {
-                display: none;
-            }
-
-            #result {
-                margin-top: 20px;
-                text-align: center;
-            }
-
-        </style>
-
         <div class="matcher-container">
 
             <p>
@@ -162,42 +120,50 @@
             let to_replace = to_replace_field.checked;
             let replacement = replacement_field?.value;
 
+            // Se non ho ne pattern e ne testo da cercare -> interrompo
+            if (!pattern || !text_to_search) {
+                return;
+            }
+
             // Sostituisco eventuali caratteri
-            let characters_to_replace = {
-                "\\n": "\n"
-            };
-            to_replace && replacement ? Object.entries(characters_to_replace).forEach(c => {
-                replacement = replacement.replaceAll(c[0], c[1]);
-            }) : '';
+            if (to_replace && replacement) {
+                Object.entries({
+                    "\\n": "\n"
+                }).forEach(c => {
+                    replacement = replacement.replaceAll(c[0], c[1]);
+                });
+            }
 
             // Creo l'istanza
             let text = new UserText(text_to_search);
 
             // Eseguo la ricerca
-            let find_pattern = text.find(pattern, is_global, to_replace ? replacement : null);
-            console.log("fp: ", find_pattern, to_replace, replacement);
+            let find_pattern = text.find(pattern, is_global, to_replace, to_replace ? replacement : null);
+            console.log("fp: ", find_pattern, to_replace, to_replace ? '\'' + replacement + '\'' : null);
 
             // Creo la variabile per prendere il testo da inserire successivamente E il numero di corrispondenze trovate
             let text_to_insert;
             let corr_number;
 
-            // Se voglio rimpiazzare
-            if (to_replace) {
-                text_to_insert = find_pattern;
-                corr_number = text.find(pattern, is_global).length;
+            // Se ho trovato qualcosa
+            if (find_pattern) {
+                // Se voglio rimpiazzare
+                if (to_replace) {
+                    text_to_insert = find_pattern;
+                    corr_number = text.find(pattern, is_global)?.length;
+                }
+                // Altrimenti inserisco normalmente
+                else {
+                    text_to_insert = find_pattern ? find_pattern.join(' ') : '';
+                    corr_number = find_pattern.length;
+                }
             }
-            // Altrimenti inserisco normalmente
-            else {
-                text_to_insert = find_pattern ? find_pattern.join(' ') : '';
-                corr_number = find_pattern.length;
-            }
-            console.log("tti: ", text_to_insert, " corr: ", corr);
 
             // Dico quante corrispondenze ho trovato
             correspondence.innerText = pattern && text_to_search && text_to_insert ? corr_number : 0;
 
             // Inserisco ciò che mi serve
-            result_field.value = text_to_insert;
+            result_field.value = find_pattern ? text_to_insert : null;
 
         }
 
