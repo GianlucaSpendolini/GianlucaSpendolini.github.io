@@ -234,7 +234,7 @@ export class UserText {
 
         // Se devo sostituire
         if (toReplace) {
-            return this.text.replace(isRegex ? new RegExp(pattern, 'g') : pattern, toReplace);
+            return this.text.replace(isRegex ? new RegExp(pattern, 'g') : pattern, toReplace['replacement']);
         }
 
         // Se cerco una RegEx
