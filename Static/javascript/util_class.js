@@ -230,11 +230,11 @@ export class UserText {
         - Se cerco per sostituire -> vado a sostituire
             - Se ho selezionato anche isRegex non c'è alcuna differenza
     */
-    find(pattern, isRegex=false, toReplace=false, replacement=null) {
+    find(pattern, isRegex=false, toReplace=null) {
 
         // Se devo sostituire
         if (toReplace) {
-            return this.text.replace(isRegex ? new RegExp(pattern, 'g') : pattern, replacement);
+            return this.text.replace(isRegex ? new RegExp(pattern, 'g') : pattern, toReplace);
         }
 
         // Se cerco una RegEx
