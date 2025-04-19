@@ -139,8 +139,10 @@
 
             // Eseguo la ricerca
             let find_pattern = text.find(pattern, is_global, {
+                '?': to_replace,
                 'replacement': replacement
             });
+            console.log("try: ", {'?': false} && {'?': false}['?']);
             console.log("fp: ", find_pattern, to_replace, to_replace ? '\'' + replacement + '\'' : null);
 
             // Creo la variabile per prendere il testo da inserire successivamente E il numero di corrispondenze trovate
