@@ -16,20 +16,62 @@
 
     <main>
 
+        <style>
+
+            .checkbox-container {
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+            .matcher-container {
+                display: flex;
+                flex-direction: column;
+                max-width: 100%;
+                min-width: 100%;
+                text-align: center;
+            }
+
+            .matcher-container > textarea {
+                align-self: center;
+                margin: 10px 0px;
+                max-width: 75%;
+                min-width: 75%;
+            }
+
+            #pattern {
+                min-height: 50px;
+            }
+
+            #text-to-search, #replacement,#result {
+                min-height: 100px;
+            }
+
+            /* Di default non è mostrato */
+            #replacement {
+                display: none;
+            }
+
+            #result {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+        </style>
+
         <div class="matcher-container">
 
             <p>
                 Numero di corrispondenze trovate: <span id="corr">0</span>
             </p>
 
-            <textarea id="pattern" placeholder="Inserire il pattern (in caso di regex inserisci solo il contenuto che metteresti tra //)"></textarea>
+            <textarea id="pattern" placeholder="Inserire il pattern (in caso di regex bisogna inserire solo il contenuto che metteresti tra //)"></textarea>
 
             <textarea id="text-to-search" placeholder="Inserire il testo in cui si vogliono cercare le corrispondenze"></textarea>
 
             <div class="checkbox-container">
                 <div>
-                    <input type="checkbox" id="is-regex" />
-                    RegEx
+                    <input type="checkbox" id="is-global" />
+                    Globale
                 </div>
                 <div>
                     <input type="checkbox" id="to-replace" />
@@ -39,28 +81,49 @@
 
             <textarea id="replacement" placeholder="Inserire il testo che si vuole inserire ad ogni corrispondenza."></textarea>
 
-            <textarea disabled id="result" placeholder="Quì verrà inserito il risultato ottenuto"></textarea>
+            <textarea disabled id="result" placeholder="Quì apparirà il risultato ottenuto"></textarea>
 
         </div>
 
         <p>
 
-            Il primo campo di testo serve per inserire un pattern che verrà usato per cercare quello che ti serve nel testo inserito nel secondo campo di testo.
+            <p>
+                Per la ricerca è necessario inserire un pattern (anche del semplice testo) nel primo campo ed inserire il testo in cui si vuole cercare nel campo sottostante.
+                Per il patterm, è possibile usare anche le espressioni regolari (<a href="https://wikipedia.org/wiki/.*">RegEx</a>).
+                Inoltre, siccome di default usa queste ultime, 
+            </p>
 
-            <br />
+            <p>
+                Normalmente, la ricerca è solo sulla prima ricorrenza (utile in caso si voglia capire se ci sono corrispondenze).
+                Se si vuole, selezionando il check "Globale" è possibile fare la ricerca su tuttol il testo inserito nel secondo campo.
+            </p>
 
-            Nel caso si vogliano usare le espressioni regolari, si può usare la modalità "RegEx" mettendo il check nel box apposito.
-            Si possono usare le espressioni regolari anche senza usare la modalità, ma la ricerca del pattern non è globale.
+            <p>
+                C'è anche una modalità che permette di sostituire ogni occorrenza trovata con un preciso testo inserito da te.
+                Per usarla, bisogna selezionare il check "Sostituire": un campo di testo comparirà nella sezione sottostante e potrai inserire il testo da inserire al posto di ogni occorrenza.
+            </p>
 
-            <br />
-
-            C'è anche una modalità che permette di sostituire ogni occorrenza trovata con un testo che puoi inserire.
-            Per usarla, non devi fare altro che selezionare il check "Sostituire".
-            Un campo di testo comparirà nella sezione sottostante, nel quale è possibile inserire il testo da inserire al posto di ogni occorrenza.
-
-            <br />
-
-            Alla fine è presente un campo di testo disabilitato che conterrà il risultato delle operazioni.
+            <p>
+                Alla fine è presente un campo di testo disabilitato che conterrà il risultato delle operazioni
+                <ul>
+                    <li>
+                        Ricerca
+                        <ul>
+                            <li>
+                                Riporta tutte le occorrenze trovate
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Ricerca e sostituzione
+                        <ul>
+                            <li>
+                                Riporta il testo inserito nel secondo campo MA con tutte le occorrenze sostituite
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
 
         </p>
         
@@ -84,7 +147,7 @@
         let correspondence = document.getElementById('corr');
         let pattern_field = document.getElementById('pattern');
         let text_to_search_field = document.getElementById('text-to-search');
-        let is_regex_field = document.getElementById('is-regex');
+        let is_global_field = document.getElementById('is-global');
         let to_replace_field = document.getElementById('to-replace');
         let replacement_field = document.getElementById('replacement');
         let result_field = document.getElementById('result');
@@ -95,36 +158,46 @@
             // Prendo i dati
             let pattern = pattern_field.value;
             let text_to_search = text_to_search_field.value;
-            let is_regex = is_regex_field.checked;
+            let is_global = is_global_field.checked;
             let to_replace = to_replace_field.checked;
             let replacement = replacement_field?.value;
+
+            // Sostituisco eventuali caratteri
+            let characters_to_replace = {
+                "\\n": "\n"
+            };
+            to_replace && replacement ? Object.entries(characters_to_replace).forEach(c => {
+                replacement = replacement.replaceAll(c[0], c[1]);
+            }) : '';
 
             // Creo l'istanza
             let text = new UserText(text_to_search);
 
             // Eseguo la ricerca
-            let find_pattern = text.find(pattern, is_regex);
-            console.log(find_pattern);
+            let find_pattern = text.find(pattern, is_global, to_replace ? replacement : null);
+            console.log("fp: ", find_pattern, to_replace, replacement);
 
-            // Creo la variabile per prendere il testo da inserire successivamente
+            // Creo la variabile per prendere il testo da inserire successivamente E il numero di corrispondenze trovate
             let text_to_insert;
+            let corr_number;
 
             // Se voglio rimpiazzare
             if (to_replace) {
-                // Utilizzo le regex per rimpiazzare ovunque c'è corrispondenza
-                text_to_insert = text_to_search.replace(new RegExp(pattern, 'g'), replacement);
+                text_to_insert = find_pattern;
+                corr_number = text.find(pattern, is_global).length;
             }
             // Altrimenti inserisco normalmente
             else {
-                // Unisco l'array restituito
                 text_to_insert = find_pattern ? find_pattern.join(' ') : '';
+                corr_number = find_pattern.length;
             }
+            console.log("tti: ", text_to_insert, " corr: ", corr);
 
             // Dico quante corrispondenze ho trovato
-            correspondence.innerText = pattern && text_to_search && text_to_insert ? find_pattern.length : 0;
+            correspondence.innerText = pattern && text_to_search && text_to_insert ? corr_number : 0;
 
             // Inserisco ciò che mi serve
-            result_field.innerText = text_to_insert;
+            result_field.value = text_to_insert;
 
         }
 
@@ -137,7 +210,7 @@
             // Cerco il pattern
             search_pattern();
         });
-        is_regex_field.addEventListener('click', () => {
+        is_global_field.addEventListener('click', () => {
             // Cerco il pattern
             search_pattern();
         });

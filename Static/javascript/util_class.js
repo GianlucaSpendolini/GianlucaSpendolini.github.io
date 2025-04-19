@@ -227,16 +227,26 @@ export class UserText {
     /*
         Ricerca
         - Cerca il pattern inserito nel testo specificato all'inizio e restituisce le corrispondenze
+        - Se cerco per sostituire -> vado a sostituire
+            - Se ho selezionato anche isRegex non c'è alcuna differenza
     */
-    find(pattern, isRegex=false) {
+    find(pattern, isRegex=false, toReplace=null) {
 
-        // Se cerco una RegEx
-        if (isRegex) {
-            return this.text.match(new RegExp(pattern, "g"));
+        // Se devo sostituire
+        if (toReplace) {
+            return this.text.replace(isRegex ? new RegExp(pattern, 'g') : pattern, toReplace);
         }
+        else {
 
-        // Cerco il pattern e restituisco l'array
-        return this.text.match(pattern);
+            // Se cerco una RegEx
+            if (isRegex) {
+                return this.text.match(new RegExp(pattern, "g"));
+            }
+
+            // Cerco il pattern e restituisco l'array
+            return this.text.match(pattern);
+
+        }
 
     }
 }
