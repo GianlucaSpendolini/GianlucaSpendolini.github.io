@@ -280,7 +280,9 @@ function what_page(points_path) {
             header_title.innerHTML = 'Prove';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Pagina di prova nella quale faccio i test di nuove funzionalità prima di inserirle ufficialmente nella pagina di destinazione.';
+            meta_descrizione = [
+                'Pagina di prova nella quale faccio i test di nuove funzionalità prima di inserirle ufficialmente nella pagina di destinazione.'
+            ].join(' ');
 
             break;
 
@@ -294,7 +296,10 @@ function what_page(points_path) {
             header_title.innerHTML = 'Home';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Home page del mio sito. Illustro in breve ciò che si potrà trovare nelle varie parti del sito.';
+            meta_descrizione = [
+                'Home page del mio sito.',
+                'Illustro in breve ciò che si potrà trovare nelle varie parti del sito.'
+            ].join(' ');
 
             // Sistemo i details per le descrizioni
             show_details(document.querySelector('div > div:has(details)'), true);
@@ -314,7 +319,9 @@ function what_page(points_path) {
             header_title.innerHTML = 'About me';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Pagina in cui descrivo molto di me: chi sono, il mio percorso formativo e lavorativo e cose extra in ambito informatico.';
+            meta_descrizione = [
+                'Pagina in cui descrivo molto di me: chi sono, il mio percorso formativo e lavorativo e cose extra in ambito informatico.'
+            ].join(' ');
 
             /*
                 Inserimento della mia età
@@ -345,7 +352,9 @@ function what_page(points_path) {
             header_title.innerHTML = 'Changes';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Index della sezione dei cambiamenti, nella quale registro ogni modifica effettuata.';
+            meta_descrizione = [
+                'Index della sezione dei cambiamenti, nella quale registro ogni modifica effettuata.'
+            ].join(' ');
 
             break;
 
@@ -359,7 +368,9 @@ function what_page(points_path) {
             header_title.innerHTML = 'Tabella dei cambiamenti';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Tabella in cui sono contenuti i cambiamenti effettuati suddivisi per i vari giorni.';
+            meta_descrizione = [
+                'Tabella in cui sono contenuti i cambiamenti effettuati suddivisi per i vari giorni.'
+            ].join(' ');
 
             // Aggiungo i bottoni per andare in cima o in fondo alla tabella più velocemente
             start_end_table(document.querySelector('table'));
@@ -379,7 +390,10 @@ function what_page(points_path) {
             header_title.innerHTML = 'Progetti';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Index della sezione dei progetti, nella quale inserisco ogni progetto. La pagina è suddivisa in base alle varie tipologie di progetti.';
+            meta_descrizione = [
+                'Index della sezione dei progetti, nella quale inserisco ogni progetto.',
+                'La pagina è suddivisa in base alle varie tipologie di progetti.'
+            ].join(' ');
 
             break;
 
@@ -393,7 +407,9 @@ function what_page(points_path) {
             header_title.innerHTML = 'Games';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Index della sezione dei giochi, nella quale inserisco i riferimenti alle pagine inerenti all\'ambiente di sviluppo nel quale ho sviluppato il gioco.';
+            meta_descrizione = [
+                'Index della sezione dei giochi, nella quale inserisco i riferimenti alle pagine inerenti all\'ambiente di sviluppo nel quale ho sviluppato il gioco.'
+            ].join(' ');
 
             break;
 
@@ -407,7 +423,9 @@ function what_page(points_path) {
             header_title.innerHTML = 'Pagina di scratch';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Pagina dei giochi sviluppati su Scratch.';
+            meta_descrizione = [
+                'Pagina dei giochi sviluppati su Scratch.'
+            ]-join(' ');
 
             break;
 
@@ -421,7 +439,9 @@ function what_page(points_path) {
             header_title.innerHTML = 'Socials';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Index della sezione dei social, nella quale sono segnati i vari social per cui ho sviluppato qualcosa.';
+            meta_descrizione = [
+                'Index della sezione dei social, nella quale sono segnati i vari social per cui ho sviluppato qualcosa.'
+            ].join(' ');
 
             break;
 
@@ -435,7 +455,9 @@ function what_page(points_path) {
             header_title.innerHTML = 'Pagina di Telegram';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Pagina di Telegram, nella quale descrivo e riporto i riferimenti ai progetti sviluppati per questo social media.';
+            meta_descrizione = [
+                'Pagina di Telegram, nella quale descrivo e riporto i riferimenti ai progetti sviluppati per questo social media.'
+            ].join(' ');
 
             break;
 
@@ -449,7 +471,9 @@ function what_page(points_path) {
             header_title.innerHTML = 'Siti';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Index della sezione dei siti, nella quale registro ogni sito che ho sviluppato o che è in fase di sviluppo.';
+            meta_descrizione = [
+                'Index della sezione dei siti, nella quale registro ogni sito che ho sviluppato o che è in fase di sviluppo.'
+            ].join(' ');
 
             break;
 
@@ -463,7 +487,10 @@ function what_page(points_path) {
             header_title.innerHTML = 'Utilities';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Index della sezione di strumenti utili a fare qualcosa, nella quale inserisco ogni strumento. Attualmente in fase di sviluppo (work in progress)!';
+            meta_descrizione = [
+                'Index della sezione di strumenti utili a fare qualcosa, nella quale inserisco ogni strumento.',
+                'Attualmente in fase di sviluppo (work in progress)!'
+            ].join(' ');
 
             break;
 
@@ -477,7 +504,26 @@ function what_page(points_path) {
             header_title.innerHTML = 'Transformer';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Pagina utile per convertire il testo normale in un tipo di codice e viceversa.';
+            meta_descrizione = [
+                'Pagina utile per convertire il testo normale in un tipo di codice e viceversa.'
+            ].join(' ');
+
+            break;
+
+        // /password-checker
+        case '/utilities/password-checker':
+
+            // Titolo
+            title.innerHTML = 'Password checker';
+
+            // Header title
+            header_title.innerHTML = 'Password checker';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = [
+                'Pagina utile per controllare la sicurezza di una password tramite dei check indicativi.',
+                'E\' anche possibile vedere la password tramite un bottone accanto al campo.'
+            ].join(' ');
 
             break;
 
@@ -491,7 +537,10 @@ function what_page(points_path) {
             header_title.innerHTML = 'Smart Pattern Matcher';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Pagina utile per cercare un determinato pattern in un testo inserito dall\'utente. Se si vuole, c\'è anche la possibilità di sostituire le corrispondenze.';
+            meta_descrizione = [
+                'Pagina utile per cercare un determinato pattern in un testo inserito dall\'utente.',
+                'Se si vuole, c\'è anche la possibilità di sostituire le corrispondenze.'
+            ].join(' ');
 
             break;
 
@@ -505,7 +554,9 @@ function what_page(points_path) {
             header_title.innerHTML = 'Scripts';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Index della sezione di script utili a fare qualcosa, nella quale inserisco ogni riferimento alle pagine. WIP!';
+            meta_descrizione = [
+                'Index della sezione di script utili a fare qualcosa, nella quale inserisco ogni riferimento alle pagine. WIP!'
+            ].join(' ');
 
             break;
 
@@ -519,7 +570,9 @@ function what_page(points_path) {
             header_title.innerHTML = 'Compilazione automatica';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Pagina contenente script inerenti alla compilazione automatica di alcuni campi in base a diversi input.';
+            meta_descrizione = [
+                'Pagina contenente script inerenti alla compilazione automatica di alcuni campi in base a diversi input.'
+            ].join(' ');
 
             /*
                 Inserisco
@@ -544,7 +597,9 @@ function what_page(points_path) {
             header_title.innerHTML = 'Riferimento alle pagine';
 
             // Definisco il contenuto della meta-descrizione
-            meta_descrizione = 'Pagina contenente script che prendono come riferimento pagine specifiche.';
+            meta_descrizione = [
+                'Pagina contenente script che prendono come riferimento pagine specifiche.'
+            ].join(' ');
 
             /*
                 Inserisco
