@@ -527,8 +527,8 @@ function what_page(points_path) {
                 - il codice di esempio
             */
             (async () => {
-                await insert_my_json('automatic filling', points_path);
-                insert_examples('code', 'automatic filling');
+                await insert_my_json('scripts automatic filling', points_path);
+                await insert_examples('code', 'automatic filling');
             })();
             
 
@@ -552,8 +552,8 @@ function what_page(points_path) {
                 - il codice di esempio
             */
             (async () => {
-                await insert_my_json('page references', points_path);
-                insert_examples('code', 'page references');
+                await insert_my_json('scripts page references', points_path);
+                await insert_examples('code', 'page references');
             })();
             
 

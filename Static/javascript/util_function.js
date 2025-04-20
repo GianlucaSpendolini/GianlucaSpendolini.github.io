@@ -35,6 +35,11 @@
 */
 
 
+import { 
+    path 
+} from "./util_variable.js";
+
+
 // Funzione per aggiungere i file js e css
 export function add_css_js(points_path) {
     /* File generali per ogni pagina */
@@ -219,328 +224,74 @@ export function clickable_path(path) {
 
 
 // Funzione per inserire esempi (di codice o di altro)
-export function insert_examples(reason, script_name) {
+export async function insert_examples(reason, script_name) {
     
     // Controllo il motivo
     switch (reason) {
 
         // Code
         case 'code':
-        
-            // Variabile per contenere i riferimenti ai vari div
-            let divs = [];
 
-            // Variabile per contenere tutti gli esempi di codice
-            let codes = [];
+            // Prendo i dati dal JSON TODO
+            let response = await fetch(`${points_number(path)}Static/json/descriptions.json`);
+            let data = await response.json();
+            let mmt = data['examples code'][script_name][0]['to insert'][0];
+            console.log(mmt.HTML ? mmt['HTML'].join('\n') : '<div align="center">Non è presente alcun esempio pratico</div>');
 
-            // Inserisco il codice js che verrà eseguito + il codice HTML dell'esempio
-            let html_examples = [];
-
-            // In base a dove voglio, vado a prendere il nome dello script
-            switch (script_name) {
-
-                // Automatic Filling
-                case 'automatic filling':
-
-                    divs.push(document.querySelector('#selezionando-un-elemento-da-una-lista-select'));
-
-                    html_examples.push({
-                        'JavaScript': `  
-                        // Seleziono checkbox e radio
-                        let cb_profilo_1 = document.getElementsByName('profilo-1')[0];            
-                        let cb_profilo_2 = document.getElementsByName('profilo-2')[0];
-                        
-                        // Selezione dell'elemento select
-                        let select = document.getElementById('PROFILO');
-                        
-                        // Aggiungo l'evento
-                        select.addEventListener('change', () => {
-                            
-                            // Controllo quale elemento è stato scelto in base al valore restituito
-                            switch (select.value) {
-                            
-                                // In caso del profilo 1
-                                case 'profilo 1':
-                                
-                                    cb_profilo_1.checked = true;
-                                    cb_profilo_2.checked = false;
-                                    
-                                    break;
-                                
-                                // In caso del profilo 2
-                                case 'profilo 2':
-                                
-                                    cb_profilo_1.checked = false;
-                                    cb_profilo_2.checked = true;
-                                    
-                                    break;
-                                
-                                // In caso non seleziono uno dei profili elencati
-                                default:
-                                    
-                                    // Svuoto campi per abilitazione e non
-                                    cb_profilo_1.checked = false;
-                                    cb_profilo_2.checked = false;
-        
-                                    
-                                    // Svuoto altri campi
-                                    // document.getElementsByName('input-text')[0].value = '';
-                                    // document.getElementsByName('textarea')[0].innerHTML = '';
-                                    
-                                    break;
-                            }
-                        });
-                        `,
-                        'HTML': `
-                        <select id="PROFILO">
-                            <option value="">...</option>
-                            <option value="profilo 1">Profilo 1</option>
-                            <option value="profilo 2">Profilo 2</option>
-                        </select>
-                        
-                        <input name="profilo-1" type="checkbox" />
-                        <input name="profilo-2" type="checkbox" />
-                        `
-                    });
-        
-                    codes.push(`
-                        <span class="js-comment">/*
-                            Codice scritto in JavaScript
-                        */</span>
-                        
-                        <span class="js-comment">// Seleziono checkbox e radio</span>
-                        <span class="js-init">let</span> <span class="js-var">cb_profilo_1</span> = document.<span class="js-func">getElementsByName</span>(<span class="str">'profilo-1'</span>)[0];            
-                        <span class="js-init">let</span> <span class="js-var">cb_profilo_2</span> = document.<span class="js-func">getElementsByName</span>(<span class="str">'profilo-2'</span>)[0];
-                        
-                        <span class="js-comment">// Selezione dell'elemento select</span>
-                        <span class="js-init">let</span> <span class="js-var">select</span> = document.<span class="js-func">getElementById</span>(<span class="str">'PROFILO'</span>);
-                        
-                        <span class="js-comment">// Aggiungo l'evento</span>
-                        select.<span class="js-func">addEventListener</span>(<span class="str">'change'</span>, () => {
-        
-                            <span class="js-comment">// Controllo quale elemento è stato scelto in base al valore restituito</span>
-                            switch (<span class="var">select</span>.<span class="var">value</span>) {
-        
-                                <span class="js-comment">// In caso del profilo 1</span>
-                                case <span class="str">'profilo 1'</span>:
-                                
-                                    <span class="js-var">cb_profilo_1</span>.<span class="js-var">checked</span> = true;
-                                    <span class="js-var">cb_profilo_2</span>.<span class="js-var">checked</span> = false;
-                                    
-                                    break;
-        
-                                <span class="js-comment">// In caso del profilo 2</span>
-                                case <span class="str">'profilo 2'</span>:
-                                
-                                    <span class="js-var">cb_profilo_1</span>.<span class="js-var">checked</span> = false;
-                                    <span class="js-var">cb_profilo_2</span>.<span class="js-var">checked</span> = true;
-                                    
-                                    break;
-        
-                                <span class="js-comment">// In caso non seleziono uno dei profili elencati</span>
-                                default:
-        
-                                    <span class="js-comment">// Svuoto campi per abilitazione e non</span>
-                                    <span class="js-var">cb_profilo_1</span>.<span class="js-var">checked</span> = false;
-                                    <span class="js-var">cb_profilo_2</span>.<span class="js-var">checked</span> = false;
-        
-                                    <span class="js-comment">// Svuoto altri campi</span>
-                                    <span class="js-var">document</span>.<span class="js-func">getElementsByName</span>(<span class="str">'input-text'</span>)[0].<span class="var">value</span> = <span class="str">''</span>;
-                                    <span class="js-var">document</span>.<span class="js-func">getElementsByName</span>(<span class="str">'textarea'</span>)[0].<span class="var">innerHTML</span> = <span class="str">''</span>;
-                                    
-                                    break;
-                            }
-                        });
-                    `);
-        
-                    break;
-
-                // Page References
-                case 'page references':
-
-                    /*
-                        Riferimento ad ogni pagina del percorso URL
-                        - JavaScript
-                    */
+            // Itero su ogni esempio trovato per lo script in cui mi trovo
+            data['examples code'][script_name].forEach( d => {
                 
-                    divs.push(document.querySelector('#percorso-cliccabile'));
+                // Prendo il riferimento del div
+                let div_ref = document.querySelector(d['reference']);
 
-                    html_examples.push({
-                        'JavaScript': `/* Non ci sono codici di esempio da eseguire*/`,
-                        'HTML': `<div align="center">Non è presente alcun esempio pratico</div>`
-                    });
-        
-                    codes.push(`
-                        <span class="comment">/*
-                            Codice scritto in JavaScript
-                        */</span>
+                // Itero su ogni esempio da inserire
+                d['to insert'].forEach( exmpl => {
 
-                        <span class="init">let</span> <span class="var">p</span> = <span class="var">document</span>.<span class="func">querySelector</span>(<span class="str">'p.movement_into_pages'</span>);
-
-                        if (<span class="var">p</span>) {
-                        
-                            <span class="comment">// Creo l'elemento per la home</span>
-                            <span class="init">let</span> <span class="var">a</span> = document.<span class="func">createElement</span>(<span class="str">'a'</span>);
-                            <span class="var">a</span>.<span class="var">innerText</span> = <span class="str">'Home'</span>;
-                            <span class="var">a</span>.<span class="var">href</span> = <span class="var">points</span>;
-                        
-                            <span class="comment">// Inserisco l'elemento per Home ed il primo separatore</span>
-                            <span class="var">p</span>.<span class="func">appendChild</span>(a);
-                            <span class="var">p</span>.<span class="func">append</span>(<span class="str">' / '</span>);
-                            
-                            <span class="comment">// Inserisco la lista nell'apposita sezione</span>
-                            <span class"func">clickable_path</span>(<span class="var">path</span>).<span class="func">forEach</span>(<span class="var">e</span> => {
-                                <span class="comment">// Inserisco l'elemento</span>
-                                <span class="var">p</span>.<span class="func">appendChild</span>(<span class="var">e</span>);
-                                <span class="comment">// Inserisco la barra spaziatrice</span>
-                                <span class="var">p</span>.<span class="func">append</span>(<span class="str">' / '</span>);
-                            });
-                        }
-                    `);
-                    
-
-                    /*
-                        Riferimento alla Home
-                        - JavaScript
-                        - PHP
-                    */
-
-                    // Versione JavaScript
-                   
-                    divs.push(document.querySelector('#tornare-alla-home'));
-
-                    html_examples.push({
-                        'JavaScript': `/* Non ci sono codici di esempio da eseguire*/`,
-                        'HTML': `<div align="center">Non è presente alcun esempio pratico</div>`
-                    });
-        
-                    codes.push(`
-                        <span class="comment">/*
-                            Codice scritto in JavaScript
-                        */</span>
-
-                        <span class="comment">// Faccio lo split</span>
-                        <span class="init">var</span> <span class="var">s</span> = <span class="var">path</span>.<span class="func">split</span>(<span class="str">'/'</span>);
-
-                        <span class="comment">// Tolgo il primo e l'ultimo elemento</span>
-                        <span class="var">s</span>.<span class="func">shift</span>();
-                        <span class="var">s</span>.<span class="func">pop</span>();
-
-                        <span class="comment">// Creo l'array al quale mettero' eventuali puntini doppi</span>
-                        <span class="init">var</span> <span class="var">a</span> = <span class="var">'./'</span>;
-
-                        <span class="comment">// Itero per vedere se e quanti puntini devo aggiungere</span>
-                        for (<span class="init">let</span> <span class="var">e</span> of <span class="var">s</span>) {
-                            <span class="var">a</span> += <span class="str">'../'</span>;
-                        }
-
-                        <span class="comment">// Ritorno l'array</span>
-                        return <span class="var">a</span>;
-                    `);
-                    
-                    // Versione PHP
-                   
-                    divs.push(document.querySelector('#tornare-alla-home'));
-
-                    html_examples.push({
-                        'JavaScript': `/* Non ci sono codici di esempio da eseguire*/`,
-                        'HTML': `<div align="center">Non è presente alcun esempio pratico</div>`
-                    });
-        
-                    codes.push(`
-                        <span class="comment">/*
-                            Codice scritto in PHP
-                        */</span>
+                    // Creo il div nel quale inserire l'esempio ed il codice associato (con gli stili)
+                    let div = document.createElement('div');
+                    div.style.borderStyle = 'solid';
+                    div.style.borderColor = 'black';
+                    div.style.padding = '10px';
     
-                        <span class="comment">// Prendo il percorso attuale</span>
-                        <span class="php-var">$relative_path</span> = <span class="php-var">$_SERVER</span>[<span class="str">'PHP_SELF'</span>];
-                        
-                        <span class="comment">// Eventualmente tolgo la base al percorso</span>
-                        <span class="php-var">$relative_path_real</span> = <span class="func">str_replace</span>(<span class="str">'/gianluca/'</span>, <span class="str">'/'</span>, <span class="php-var">$relative_path</span>);
-                        
-                        <span class="comment">// Tolgo il nome dello script alla fine</span>
-                        <span class="php-var">$relative_path_real</span> = <span class="func">explode</span>(<span class="str">'/'</span>, <span class="php-var">$relative_path_real</span>);
-                        
-                        <span class="comment">// Tolgo il primo elemento</span>
-                        <span class="func">array_shift</span>(<span class="php-var">$relative_path_real</span>);
-                        
-                        <span class="comment">// Tolgo l'ultimo elemento</span>
-                        <span class="func">array_pop</span>(<span class="php-var">$relative_path_real</span>);
-                        
-                        <span class="comment">// Creo l'array per i punti</span>
-                        <span class="php-var">$a</span> = <span class="str">'./'</span>;
-                        
-                        foreach (<span class="php-var">$relative_path_real</span> as <span class="php-var">$e</span>) {
-                            <span class="php-var">$a</span> .= <span class="str">'../'</span>;
-                        }
-                        
-                        <span class="comment">// Ritorno il percorso</span>
-                        return <span class="php-var">$a</span>;
-                    `);
-        
-                    break;
-                
-                // Default
-                default:
+                    // Creo il titolo della sezione e lo inserisco nel div
+                    let h3 = document.createElement('h3');
+                    h3.innerText = 'Esempio pratico + codice';
+                    div.appendChild(h3);
+    
+                    // Creo il div dell'esempio e aggiungo gli elementi
+                    let example_div = document.createElement('div');
+                    example_div.innerHTML = exmpl.HTML ? exmpl['HTML'].join('\n') : '<div align="center">Non è presente alcun esempio pratico</div>';
+    
+                    // Appendo il div di esempio
+                    div.appendChild(example_div);
+                    
+                    // Creo la variabile per i dettagli e aggiungo le caratteristiche
+                    let details = document.createElement('details');
+                    details.style.paddingTop = '10px';
+    
+                    // Aggiungo del codice HTML
+                    details.innerHTML = `
+                        <summary>Codice di esempio</summary>
+                        <div>
+                            <code></code>
+                        </div>
+                    `;
+    
+                    // Aggiungo il codice
+                    details.querySelector('code').innerHTML = exmpl['example'].join('\n');//.replaceAll(/\n( {4}|\t){6}/g, '\n');
+                    details.querySelector('code').style.whiteSpace = 'pre-wrap';
+    
+                    // Aggiungo i dettagli al div
+                    div.appendChild(details);
+    
+                    // Inserisco i dettagli nel div
+                    div_ref.append(div);
+                    
+                    // Eseguo il codice javascript
+                    (new Function(exmpl.JavaScript ? exmpl['JavaScript'].join('\n') : '/* Non ci sono codici di esempio da eseguire */'))();
 
-                    divs.push(document.querySelector('#'));
-
-                    html_examples.push({
-                        'JavaScript': ``,
-                        'HTML': ``
-                    });
-        
-                    codes.push(``);
-
-                    break;
-            }
-        
-            // Vado a ciclare ogni elemento per poter aggiungere i codici dove voglio
-            for (let pos = 0; pos < divs.length; pos++) {
-
-                // Creo il div nel quale inserire l'esempio ed il codice associato (con gli stili)
-                let div = document.createElement('div');
-                div.style.borderStyle = 'solid';
-                div.style.borderColor = 'black';
-                div.style.padding = '10px';
-
-                // Creo il titolo della sezione e lo inserisco nel div
-                let h3 = document.createElement('h3');
-                h3.innerText = 'Esempio pratico + codice';
-                div.appendChild(h3);
-
-                // Creo il div dell'esempio e aggiungo gli elementi
-                let example_div = document.createElement('div');
-                example_div.innerHTML = html_examples[pos].HTML;
-
-                // Appendo il div di esempio
-                div.appendChild(example_div);
-                
-                // Creo la variabile per i dettagli e aggiungo le caratteristiche
-                let details = document.createElement('details');
-                details.style.paddingTop = '10px';
-
-                // Aggiungo del codice HTML
-                details.innerHTML = `
-                    <summary>Codice di esempio</summary>
-                    <div>
-                        <code></code>
-                    </div>
-                `;
-
-                // Aggiungo il codice
-                details.querySelector('code').innerHTML = codes[pos].replaceAll(/\n( {4}|\t){6}/g, '\n');
-                details.querySelector('code').style.whiteSpace = 'pre-wrap';
-
-                // Aggiungo i dettagli al div
-                div.appendChild(details);
-
-                // Inserisco i dettagli nel div
-                divs[pos].append(div);
-                
-                // Eseguo il codice javascript
-                (new Function(html_examples[pos].JavaScript))();
-            }
+                });
+            });
 
             break;
 
@@ -561,6 +312,22 @@ export function insert_in_head(meta_tags) {
 
 // Funzione per inserire dei contenuti dei miei file JSON in una determinata sezione
 export async function insert_my_json(file_description, points) {
+
+    // Variabile per eventuali specifiche chiavi da prendere dentro quella parte del JSON (k: {'k': v})
+    let specific_description;
+
+    if ([
+        'scripts'
+    ].includes(file_description.split(' ')[0])) {
+        // Divido la stringa in un array (per prendere il primo elemento)
+        let splitted = file_description.split(' ');
+        // Assegno la sezione in cui voglio andare
+        file_description = splitted[0];
+        // Elimino file_description dall'array
+        delete splitted[0];
+        // Unisco eliminando eventuali spazi bianchi
+        specific_description = splitted.join(' ').trim();
+    }
 
     switch (file_description) {
 
@@ -643,31 +410,6 @@ export async function insert_my_json(file_description, points) {
 
                 // Aggiungo l'evento per vedere un dettaglio alla volta
                 show_details(details_container);
-            });
-
-            break;
-
-        // Utilities/scripts/automatic-filling (per inserire le descrizioni)
-        case 'automatic filling':
-
-            return fetch(`${points}Static/json/descriptions.json`)
-            .then(response => response.json())
-            .then(data => {
-
-                // Prendo i dati che mi servono
-                let descriptions = data['scripts']['automatic filling'];
-
-                // In un ciclo for prendo chiave e valore di ogni elemento
-                for (let [div_id, description] of Object.entries(descriptions)) {
-
-                    // Uso la chiave per cercare l'id (le chiavi hanno lo stesso nome degli id dei vari div contenenti i codici)
-                    let ref = document.querySelector(`#${div_id}`);
-    
-                    // Prendo il contenuto, creo l'elenco e lo appendo all'elemento
-                    ref.append('Funzionamento:');
-                    ref.appendChild(json_to_element('ul', description))
-
-                }
             });
 
             break;
@@ -799,30 +541,30 @@ export async function insert_my_json(file_description, points) {
 
             break;
 
-        // Utilities/scripts/page-references (per inserire le descrizioni)
-        case 'page references':
+        // Utilities/scripts/... (per inserire le descrizioni)
+        case 'scripts':
 
-            return fetch(`${points}Static/json/descriptions.json`)
-            .then(response => response.json())
-            .then(data => {
+        return fetch(`${points}Static/json/descriptions.json`)
+        .then(response => response.json())
+        .then(data => {
 
-                // Prendo i dati che mi servono
-                let descriptions = data['scripts']['page references'];
+            // Prendo i dati che mi servono
+            let descriptions = data['examples'][file_description][specific_description];
 
-                // In un ciclo for prendo chiave e valore di ogni elemento
-                for (let [div_id, description] of Object.entries(descriptions)) {
+            // In un ciclo for prendo chiave e valore di ogni elemento
+            for (let [div_id, description] of Object.entries(descriptions)) {
 
-                    // Uso la chiave per cercare l'id (le chiavi hanno lo stesso nome degli id dei vari div contenenti i codici)
-                    let ref = document.querySelector(`#${div_id}`);
-    
-                    // Prendo il contenuto, creo l'elenco e lo appendo all'elemento
-                    ref.append('Funzionamento:');
-                    ref.appendChild(json_to_element('ul', description))
+                // Uso la chiave per cercare l'id (le chiavi hanno lo stesso nome degli id dei vari div contenenti i codici)
+                let ref = document.querySelector(`#${div_id}`);
 
-                }
-            });
+                // Prendo il contenuto, creo l'elenco e lo appendo all'elemento
+                ref.append('Funzionamento:');
+                ref.appendChild(json_to_element('ul', description))
 
-            break;
+            }
+        });
+
+        break;
 
         default:
             // Non faccio nulla

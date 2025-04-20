@@ -1,73 +1,303 @@
 {
-    "scripts": {
-        "automatic filling": {
-            "selezionando-un-elemento-da-una-lista-select": {
-                "Nel codice": [
-                    "Seleziono i vari campi che voglio compilare",
-                    "Prendo un riferimento per l'elemento select che, in base all'elemento selezionato, userò per compilare i campi",
-                    {
-                        "Aggiungo l'evento \"click\" all'elemento \"select\":": [
-                            "Prendo il valore",
-                            "Il valore viene passato allo switch-case",
-                            "Utilizzando il 'default' dello switch posso andare a svuotare i campi"
-                        ]
-                    }
-                ],
-                "Lato interfaccia": [
-                    "Seleziono un'opzione nella lista sel tag \"select\"",
-                    "In automatico vengono compilati i vari campi che si vogliono compilare"
-                ]
-            }
-        },
-        "page references": {
-            "percorso-cliccabile": {
-                "Nel codice": [
-                    "Controlo se è presente il paragrafo nel quale mettere il percorso",
-                    {
-                        "Se presente": [
-                            "Creo l'elemento per la Home usando come riferimento i puntini ricevuti",
-                            "Inserisco l'elemento per la Home ed il primo separatore \"/\"",
-                            {
-                                "Tramite la mia funzione \"clickable_path\" mi viene restituito un percorso sempre più corto": [
-                                    "Viene usato per i riferimenti andando indietro ma non troppo",
-                                    {
-                                        "Per ogni elemento (già con il link alla pagina) dell'array restituito": [
-                                            "Inserisco l'elemento",
-                                            "Inserisco il separatore"
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "Lato interfaccia": [
-                    "Clicco in uno dei link facenti parte del percorso attuale (in alto a sinistra)",
-                    "Si verrà indirizzati alla pagina corrispondente"
-                ]
+    "examples": {
+        "scripts": {
+            "automatic filling": {
+                "selezionando-un-elemento-da-una-lista-select": {
+                    "Nel codice": [
+                        "Seleziono i vari campi che voglio compilare",
+                        "Prendo un riferimento per l'elemento select che, in base all'elemento selezionato, userò per compilare i campi",
+                        {
+                            "Aggiungo l'evento \"click\" all'elemento \"select\":": [
+                                "Prendo il valore",
+                                "Il valore viene passato allo switch-case",
+                                "Utilizzando il 'default' dello switch posso andare a svuotare i campi"
+                            ]
+                        }
+                    ],
+                    "Lato interfaccia": [
+                        "Seleziono un'opzione nella lista sel tag \"select\"",
+                        "In automatico vengono compilati i vari campi che si vogliono compilare"
+                    ]
+                }
             },
-            "tornare-alla-home": {
-                "Nel codice": [
-                    "Faccio lo split del percorso URL usando \"/\" come riferimento per lo split",
-                    "Tolgo il primo ed ultimo elemento (nome del sito e '')",
-                    "Creo la stringa a cui appenderò eventuali altri punti per \"tornare indietro\"",
-                    {
-                        "Itero il percorso splittato per vedere se e quanti \"..\" devo inserire": [
-                            "Se ci sono -> aggiungo tanti doppi punti quanti elementi ho nell'URL splittato"
-                        ]
-                    },
-                    "Ritorno l'array",
-                    {
-                        "Differenze tra versioni in base al linguaggio": [
-                            "In quella di PHP, oltre a togliere primo ed ultimo elemento, devo prima togliere, se presente, il nome dello script finale",
-                            "In entrambe è possibile togliere anche pezzi del percorso che non si vogliono utilizzare per \"accorciare le distanze\" (usando altro come Home)"
-                        ]
-                    }
-                ],
-                "Lato interfaccia": [
-                    "Non succede nulla visivamente!"
-                ]
+            "page references": {
+                "percorso-cliccabile": {
+                    "Nel codice": [
+                        "Controlo se è presente il paragrafo nel quale mettere il percorso",
+                        {
+                            "Se presente": [
+                                "Creo l'elemento per la Home usando come riferimento i puntini ricevuti",
+                                "Inserisco l'elemento per la Home ed il primo separatore \"/\"",
+                                {
+                                    "Tramite la mia funzione \"clickable_path\" mi viene restituito un percorso sempre più corto": [
+                                        "Viene usato per i riferimenti andando indietro ma non troppo",
+                                        {
+                                            "Per ogni elemento (già con il link alla pagina) dell'array restituito": [
+                                                "Inserisco l'elemento",
+                                                "Inserisco il separatore"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "Lato interfaccia": [
+                        "Clicco in uno dei link facenti parte del percorso attuale (in alto a sinistra)",
+                        "Si verrà indirizzati alla pagina corrispondente"
+                    ]
+                },
+                "tornare-alla-home": {
+                    "Nel codice": [
+                        "Faccio lo split del percorso URL usando \"/\" come riferimento per lo split",
+                        "Tolgo il primo ed ultimo elemento (nome del sito e '')",
+                        "Creo la stringa a cui appenderò eventuali altri punti per \"tornare indietro\"",
+                        {
+                            "Itero il percorso splittato per vedere se e quanti \"..\" devo inserire": [
+                                "Se ci sono -> aggiungo tanti doppi punti quanti elementi ho nell'URL splittato"
+                            ]
+                        },
+                        "Ritorno l'array",
+                        {
+                            "Differenze tra versioni in base al linguaggio": [
+                                "In quella di PHP, oltre a togliere primo ed ultimo elemento, devo prima togliere, se presente, il nome dello script finale",
+                                "In entrambe è possibile togliere anche pezzi del percorso che non si vogliono utilizzare per \"accorciare le distanze\" (usando altro come Home)"
+                            ]
+                        }
+                    ],
+                    "Lato interfaccia": [
+                        "Non succede nulla visivamente!"
+                    ]
+                }
             }
         }
+    },
+
+    "examples code": {
+        "automatic filling": [
+            {
+                "reference": "#selezionando-un-elemento-da-una-lista-select",
+                "to insert": [
+                    {
+                        "language": "JavaScript",
+                        "HTML": [
+                            "<select id=\"PROFILO\">",
+                            "    <option value=\"\">...</option>",
+                            "    <option value=\"profilo 1\">Profilo 1</option>",
+                            "    <option value=\"profilo 2\">Profilo 2</option>",
+                            "</select>",
+                            "",
+                            "<input name=\"profilo-1\" type=\"checkbox\" />",
+                            "<input name=\"profilo-2\" type=\"checkbox\" />"
+                        ],
+                        "JavaScript": [
+                            "// Seleziono checkbox e radio",
+                            "let cb_profilo_1 = document.getElementsByName('profilo-1')[0];",
+                            "let cb_profilo_2 = document.getElementsByName('profilo-2')[0];",
+                            "",
+                            "// Selezione dell'elemento select",
+                            "let select = document.getElementById('PROFILO');",
+                            "",
+                            "// Aggiungo l'evento",
+                            "select.addEventListener('change', () => {",
+                            "    ",
+                            "    // Controllo quale elemento è stato scelto in base al valore restituito",
+                            "    switch (select.value) {",
+                            "    ",
+                            "        // In caso del profilo 1",
+                            "        case 'profilo 1':",
+                            "        ",
+                            "            cb_profilo_1.checked = true;",
+                            "            cb_profilo_2.checked = false;",
+                            "            ",
+                            "            break;",
+                            "        ",
+                            "        // In caso del profilo 2",
+                            "        case 'profilo 2':",
+                            "        ",
+                            "            cb_profilo_1.checked = false;",
+                            "            cb_profilo_2.checked = true;",
+                            "            ",
+                            "            break;",
+                            "        ",
+                            "        // In caso non seleziono uno dei profili elencati",
+                            "        default:",
+                            "            ",
+                            "            // Svuoto campi per abilitazione e non",
+                            "            cb_profilo_1.checked = false;",
+                            "            cb_profilo_2.checked = false;",
+                            "            ",
+                            "            // Svuoto altri campi",
+                            "            // document.getElementsByName('input-text')[0].value = '';",
+                            "            // document.getElementsByName('textarea')[0].innerHTML = '';",
+                            "            ",
+                            "            break;",
+                            "    }",
+                            "});"
+                        ],
+                        "example": [
+                            "<span class=\"js-comment\">/*",
+                            "    Codice scritto in JavaScript",
+                            "*/</span>",
+                            "",
+                            "<span class=\"js-comment\">// Seleziono checkbox e radio</span>",
+                            "<span class=\"js-init\">let</span> <span class=\"js-var\">cb_profilo_1</span> = document.<span class=\"js-func\">getElementsByName</span>(<span class=\"str\">'profilo-1'</span>)[0];",
+                            "<span class=\"js-init\">let</span> <span class=\"js-var\">cb_profilo_2</span> = document.<span class=\"js-func\">getElementsByName</span>(<span class=\"str\">'profilo-2'</span>)[0];",
+                            "",
+                            "<span class=\"js-comment\">// Selezione dell'elemento select</span>",
+                            "<span class=\"js-init\">let</span> <span class=\"js-var\">select</span> = document.<span class=\"js-func\">getElementById</span>(<span class=\"str\">'PROFILO'</span>);",
+                            "",
+                            "<span class=\"js-comment\">// Aggiungo l'evento</span>",
+                            "select.<span class=\"js-func\">addEventListener</span>(<span class=\"str\">'change'</span>, () => {",
+                            "    <span class=\"js-comment\">// Controllo quale elemento è stato scelto in base al valore restituito</span>",
+                            "    switch (<span class=\"var\">select</span>.<span class=\"var\">value</span>) {",
+                            "        <span class=\"js-comment\">// In caso del profilo 1</span>",
+                            "        case <span class=\"str\">'profilo 1'</span>:",
+                            "        ",
+                            "            <span class=\"js-var\">cb_profilo_1</span>.<span class=\"js-var\">checked</span> = true;",
+                            "            <span class=\"js-var\">cb_profilo_2</span>.<span class=\"js-var\">checked</span> = false;",
+                            "            ",
+                            "            break;",
+                            "        <span class=\"js-comment\">// In caso del profilo 2</span>",
+                            "        case <span class=\"str\">'profilo 2'</span>:",
+                            "        ",
+                            "            <span class=\"js-var\">cb_profilo_1</span>.<span class=\"js-var\">checked</span> = false;",
+                            "            <span class=\"js-var\">cb_profilo_2</span>.<span class=\"js-var\">checked</span> = true;",
+                            "            ",
+                            "            break;",
+                            "        <span class=\"js-comment\">// In caso non seleziono uno dei profili elencati</span>",
+                            "        default:",
+                            "            <span class=\"js-comment\">// Svuoto campi per abilitazione e non</span>",
+                            "            <span class=\"js-var\">cb_profilo_1</span>.<span class=\"js-var\">checked</span> = false;",
+                            "            <span class=\"js-var\">cb_profilo_2</span>.<span class=\"js-var\">checked</span> = false;",
+                            "            <span class=\"js-comment\">// Svuoto altri campi</span>",
+                            "            <span class=\"js-var\">document</span>.<span class=\"js-func\">getElementsByName</span>(<span class=\"str\">'input-text'</span>)[0].<span class=\"var\">value</span> = <span class=\"str\">''</span>;",
+                            "            <span class=\"js-var\">document</span>.<span class=\"js-func\">getElementsByName</span>(<span class=\"str\">'textarea'</span>)[0].<span class=\"var\">innerHTML</span> = <span class=\"str\">''</span>;",
+                            "            ",
+                            "            break;",
+                            "    }",
+                            "});"
+                        ]
+                    }
+                ]
+            }
+        ],
+
+        "page references": [
+            {
+                "reference": "#percorso-cliccabile",
+                "to insert": [
+                    {
+                        "language": "JavaScript",
+                        "HTML": null,
+                        "JavaScript": null,
+                        "example": [
+                            "<span class=\"comment\">/*",
+                            "    Codice scritto in JavaScript",
+                            "*/</span>",
+                            "<span class=\"init\">let</span> <span class=\"var\">p</span> = <span class=\"var\">document</span>.<span class=\"func\">querySelector</span>(<span class=\"str\">'p.movement_into_pages'</span>);",
+                            "if (<span class=\"var\">p</span>) {",
+                            "",
+                            "    <span class=\"comment\">// Creo l'elemento per la home</span>",
+                            "    <span class=\"init\">let</span> <span class=\"var\">a</span> = document.<span class=\"func\">createElement</span>(<span class=\"str\">'a'</span>);",
+                            "    <span class=\"var\">a</span>.<span class=\"var\">innerText</span> = <span class=\"str\">'Home'</span>;",
+                            "    <span class=\"var\">a</span>.<span class=\"var\">href</span> = <span class=\"var\">points</span>;",
+                            "",
+                            "    <span class=\"comment\">// Inserisco l'elemento per Home ed il primo separatore</span>",
+                            "    <span class=\"var\">p</span>.<span class=\"func\">appendChild</span>(a);",
+                            "    <span class=\"var\">p</span>.<span class=\"func\">append</span>(<span class=\"str\">' / '</span>);",
+                            "    ",
+                            "    <span class=\"comment\">// Inserisco la lista nell'apposita sezione</span>",
+                            "    <span class\"func\">clickable_path</span>(<span class=\"var\">path</span>).<span class=\"func\">forEach</span>(<span class=\"var\">e</span> => {",
+                            "        <span class=\"comment\">// Inserisco l'elemento</span>",
+                            "        <span class=\"var\">p</span>.<span class=\"func\">appendChild</span>(<span class=\"var\">e</span>);",
+                            "        <span class=\"comment\">// Inserisco la barra spaziatrice</span>",
+                            "        <span class=\"var\">p</span>.<span class=\"func\">append</span>(<span class=\"str\">' / '</span>);",
+                            "    });",
+                            "}"
+                        ]
+                    }
+                ]
+            },
+
+            {
+                "reference": "#tornare-alla-home",
+                "to insert": [
+                    {
+                        "language": "JavaScript",
+                        "HTML": null,
+                        "JavaScript": null,
+                        "example": [
+                            "<span class=\"comment\">/*",
+                            "    Codice scritto in JavaScript",
+                            "*/</span>",
+                            "<span class=\"comment\">// Faccio lo split</span>",
+                            "<span class=\"init\">var</span> <span class=\"var\">s</span> = <span class=\"var\">path</span>.<span class=\"func\">split</span>(<span class=\"str\">'/'</span>);",
+                            "<span class=\"comment\">// Tolgo il primo e l'ultimo elemento</span>",
+                            "<span class=\"var\">s</span>.<span class=\"func\">shift</span>();",
+                            "<span class=\"var\">s</span>.<span class=\"func\">pop</span>();",
+                            "<span class=\"comment\">// Creo l'array al quale mettero' eventuali puntini doppi</span>",
+                            "<span class=\"init\">var</span> <span class=\"var\">a</span> = <span class=\"var\">'./'</span>;",
+                            "<span class=\"comment\">// Itero per vedere se e quanti puntini devo aggiungere</span>",
+                            "for (<span class=\"init\">let</span> <span class=\"var\">e</span> of <span class=\"var\">s</span>) {",
+                            "    <span class=\"var\">a</span> += <span class=\"str\">'../'</span>;",
+                            "}",
+                            "<span class=\"comment\">// Ritorno l'array</span>",
+                            "return <span class=\"var\">a</span>;"
+                        ]
+                    },
+                    {
+                        "language": "PHP",
+                        "HTML": null,
+                        "JavaScript": null,
+                        "example": [
+                            "<span class=\"comment\">/*",
+                            "    Codice scritto in PHP",
+                            "*/</span>",
+                            "<span class=\"comment\">// Prendo il percorso attuale</span>",
+                            "<span class=\"php-var\">$relative_path</span> = <span class=\"php-var\">$_SERVER</span>[<span class=\"str\">'PHP_SELF'</span>];",
+                            "",
+                            "<span class=\"comment\">// Eventualmente tolgo la base al percorso</span>",
+                            "<span class=\"php-var\">$relative_path_real</span> = <span class=\"func\">str_replace</span>(<span class=\"str\">'/gianluca/'</span>, <span class=\"str\">'/'</span>, <span class=\"php-var\">$relative_path</span>);",
+                            "",
+                            "<span class=\"comment\">// Tolgo il nome dello script alla fine</span>",
+                            "<span class=\"php-var\">$relative_path_real</span> = <span class=\"func\">explode</span>(<span class=\"str\">'/'</span>, <span class=\"php-var\">$relative_path_real</span>);",
+                            "",
+                            "<span class=\"comment\">// Tolgo il primo elemento</span>",
+                            "<span class=\"func\">array_shift</span>(<span class=\"php-var\">$relative_path_real</span>);",
+                            "",
+                            "<span class=\"comment\">// Tolgo l'ultimo elemento</span>",
+                            "<span class=\"func\">array_pop</span>(<span class=\"php-var\">$relative_path_real</span>);",
+                            "",
+                            "<span class=\"comment\">// Creo l'array per i punti</span>",
+                            "<span class=\"php-var\">$a</span> = <span class=\"str\">'./'</span>;",
+                            "",
+                            "foreach (<span class=\"php-var\">$relative_path_real</span> as <span class=\"php-var\">$e</span>) {",
+                            "    <span class=\"php-var\">$a</span> .= <span class=\"str\">'../'</span>;",
+                            "}",
+                            "",
+                            "<span class=\"comment\">// Ritorno il percorso</span>",
+                            "return <span class=\"php-var\">$a</span>;"
+                        ]
+                    }
+                ]
+            }
+        ],
+
+        "script name": [
+            {
+                "reference": "",
+                "to insert": [
+                    {
+                        "language": "Language",
+                        "HTML": null,
+                        "JavaScript": null,
+                        "example": [
+                            ""
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 }
