@@ -993,10 +993,36 @@
     },
 
     {
-        "tData": "18/04/2025 - 20/04/2025",
+        "tData": "18/04/2025 - 21/04/2025",
         "tDescrizione": {
-            "Aggiunta": null,
-            "Aggiornamento": null
+            "Aggiunta": {
+                "/Static/javascript/util_class.js": [
+                    "Implementato metodo findReplace (per cercare e/o sostituire un pattern);"
+                ]
+            },
+            "Aggiornamento": {
+                "/Static/": {
+                    "/javascript/": {
+                        "/scripts.js": [
+                            "Aggiunta sezione per descrizione e titoli della pagina del pattern-matcher;",
+                            "Fatto diventare le meta desctizioni come frasi in un array unito da join (maggiora chiarezza mettendo le frasi su più righe);"
+                        ],
+                        "/util_function.js": [
+                            "Spostamento esempi di codici da inserire in descriptions.json;",
+                            "Creata nuova logica per prendere elementi dal json, unirli ed inserirli nella pagina;"
+                        ]
+                    },
+                    "/json/": {
+                        "/encoding-map.json": [
+                            "Suddiviso nelle sezioni encode (con le mappature carattere-codice) e formatting (con l'associazione tra caratteri particolari ed i corrispettivi normali);",
+                            "Spostato l'apostrofo particolare nella sezione formatting;",
+                            "Aggiunti caratteri '“' e '”' alla sezione formatting;"
+                        ]
+                    },
+                    "/css/style.css": "Aggiunti stili per pagina del pattern-matcher;"
+                },
+                "README.md":"Nuova versione (0.27.0)."
+            }
         },
         "tAggiunte": null
     },
