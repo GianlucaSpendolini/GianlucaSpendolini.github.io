@@ -561,7 +561,7 @@ function what_page(points_path) {
             break;
 
         // /scripts/automatic-filling
-        case '/utilities/scripts/automatic-filling.html':
+        case '/utilities/scripts/automatic-filling':
 
             // Titolo
             title.innerHTML = 'Compilazione automatica';
@@ -585,7 +585,7 @@ function what_page(points_path) {
             break;
 
         // /scripts/page-references
-        case '/utilities/scripts/page-references.html':
+        case '/utilities/scripts/page-references':
 
             // Titolo
             title.innerHTML = 'Riferimento alle pagine';
