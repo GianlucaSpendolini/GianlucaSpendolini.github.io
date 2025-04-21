@@ -561,7 +561,7 @@ function what_page(points_path) {
             break;
 
         // /scripts/automatic-filling
-        case '/utilities/scripts/automatic-filling':
+        case '/utilities/scripts/automatic-filling.html':
 
             // Titolo
             title.innerHTML = 'Compilazione automatica';
@@ -579,16 +579,13 @@ function what_page(points_path) {
                 - le descrizioni per ogni script di compilazione automatica
                 - il codice di esempio
             */
-            (async () => {
-                await insert_my_json('scripts automatic filling', points_path);
-                await insert_examples('code', 'automatic filling');
-            })();
+            insert_examples('code', 'automatic filling');
             
 
             break;
 
         // /scripts/page-references
-        case '/utilities/scripts/page-references':
+        case '/utilities/scripts/page-references.html':
 
             // Titolo
             title.innerHTML = 'Riferimento alle pagine';
@@ -607,7 +604,7 @@ function what_page(points_path) {
                 - il codice di esempio
             */
             (async () => {
-                await insert_my_json('scripts page references', points_path);
+                // await insert_my_json('scripts page references', points_path);
                 await insert_examples('code', 'page references');
             })();
             

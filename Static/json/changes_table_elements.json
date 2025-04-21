@@ -1009,10 +1009,14 @@
                         ],
                         "/util_function.js": [
                             "Spostamento esempi di codici da inserire in descriptions.json;",
-                            "Creata nuova logica per prendere elementi dal json, unirli ed inserirli nella pagina;"
+                            "Creata nuova logica per prendere elementi dal json, unirli (avendo così descrizioni ed esempi usando la stessa chiamata fetch) ed inserirli nella pagina;"
                         ]
                     },
                     "/json/": {
+                        "/descriptions.json": [
+                            "Cambiata leggermente la struttura (per ogni id di riferimento c'è la descrizione sotto la voce 'description' e l'esempio da inserire sotto la voce 'to insert';",
+                            "Inseriti esempi da inserire in 'to insert' sotto l'apposito id di riferimento;"
+                        ],
                         "/encoding-map.json": [
                             "Suddiviso nelle sezioni encode (con le mappature carattere-codice) e formatting (con l'associazione tra caratteri particolari ed i corrispettivi normali);",
                             "Spostato l'apostrofo particolare nella sezione formatting;",
@@ -1021,7 +1025,10 @@
                     },
                     "/css/style.css": "Aggiunti stili per pagina del pattern-matcher;"
                 },
-                "README.md":"Nuova versione (0.27.0)."
+                "README.md": [
+                    "Aggiunto dettaglio per l'utilizzo dei major changes (quando modifico e/o entra in funzione una sezione a livello della root);",
+                    "Nuova versione (0.27.0)."
+                ]
             }
         },
         "tAggiunte": null

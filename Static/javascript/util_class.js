@@ -233,7 +233,7 @@ export class UserText {
     findReplace(pattern, isGlobal=false, toReplace={'?': false}) {
 
         // Se devo sostituire
-        if (toReplace['?']) {
+        if (toReplace['?'] && this.findReplace(pattern, isGlobal)) {
             return this.text.replace(isGlobal ? new RegExp(pattern, 'g') : pattern, toReplace['replacement']);
         }
 

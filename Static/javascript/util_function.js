@@ -232,20 +232,23 @@ export async function insert_examples(reason, script_name) {
         // Code
         case 'code':
 
-            // Prendo i dati dal JSON TODO
+            // Prendo i dati dal JSON
             let response = await fetch(`${points_number(path)}Static/json/descriptions.json`);
             let data = await response.json();
-            let mmt = data['examples code'][script_name][0]['to insert'][0];
-            console.log(mmt.HTML ? mmt['HTML'].join('\n') : '<div align="center">Non è presente alcun esempio pratico</div>');
+            let page_ref = data['scripts'][script_name];
+            
+            // Itero su ogni id che trovo (riferiti ai div in cui devo inserire i dati)
+            Object.keys(page_ref).forEach( id_ref => {
 
-            // Itero su ogni esempio trovato per lo script in cui mi trovo
-            data['examples code'][script_name].forEach( d => {
-                
-                // Prendo il riferimento del div
-                let div_ref = document.querySelector(d['reference']);
+                // Prendo il div di riferimento
+                let div_ref = document.getElementById(id_ref);
+
+                // Prendo le descrizioni, creo l'elenco e lo appendo all'elemento
+                div_ref.append('Funzionamento:');
+                div_ref.appendChild(json_to_element('ul', page_ref[id_ref]['description']))
 
                 // Itero su ogni esempio da inserire
-                d['to insert'].forEach( exmpl => {
+                page_ref[id_ref]['to insert'].forEach( exmpl => {
 
                     // Creo il div nel quale inserire l'esempio ed il codice associato (con gli stili)
                     let div = document.createElement('div');
@@ -291,6 +294,7 @@ export async function insert_examples(reason, script_name) {
                     (new Function(exmpl.JavaScript ? exmpl['JavaScript'].join('\n') : '/* Non ci sono codici di esempio da eseguire */'))();
 
                 });
+
             });
 
             break;
@@ -540,31 +544,6 @@ export async function insert_my_json(file_description, points) {
             });
 
             break;
-
-        // Utilities/scripts/... (per inserire le descrizioni)
-        case 'scripts':
-
-        return fetch(`${points}Static/json/descriptions.json`)
-        .then(response => response.json())
-        .then(data => {
-
-            // Prendo i dati che mi servono
-            let descriptions = data['examples'][file_description][specific_description];
-
-            // In un ciclo for prendo chiave e valore di ogni elemento
-            for (let [div_id, description] of Object.entries(descriptions)) {
-
-                // Uso la chiave per cercare l'id (le chiavi hanno lo stesso nome degli id dei vari div contenenti i codici)
-                let ref = document.querySelector(`#${div_id}`);
-
-                // Prendo il contenuto, creo l'elenco e lo appendo all'elemento
-                ref.append('Funzionamento:');
-                ref.appendChild(json_to_element('ul', description))
-
-            }
-        });
-
-        break;
 
         default:
             // Non faccio nulla

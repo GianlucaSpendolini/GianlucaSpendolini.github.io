@@ -1,8 +1,8 @@
 {
-    "examples": {
-        "scripts": {
-            "automatic filling": {
-                "selezionando-un-elemento-da-una-lista-select": {
+    "scripts": {
+        "automatic filling": {
+            "selezionando-un-elemento-da-una-lista-select": {
+                "description": {
                     "Nel codice": [
                         "Seleziono i vari campi che voglio compilare",
                         "Prendo un riferimento per l'elemento select che, in base all'elemento selezionato, userò per compilare i campi",
@@ -18,65 +18,7 @@
                         "Seleziono un'opzione nella lista sel tag \"select\"",
                         "In automatico vengono compilati i vari campi che si vogliono compilare"
                     ]
-                }
-            },
-            "page references": {
-                "percorso-cliccabile": {
-                    "Nel codice": [
-                        "Controlo se è presente il paragrafo nel quale mettere il percorso",
-                        {
-                            "Se presente": [
-                                "Creo l'elemento per la Home usando come riferimento i puntini ricevuti",
-                                "Inserisco l'elemento per la Home ed il primo separatore \"/\"",
-                                {
-                                    "Tramite la mia funzione \"clickable_path\" mi viene restituito un percorso sempre più corto": [
-                                        "Viene usato per i riferimenti andando indietro ma non troppo",
-                                        {
-                                            "Per ogni elemento (già con il link alla pagina) dell'array restituito": [
-                                                "Inserisco l'elemento",
-                                                "Inserisco il separatore"
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "Lato interfaccia": [
-                        "Clicco in uno dei link facenti parte del percorso attuale (in alto a sinistra)",
-                        "Si verrà indirizzati alla pagina corrispondente"
-                    ]
                 },
-                "tornare-alla-home": {
-                    "Nel codice": [
-                        "Faccio lo split del percorso URL usando \"/\" come riferimento per lo split",
-                        "Tolgo il primo ed ultimo elemento (nome del sito e '')",
-                        "Creo la stringa a cui appenderò eventuali altri punti per \"tornare indietro\"",
-                        {
-                            "Itero il percorso splittato per vedere se e quanti \"..\" devo inserire": [
-                                "Se ci sono -> aggiungo tanti doppi punti quanti elementi ho nell'URL splittato"
-                            ]
-                        },
-                        "Ritorno l'array",
-                        {
-                            "Differenze tra versioni in base al linguaggio": [
-                                "In quella di PHP, oltre a togliere primo ed ultimo elemento, devo prima togliere, se presente, il nome dello script finale",
-                                "In entrambe è possibile togliere anche pezzi del percorso che non si vogliono utilizzare per \"accorciare le distanze\" (usando altro come Home)"
-                            ]
-                        }
-                    ],
-                    "Lato interfaccia": [
-                        "Non succede nulla visivamente!"
-                    ]
-                }
-            }
-        }
-    },
-
-    "examples code": {
-        "automatic filling": [
-            {
-                "reference": "#selezionando-un-elemento-da-una-lista-select",
                 "to insert": [
                     {
                         "language": "JavaScript",
@@ -181,11 +123,35 @@
                     }
                 ]
             }
-        ],
-
-        "page references": [
-            {
-                "reference": "#percorso-cliccabile",
+        },
+        "page references": {
+            "percorso-cliccabile": {
+                "description": {
+                    "Nel codice": [
+                        "Controlo se è presente il paragrafo nel quale mettere il percorso",
+                        {
+                            "Se presente": [
+                                "Creo l'elemento per la Home usando come riferimento i puntini ricevuti",
+                                "Inserisco l'elemento per la Home ed il primo separatore \"/\"",
+                                {
+                                    "Tramite la mia funzione \"clickable_path\" mi viene restituito un percorso sempre più corto": [
+                                        "Viene usato per i riferimenti andando indietro ma non troppo",
+                                        {
+                                            "Per ogni elemento (già con il link alla pagina) dell'array restituito": [
+                                                "Inserisco l'elemento",
+                                                "Inserisco il separatore"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "Lato interfaccia": [
+                        "Clicco in uno dei link facenti parte del percorso attuale (in alto a sinistra)",
+                        "Si verrà indirizzati alla pagina corrispondente"
+                    ]
+                },
                 "to insert": [
                     {
                         "language": "JavaScript",
@@ -219,9 +185,29 @@
                     }
                 ]
             },
-
-            {
-                "reference": "#tornare-alla-home",
+            "tornare-alla-home": {
+                "description": {
+                    "Nel codice": [
+                        "Faccio lo split del percorso URL usando \"/\" come riferimento per lo split",
+                        "Tolgo il primo ed ultimo elemento (nome del sito e '')",
+                        "Creo la stringa a cui appenderò eventuali altri punti per \"tornare indietro\"",
+                        {
+                            "Itero il percorso splittato per vedere se e quanti \"..\" devo inserire": [
+                                "Se ci sono -> aggiungo tanti doppi punti quanti elementi ho nell'URL splittato"
+                            ]
+                        },
+                        "Ritorno l'array",
+                        {
+                            "Differenze tra versioni in base al linguaggio": [
+                                "In quella di PHP, oltre a togliere primo ed ultimo elemento, devo prima togliere, se presente, il nome dello script finale",
+                                "In entrambe è possibile togliere anche pezzi del percorso che non si vogliono utilizzare per \"accorciare le distanze\" (usando altro come Home)"
+                            ]
+                        }
+                    ],
+                    "Lato interfaccia": [
+                        "Non succede nulla visivamente!"
+                    ]
+                },
                 "to insert": [
                     {
                         "language": "JavaScript",
@@ -282,11 +268,13 @@
                     }
                 ]
             }
-        ],
-
-        "script name": [
-            {
-                "reference": "",
+        }
+    },
+    
+    "nome sezione": {
+        "script name": {
+            "id-riferimento-contenitore-dove-inserire-esempio": {
+                "description": "{} o [] -> in base a che elenco puntato voglio fare tramite json_to_element",
                 "to insert": [
                     {
                         "language": "Language",
@@ -298,6 +286,6 @@
                     }
                 ]
             }
-        ]
+        }
     }
 }
