@@ -511,7 +511,7 @@ function what_page(points_path) {
             break;
 
         // /password-checker
-        case '/utilities/password-checker':
+        case '/utilities/password-checker.html':
 
             // Titolo
             title.innerHTML = 'Password checker';

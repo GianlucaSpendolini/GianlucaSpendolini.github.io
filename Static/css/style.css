@@ -18,6 +18,11 @@
     list-style: none;
 }
 
+/* Checkbox non checkabili manualmente (NON IN USO) */
+.fake-checkbox {
+    background-color: green;
+}
+
 /* Link per tornare indietro di 1+ pagine */
 .movement_into_pages {
     color: blue;
@@ -266,6 +271,65 @@ main#descrizione hr:not(.break-line) {
 
 #type-left, #type-right {
     min-width: 50%;
+}
+
+
+/*
+    PASSWORD CHECKER 
+*/
+
+.checker-container > .checkbox-container > ul {
+    min-width: 75%;
+    padding-inline-start: 0;
+}
+
+.checker-container > .checkbox-container > ul > li {
+    list-style-type: none;
+}
+
+.checker-container > label:has(>meter) {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.checker-container > label:has(>meter) > meter {
+    appearance: none;
+    min-width: 50%;
+}
+
+.checker-container > label:has(>meter) > meter::-webkit-meter-bar {
+    background: #eee; /* colore sfondo barra */
+    border-radius: 4px;
+}
+
+.checker-container > label:has(>meter) > meter::-moz-meter-bar {
+    background: #eee; /* colore sfondo barra */
+    border-radius: 4px;
+}
+
+.checker-container > label:has(>meter) > meter::-webkit-meter-optimum-value {
+    background: green; /* colore barra valore normale */
+}
+
+.checker-container > label:has(>meter) > meter::-webkit-meter-suboptimum-value {
+    background: orange; /* valore medio */
+}
+
+.checker-container > label:has(>meter) > meter::-webkit-meter-even-less-good-value {
+    background: red; /* valore critico */
+}
+
+#password-field {
+    margin-top: 10px;
+    max-width: 75%;
+    min-height: 25px;
+    min-width: 75%;
+}
+
+div:has(>#password-field) {
+    text-align: center;
+    justify-content: center;
 }
 
 
