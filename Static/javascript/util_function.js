@@ -856,22 +856,22 @@ export function togglePasswordVisibility(passwordField, button, svgs) {
         passwordField.type = "text";
         // Inserisco l'svg
         if (button.tagName === 'IMG') {
-            button.src = points_number(path) + svg(date.getMonth()).barrato;
+            button.src = points_number(path) + svg(date.getMonth()).non_barrato;
             button.alt = 'Hide';
             button.title = 'Hide password';
         } else {
-            button.innerHTML = svgs.barrato;
+            button.innerHTML = svgs.non_barrato;
         }
     } else {
         // Cambio il tipo
         passwordField.type = "password";
         // Inserisco l'svg
         if (button.tagName === 'IMG') {
-            button.src = points_number(path) + svg(date.getMonth()).non_barrato;
+            button.src = points_number(path) + svg(date.getMonth()).barrato;
             button.alt = 'Show';
             button.title = 'Show password';
         } else {
-            button.innerHTML = svgs.non_barrato;
+            button.innerHTML = svgs.barrato;
         }
     }
 }
