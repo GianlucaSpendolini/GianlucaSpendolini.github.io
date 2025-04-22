@@ -68,8 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Capisco in che pagina mi trovo
     what_page(points);
 
-    // setTimeout(() => {console.log('fine');}, 0);
-
 
     /* ALTRE COSE DA FARE */
 
@@ -271,7 +269,6 @@ function what_page(points_path) {
         case '/prova':
             //navbar_header();
             //creazione_header();
-            console.log('Ciao prova');
 
             // Titolo
             title.innerHTML = 'Prova';
@@ -511,7 +508,7 @@ function what_page(points_path) {
             break;
 
         // /password-checker
-        case '/utilities/password-checker.html':
+        case '/utilities/password-checker':
 
             // Titolo
             title.innerHTML = 'Password checker';

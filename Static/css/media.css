@@ -143,6 +143,15 @@
         flex-direction: column;
         justify-content: space-evenly;
     }
+
+    /*
+        SEZIONE PASSWORD CHECKER
+    */
+    /* Riadatto il div che contiene il campo password per averlo più largo */
+    div:has(>#password-field) {
+        max-width: 90%;
+        min-width: 90%;
+    }
 }
 
 

@@ -113,16 +113,36 @@ export function add_css_js(points_path) {
 export function advertiment_capslock(event) {
                 
     // Dove inserire il messaggio
-    let caps_lock = document.getElementById('caps-lock');
-
-    if (caps_lock) {
-        if (event.getModifierState('CapsLock')) {
-            caps_lock.style.display = 'block';
-            caps_lock.innerHTML = '<span class="Style2" style="color: red; font-size:18px;">Attenzione! Blocco maiuscole ATTIVO!</span>';
+    let container = document.getElementById('warning');
+    
+    if (event.getModifierState('CapsLock')) {
+        if (!document.querySelector('span#caps-lock')) {
+            // Creo il messaggio
+            let span = document.createElement('span');
+            span.className = 'warning';
+            span.id = 'caps-lock';
+            span.innerText = 'Attenzione! Blocco maiuscole ATTIVO!';
+    
+            container.appendChild(span);
         }
-        else {
-            caps_lock.style.display = 'none';
-            caps_lock.innerHTML = '';
+    
+        // Se il container è nascosto -> lo mostro
+        if (container.style.display === 'none') {
+            container.style.display = 'block';
+            container.style.display = 'flex';
+            container.style.flexDirection = 'column';
+        }
+    }
+    else {
+        // Provo a vedere se avevo inserito l'elemento
+        let span = document.querySelector('span#caps-lock');
+        if (span) {
+            container.removeChild(span);
+        }
+
+        // Se il container è vuoto -> lo nascondo
+        if (container.innerHTML === '') {
+            container.style.display = 'none';
         }
     }
 }
@@ -132,16 +152,35 @@ export function advertiment_capslock(event) {
 export function advertiment_numlock(event) {
                 
     // Dove inserire il messaggio
-    let num_lock = document.getElementById('num-lock');
-
-    if (num_lock) {
-        if (!event.getModifierState('NumLock')) {
-            num_lock.style.display = 'block';
-            num_lock.innerHTML = '<span class="Style2" style="color: red; font-size:18px;">Attenzione! Blocco numerico NON ATTIVO!</span>';
+    let container = document.getElementById('warning');
+    
+    if (!event.getModifierState('NumLock')) {
+        if (!document.querySelector('span#num-lock')) {
+            // Creo il messaggio
+            let span = document.createElement('span');
+            span.className = 'warning';
+            span.id = 'num-lock';
+            span.innerText = 'Attenzione! Blocco numerico NON ATTIVO!';
+            
+            container.appendChild(span);
         }
-        else {
-            num_lock.style.display = 'none';
-            num_lock.innerHTML = '';
+
+        // Se il container è nascosto -> lo mostro
+        if (container.style.display === 'none') {
+            container.style.display = 'block';
+            container.style.display = 'flex';
+            container.style.flexDirection = 'column';
+        }
+    }
+    else {
+        let span = document.querySelector('span#num-lock');
+        if (span) {
+            container.removeChild(span);
+        }
+
+        // Se il container è vuoto -> lo nascondo
+        if (container.innerHTML === '') {
+            container.style.display = 'none';
         }
     }
 }
@@ -169,7 +208,7 @@ export function checkAnyState(passwordField) {
         advertiment_capslock(event);
         advertiment_numlock(event);
     });
-    passwordField.addEventListener('mousemove', event => {
+    document.addEventListener('mousemove', event => {
         advertiment_capslock(event);
         advertiment_numlock(event);
     });
@@ -224,7 +263,6 @@ export function clickable_path(path) {
 
         // // Elimino il secondo elemento della lista 
         // delete elements_list_copy[1];
-        // console.log('elc: ', elements_list_copy);
 
         // Diminuisco il conteggio
         count -= 1;

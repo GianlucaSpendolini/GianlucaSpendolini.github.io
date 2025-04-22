@@ -128,12 +128,6 @@
 
             let text = new UserText(input_text.value);
 
-            console.log(
-                pattern.value,
-                text,
-                text.find(pattern.value, input_checkbox.checked)
-            );
-
             div.innerText = text.find(pattern, input_checkbox.checked).join(' <=> ');
 
         });

@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Assegno ai "bottoni" il link che devono raggiungere
     /*navbar_header();*/
 
-    console.log("file di prova js");
-
     // fetch('./Static/json/prova.json')
 });
 
@@ -21,8 +19,6 @@ function prova(messaggio) {
 
 
 function navbar_header() {
-
-    console.log('dentro funzione');
 
     // Home (/)
     document.querySelector('#home').addEventListener('click', function() {
