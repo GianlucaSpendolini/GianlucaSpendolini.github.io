@@ -115,12 +115,16 @@ export function advertiment_capslock(event) {
     // Dove inserire il messaggio
     let caps_lock = document.getElementById('caps-lock');
 
-    if (event.getModifierState('CapsLock')) {
-        caps_lock.innerHTML = '<span class="Style2" style="color: red; font-size:18px;">Attenzione! Blocco maiuscole ATTIVO!</span>';
+    if (caps_lock) {
+        if (event.getModifierState('CapsLock')) {
+            caps_lock.style.display = 'block';
+            caps_lock.innerHTML = '<span class="Style2" style="color: red; font-size:18px;">Attenzione! Blocco maiuscole ATTIVO!</span>';
+        }
+        else {
+            caps_lock.style.display = 'none';
+            caps_lock.innerHTML = '';
+        }
     }
-    else {
-        caps_lock.innerHTML = '';
-    } 
 }
 
 
@@ -130,35 +134,42 @@ export function advertiment_numlock(event) {
     // Dove inserire il messaggio
     let num_lock = document.getElementById('num-lock');
 
-    if (!event.getModifierState('NumLock')) {
-        num_lock.innerHTML = '<span class="Style2" style="color: red; font-size:18px;">Attenzione! Blocco numerico NON ATTIVO!</span>';
+    if (num_lock) {
+        if (!event.getModifierState('NumLock')) {
+            num_lock.style.display = 'block';
+            num_lock.innerHTML = '<span class="Style2" style="color: red; font-size:18px;">Attenzione! Blocco numerico NON ATTIVO!</span>';
+        }
+        else {
+            num_lock.style.display = 'none';
+            num_lock.innerHTML = '';
+        }
     }
-    else {
-        num_lock.innerHTML = '';
-    } 
 }
 
 
 // Funzione contenente eventi per controllare se qualche blocco è attivo
-export function check_anylock() {
-                
-    // Seleziono campo password
-    let password = document.getElementById('passwordField');
+export function checkAnyState(passwordField) {
+
+    // Controllo se il campo password è passato come stringa
+    if (typeof passwordField === 'string') {
+        // Seleziono campo password
+        passwordField = document.getElementById('passwordField');
+    }
     
     // Eventi
-    password.addEventListener('click', event => {
+    passwordField.addEventListener('click', event => {
         advertiment_capslock(event);
         advertiment_numlock(event);
     });
-    password.addEventListener('keydown', event => {
+    passwordField.addEventListener('keydown', event => {
         advertiment_capslock(event);
         advertiment_numlock(event);
     });
-    password.addEventListener('keyup', event => {
+    passwordField.addEventListener('keyup', event => {
         advertiment_capslock(event);
         advertiment_numlock(event);
     });
-    password.addEventListener('mousemove', event => {
+    passwordField.addEventListener('mousemove', event => {
         advertiment_capslock(event);
         advertiment_numlock(event);
     });
