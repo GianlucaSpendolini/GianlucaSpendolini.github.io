@@ -45,6 +45,9 @@
 }
 
 /* Nav-bar dell'header */
+#nav-bar {
+    text-align: -webkit-center;
+}
 #nav-bar nav {
     justify-content: space-evenly;
     max-width: 750px;
@@ -278,15 +281,22 @@ main#descrizione hr:not(.break-line) {
     PASSWORD CHECKER 
 */
 
+.checker-container {
+   text-align: -webkit-center;
+}
+
 .checker-container > .checkbox-container {
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
     margin-top: 25px;
+    max-width: 750px !important;
+    text-align: -webkit-center;
 }
 
 .checker-container > .checkbox-container > ul {
     min-width: 75%;
     padding-inline-start: 0;
+    text-align: -webkit-left;
 }
 
 .checker-container > .checkbox-container > ul > li {
@@ -302,6 +312,7 @@ main#descrizione hr:not(.break-line) {
 .checker-container > div > label:has(>meter) > meter {
     appearance: none;
     min-width: 50%;
+    text-align: left;
 }
 
 .checker-container > div > label:has(>meter) > meter::-webkit-meter-bar {
@@ -327,15 +338,49 @@ main#descrizione hr:not(.break-line) {
 }
 
 #password-field {
-    margin-top: 10px;
+    /* background-color: lightblue; */
+    border-color: lightblue;
+    border-radius: 20px;
     max-width: 75%;
     min-height: 25px;
     min-width: 75%;
+    text-align: center;
 }
 
+/* #password-field:focus-visible {
+    background-color: lightblue;
+    color: lightblue;
+} */
+
 div:has(>#password-field) {
-    text-align: center;
+    display: flex;
     justify-content: center;
+    margin-top: 10px;
+    max-width: 75%;
+    min-width: 75%;
+}
+
+div:has(>#password-field) > button {
+    background-color: transparent;
+    border-color: transparent;
+    max-width: 5%;
+    min-height: auto;
+    min-width: 5%;
+    text-align: center;
+}
+
+main:has(>.checker-container) > .checker-container > * {
+    /* align-self: center; */
+    max-width: 1000px;
+}
+
+main:has(>.checker-container) > div:has(>p) {
+    text-align: -webkit-center;
+}
+
+main:has(>.checker-container) > div:has(>p) > p {
+    text-align: left;
+    max-width: 1000px;
 }
 
 

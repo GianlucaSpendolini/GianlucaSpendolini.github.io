@@ -35,8 +35,9 @@
 */
 
 
-import { 
-    path 
+import {
+    date, 
+    path
 } from "./util_variable.js";
 
 
@@ -842,15 +843,36 @@ export function svg(month) {
 
 
 // Settare icona per vedere o meno password
-export function togglePasswordVisibility(button, svgs) {
-    let passwordField = document.getElementById("passwordField");
+export function togglePasswordVisibility(passwordField, button, svgs) {
+
+    // Se il campo di testo è una stringa
+    if (typeof passwordField === 'string') {
+        // Prendo il campo della password
+        passwordField = document.getElementById(passwordField);
+    }
 
     if (passwordField.type === "password") {
+        // Cambio il tipo
         passwordField.type = "text";
-        button.innerHTML = svgs.barrato;
+        // Inserisco l'svg
+        if (button.tagName === 'IMG') {
+            button.src = points_number(path) + svg(date.getMonth()).barrato;
+            button.alt = 'Hide';
+            button.title = 'Hide password';
+        } else {
+            button.innerHTML = svgs.barrato;
+        }
     } else {
+        // Cambio il tipo
         passwordField.type = "password";
-        button.innerHTML = svgs.non_barrato;
+        // Inserisco l'svg
+        if (button.tagName === 'IMG') {
+            button.src = points_number(path) + svg(date.getMonth()).non_barrato;
+            button.alt = 'Show';
+            button.title = 'Show password';
+        } else {
+            button.innerHTML = svgs.non_barrato;
+        }
     }
 }
 

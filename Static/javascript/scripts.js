@@ -106,7 +106,7 @@ function create_header(links_list) {
         // Inserisco una struttura nell'header
         header.innerHTML = `<h1 class="title"></h1>
                             <br />
-                            <div align="center" id="nav-bar">
+                            <div id="nav-bar">
                                 <nav></nav>
                             </div>
                             `;
@@ -511,7 +511,7 @@ function what_page(points_path) {
             break;
 
         // /password-checker
-        case '/utilities/password-checker':
+        case '/utilities/password-checker.html':
 
             // Titolo
             title.innerHTML = 'Password checker';
