@@ -139,6 +139,9 @@
         max-width: 100% !important;
         min-width: 100% !important;
     }
+    .checker-container > div > label:has(>meter) > meter {
+        min-width: 75% !important;
+    }
 }
 
 
