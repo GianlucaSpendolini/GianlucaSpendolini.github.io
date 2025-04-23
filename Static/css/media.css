@@ -12,33 +12,6 @@
     
     /* GENERALE */
 
-    .details-container {
-        flex-direction: column;
-    }
-
-    #nav-bar button {
-        max-height: auto;
-        max-width: auto;
-        font-size: 1em;
-    }
-
-    body {
-        font-size: 0.9em;
-    }
-
-    footer {
-        align-items: center;
-    }
-
-    footer ul.sezioni {
-        font-size: 1em;
-        padding: 0 10px 0 10px;
-    }
-
-    header .title {
-        font-size: 1.5em;
-    }
-
     table td {
         font-size: 0.8em;
     }
@@ -91,7 +64,7 @@
 /* PER NON RIPETERE LE STESSE COSE PER TROPPE MEDIA QUERY */
 
 
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 360px) {
 
     /*
         GENERALE
@@ -104,12 +77,28 @@
         max-width: 30%;
     }
     #nav-bar button {
+        font-size: 1em;
         margin: 5px 0px;
+        max-height: auto;
+        max-width: auto;
         width: 100%;
     }
     #nav-bar nav:has(button) {
         flex-direction: column;
         min-width: 25%;
+    }
+
+    body {
+        font-size: 0.9em;
+    }
+
+    footer {
+        align-items: center;
+    }
+
+    footer ul.sezioni {
+        font-size: 1em;
+        padding: 0 10px 0 10px;
     }
 
     /* footer {
@@ -124,11 +113,31 @@
         flex-direction: row !important;
         justify-content: space-between !important;
     }
+    header .title {
+        font-size: 1.5em;
+    }
     header br {
         display: none;
     }
     header h1 {
         max-width: 30%;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+
+    /*
+        SEZIONE PASSWORD CHECKER
+    */
+    /* Riadatto il div che contiene il campo password per averlo più largo */
+    div:has(> div > #password-field) {
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+    div:has(> #password-field) {
+        max-width: 100% !important;
+        min-width: 100% !important;
     }
 }
 
@@ -142,15 +151,6 @@
     #page-description .no-points-list {
         flex-direction: column;
         justify-content: space-evenly;
-    }
-
-    /*
-        SEZIONE PASSWORD CHECKER
-    */
-    /* Riadatto il div che contiene il campo password per averlo più largo */
-    div:has(>#password-field) {
-        max-width: 90%;
-        min-width: 90%;
     }
 }
 
