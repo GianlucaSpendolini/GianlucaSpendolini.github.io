@@ -187,28 +187,28 @@ export function advertiment_numlock(event) {
 
 
 // Funzione contenente eventi per controllare se qualche blocco è attivo
-export function checkAnyState(passwordField) {
+export function checkAnyState(field) {
 
     // Controllo se il campo password è passato come stringa
-    if (typeof passwordField === 'string') {
+    if (typeof field === 'string') {
         // Seleziono campo password
-        passwordField = document.getElementById('passwordField');
+        field = document.getElementById(field);
     }
     
     // Eventi
-    passwordField.addEventListener('click', event => {
+    field.addEventListener('click', event => {
         advertiment_capslock(event);
         advertiment_numlock(event);
     });
-    passwordField.addEventListener('keydown', event => {
+    field.addEventListener('keydown', event => {
         advertiment_capslock(event);
         advertiment_numlock(event);
     });
-    passwordField.addEventListener('keyup', event => {
+    field.addEventListener('keyup', event => {
         advertiment_capslock(event);
         advertiment_numlock(event);
     });
-    document.addEventListener('mousemove', event => {
+    field.addEventListener('mousemove', event => {
         advertiment_capslock(event);
         advertiment_numlock(event);
     });

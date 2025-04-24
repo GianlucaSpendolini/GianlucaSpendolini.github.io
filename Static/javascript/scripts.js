@@ -174,7 +174,7 @@ function create_footer(points_path, links_list) {
         {
             alt: 'Logo Git Hub',
             class: 'github icona',
-            src: `${points_path}Static/images/github-mark/github-mark.png`
+            src: `${points_path}Static/images/github-mark/github-mark.svg`
         },
         {
             alt: 'Logo Telegram',
