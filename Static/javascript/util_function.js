@@ -6,7 +6,7 @@
             - Funzione per avvisare se capslock è attivo
         - advertiment_numlock
             - Funzione per avvisare se blocco numerico non è attivo
-        - check_anylock
+        - checkAnyState
             - Funzione contenente tutti gli eventi per controllare se attivi alcuni blocchi
         - clickable_path
             - Funzione per creare un percorso cliccabile da inserire nell'apposita sezione

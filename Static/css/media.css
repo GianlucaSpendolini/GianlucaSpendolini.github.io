@@ -186,6 +186,14 @@
     main#descrizione hr:not(.break-line) {
         display: none;
     }
+
+    /*
+        SEZIONE PROJECTS SCRATCH
+    */
+    iframe {
+        height: auto;
+        width: 100%;
+    }
     
     /* 
         SEZIONE UTILITIES CODE TRANSLATOR

@@ -422,7 +422,7 @@ function what_page(points_path) {
             // Definisco il contenuto della meta-descrizione
             meta_descrizione = [
                 'Pagina dei giochi sviluppati su Scratch.'
-            ]-join(' ');
+            ].join(' ');
 
             break;
 
@@ -508,7 +508,7 @@ function what_page(points_path) {
             break;
 
         // /password-checker
-        case '/utilities/password-checker.html':
+        case '/utilities/password-checker':
 
             // Titolo
             title.innerHTML = 'Password checker';

@@ -23,6 +23,15 @@
     background-color: green;
 }
 
+.iframe-container {
+    height: auto;
+    width: 100%;
+}
+.iframe-container > iframe {
+    height: 402;
+    width: 485;
+}
+
 /* Link per tornare indietro di 1+ pagine */
 .movement_into_pages {
     color: blue;
@@ -69,6 +78,18 @@
 body {
     line-height: 1.5;
     margin: 20px;
+}
+
+details:has(.iframe-container) > summary {
+    list-style: none;
+}
+
+div:has(> details > .iframe-container) {
+    margin: 20px 0;
+}
+
+div > details:has(> .iframe-container) > summary > h2 {
+    margin-bottom: 5px;
 }
 
 /* Display flex */
@@ -130,6 +151,12 @@ header ul li/*, nav ul li*/ {
     padding-top: 10px;
     padding-left: 40px;
     padding-right: 40px;
+}
+
+/* dimensione generale degli iframe */
+iframe {
+    height: 402;
+    width: 485;
 }
 
 /* Decorazione per ogni elenco di link */
