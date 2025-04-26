@@ -171,7 +171,9 @@
                 iframe.src = links[container.id];
 
                 // Inserisco l'iframe nel contenitore
-                container.firstElementChild.tagName === 'IFRAME' ? null : container.appendChild(iframe);
+                if (container.firstElementChild && container.firstElementChild.tagName === 'IFRAME') {
+container.appendChild(iframe)
+}
 
                 // Tolgo l'attributo open a tutti gli altri "detail"
                 Array.from(iframe_containers).forEach(other_container => {
