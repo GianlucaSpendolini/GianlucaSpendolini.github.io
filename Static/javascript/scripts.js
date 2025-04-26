@@ -581,6 +581,30 @@ function what_page(points_path) {
 
             break;
 
+        // /scripts/general-checks
+        case '/utilities/scripts/general-checks.html':
+
+            // Titolo
+            title.innerHTML = 'Controlli generici';
+
+            // Header title
+            header_title.innerHTML = 'Controlli generici';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = [
+                'Pagina contenente script inerenti a diversi tipi di controlli in base alle necessità.'
+            ].join(' ');
+
+            /*
+                Inserisco
+                - le descrizioni per ogni script di compilazione automatica
+                - il codice di esempio
+            */
+            insert_examples('code', 'general checks');
+            
+
+            break;
+
         // /scripts/page-references
         case '/utilities/scripts/page-references':
 

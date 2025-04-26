@@ -124,6 +124,55 @@
                 ]
             }
         },
+        
+        "general checks": {
+            "controllo-dei-cambiamenti-di-stato": {
+                "description": "{} o [] -> in base a che elenco puntato voglio fare tramite json_to_element",
+                "to insert": [
+                    {
+                        "language": "JavaScript",
+                        "HTML": null,
+                        "JavaScript": null,
+                        "example": [
+                            "/*",
+                            "   Dove inserire il messaggio",
+                            "*/",
+                            "",
+                            "let container = document.getElementById('warning');",
+                            "",
+                            "if (!event.getModifierState('stato')) {",
+                            "    if (!document.querySelector('span#num-lock')) {",
+                            "        // Creo il messaggio",
+                            "        let span = document.createElement('span');",
+                            "        span.className = 'warning';",
+                            "        span.id = 'num-lock';",
+                            "        span.innerText = 'Attenzione! ... NON ATTIVO!';",
+                            "        ",
+                            "        container.appendChild(span);",
+                            "    }",
+                            "    // Se il container è nascosto -> lo mostro",
+                            "    if (container.style.display === 'none') {",
+                            "        container.style.display = 'block';",
+                            "        container.style.display = 'flex';",
+                            "        container.style.flexDirection = 'column';",
+                            "    }",
+                            "}",
+                            "else {",
+                            "    let span = document.querySelector('span#num-lock');",
+                            "    if (span) {",
+                            "        container.removeChild(span);",
+                            "    }",
+                            "    // Se il container è vuoto -> lo nascondo",
+                            "    if (container.innerHTML === '') {",
+                            "        container.style.display = 'none';",
+                            "    }",
+                            "}"
+                        ]
+                    }
+                ]
+            }
+        },
+
         "page references": {
             "percorso-cliccabile": {
                 "description": {

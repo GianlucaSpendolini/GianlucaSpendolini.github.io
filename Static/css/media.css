@@ -190,8 +190,14 @@
     /*
         SEZIONE PROJECTS SCRATCH
     */
-    iframe {
-        height: auto;
+
+    /* Dimensionare il container dell'iframe in base alla dimensione dello schermo */
+    .iframe-container {
+        height: calc(100vw * 0.82) !important;
+        width: 100% !important;
+    }
+    .iframe-container > iframe {
+        height: 100%;
         width: 100%;
     }
     

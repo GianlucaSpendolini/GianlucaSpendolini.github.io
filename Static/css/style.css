@@ -23,13 +23,15 @@
     background-color: green;
 }
 
+/* Dimensionare il container dell'iframe in base alla dimensione dello schermo */
 .iframe-container {
-    height: auto;
-    width: 100%;
+    /* aspect-ratio: 100 / 82; */
+    height: calc(40vw * 0.82);
+    width: 40.5%;
 }
 .iframe-container > iframe {
-    height: 402;
-    width: 485;
+    height: 100%;
+    width: 100%;
 }
 
 /* Link per tornare indietro di 1+ pagine */
