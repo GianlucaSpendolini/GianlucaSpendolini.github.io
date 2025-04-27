@@ -347,6 +347,17 @@ export async function insert_examples(reason, script_name) {
 
             });
 
+            // Aggiungo che, se apro un esempio, chiudo tutti gli altri
+            document.querySelectorAll('details').forEach( tag => {
+                tag.onclick = function() {
+                    document.querySelectorAll('details').forEach( other_tag => {
+                        if (other_tag !== tag) {
+                            other_tag.removeAttribute('open');
+                        }
+                    });
+                };
+            });
+
             break;
 
         // Default

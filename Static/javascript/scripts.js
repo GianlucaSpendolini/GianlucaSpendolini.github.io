@@ -582,7 +582,7 @@ function what_page(points_path) {
             break;
 
         // /scripts/general-checks
-        case '/utilities/scripts/general-checks':
+        case '/utilities/scripts/general-checks.html':
 
             // Titolo
             title.innerHTML = 'Controlli generici';
@@ -606,7 +606,7 @@ function what_page(points_path) {
             break;
 
         // /scripts/page-references
-        case '/utilities/scripts/page-references':
+        case '/utilities/scripts/page-references.html':
 
             // Titolo
             title.innerHTML = 'Riferimento alle pagine';

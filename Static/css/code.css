@@ -78,6 +78,10 @@
     color: lightgoldenrodyellow;
 }
 
+.js-func-var {
+    color: lightslategray;
+}
+
 .js-class {
     color: green;
 }

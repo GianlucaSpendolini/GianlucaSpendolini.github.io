@@ -156,6 +156,13 @@
 @media screen and (max-width: 545px) {
 
     /*
+        GENERALE
+    */
+    header .title {
+        font-size: 1.3em;
+    }
+
+    /*
         SEZIONE HOME
     */
     .details-container {

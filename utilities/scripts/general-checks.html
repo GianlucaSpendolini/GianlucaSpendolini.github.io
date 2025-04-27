@@ -42,6 +42,57 @@
 
     <!-- File JavaScript generico -->
     <script src="./../../Static/javascript/scripts.js" type="module"></script>
+    <script>
+
+        // Funzione
+        function checkState(event) {
+            // Dove inserire il messaggio
+            let container = document.getElementById('warning');
+            
+            if (!event.getModifierState('NumLock')) {
+                if (!document.querySelector('span#num-lock')) {
+                    // Creo il messaggio
+                    let span = document.createElement('span');
+                    span.className = 'warning';
+                    span.id = 'num-lock';
+                    span.innerText = 'Attenzione! Blocco numerico NON ATTIVO!';
+                    
+                    container.appendChild(span);
+                }
+    
+                // Se il container è nascosto -> lo mostro
+                if (container.style.display === 'none') {
+                    container.style.display = 'block';
+                    container.style.display = 'flex';
+                    container.style.flexDirection = 'column';
+                }
+            }
+            else {
+                let span = document.querySelector('span#num-lock');
+                if (span) {
+                    container.removeChild(span);
+                }
+    
+                // Se il container è vuoto -> lo nascondo
+                if (container.innerHTML === '') {
+                    container.style.display = 'none';
+                }
+            }
+        }
+
+        // Prendo il campo
+        let input_field = document.getElementById('input-field');
+        // Attacco la funzione agli eventi
+        input_field.oninput = function(event) {
+            checkState(event);
+        };
+        input_field.onmousemove = function(event) {
+            checkState(event);
+        };
+        input_field.onkeypress = function(event) {
+            checkState(event);
+        };
+    </script>
     
 </body>
 
