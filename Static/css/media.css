@@ -4,6 +4,14 @@
     - Tablet/iPad: 481-768px
     - Schermi piccoli/laptop: 769-1024px
     - Computer: 1025-1200px
+
+    Altre dimensioni
+    - max 360px
+    - max 400px
+    - max 545px
+    - max 768px
+    - max 900px
+    - max 901px
 */
 
 
@@ -145,6 +153,17 @@
 }
 
 
+@media screen and (max-width: 545px) {
+
+    /*
+        SEZIONE HOME
+    */
+    .details-container {
+        flex-direction: column;
+    }
+}
+
+
 @media screen and (max-width: 768px) {
 
     /*
@@ -193,7 +212,7 @@
 
     /* Dimensionare il container dell'iframe in base alla dimensione dello schermo */
     .iframe-container {
-        height: calc(100vw * 0.82) !important;
+        height: calc((100vw - 1vw) * 0.82) !important;
         width: 100% !important;
     }
     .iframe-container > iframe {

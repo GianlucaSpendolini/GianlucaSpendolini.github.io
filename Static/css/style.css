@@ -26,8 +26,8 @@
 /* Dimensionare il container dell'iframe in base alla dimensione dello schermo */
 .iframe-container {
     /* aspect-ratio: 100 / 82; */
-    height: calc(40vw * 0.82);
-    width: 40.5%;
+    height: calc((40vw - 1vw) * 0.82);
+    width: 40%;
 }
 .iframe-container > iframe {
     height: 100%;

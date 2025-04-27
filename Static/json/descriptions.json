@@ -127,18 +127,26 @@
         
         "general checks": {
             "controllo-dei-cambiamenti-di-stato": {
-                "description": "{} o [] -> in base a che elenco puntato voglio fare tramite json_to_element",
+                "description": { 
+                    "Nel codice": [
+                        "Interroga l'evento", 
+                        "Se è stato modificato qualcosa (come gli stati capsLock e numLock), inserisce il messaggio in un div preparato in precedenza"
+                    ],
+                    "Lato interfaccia": [
+                        "Compariranno degli avvisi sotto il campo desiderato"
+                    ]
+                },
                 "to insert": [
                     {
                         "language": "JavaScript",
                         "HTML": null,
                         "JavaScript": null,
                         "example": [
-                            "/*",
+                            "<span class=\"js-comment\">/*",
                             "   Dove inserire il messaggio",
-                            "*/",
+                            "*/</span>",
                             "",
-                            "let container = document.getElementById('warning');",
+                            "<span class=\"js-init\">let</span> container = document.getElementById('warning');",
                             "",
                             "if (!event.getModifierState('stato')) {",
                             "    if (!document.querySelector('span#num-lock')) {",
@@ -146,7 +154,7 @@
                             "        let span = document.createElement('span');",
                             "        span.className = 'warning';",
                             "        span.id = 'num-lock';",
-                            "        span.innerText = 'Attenzione! ... NON ATTIVO!';",
+                            "        <span class=\"var\">span</span>.<span class=\"var\">innerText</span> = <span class=\"str\">'Attenzione! ...!'</span>;",
                             "        ",
                             "        container.appendChild(span);",
                             "    }",
