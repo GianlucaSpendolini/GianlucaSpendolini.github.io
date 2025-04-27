@@ -1009,26 +1009,66 @@
                         "Pagina contenente script inerenti a diversi tipi di controlli;"
                     ]
                 },
-                "/Static/javascript/util_class.js": [
-                    "Implementato metodo findReplace (per cercare e/o sostituire un pattern);"
-                ]
+                "/Static/": {
+                    "/images/icons/": [
+                        "Aggiunte icone svg _b e _nb (con il colore appropriato) per il mese 10;"
+                    ],
+                    "/javascript/util_class.js": [
+                        "Implementato metodo findReplace (per cercare e/o sostituire un pattern);"
+                    ]
+                }
             },
             "Aggiornamento": {
-                "/projects/games/scratch": [
-                    "Tolti tutti gli iframe perchè inseriti in automatico tramite logica JavaScript in fondo alla pagina;",
-                    "Fatto in modo che titolo e gioco fossero in tag details;",
-                    "Tramite JavaScript, inserimento degli iframe solo quando clicco sul titolo della sezione per aprire il tag details;"
+                "/projects/games/": [
+                    "Aggiunta la descrizione di cos'è scratch;",
+                    {
+                        "scratch": [
+                            "Tolti tutti gli iframe perchè inseriti in automatico tramite logica JavaScript in fondo alla pagina;",
+                            "Fatto in modo che titolo e gioco fossero in tag details;",
+                            "Tramite JavaScript, inserimento degli iframe solo quando clicco sul titolo della sezione per aprire il tag details;"
+                        ]
+                    }
                 ],
                 "utilities/scripts/": "Inserito riferimento per la pagina general-checks;",
                 "/Static/": {
+                    "/css/": {
+                        "/style.css": [
+                            "Aggiunti stili per la pagina del pattern-matcher;",
+                            "Aggiunti stili per la pagina del password-checker;",
+                            "Aggiunti stili per gestire gli iframe nella sezione /projects/games/scratch"
+                        ],
+                        "/media.css": [
+                            "Stili per ridimensionare la pagina del pattern-matcher mettendo i textarea in colonna;",
+                            "Adattare il campo password di password-checker all'intera lunghezza se sono al massimo a 900px;",
+                            "Ridimensionare iframe e loro contenitori se mi trovo sul telefono;",
+                            {
+                                "Ridimensionare titolo pagina (blu in alto)": [
+                                    "1.3em fino a 900px",
+                                    "1.5 se tramite telefono mobile;"
+                                ]
+                            }
+                        ],
+                        "/code.css": [
+                            "Aggiunto stile per le variabili JavaScript della funzione function('variabile) { ... };",
+                            "Aggiunto stile per le regex;"
+                        ]
+                    },
+                    "/images/": {
+                        "/scratch.png": "Tolta dal server poichè inutilizzata (viene usato un link che punta a wikimedia/...);",
+                        "/icons/": [
+                            "Cambiato i colori per gli svg dei mesi per i bottoni _b (barrato) e _nb (non barrato);"
+                        ]
+                    },
                     "/javascript/": {
                         "/scripts.js": [
                             "Aggiunta sezione per descrizione e titoli della pagina del pattern-matcher;",
                             "Fatto diventare le meta desctizioni come frasi in un array unito da join (maggiora chiarezza mettendo le frasi su più righe);",
-                            "Aggiunta sezione per descrizione e titoli della pagina del password-checker;"
+                            "Aggiunta sezione per descrizione e titoli della pagina del password-checker;",
+                            "Per la creazione del footer, cambiato il logo di GitHub da .png a .svg;"
                         ],
                         "/util_function.js": [
                             "Spostamento esempi di codici da inserire in descriptions.json;",
+                            "Generalizzate le funzioni togglePasswordVisibility() e quelle dei vari check per avere più compatibilità per i vari utilizzi;",
                             {
                                 "insert_examples()": [
                                     "Creata nuova logica per prendere elementi dal json, unirli (avendo così descrizioni ed esempi usando la stessa chiamata fetch) ed inserirli nella pagina;",
@@ -1047,27 +1087,6 @@
                             "Suddiviso nelle sezioni encode (con le mappature carattere-codice) e formatting (con l'associazione tra caratteri particolari ed i corrispettivi normali);",
                             "Spostato l'apostrofo particolare nella sezione formatting;",
                             "Aggiunti caratteri '“' e '”' alla sezione formatting;"
-                        ]
-                    },
-                    "/css/": {
-                        "/style.css": [
-                            "Aggiunti stili per pagina del pattern-matcher;",
-                            ""
-                        ],
-                        "/media.css": [
-                            "Stili per ridimensionare la pagina del pattern-matcher mettendo i textarea in colonna;",
-                            "Adattare il campo password di password-checker all'intera lunghezza se sono al massimo a 900px;",
-                            "Ridimensionare iframe e loro contenitori se mi trovo sul telefono;",
-                            {
-                                "Ridimensionare titolo pagina (blu in alto)": [
-                                    "1.3em fino a 900px",
-                                    "1.5 se tramite telefono mobile;"
-                                ]
-                            }
-                        ],
-                        "/code.css": [
-                            "Aggiunto stile per le variabili JavaScript della funzione function('variabile) { ... };",
-                            "Aggiunto stile per le regex;"
                         ]
                     }
                 },
