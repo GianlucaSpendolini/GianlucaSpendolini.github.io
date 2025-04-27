@@ -1025,7 +1025,8 @@
                         "scratch": [
                             "Tolti tutti gli iframe perchè inseriti in automatico tramite logica JavaScript in fondo alla pagina;",
                             "Fatto in modo che titolo e gioco fossero in tag details;",
-                            "Tramite JavaScript, inserimento degli iframe solo quando clicco sul titolo della sezione per aprire il tag details;"
+                            "Tramite JavaScript, inserimento degli iframe solo quando clicco sul titolo della sezione per aprire il tag details;",
+                            "Aggiunto il link del 'progetto'/embed per inserire il gioco nella pagina e poterlo giocare;"
                         ]
                     }
                 ],
