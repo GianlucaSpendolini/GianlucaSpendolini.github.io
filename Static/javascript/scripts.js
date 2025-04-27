@@ -582,7 +582,7 @@ function what_page(points_path) {
             break;
 
         // /scripts/general-checks
-        case '/utilities/scripts/general-checks.html':
+        case '/utilities/scripts/general-checks':
 
             // Titolo
             title.innerHTML = 'Controlli generici';
