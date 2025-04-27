@@ -126,11 +126,11 @@
         },
         
         "general checks": {
-            "controllo-dei-cambiamenti-di-stato": {
-                "description": { 
+            "cambiamenti-di-stato": {
+                "description": {
                     "Nel codice": [
                         "Interroga l'evento", 
-                        "Se è stato modificato qualcosa (come gli stati capsLock e numLock), inserisce il messaggio in un div preparato in precedenza"
+                        "Se è stato modificato qualcosa (come gli stati CapsLock e NumLock), inserisce il messaggio in un div preparato in precedenza"
                     ],
                     "Lato interfaccia": [
                         "Compariranno degli avvisi nella posizione desiderata (dove è stato inserito il container con id 'warning')"
@@ -140,8 +140,11 @@
                     {
                         "language": "JavaScript",
                         "HTML": [
-                            "<input id=\"input-field\" type=\"text\" />",
-                            "<div id=\"warning\"></div>"
+                            "<div>La funzionalità di esempio può essere provata su computer attivando o meno il blocco maiuscole da tastiera</div>",
+                            "<div style=\"display: flex;\">",
+                            "   <input id=\"input-field\" type=\"text\" />",
+                            "   <div id=\"warning\" style=\"margin-left: 20px;\"></div>",
+                            "</div>"
                         ],
                         "JavaScript": [
                             "// Funzione",
@@ -149,13 +152,13 @@
                             "    // Dove inserire il messaggio",
                             "    let container = document.getElementById('warning');",
                             "    ",
-                            "    if (!event.getModifierState('CapsLock')) {",
+                            "    if (event.getModifierState('CapsLock')) {",
                             "        if (!document.querySelector('span#num-lock')) {",
                             "            // Creo il messaggio",
                             "            let span = document.createElement('span');",
                             "            span.className = 'warning';",
                             "            span.id = 'num-lock';",
-                            "            span.innerText = 'Attenzione! Blocco numerico NON ATTIVO!';",
+                            "            span.innerText = 'Attenzione! Blocco maiuscole ATTIVO!';",
                             "            ",
                             "            container.appendChild(span);",
                             "        }",
@@ -198,7 +201,7 @@
                             "",
                             "<span class=\"js-init\">let</span> <span class=\"js-var\">container</span> = <span class=\"js-var\">document</span>.<span class=\"js-func\">getElementById</span>(<span class=\"str\">'warning'</span>);",
                             "",
-                            "if (!<span class=\"js-func-var\">event</span>.<span class=\"js-func\">getModifierState</span>(<span class=\"str\">'stato'</span>)) {",
+                            "if (<span class=\"js-func-var\">event</span>.<span class=\"js-func\">getModifierState</span>(<span class=\"str\">'stato'</span>)) {",
                             "    if (!<span class=\"js-var\">document</span>.<span class=\"js-func\">querySelector</span>(<span class=\"var\">'span#num-lock'</span>)) {",
                             "        <span class=\"js-comment\">// Creo il messaggio</span>",
                             "        <span class=\"js-init\">let</span> <span class=\"js-var\">span</span> = <span class=\"js-var\">document</span>.<span class=\"js-func\">createElement</span>(<span class=\"str\">'span'</span>);",
@@ -225,6 +228,120 @@
                             "        <span class=\"js-var\">container</span>.<span class=\"js-var\">style</span>.<span class=\"js-var\">display</span> = <span class=\"str\">'none'</span>;",
                             "    }",
                             "}"
+                        ]
+                    }
+                ]
+            },
+            "struttura-della-password": {
+                "description": {
+                    "Nel codice": [
+                        "Controlla la struttura della password in base a diversi pattern"
+                    ],
+                    "Lato interfaccia": [
+                        "Se corrisponde al pattern, colora in verde il testo inerente al parametro",
+                        "Se non corrisponde al pattern, lo lascia del colore standard"
+                    ]
+                },
+                "to insert": [
+                    {
+                        "language": "JavaScript",
+                        "HTML": [
+                            "<div>Il codice più esteso può essere visto nella sezione del controllo delle password (/utilities/password-checker)</div>",
+                            "<div style=\"display: block; margin: 0px;\">",
+                            "   <input id=\"password-field\" placeholder=\"Inserisci la password\" type=\"password\" />",
+                            "</div>",
+                            "<div>",
+                            "   <input class=\"fake-checkbox\" disabled id=\"lowercase-check\" type=\"checkbox\" />",
+                            "   <label for=\"uppercase-check\">Lettere minuscole</label>",
+                            "</div>"
+                        ],
+                        "JavaScript": [
+                            "// Prendo le variabili",
+                            "let password_field = document.getElementById('password-field');",
+                            "let lowercase_check = document.getElementById('lowercase-check');",
+                            "",
+                            "// Ogni volta che inserisco qualcosa -> faccio il controllo",
+                            "password_field.addEventListener('input', () => {",
+                            "    ",
+                            "    // Prendo la password inserita",
+                            "    let password = password_field.value;",
+                            "    // Imposto i colori per il cambio colori delle scritte",
+                            "    let is_requirement_met = function(field) {",
+                            "        let parent_style = field.parentNode.style;",
+                            "        if (field.tagName === 'INPUT') {",
+                            "            if (field.checked) {",
+                            "                parent_style.color = 'green';",
+                            "            } else {",
+                            "                parent_style.color = '';",
+                            "            }",
+                            "        } else {",
+                            "            if (parent_style.color === 'green') {",
+                            "                parent_style.color = '';",
+                            "            } else {",
+                            "                parent_style.color = 'green';",
+                            "            }",
+                            "        }",
+                            "    };",
+                            "    ",
+                            "    // Controllo se contiene lettere minuscole",
+                            "    if (password.match(/[a-z]+/g)) {",
+                            "        if (!lowercase_check.checked) {",
+                            "            lowercase_check.checked = true;",
+                            "            is_requirement_met(lowercase_check);",
+                            "        }",
+                            "    } else {",
+                            "        if (lowercase_check.checked) {",
+                            "            lowercase_check.checked = false;",
+                            "            is_requirement_met(lowercase_check);",
+                            "        }",
+                            "    }",
+                            "});"
+                        ],
+                        "example": [
+                            "<span class=\"js-comment\">/*",
+                            "   Codice scritto in JavaScript",
+                            "*/</span>",
+                            "",
+                            "<span class=\"js-comment\">// Prendo le variabili</span>",
+                            "<span class=\"js-init\">let</span> <span class=\"js-var\">password_field</span> = <span class=\"js-var\">document</span>.<span class=\"js-func\">getElementById</span>(<span class=\"str\">'password-field'</span>);",
+                            "<span class=\"js-init\">let</span> <span class=\"js-var\">check</span> = <span class=\"js-var\">document</span>.<span class=\"js-func\">getElementById</span>(<span class=\"str\">'lowercase-check'</span>);",
+                            "",
+                            "<span class=\"js-comment\">// Ogni volta che inserisco qualcosa -> faccio il controllo</span>",
+                            "<span class=\"js-var\">password_field</span>.<span class=\"js-func\">addEventListener</span>(<span class=\"str\">'input'</span>, () => {",
+                            "    ",
+                            "    <span class=\"js-comment\">// Prendo la password inserita</span>",
+                            "    <span class=\"js-init\">let</span> <span class=\"js-var\">password</span> = <span class=\"js-var\">password_field</span>.<span class=\"js-var\">value</span>;",
+                            "    <span class=\"js-comment\">// Imposto i colori per il cambio colori delle scritte</span>",
+                            "    <span class=\"js-init\">let</span> <span class=\"js-var\">is_requirement_met</span> = function(<span class=\"js-func-var\">field</span>) {",
+                            "        <span class=\"js-init\">let</span> <span class=\"js-var\">parent_style</span> = <span class=\"js-func-var\">field</span>.<span class=\"js-var\">parentNode</span>.<span class=\"js-var\">style</span>;",
+                            "        if (<span class=\"js-func-var\">field</span>.<span class=\"js-var\">tagName</span> === <span class=\"str\">'INPUT'</span>) {",
+                            "            if (<span class=\"js-func-var\">field</span>.<span class=\"js-var\">checked</span>) {",
+                            "                <span class=\"js-var\">parent_style</span>.<span class=\"js-var\">color</span> = <span class=\"str\">'green'</span>;",
+                            "            } else {",
+                            "                <span class=\"js-var\">parent_style</span>.<span class=\"js-var\">color</span> = <span class=\"str\">''</span>;",
+                            "            }",
+                            "        } else {",
+                            "            if (<span class=\"js-var\">parent_style</span>.<span class=\"js-var\">color</span> === <span class=\"str\">'green'</span>) {",
+                            "                <span class=\"js-var\">parent_style</span>.<span class=\"js-var\">color</span> = <span class=\"str\">''</span>;",
+                            "            } else {",
+                            "                <span class=\"js-var\">parent_style</span>.<span class=\"js-var\">color</span> = <span class=\"str\">'green'</span>;",
+                            "            }",
+                            "        }",
+                            "    };",
+                            "    ",
+                            "    <span class=\"js-comment\">// Controllo se rispetta il controllo</span>",
+                            "    if (<span class=\"js-var\">password</span>.<span class=\"js-func\">match</span>(<span class=\"regex\">/'pattern'/</span>g)) {",
+                            "        if (!<span class=\"js-var\">check</span>.<span class=\"js-var\">checked</span>) {",
+                            "            <span class=\"js-var\">check</span>.<span class=\"js-var\">checked</span> = true;",
+                            "            <span class=\"js-func\">is_requirement_met</span>(<span class=\"js-var\">check</span>);",
+                            "        }",
+                            "    } else {",
+                            "        if (<span class=\"js-var\">check</span>.<span class=\"js-var\">checked</span>) {",
+                            "            <span class=\"js-var\">check</span>.<span class=\"js-var\">checked</span> = false;",
+                            "            <span class=\"js-func\">is_requirement_met</span>(<span class=\"js-var\">check</span>);",
+                            "        }",
+                            "    }",
+                            "});"
                         ]
                     }
                 ]
