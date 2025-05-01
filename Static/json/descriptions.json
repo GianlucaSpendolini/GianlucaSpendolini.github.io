@@ -124,6 +124,133 @@
                 ]
             }
         },
+
+        "data extractions": {
+            "export-data-into-file-by-javascript&php&sql": {
+                "description": {
+                    "Nel codice": [
+                        {
+                            "JavaScript": [
+                                "Prende il valore del bottone", 
+                                "Esegue una chiamata fetch in cui passa l'id del riferimento del contenuto XML nel database"
+                            ]
+                        },
+                        {
+                            "PHP ed SQL": [
+                                "Rende il valore passato un numero intero",
+                                "Esegue la chiamata al database usando il numero per prelevare il contenuto desiderato",
+                                "Controllo se la chiamata al database è stata eseguita con successo",
+                                "Vado a prendere il contenuto che volevo estrarre",
+                                "Controllo se l'estrazione del contenuto è andata a buon fine",
+                                "Restituisco il contenuto estratto",
+                                "Esco dallo script per restituire solo il contenuto estratto"
+                            ]
+                        },
+                        {
+                            "JavaScript": [
+                                "Prende il contenuto che gli ritorna",
+                                "Lo fa diventare Blob",
+                                "Crea il tag HTML 'a' e gli inserisce l'attributo download con il nome del file",
+                                "Aggiunge il tag al documento",
+                                "Esegue dinamicamente un click",
+                                "Rimuove l'elemento 'a' dal documento HTML"
+                            ]
+                        }
+                    ],
+                    "Lato interfaccia": [
+                        "Una volta cliccato il bottone compare la schermata per il download del file"
+                    ]
+                },
+                "to insert": [
+                    {
+                        "language": "JavaScript & PHP & SQL",
+                        "HTML": null,
+                        "JavaScript": null,
+                        "example": [
+                            "/* CODICE JAVASCRIPT */",
+                            "",
+                            "// Prendo il riferimento al bottone",
+                            "let buttonXML = document.getElementsByClassName('download-xml');",
+                            "buttonXML.forEach(button => {",
+                            "    button.addEventListener('click', function() {",
+                            "        console.log(\"value: \", button.value);",
+                            "        // Chiamata fetch",
+                            "        fetch('lista_impegnative_step2.php', {",
+                            "            method: \"POST\",",
+                            "            headers: {",
+                            "                'Content-Type': 'application/x-www-form-urlencoded'",
+                            "            },",
+                            "            body: `XMLdownload=true&id=${button.value}`",
+                            "        })",
+                            "        .then(response => {",
+                            "            if (!response.ok) {",
+                            "                throw new Error('Errore server: ' + response.status);",
+                            "            }",
+                            "            return response.text();",
+                            "        })",
+                            "        .then(data => {",
+                            "            data = data.trim();",
+                            "            console.log(\"data: \", data);",
+                            "            // Crea un blob dal contenuto XML",
+                            "            const blob = new Blob([data], { type: 'application/xml' });",
+                            "            const url = URL.createObjectURL(blob);",
+                            "            // Crea un link invisibile per scaricare il file",
+                            "            const a = document.createElement('a');",
+                            "            a.href = url;",
+                            "            a.download = 'dati.xml';",
+                            "            document.body.appendChild(a);",
+                            "            a.click();",
+                            "            // Pulizia",
+                            "            document.body.removeChild(a);",
+                            "            URL.revokeObjectURL(url);",
+                            "        })",
+                            "        .catch(err => {",
+                            "            console.error('Errore:', err);",
+                            "        });",
+                            "    })",
+                            "});",
+                            "",
+                            "",
+                            "/* CODICE PHP E SQL */",
+                            "",
+                            "if (!empty($_POST[\"XMLdownload\"])) {",
+                            "    ",
+                            "    include \"./../include/connection_emr.php\";",
+                            "    ",
+                            "    $id_xml = intval($_POST['id']);",
+                            "    // echo $id_xml; die;",
+                            "    // Recupera riga (esempio: prima riga)",
+                            "    $xml_content= \" SELECT ",
+                            "                        SOAP_CODE",
+                            "                    FROM ",
+                            "                        LOG_SISS_SOAP ",
+                            "                    WHERE ",
+                            "                        ID=$id_xml\";",
+                            "    $result = $db->query($xml_content);",
+                            "    if (!$result) {",
+                            "        http_response_code(500);",
+                            "        die('Errore nella query');",
+                            "    }",
+                            "    ",
+                            "    $result_row = $result->fetchRow(DB_FETCHMODE_ASSOC);",
+                            "    if (!$result_row) {",
+                            "        http_response_code(404);",
+                            "        die('Nessun dato trovato');",
+                            "    }",
+                            "    // Decodifica base64 ? XML",
+                            "    $xmlDecoded = base64_decode($result_row['SOAP_CODE']);",
+                            "    ",
+                            "    header('Content-Type: application/xml; charset=utf-8');",
+                            "    // Restituisci XML come testo",
+                            "    echo $xmlDecoded;",
+                            "    exit; // BLOCCA IL RESTO",
+                            "    ",
+                            "}"
+                        ]
+                    }
+                ]
+            }
+        },
         
         "general checks": {
             "cambiamenti-di-stato": {
