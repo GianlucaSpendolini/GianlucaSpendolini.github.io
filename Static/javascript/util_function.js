@@ -10,6 +10,10 @@
             - Funzione contenente tutti gli eventi per controllare se attivi alcuni blocchi
         - clickable_path
             - Funzione per creare un percorso cliccabile da inserire nell'apposita sezione
+        - copy_icons_swap
+            - Funzione per cambiare l'icona da 'copy' a 'copied'
+        - copy_to_clipboard
+            - Funzione per copiare un determinato contenuto nella clipboard (appunti)
         - insert_examples
             - Funzione per inserire esempi (di codice o di altro)
         - insert_in_head
@@ -270,6 +274,102 @@ export function clickable_path(path) {
 
     // Ritorno l'array
     return path_to_move_into_pages;
+}
+
+
+// Funzione per cambiare l'icona da 'copy' a 'copied'
+export function copy_icons_swap() {
+
+    // Prendo il bottone e gli inserisco l'immagine svg
+    let buttons = document.getElementsByClassName('copy');
+
+    if (buttons) {
+
+        Array.from(buttons).forEach(button => {
+            // Elimino eventuali figli
+            if (button.hasChildNodes()) {
+                button.removeChild(button.firstElementChild);
+            }
+
+            // Creo l'elemento di immagine ed inserisco le proprietà
+            let img = document.createElement('img');
+            img.src = points_number(path) + 'Static/images/icons/copy.svg';
+            img.alt = 'Copy';
+            img.title = 'Copy';
+
+            // Inserisco l'icona di default
+            button.appendChild(img);
+    
+            // Se clicco -> cambio l'icona
+            button.onclick = function() {
+                img.src = points_number(path) + 'Static/images/icons/copied.svg';;
+            };
+        });
+    }
+}
+
+
+// Funzione per copiare un determinato contenuto nella clipboard (appunti)
+export async function copy_to_clipboard(content) {
+
+    try {
+        if (typeof content === 'string') {
+            await navigator.clipboard.writeText(content);
+            console.log('✅ Testo copiato');
+        } 
+        else if (content instanceof Blob || content instanceof File) {
+            let type = content.type || 'application/octet-stream';
+            let clipboardItem = new ClipboardItem({ [type]: content });
+            await navigator.clipboard.write([clipboardItem]);
+            console.log('✅ Blob/File copiato');
+        } 
+        else if (content instanceof HTMLElement) {
+            switch (content.tagName) {
+
+                case 'A':
+                    if (content.hasAttribute('download')) {
+                        let href = content.href;
+                        let res = await fetch(href);
+                        let blob = await res.blob();
+                        let clipboardItem = new ClipboardItem({ [blob.type]: blob });
+                        await navigator.clipboard.write([clipboardItem]);
+                        console.log('✅ Contenuto da <a download> copiato come blob');
+                    } else {
+                        console.warn('❗️ Solo il contenuto dell\'attributo "download" del tag "a" può essere copiato come blob');
+                    }
+                
+                    break;
+
+                case 'IMG':
+                    let src = content.src;
+                    if (src.startsWith('data:')) {
+                        let res = await fetch(src);
+                        let blob = await res.blob();
+                        let clipboardItem = new ClipboardItem({ [blob.type]: blob });
+                        await navigator.clipboard.write([clipboardItem]);
+                        console.log('✅ Immagine (data URL) copiata');
+                    } else {
+                        await navigator.clipboard.writeText(src);
+                        console.warn('❗️ Solo immagini con data URL possono essere copiate come blob');
+                    }
+
+                    break;
+
+                default:
+                    await navigator.clipboard.writeText(content.outerHTML);
+                    console.log('✅ HTML copiato come testo');
+                    break;
+            
+            }
+        } 
+        else {
+            throw new Error('Tipo non supportato');
+        }
+
+    } catch (err) {
+        console.error('❌ Errore copia:', err);
+    }
+
 }
 
 

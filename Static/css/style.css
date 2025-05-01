@@ -9,6 +9,12 @@
     max-width: 50%;
 }
 
+/* Bottone per copiare del contenuto */
+.copy {
+    background-color: transparent;
+    border-color: transparent;
+}
+
 /* Container per i tag details */
 .details-container details {
     color: blue;
@@ -315,6 +321,10 @@ main#descrizione hr:not(.break-line) {
     min-width: 50%;
 }
 
+div:has(> .copy) {
+    text-align: -webkit-right;
+}
+
 
 /*
     PASSWORD CHECKER 
@@ -455,7 +465,7 @@ main:has(>.checker-container) > div:has(>p) > p {
     flex-direction: column;
     max-width: 100%;
     min-width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 .matcher-container > textarea {

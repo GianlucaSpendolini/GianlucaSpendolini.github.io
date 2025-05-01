@@ -4,7 +4,8 @@
 // Importo funzioni da file esterni
 import { 
     add_css_js, 
-    clickable_path, 
+    clickable_path,
+    copy_icons_swap,
     insert_examples,
     insert_in_head, 
     insert_my_json, 
@@ -73,6 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Cerco se voglio la lista delle pagine (per avere un minimo di percorso)
     movement_into_pages(points, path);
+
+    // Inserisco l'icona per copiare se trovo il bottone
+    copy_icons_swap();
 });
 
 
@@ -492,7 +496,7 @@ function what_page(points_path) {
             break;
 
         // /code-translator
-        case '/utilities/code-translator':
+        case '/utilities/code-translator.html':
 
             // Titolo
             title.innerHTML = 'Transformer';
@@ -581,6 +585,32 @@ function what_page(points_path) {
 
             break;
 
+        // /scripts/data-extractions
+        case '/utilities/scripts/data-extractions':
+
+            // Titolo
+            title.innerHTML = 'Data extractions & clipboard tools';
+
+            // Header title
+            header_title.innerHTML = 'Data extractions & clipboard tools';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = [
+                'Pagina contenente script per l\'estrazione dei dati tramite file o copiandoli nella clipboard.'
+            ].join(' ');
+
+            /*
+                Inserisco
+                - le descrizioni per ogni script di compilazione automatica
+                - il codice di esempio
+            */
+            (async () => {
+                await insert_examples('code', 'data extractions');
+            })();
+            
+
+            break;
+
         // /scripts/general-checks
         case '/utilities/scripts/general-checks':
 
@@ -625,7 +655,6 @@ function what_page(points_path) {
                 - il codice di esempio
             */
             (async () => {
-                // await insert_my_json('scripts page references', points_path);
                 await insert_examples('code', 'page references');
             })();
             

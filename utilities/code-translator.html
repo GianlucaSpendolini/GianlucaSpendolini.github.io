@@ -19,6 +19,10 @@
 		<div class="converter-container">
 
             <div class="left-container">
+
+                <div>
+                    <button class="copy"></button>
+                </div>
                 
                 <textarea id="left" placeholder="Inserire il testo"></textarea>
 
@@ -43,6 +47,10 @@
             </button>
 
             <div class="right-container">
+
+                <div>
+                    <button class="copy"></button>
+                </div>
                 
                 <textarea id="right" placeholder="Inserire il testo"></textarea>
 
@@ -121,6 +129,10 @@
         import {
             UserText
         } from './../Static/javascript/util_class.js';
+
+        import {
+            copy_icons_swap
+        } from './../Static/javascript/util_function.js';
 
         document.addEventListener('DOMContentLoaded', () => {
 
@@ -230,6 +242,9 @@
                 // Eseguo la funzione
                 left_input(content);
 
+                // Aggiorno le icone a quelle originali
+                copy_icons_swap();
+
             });
             left.addEventListener('click', () => {
 
@@ -238,6 +253,9 @@
 
                 // Eseguo la funzione
                 left_input(content);
+
+                // Aggiorno le icone a quelle originali
+                copy_icons_swap();
 
             });
 
@@ -249,6 +267,9 @@
 
                 // Eseguo la funzione
                 right_input(content);
+
+                // Aggiorno le icone a quelle originali
+                copy_icons_swap();
                 
             });
             right.addEventListener('click', () => {
@@ -258,6 +279,9 @@
 
                 // Eseguo la funzione
                 right_input(content);
+
+                // Aggiorno le icone a quelle originali
+                copy_icons_swap();
                 
             });
 
@@ -274,6 +298,9 @@
                 // Inverto i valori
                 left.value = right_content;
                 right.value = left_content;
+
+                // Aggiorno le icone a quelle originali
+                copy_icons_swap();
 
             })
 
