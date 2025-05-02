@@ -497,7 +497,7 @@ function what_page(points_path) {
             break;
 
         // /code-translator
-        case '/utilities/code-translator.html':
+        case '/utilities/code-translator':
 
             // Titolo
             title.innerHTML = 'Transformer';
@@ -540,7 +540,7 @@ function what_page(points_path) {
             break;
 
         // /pattern-matcher
-        case '/utilities/pattern-matcher.html':
+        case '/utilities/pattern-matcher':
 
             // Titolo
             title.innerHTML = 'Smart Pattern Matcher';
@@ -583,7 +583,7 @@ function what_page(points_path) {
             break;
 
         // /scripts/automatic-filling
-        case '/utilities/scripts/automatic-filling.html':
+        case '/utilities/scripts/automatic-filling':
 
             // Titolo
             title.innerHTML = 'Compilazione automatica';
@@ -607,7 +607,7 @@ function what_page(points_path) {
             break;
 
         // /scripts/data-extractions
-        case '/utilities/scripts/data-extractions.html':
+        case '/utilities/scripts/data-extractions':
 
             // Titolo
             title.innerHTML = 'Data extractions';
