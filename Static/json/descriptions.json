@@ -196,7 +196,7 @@
                             "                if (<span class=\"js-var\">src</span>.<span class=\"js-func\">startsWith</span>(<span class=\"str\">'data:'</span>)) {",
                             "                    <span class=\"js-init\">let</span> <span class=\"js-var\">res</span> = await <span class=\"js-func\">fetch</span>(<span class=\"js-var\">src</span>);",
                             "                    <span class=\"js-init\">let</span> <span class=\"js-var\">blob</span> = await <span class=\"js-var\">res</span>.<span class=\"js-func\">blob</span>();",
-                            "                    <span class=\"js-init\">let</span> <span class=\"js-var\">clipboardItem</span>( = new <span class=\"class\">ClipboardItem</span>({ [<span class=\"js-var\">blob</span>.<span class=\"js-var\">type</span>]: <span class=\"js-var\">blob</span> });",
+                            "                    <span class=\"js-init\">let</span> <span class=\"js-var\">clipboardItem</span> = new <span class=\"class\">ClipboardItem</span>({ [<span class=\"js-var\">blob</span>.<span class=\"js-var\">type</span>]: <span class=\"js-var\">blob</span> });",
                             "                    await <span class=\"js-var\">navigator</span>.<span class=\"js-var\">clipboard</span>.<span class=\"js-func\">write</span>([<span class=\"js-var\">clipboardItem</span>]);",
                             "                    <span class=\"js-var\">console</span>.<span class=\"js-func\">log</span>(<span class=\"str\">'✅ Immagine (data URL) copiata'</span>);",
                             "                } else {",
