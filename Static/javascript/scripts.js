@@ -6,6 +6,7 @@ import {
     add_css_js, 
     clickable_path,
     copy_icons_swap,
+    copy_to_clipboard,
     insert_examples,
     insert_in_head, 
     insert_my_json, 
@@ -509,6 +510,16 @@ function what_page(points_path) {
                 'Pagina utile per convertire il testo normale in un tipo di codice e viceversa.'
             ].join(' ');
 
+            /*
+                Eseguo altre funzionalità
+            */
+           // Copiare l'elemento nella clipboard
+            Array.from(document.getElementsByClassName('copy')).forEach(button => {
+                button.addEventListener('click', async () => {
+                    await copy_to_clipboard(button.parentNode.parentNode.querySelector('textarea').value);
+                });
+            });
+
             break;
 
         // /password-checker
@@ -529,7 +540,7 @@ function what_page(points_path) {
             break;
 
         // /pattern-matcher
-        case '/utilities/pattern-matcher':
+        case '/utilities/pattern-matcher.html':
 
             // Titolo
             title.innerHTML = 'Smart Pattern Matcher';
@@ -542,6 +553,16 @@ function what_page(points_path) {
                 'Pagina utile per cercare un determinato pattern in un testo inserito dall\'utente.',
                 'Se si vuole, c\'è anche la possibilità di sostituire le corrispondenze.'
             ].join(' ');
+
+            /*
+                Eseguo altre funzionalità
+            */
+           // Copiare l'elemento nella clipboard
+            Array.from(document.getElementsByClassName('copy')).forEach(button => {
+                button.addEventListener('click', async () => {
+                    await copy_to_clipboard(button.parentNode.parentNode.querySelector('textarea').value);
+                });
+            });
 
             break;
 

@@ -12,7 +12,10 @@
 /* Bottone per copiare del contenuto */
 .copy {
     background-color: transparent;
+    border: none;
     border-color: transparent;
+    margin: 5px 5px 0 0;
+    padding: 0;
 }
 
 /* Container per i tag details */
@@ -82,6 +85,19 @@
     display: none;
     text-align: -webkit-center;
 }
+
+:has(> .copy) {
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+    background-color: lightslategray;
+    border-radius: 5px 5px 0 0;
+    text-align: -webkit-right;
+}
+
+/* :has(> .copy) > *:not(.copy) {
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+} */
 
 body {
     line-height: 1.5;
@@ -298,15 +314,18 @@ main#descrizione hr:not(.break-line) {
 .left-container, .right-container {
     display: flex;
     flex-direction: column;
+    margin: 0;
     /* max-width: 30%; */
     min-width: 30%;
 }
 
 .left-container > textarea, .right-container > textarea {
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
     margin-bottom: 10px;
-    max-width: 99%;
+    max-width: 100%;
     min-height: 100px;
-    min-width: 99%;
+    min-width: 100%;
 }
 
 #text-swap {
@@ -319,10 +338,6 @@ main#descrizione hr:not(.break-line) {
 
 #type-left, #type-right {
     min-width: 50%;
-}
-
-div:has(> .copy) {
-    text-align: -webkit-right;
 }
 
 
@@ -468,11 +483,15 @@ main:has(>.checker-container) > div:has(>p) > p {
     text-align: left;
 }
 
-.matcher-container > textarea {
+.matcher-container > * {
     align-self: center;
     margin: 10px 0px;
     max-width: 75%;
     min-width: 75%;
+}
+
+.matcher-container > p {
+    text-align: center;
 }
 
 #pattern {
@@ -489,8 +508,16 @@ main:has(>.checker-container) > div:has(>p) > p {
 }
 
 #result {
+    align-self: center;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 100%;
+    /* text-align: center; */
+}
+
+div:has(> #result) {
     margin-top: 20px;
-    text-align: center;
 }
 
 

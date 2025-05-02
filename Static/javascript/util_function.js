@@ -302,7 +302,9 @@ export function copy_icons_swap() {
     
             // Se clicco -> cambio l'icona
             button.onclick = function() {
-                img.src = points_number(path) + 'Static/images/icons/copied.svg';;
+                img.src = points_number(path) + 'Static/images/icons/copied.svg';
+                img.alt = 'Copied';
+                img.title = 'Copied';
             };
         });
     }
