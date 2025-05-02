@@ -471,7 +471,7 @@ export async function insert_examples(reason, script_name) {
 
                 // Prendo le descrizioni, creo l'elenco e lo appendo all'elemento
                 div_ref.append('Funzionamento:');
-                div_ref.appendChild(json_to_element('ul', page_ref[id_ref]['description']))
+                div_ref.appendChild(json_to_element('ul', page_ref[id_ref]['description']));
 
                 // Itero su ogni esempio da inserire
                 page_ref[id_ref]['to insert'].forEach( exmpl => {

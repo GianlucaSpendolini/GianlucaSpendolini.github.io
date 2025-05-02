@@ -90,7 +90,7 @@
         "tData": "22/02/2024",
         "tDescrizione": {
             "Aggiunta": {
-                "/changes/": {
+                "changes/": {
                     "index.html": [
                         "Indica ogni file sotto questa cartella e una descrizione"
                     ],
@@ -103,7 +103,7 @@
                         "Inserimento link a progetti per i miei amici (cartella di prova, per questa sezione faro' una repo su GitHub condivisa)"
                     ]
                 },
-                "/projects/web/": {
+                "projects/web/": {
                     "index.html": [
                         "Indica i link ai vari siti che non fanno direttamente parte di questo progetto"
                     ]
@@ -136,11 +136,11 @@
         "tData": "23/02/2024",
         "tDescrizione": {
             "Aggiunta": {
-                "/Static/css/photo.css": "Contiene ogni cambiamento per ogni tipo di immagine (es icone o sfondi)",
-                "/Static/css/table.css": "Contiene ogni cambiamento per ogni tipo di tabelle (es generale o per contatti)"
+                "Static/css/photo.css": "Contiene ogni cambiamento per ogni tipo di immagine (es icone o sfondi)",
+                "Static/css/table.css": "Contiene ogni cambiamento per ogni tipo di tabelle (es generale o per contatti)"
             },
             "Aggiornamento": {
-                "/projects/index.html": "Lettere accentate con \"lettera'\"",
+                "projects/index.html": "Lettere accentate con \"lettera'\"",
                 "index.html": "Modifica al posto del link completo, uso \"/generic/\"",
                 "about.html": [
                     "Sistemati i link per i social e per la mail",
@@ -302,7 +302,7 @@
             "Aggiunta": null,
             "Aggiornamento": {
                 "index.html": "tolto il doppione del tag \"hr\"",
-                "/projects/web/index.html": "aggiornato il link che porta al sito del Mario Negri (da \"clinicalweb-twin\" tolto \"-twin\")"
+                "projects/web/index.html": "aggiornato il link che porta al sito del Mario Negri (da \"clinicalweb-twin\" tolto \"-twin\")"
             }
         },
         "tAggiunte": null
@@ -411,8 +411,8 @@
         "tDescrizione": {
             "Aggiunta": null,
             "Aggiornamento": {
-                "/projects/": "corretto riferimento nella pagina per #games",
-                "/projects/games/scratch": [
+                "projects/": "corretto riferimento nella pagina per #games",
+                "projects/games/scratch": [
                     "aggiunti quasi tutti i link per i giochi di scratch",
                     "aggiunte le descrizioni dei giochi e relativi avvertimenti"
                 ],
@@ -448,24 +448,24 @@
         "tData": "18/06/2024",
         "tDescrizione": {
             "Aggiunta": {
-                "/Static/javascript/util_class.js": "file creato per contenere tutte le classi che posso importare ed usare in altri file js",
-                "/Static/javascript/util_function.js": [
+                "Static/javascript/util_class.js": "file creato per contenere tutte le classi che posso importare ed usare in altri file js",
+                "Static/javascript/util_function.js": [
                     "contiene le funzioni che posso importare ed usare anche in altri file js",
                     "funzione per inserire in automatico file js e css",
                     "funzione per inserire i meta tag"
                 ],
-                "/Static/css/media.css": [
+                "Static/css/media.css": [
                     "contiene tutte le '@media' query per tutti i file",
                     "riadattamento parti codice in base a dimensione schermo"
                 ]
             },
             "Aggiornamento": {
                 "tutti i file html": "tolti tutti i meta-tag perchè inseriti automaticamente tramite js",
-                "/Static/javascript/scripts.js": [
+                "Static/javascript/scripts.js": [
                     "spostata funzione e points_number in util_function.js",
                     "aggiunto inserimento automatico tag meta"
                 ],
-                "/Static/css/style.css": [
+                "Static/css/style.css": [
                     "spostati codici css '@media' in media.css",
                     "suddivisione file in base allo scopo del codice (maggiore ordine)"
                 ]
@@ -482,7 +482,7 @@
         "tDescrizione": {
             "Aggiunta": null,
             "Aggiornamento": {
-                "/Static/javascript/util_function.js": [
+                "Static/javascript/util_function.js": [
                     "aggiunte nuove funzioni per scambiare icona in base a vedo/non vedo la password",
                     "aggiunta funzione per scegliere le icone in base al mese"
                 ]
@@ -495,17 +495,17 @@
         "tData": "10/07/2024",
         "tDescrizione": {
             "Aggiunta": {
-                "/Static/image/icons/": "icone in formato svg",
-                "/Static/javascript/": {
+                "Static/image/icons/": "icone in formato svg",
+                "Static/javascript/": {
                     "util_variable.js": "inserimento variabili utili globali"
                 }
             },
             "Aggiornamento": {
-                "/Static/javascript/util_function.js": [
+                "Static/javascript/util_function.js": [
                     "migliorata funzione per selezionare icone in base al mese in modo che seleziona solo nome dell'icona con path",
                     "cambiato nome per la funzione insert_meta -> insert_in_head"
                 ],
-                "/Static/javascript/scripts.js": [
+                "Static/javascript/scripts.js": [
                     "inserimento dell'icona favicon prima dei tag meta",
                     "importazione variabili globali utili da file esterno"
                 ]
@@ -520,7 +520,7 @@
             "Aggiunta": null,
             "Aggiornamento": {
                 "/about.html": "aggiornato URL di Linkedin (tolto numero alla fine del nome)",
-                "/Static/javascript/util_function.js": "sistemato switch-case per mesi 6/7/8 (tolto \"||\" e aggiunti più \"case\")"
+                "Static/javascript/util_function.js": "sistemato switch-case per mesi 6/7/8 (tolto \"||\" e aggiunti più \"case\")"
             }
         },
         "tAggiunte": null
@@ -530,12 +530,12 @@
         "tData": "08/11/2024",
         "tDescrizione": {
             "Aggiunta": {
-                "/projects/socials/": "Collegamento a pagina per ./telegram",
-                "/projects/socials/telegram": [
+                "projects/socials/": "Collegamento a pagina per ./telegram",
+                "projects/socials/telegram": [
                     "Aggiunta descrizione bot CashCommBot",
                     "Aggiunto PDF specifiche progetto"
                 ], 
-                "/Static/javascript/scripts.js": "Sezione per inserimento titolo (pagina e main) in automatico per .../socials/ e .../telegram"
+                "Static/javascript/scripts.js": "Sezione per inserimento titolo (pagina e main) in automatico per .../socials/ e .../telegram"
             },
             "Aggiornamento": null
         },
@@ -547,8 +547,8 @@
         "tDescrizione": {
             "Aggiunta": null,
             "Aggiornamento": {
-                "/projects/socials/": "Riferimento a ./telegram",
-                "/projects/socials/telegram": "Tolto il riferimento alla documentazione CashCommBot"
+                "projects/socials/": "Riferimento a ./telegram",
+                "projects/socials/telegram": "Tolto il riferimento alla documentazione CashCommBot"
             }
         },
         "tAggiunte": null
@@ -558,15 +558,15 @@
         "tData": "14/11/2024",
         "tDescrizione": {
             "Aggiunta": {
-                "/Static/json/": "Sezione per contenere file json utili (come quello della tabella dei cambiamenti)"
+                "Static/json/": "Sezione per contenere file json utili (come quello della tabella dei cambiamenti)"
             },
             "Aggiornamento": {
                 "README.md": [
                     "Tolte le date",
                     "Creato una struttura più descrittiva"
                 ],
-                "/changes/": "Aggiunto <hr /> tra header e main",
-                "/changes/changes_table": [
+                "changes/": "Aggiunto <hr /> tra header e main",
+                "changes/changes_table": [
                     "Aggiunte modifiche readme",
                     {
                         "Aggiunta l'aggiunta della sezione": [
@@ -584,13 +584,13 @@
         "tData": "18/11/2024",
         "tDescrizione": {
             "Aggiunta": {
-                "/Static/javascript/util_function.js": "Funzione per trasformazione json in elemento html",
-                "/Static/javascript/scripts.js": "Funzione per inserimento automatico dei dati del file json in tabella cambiamenti"
+                "Static/javascript/util_function.js": "Funzione per trasformazione json in elemento html",
+                "Static/javascript/scripts.js": "Funzione per inserimento automatico dei dati del file json in tabella cambiamenti"
             },
             "Aggiornamento": {
                 "README.md": "Nuova versione (0.17.0)",
-                "/Static/javascript/scripts.js": "Sezione per inserimento nelle pagine specifiche (tabella cambiamenti e prova)",
-                "/Static/json/changes_table_elements.json": "Continuato aggiornamento elenco coi dati delle tabelle"
+                "Static/javascript/scripts.js": "Sezione per inserimento nelle pagine specifiche (tabella cambiamenti e prova)",
+                "Static/json/changes_table_elements.json": "Continuato aggiornamento elenco coi dati delle tabelle"
             }
         },
         "tAggiunte": null
@@ -600,24 +600,24 @@
         "tData": "19/11/2024",
         "tDescrizione": {
             "Aggiunta": {
-                "/Static/images/icons/": [
+                "Static/images/icons/": [
                     "00_favicon.svg",
                     "04_favicon.svg",
                     "06_07_08_favicon.svg",
                     "10_favicon.svg",
                     "12_favicon.svg"
                 ],
-                "/Static/json/changes_table_elements.json": "Inserimento elementi dei giorni successivi al 06/08/2024 (oltre a quelli che mi mancavano da inserire)"
+                "Static/json/changes_table_elements.json": "Inserimento elementi dei giorni successivi al 06/08/2024 (oltre a quelli che mi mancavano da inserire)"
             },
             "Aggiornamento": {
                 "README.md": "Nuova versione (0.17.1)",
                 ".gitignore": "Commentata la possibilità di ignorare il README.md (mi serve aggiornato)",
-                "/Static/javascript/scripts.js": [
+                "Static/javascript/scripts.js": [
                     "Correzione link LinkedIn (lasciato solo nome e cognome)",
                     "Tolto riferimenti inserimenti automatici in tabella per la sezione \"prova\""
                 ],
-                "/Static/javascript/util_function.js": "Se, nella sezione aggiunte per l'inserimento dati della tabella delle modifiche, ho un elenco di stringhe, il separatore non è '\n' ma '<br />'",
-                "/changes/changes_table.html": "Tolti elementi (poichè inseriti in automatico)"
+                "Static/javascript/util_function.js": "Se, nella sezione aggiunte per l'inserimento dati della tabella delle modifiche, ho un elenco di stringhe, il separatore non è '\n' ma '<br />'",
+                "changes/changes_table.html": "Tolti elementi (poichè inseriti in automatico)"
             }
         },
         "tAggiunte": null
@@ -648,8 +648,8 @@
         "tData": "23/12/2024",
         "tDescrizione": {
             "Aggiunta": {
-                "/Static/javascript/scripts.js": "Funzione per inserimento automatico auguri in base alla festività corrente;",
-                "/Static/documents/cv/": "Aggiunto CV in versione inglese ( - En)."
+                "Static/javascript/scripts.js": "Funzione per inserimento automatico auguri in base alla festività corrente;",
+                "Static/documents/cv/": "Aggiunto CV in versione inglese ( - En)."
             },
             "Aggiornamento": {
                 "index.html": [
@@ -657,16 +657,16 @@
                     "Aggiunta sezione per l'inserimento degli auguri personalizzati;"
                 ],
                 "about.html": "Aggiunta classe 'no-points-list' all'ul;",
-                "/Static/css/style.css": [
+                "Static/css/style.css": [
                     "Aggiunti stili per la nuova descrizione in Home;",
                     "Modificati stili per portare a sinistra i titoli nella schermata home;",
                     "Aggiunta classe per togliere la lista puntata dagli elenchi ul"
                 ],
-                "/Static/css/media.css": [
+                "Static/css/media.css": [
                     "Aggiunta sezione per modificare più stili da 0 ad una certa grandezza;",
                     "Modificati stili per /about in modo che, fino a 900px di grandezza, sia in colonna e non abbia l'overflow;"
                 ],
-                "/Static/javascript/scripts.js": "Modificata funzione per inserire l'header (impedita la creazione per il bottone Generic);",
+                "Static/javascript/scripts.js": "Modificata funzione per inserire l'header (impedita la creazione per il bottone Generic);",
                 "README.md": "Nuova versione (0.18.0)."
             }
         },
@@ -677,11 +677,11 @@
         "tData": "24/12/2024 & 25/12/2024",
         "tDescrizione": {
             "Aggiunta": {
-                "/Static/json/progress.json": "File per tenere traccia delle % dei progressi nel tempo (ora per linguaggi usati nei progetti)."
+                "Static/json/progress.json": "File per tenere traccia delle % dei progressi nel tempo (ora per linguaggi usati nei progetti)."
             },
             "Aggiornamento": {
                 "index.html": "Maggiore descrizione per le sezioni (soprattutto /projects/);",
-                "/projects/": [
+                "projects/": [
                     "Cambio struttura della descrizione;",
                     "Aggiunta break-line per separare legenda da elenco e da archivio finale;",
                     "Sistemate descrizioni delle varie sezioni;"
@@ -696,15 +696,15 @@
         "tData": "26/12/2024 & 27/12/2024",
         "tDescrizione": {
             "Aggiunta": {
-                "/Static/javascript/scripts.js": "Funzione per gestione tag details in Home;",
+                "Static/javascript/scripts.js": "Funzione per gestione tag details in Home;",
                 "index.html": "Aggiunti i tag details (sostituiscono lista di tag p per le sezioni)."
             },
             "Aggiornamento": {
-                "/Static/css/style.css": [
+                "Static/css/style.css": [
                     "Aggiunta classe per gestire la lista di details;",
                     "Tolta altezza generale di header e footer;"
                 ],
-                "/Static/css/media.css": [
+                "Static/css/media.css": [
                     "Aggiunta media query per gestire header quando schermo < 320px;",
                     "Modificata altezza massima di header e footer solo in monitor > 481px;"
                 ],
@@ -748,8 +748,8 @@
                 "about.html": [
                     "Continuata descrizione dei corsi svolti;"
                 ],
-                "/Static/css/media.css": "Modificato la selezione del tag hr per mettere il display none (ora è più specifica usando ':not()');",
-                "/Static/css/style.css": "Modificata la selezione del tag hr in /about per dare le caratteristiche specifiche (ora è più specifica usando ':not()');",
+                "Static/css/media.css": "Modificato la selezione del tag hr per mettere il display none (ora è più specifica usando ':not()');",
+                "Static/css/style.css": "Modificata la selezione del tag hr in /about per dare le caratteristiche specifiche (ora è più specifica usando ':not()');",
                 "README.md": "Nuova versione (0.20.1)"
             }
         },
@@ -760,13 +760,13 @@
         "tData": "04/01/2025",
         "tDescrizione": {
             "Aggiunta": {
-                "/Static/javascript/scripts.js": "Funzione per raggiungere più velocemente la fine o l'inizio di una tabella (in base alla pagina in cui si dice di inserirsi);",
+                "Static/javascript/scripts.js": "Funzione per raggiungere più velocemente la fine o l'inizio di una tabella (in base alla pagina in cui si dice di inserirsi);",
                 "about.html": "Aggiunto div#details-container per l'inserimento automatico dei details dei linguaggi."
             },
             "Aggiornamento": {
-                "/Static/css/style.css": "Sistemati stili per tag details (il margin solo in Home + cambio colore dei p nei details + rientranza per il contenuto del p);",
-                "/Static/javascript/scripts.js": "Spostata in una funzione separata la logica per aggiornare il p.movement-into-pages;",
-                "/Static/javascript/util_function.js": [
+                "Static/css/style.css": "Sistemati stili per tag details (il margin solo in Home + cambio colore dei p nei details + rientranza per il contenuto del p);",
+                "Static/javascript/scripts.js": "Spostata in una funzione separata la logica per aggiornare il p.movement-into-pages;",
+                "Static/javascript/util_function.js": [
                     "Spostate tutte le funzioni da non inserire nel DOMContentLoaded precedentemente contenute in .../scripts.js;",
                     "Aggiornata funzione insert_my_json con parte di about per inserire i progressi per i linguaggi e relativi framework (se presenti);",
                     "Aggiornata funzione show_details in modo che se volevo vedere il contenuto sotto a tutti potevo farlo, come il vederlo sotto al singolo annullando le altre aperture;"
@@ -800,7 +800,7 @@
         "tData": "09/01/2025",
         "tDescrizione": {
             "Aggiunta": {
-                "/Static/javascript/scripts.js": [
+                "Static/javascript/scripts.js": [
                     "Link per il blog da aggiungere nel footer (rimpiazzerà 'Altro');",
                     "Aggiunto un filtro nella funzione per aggiungere l'header (per non includere il link del blog)."
                 ]
@@ -817,7 +817,7 @@
         "tDescrizione": {
             "Aggiunta": null,
             "Aggiornamento": {
-                "/Static/javascript/scripts.js": "Aggiunti meta-descrizioni personalizzate per ogni pagina del sito (prima era solo per la Home);",
+                "Static/javascript/scripts.js": "Aggiunti meta-descrizioni personalizzate per ogni pagina del sito (prima era solo per la Home);",
                 "README.md": "Nuova versione (0.22.1)."
             }
         },
@@ -856,14 +856,14 @@
                         "utilities/scripts/automatic-filling.html": "Inserisco gli script che permettono l'inserimento automatico dei dati in base a determinati eventi;"
                     }
                 ],
-                "/Static/json/descriptions.json": "File contenente le descrizioni sottoforma di 'elenco puntato';",
-                "/Static/css/code.css": "File che contiene gli stili per le varie sezioni in cui inserisco frammenti di codice (comprese le classi delle parti del codice come var o func);",
-                "/Static/javascript/util_function.js": "Funzione insert_examples per inserire in automatico i pezzi di codice in base alla sezione."
+                "Static/json/descriptions.json": "File contenente le descrizioni sottoforma di 'elenco puntato';",
+                "Static/css/code.css": "File che contiene gli stili per le varie sezioni in cui inserisco frammenti di codice (comprese le classi delle parti del codice come var o func);",
+                "Static/javascript/util_function.js": "Funzione insert_examples per inserire in automatico i pezzi di codice in base alla sezione."
             },
             "Aggiornamento": {
                 "utilities/": "Aggiunta descrizione per sezione /scripts/;",
-                "/Static/javascript/scripts.js": "Aggiunte parti per le nuove sezioni nella funzione 'what page';",
-                "/Static/javascript/util_function.js": "Nuova sezione nella funzione insert_my_json per la compilazione automatica dei campi;",
+                "Static/javascript/scripts.js": "Aggiunte parti per le nuove sezioni nella funzione 'what page';",
+                "Static/javascript/util_function.js": "Nuova sezione nella funzione insert_my_json per la compilazione automatica dei campi;",
                 "README.md":"Nuova versione (0.23.0)."
             }
         },
@@ -886,15 +886,15 @@
                         "utilities/scripts/": "Inserimento richiamo e descrizione per sezione /page-references.html;"
                     }
                 ],
-                "/Static/css/code.css": [
+                "Static/css/code.css": [
                     "Aggiunti classi generali per parti codice;",
                     "Aggiunti colori per linguaggi Python e PHP;"
                 ],
-                "/Static/javascript/util_function.js": [
+                "Static/javascript/util_function.js": [
                     "Aggiornata funzione insert_my_json con parte di /page-references.html per inserire le descrizione;",
                     "Aggiornata funzione insert_examples per inserire esempi anche in /page-references.html;"
                 ],
-                "/Static/json/": {
+                "Static/json/": {
                     "/descriptions.json": "Inserimento descrizione per sezione /page_references.html;",
                     "/progress.json": "Aggiornamento percentuali per progetto sito statico GitHub;"
                 },
@@ -917,7 +917,7 @@
         "tDescrizione": {
             "Aggiunta": {
                 "utilities/code-translator": "Aggiunta pagina per la conversione di codici;",
-                "/Static/": {
+                "Static/": {
                     "/javascript/util_class.js": {
                         "UserText": "Classe per manipolare il testo dell'utente (ora può convertire codici);"
                     },
@@ -927,7 +927,7 @@
             "Aggiornamento": {
                 "index.html": "Aggiornata descrizione della sezione utilities/;",
                 "utilities/": "Aggiunte sezione, descrizione ed il riferimento per code-translator;",
-                "/Static/": {
+                "Static/": {
                     "/css/": {
                         "/media.css": "Stili per adattare la pagina code-translator;",
                         "/style.css": [
@@ -959,7 +959,7 @@
                     "Aggiunta evento 'click' sui textarea per dire di tradurre 'quello' nell'altro (se i valori non sono '' o i tipi di conversioni sono uguali);",
                     "Nelle funzioni left_ right_ per l'input, aggiunta gestione del codice binario (se scritto tutto attaccato viene suddiviso in multipli di max 8 caratteri);"
                 ],
-                "/Static/": {
+                "Static/": {
                     "/css/style.css": "Stile per il bottone per il text-swap;",
                     "/json/encoding-map.json": [
                         "Aggiunti gruppi dei caratteri accentati (maiuscoli e minuscoli);",
@@ -974,7 +974,7 @@
                     "Funzioni per contenere le azioni da fare in base da dove voglio tradurre;",
                     "Migliore gestione del carattere '' (ora non entra nella traduzione ma copia il contenuto '' nell'altro) in modo che non esca '#' perchè non presente nella mappatura;"
                 ],
-                "/Static/": {
+                "Static/": {
                     "/css/media.css": [
                         "Rendere la larghezza dei textarea la massima possibile (se nel cell);",
                         "Allineare gli elementi al centro (poter allineare il bottone al centro);"
@@ -1009,7 +1009,7 @@
                         "Pagina contenente script inerenti a diversi tipi di controlli;"
                     ]
                 },
-                "/Static/": {
+                "Static/": {
                     "/images/icons/": [
                         "Aggiunte icone svg _b e _nb (con il colore appropriato) per il mese 10;"
                     ],
@@ -1019,7 +1019,7 @@
                 }
             },
             "Aggiornamento": {
-                "/projects/games/": [
+                "projects/games/": [
                     "Aggiunta la descrizione di cos'è scratch;",
                     {
                         "scratch": [
@@ -1031,7 +1031,7 @@
                     }
                 ],
                 "utilities/scripts/": "Inserito riferimento per la pagina general-checks;",
-                "/Static/": {
+                "Static/": {
                     "/css/": {
                         "/style.css": [
                             "Aggiunti stili per la pagina del pattern-matcher;",
@@ -1100,6 +1100,55 @@
         "tAggiunte": [
             "Aggiungere una pagina nella sezione delle cose utili con i vari cifrari (Cesare, Vigenère, ...)."
         ]
+    },
+
+    {
+        "tData": "01/05/2025 - 02/05/2025",
+        "tDescrizione": {
+            "Aggiunta": {
+                "utilities/scripts/": {
+                    "/data-extractions": "Pagina per inserire i vari script sul come estrarre i dati;"
+                },
+                "Static/": {
+                    "/images/icons/": {
+                        "/copy.svg": "Icona per quando voglio copiare l'elemento;",
+                        "/copied.svg": "Icona per quando ho già copiato l'elemento negli appunti;"
+                    },
+                    "/javascript/util_function.js": {
+                        "copy_to_clipboard()": "Aggiunta funzione per copiare un elemento di qualsiasi tipo negli appunti;",
+                        "copy_icons_swap()": "Aggiunta funzione per cambiare l'icona del 'copy' quando copio e disabilitare il bottone."
+                    }
+                }
+            },
+            "Aggiornamento": {
+                "utilities/": {
+                    "/code-translator": [
+                        "Aggiunta possibilità di copiare il contenuto di ogni textarea;",
+                        "Ripristino il bottone per copiare usando la funzione copy_icons_swap() in ogni evento;"
+                    ],
+                    "/pattern-matcher": [
+                        "Aggiunta la possibilità di copiare il contenuto del textarea del risultato;",
+                        "Ripristino il bottone per copiare usando la funzione copy_icons_swap() in ogni evento;"
+                    ],
+                    "/scripts/": "Aggiunti riferimenti alla nuova pagina /data-extractions;"
+                },
+                "Static/": {
+                    "/css/style.css": "Aggiunti stili per gestire la classe .copy ed il suo contenitore;",
+                    "/javascript/scripts.js": [
+                        "Importazione delle funzioni copy_to_clipboard() e copy_icons_swap();",
+                        {
+                            "DOMContentLoaded": "Eseguita funzione per gestire, almeno la prima volta, l'icona del bottone per copiare;",
+                            "what_page()": [
+                                "Inserite descrizione e titoli per la nuova pagina /data-extractions;",
+                                "Aggiunta funzione asincrona copy_to_clipboard() per ogni pagina in cui uso il bottone per copiare andando a prendere bottoni ed campo specifici;"
+                            ]
+                        }
+                    ]
+                },
+                "README.md": "Nuova versione (0.28.0)."
+            }
+        },
+        "tAggiunte": null
     },
 
     {
