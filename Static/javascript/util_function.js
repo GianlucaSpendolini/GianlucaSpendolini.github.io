@@ -291,6 +291,9 @@ export function copy_icons_swap() {
                 button.removeChild(button.firstElementChild);
             }
 
+            // Abilito il bottone (soprattutto se disattivato)
+            button.disabled = false;
+
             // Creo l'elemento di immagine ed inserisco le proprietà
             let img = document.createElement('img');
             img.src = points_number(path) + 'Static/images/icons/copy.svg';
@@ -305,6 +308,9 @@ export function copy_icons_swap() {
                 img.src = points_number(path) + 'Static/images/icons/copied.svg';
                 img.alt = 'Copied';
                 img.title = 'Copied';
+
+                // Disabilito il bottone
+                button.disabled = true;
             };
         });
     }
@@ -342,6 +348,16 @@ export async function copy_to_clipboard(content) {
                 
                     break;
 
+                case 'CANVAS':
+                    content.toBlob(async (blob) => {
+                        await navigator.clipboard.write([
+                            new ClipboardItem({ [blob.type]: blob })
+                        ]);
+                        console.log('✅ Canvas copiato negli appunti come immagine');
+                    });
+                    
+                    break;
+
                 case 'IMG':
                     let src = content.src;
                     if (src.startsWith('data:')) {
@@ -357,9 +373,67 @@ export async function copy_to_clipboard(content) {
 
                     break;
 
+                case 'INPUT':
+                    switch (content.type) {
+
+                        case 'color':
+
+                        case 'date':
+
+                        case 'datetime-local':
+
+                        case 'email':
+
+                        case 'month':
+
+                        case 'number':
+
+                        case 'password':
+
+                        case 'range':
+
+                        case 'tel':
+
+                        case 'text':
+
+                        case 'time':
+
+                        case 'url':
+
+                        case 'week':
+                            await copy_to_clipboard(content.value);
+
+                            break;
+
+                        default:
+                            console.warn('❗️ Non è stato possibile copiare alcun elemento');
+
+                            // break;
+                    }
+
+                case 'TEXTAREA':
+                    let value = content.value;
+                    await navigator.clipboard.writeText(value);
+                    console.log('✅ Testo copiato');
+                    
+                    break;
+
+                case 'VIDEO':
+                    let canvas = document.createElement('canvas');
+                    canvas.width = content.videoWidth;
+                    canvas.height = content.videoHeight;
+                    let ctx = canvas.getContext('2d');
+                    ctx.drawImage(content, 0, 0, canvas.width, canvas.height);
+
+                    // Copia il frame del momento in cui si è voluto copiare
+                    await copy_to_clipboard(canvas);
+
+                    break;
+
                 default:
                     await navigator.clipboard.writeText(content.outerHTML);
                     console.log('✅ HTML copiato come testo');
+
                     break;
             
             }

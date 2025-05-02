@@ -583,7 +583,7 @@ function what_page(points_path) {
             break;
 
         // /scripts/automatic-filling
-        case '/utilities/scripts/automatic-filling':
+        case '/utilities/scripts/automatic-filling.html':
 
             // Titolo
             title.innerHTML = 'Compilazione automatica';
@@ -607,10 +607,10 @@ function what_page(points_path) {
             break;
 
         // /scripts/data-extractions
-        case '/utilities/scripts/data-extractions':
+        case '/utilities/scripts/data-extractions.html':
 
             // Titolo
-            title.innerHTML = 'Data extractions & clipboard tools';
+            title.innerHTML = 'Data extractions';
 
             // Header title
             header_title.innerHTML = 'Data extractions & clipboard tools';

@@ -87,14 +87,13 @@
 }
 
 :has(> .copy) {
-    border-radius: 0 0 5px 5px;
-    box-sizing: border-box;
     background-color: lightslategray;
+    border-radius: 0 0 5px 5px;
     border-radius: 5px 5px 0 0;
     text-align: -webkit-right;
 }
 
-/* :has(> .copy) > *:not(.copy) {
+/* :has(> :has(> .copy)) > *:not(:has(> .copy)) {
     border-radius: 0 0 5px 5px;
     box-sizing: border-box;
 } */
@@ -181,6 +180,11 @@ header ul li/*, nav ul li*/ {
 iframe {
     height: 402;
     width: 485;
+}
+
+/* Stili per tutti i textarea */
+textarea {
+    box-sizing: border-box;
 }
 
 /* Decorazione per ogni elenco di link */
@@ -321,7 +325,6 @@ main#descrizione hr:not(.break-line) {
 
 .left-container > textarea, .right-container > textarea {
     border-radius: 0 0 5px 5px;
-    box-sizing: border-box;
     margin-bottom: 10px;
     max-width: 100%;
     min-height: 100px;
@@ -498,7 +501,7 @@ main:has(>.checker-container) > div:has(>p) > p {
     min-height: 50px;
 }
 
-#text-to-search, #replacement,#result {
+#text-to-search, #replacement, #result {
     min-height: 100px;
 }
 
@@ -510,7 +513,6 @@ main:has(>.checker-container) > div:has(>p) > p {
 #result {
     align-self: center;
     border-radius: 0 0 5px 5px;
-    box-sizing: border-box;
     max-width: 100%;
     min-width: 100%;
     /* text-align: center; */

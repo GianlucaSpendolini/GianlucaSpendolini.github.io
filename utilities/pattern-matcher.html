@@ -105,6 +105,10 @@
             UserText
         } from './../Static/javascript/util_class.js';
 
+        import {
+            copy_icons_swap
+        } from './../Static/javascript/util_function.js';
+
 
         // Prendo i campi
         let correspondence = document.getElementById('corr');
@@ -173,14 +177,23 @@
         pattern_field.addEventListener('input', () => {
             // Cerco il pattern
             search_pattern();
+
+            // Aggiorno le icone a quelle originali
+            copy_icons_swap();
         });
         text_to_search_field.addEventListener('input', () => {
             // Cerco il pattern
             search_pattern();
+
+            // Aggiorno le icone a quelle originali
+            copy_icons_swap();
         });
         is_global_field.addEventListener('click', () => {
             // Cerco il pattern
             search_pattern();
+
+            // Aggiorno le icone a quelle originali
+            copy_icons_swap();
         });
         to_replace_field.addEventListener('click', () => {
             // Se voglio rimpiazzare -> mostro il blocco
@@ -193,10 +206,16 @@
             }
             // Cerco il pattern
             search_pattern();
+
+            // Aggiorno le icone a quelle originali
+            copy_icons_swap();
         });
         replacement_field.addEventListener('input', () => {
             // Cerco il pattern
             search_pattern();
+
+            // Aggiorno le icone a quelle originali
+            copy_icons_swap();
         });
 
     </script>
