@@ -1133,16 +1133,23 @@
                     "/scripts/": "Aggiunti riferimenti alla nuova pagina /data-extractions;"
                 },
                 "Static/": {
-                    "/css/style.css": "Aggiunti stili per gestire la classe .copy ed il suo contenitore;",
+                    "/css/style.css": [
+                        "Aggiunti stili per gestire la classe .copy ed il suo contenitore;",
+                        "Aggiunto stile per dire che textarea devono essere lunghe al massimo la lunghezza del contenitore;"
+                    ],
                     "/javascript/scripts.js": [
                         "Importazione delle funzioni copy_to_clipboard() e copy_icons_swap();",
                         {
                             "DOMContentLoaded": "Eseguita funzione per gestire, almeno la prima volta, l'icona del bottone per copiare;",
                             "what_page()": [
                                 "Inserite descrizione e titoli per la nuova pagina /data-extractions;",
-                                "Aggiunta funzione asincrona copy_to_clipboard() per ogni pagina in cui uso il bottone per copiare andando a prendere bottoni ed campo specifici;"
+                                "Aggiunta funzione copy_to_clipboard() in modo asincrono per ogni pagina in cui uso il bottone per copiare andando a prendere bottoni ed campo specifici;"
                             ]
                         }
+                    ],
+                    "/json/descriptions.json": [
+                        "Aggiunta descrizione ed esempio per lo script dell'estrazione dei dati in un file tramite JS/PHP/SQL;",
+                        "Aggiunta descrizione ed esempio per lo script dell'estrazione dei dati copiandoli negli appunti tramite JS;"
                     ]
                 },
                 "README.md": "Nuova versione (0.28.0)."
