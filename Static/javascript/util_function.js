@@ -1308,7 +1308,7 @@ export function wishes_function(date) {
             <h3>
                 ${wishes.innerHTML ? "PS: ": ''}Buon ${month === mis ? 'anniversario' : 'mesiversario'}!
                 <br /><br />
-                Questo per ricordare, ad una persona speciale, ${month === mis ? `
+                Questo per ricordare ad una persona speciale ${month === mis ? `
                     che ${as === 1 ? 'è un' : 'sono'} ${as} ann${as === 1 ? 'o' : 'i'} 
                 ` : ''}che mi s(u/o)pporta${month !== mis ? ` 
                     da diverso tempo (${as}:${(month < mis ? month + (12 - mis) : month - mis) < 2 ? 0 : ''}${(month < mis ? month + (12 - mis) : month - mis) * 5})
