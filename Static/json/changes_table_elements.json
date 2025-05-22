@@ -1159,6 +1159,35 @@
     },
 
     {
+        "tData": "22/05/2025",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "Static/javascript/": {
+                    "/util_class.js": {
+                        "UserText.convert()": [
+                            "Quando traduco da esadecimale -> rendo maiuscolo tutto ciò che verrà tradotto (in modo che si possa usare esadecimale minuscolo o maiuscolo);",
+                            "Quando traduco in esadecimale -> rendo minuscolo tutto ciò che visualizzo (per visualizzarlo come viene scritto in generale);"
+                        ]
+                    },
+                    "/util_function.js": {
+                        "wishes_function": [
+                            {
+                                "Aggiunta una condizione per vedere se il giorno è quello del mesiversario (in base ai parametri inseriti dell'ora, giorno, etc)": [
+                                    "Se il mese è quello indicato -> faccio gli auguri per l'anniversario (spostata logica da switch a dentro la condizione);",
+                                    "Altrimenti -> faccio gli auguri per il mesiversario"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "README.md": "Nuova versione (0.28.1)."
+            }
+        },
+        "tAggiunte": null
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,

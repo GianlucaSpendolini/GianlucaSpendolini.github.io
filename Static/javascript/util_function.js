@@ -1222,47 +1222,6 @@ export function wishes_function(date) {
 
         // Anniversario Betta-Me
         case '22/10':
-            // Colore
-            wishes.style.color = '#00BFFF';
-            wishes.style.backgroundColor = '#1F305E';
-            // Anni di sopportazione
-            let as = date.getFullYear() - 2023;
-            //Altri dati
-            let h = date.getHours();
-            let m = date.getMinutes();
-            // Testo
-            wishes.innerHTML = h >= 4 ? `
-                <h3>
-                    Buon anniversario!
-                    <br /><br />
-                    Questo per ricordarti che ${as === 1 ? 'è un' : 'sono'} ${as} ann${as === 1 ? 'o' : 'i'} che ci sopportiamo :)
-                </h3>
-                <code>
-                    00100000 00100000 00100000 01011111 01011111 00100000 00100000 00100000 00100000 01011111 01011111&nbsp;
-                    <br />
-                    &nbsp;01111100 00100000 00101111 00100000 00100000 01011100 01011111 01011111 00101111 00100000 00100000 01011100 00100000 01111100&nbsp;
-                    <br />
-                    &nbsp;01111100 00100000 01011100 00100000 00100000 00100000 00100000 00100000 00100000 00100000 00100000 00101111 00100000 01111100&nbsp;
-                    <br />
-                    &nbsp;01111100 00100000 00100000 01011100 00100000 00100000 01001100 01010101 00100000 00100000 00101111 00100000 00100000 01111100&nbsp;
-                    <br />
-                    &nbsp;01111100 00100000 00100000 00100000 01011100 00100000 00100000 00100000 00100000 00101111 00100000 00100000 00100000 01111100&nbsp;
-                    <br />
-                    &nbsp;01111100 00100000 00100000 00100000 00100000 01011100 00100000 00100000 00101111 00100000 00100000 00100000 00100000 01111100&nbsp;
-                    <br />
-                    &nbsp;01111100 00100000 00100000 00100000 00100000 00100000 01011100 00101111 00100000 00100000 00100000 00100000 00100000 01111100
-                </code>
-            ` : `
-                <h3>
-                    We, che controlli? Non è ancora arrivata l'ora!
-                    <br /><br />
-                    Torna tra 
-                    ${(h - 3 > 0 || (h - 3 === 0 && m === 0)) ? ((h - 2 === 0 && m > 0) || (h - 3 === 0 && m === 0) ? '1 ora' : `${4 - (h + 1)} ore`) + ' e' : ''} 
-                    ${60 - m} minut${m === 59 ? 'o' : 'i'} :)
-                </h3>
-            `;
-            // Mostro l'elemento
-            wishes.style.display = 'block';
 
             break;
 
@@ -1296,10 +1255,95 @@ export function wishes_function(date) {
 
             break;
 
-        // Default -> elimino il div
+        // Default -> elimino il div se non è il giorno del mesiversario
         default:
-            wishes.remove();
+            day !== 22 ? wishes.remove() : null;
 
             break;
+    }
+
+    // Inserisco il promemoria per il mesiversario
+    if (day === 22) {
+
+        /*
+            Per i calcoli
+            - hour: 04
+            - day: 22
+            - month: 10
+            - year: 2023
+        */
+       
+        // Ore di inizio sopportazione
+        let os = 4;
+        // Mese di inizio sopportazione
+        let ms = 10;
+        // Anni di sopportazione
+        let as = date.getFullYear() - (month >= ms ? 2023 : 2023 + 1);
+        
+        //Altri dati
+        let h = date.getHours();
+        let m = date.getMinutes();
+        
+        // Colore
+        wishes.style.color = '#00BFFF';
+        wishes.style.backgroundColor = '#1F305E';
+
+        // Creo il contenitore
+        let div = document.createElement('div');
+        
+        // Testo
+        div.innerHTML = h >= (os) ? `
+            <h3>
+                ${wishes.innerHTML ? "<br />PS: ": ''}Buon ${month === ms ? 'anniversario' : 'mesiversario'}!
+                <br /><br />
+                Questo per ricordare ad una persona speciale ${month === ms ? `
+                    che ${as === 1 ? 'è un' : 'sono'} ${as} ann${as === 1 ? 'o' : 'i'} 
+                ` : ''}che mi s(u/o)pporta${month !== ms ? ` 
+                    da molto tempo, precisamente ${as}:${(month < ms ? month + (12 - ms) : month) * 5}
+                ` : ''} :)
+            </h3>
+        ` : `
+            <h3>
+                We, che controlli? Non è ancora arrivata l'ora!
+                <br /><br />
+                Torna tra 
+                ${((os - 1) - h > 0 || ((os - 1) - h === 0 && m === 0)) ? (((os - 2) - h === 0 && m > 0) || ((os - 1) - h === 0 && m === 0) ? '1 ora' : `${os - (h + 1)} ore`) + ' e' : ''} 
+                ${60 - m} minut${m === 59 ? 'o' : 'i'} :)
+            </h3>
+        `;
+
+        // Se non è il mesiversario
+        if (month === ms) {
+            // Testo sottoforma di array
+            let text = [
+                ['00100000 00100000 00100000 01011111 01011111 00100000 00100000 00100000 00100000 01011111 01011111'],
+                ['01111100 00100000 00101111 00100000 00100000 01011100 01011111 01011111 00101111 00100000 00100000 01011100 00100000 01111100'],
+                ['01111100 00100000 01011100 00100000 00100000 00100000 00100000 00100000 00100000 00100000 00100000 00101111 00100000 01111100'],
+                ['01111100 00100000 00100000 01011100 00100000 00100000 01001100 01010101 00100000 00100000 00101111 00100000 00100000 01111100'],
+                ['01111100 00100000 00100000 00100000 01011100 00100000 00100000 00100000 00100000 00101111 00100000 00100000 00100000 01111100'],
+                ['01111100 00100000 00100000 00100000 00100000 01011100 00100000 00100000 00101111 00100000 00100000 00100000 00100000 01111100'],
+                ['01111100 00100000 00100000 00100000 00100000 00100000 01011100 00101111 00100000 00100000 00100000 00100000 00100000 01111100']
+            ];
+
+            // Inserisco il testo nel tag <code>
+            div.innerHTML += `
+                <code>
+                    ${text.join(`&nbsp;
+                        <br />
+                    &nbsp;`)}
+                </code>
+            `;
+            
+            // Coloro anche il codice
+            div.style.color = wishes.style.color;
+            div.style.backgroundColor = wishes.style.backgroundColor;
+        }
+
+        // Inserisco gli auguri
+        wishes.appendChild(div);
+
+        // Mostro l'elemento
+        wishes.style.display = 'block';
+
     }
 }

@@ -54,8 +54,8 @@ export class UserText {
         // Tolgo eventuali spazi prima e dopo (se metto 'lettera ', se traduzione code-code, avrò '' come carattere da tradurre -> non trovato -> undefined)
         this.text = this.text.trim();
 
-        // Se traduco in morse -> rendo upper tutti i caratteri
-        if (to === 'morse') {
+        // Se traduco da esadecimale O in morse -> rendo upper tutti i caratteri
+        if (from === 'hexadecimal' || to === 'morse') {
             this.text = this.text.toUpperCase();
         }
 
@@ -192,6 +192,12 @@ export class UserText {
         }
         // Altrimenti
         else {
+            // Se to è esadecimale -> rendo minuscole le lettere
+            if (to === 'hexadecimal') {
+                converted = converted.map(e => {
+                    return e.toLowerCase();
+                });
+            }
             // Riporto caratteri a blocchi (se non metto spazi -> unisco -> non capibili) -> aggiungo lo spazio
             return converted.join(' ');
         }
