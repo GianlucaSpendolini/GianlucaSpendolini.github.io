@@ -1123,6 +1123,8 @@ export function wishes_function(date) {
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let actual_day = `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}`;
+    // Prendo anche il giorno di inizio sopportazione (della relazione)
+    let gis = 22;
 
     switch (actual_day) {
 
@@ -1257,13 +1259,13 @@ export function wishes_function(date) {
 
         // Default -> elimino il div se non è il giorno del mesiversario
         default:
-            day !== 22 ? wishes.remove() : null;
+            day !== gis ? wishes.remove() : null;
 
             break;
     }
 
     // Inserisco il promemoria per il mesiversario
-    if (day === 22) {
+    if (day === gis) {
 
         /*
             Per i calcoli
@@ -1274,32 +1276,42 @@ export function wishes_function(date) {
         */
        
         // Ore di inizio sopportazione
-        let os = 4;
+        let ois = 4;
         // Mese di inizio sopportazione
-        let ms = 10;
+        let mis = 10;
+        // Anno di inizio sopportazione
+        let ais = 2023;
         // Anni di sopportazione
-        let as = date.getFullYear() - (month >= ms ? 2023 : 2023 + 1);
+        let as = date.getFullYear() - (month >= mis ? ais : ais + 1);
         
         //Altri dati
         let h = date.getHours();
         let m = date.getMinutes();
-        
-        // Colore
-        wishes.style.color = '#00BFFF';
-        wishes.style.backgroundColor = '#1F305E';
 
         // Creo il contenitore
         let div = document.createElement('div');
+            
+        // Coloro e sistemo il contenitore degli auguri per mesi/anniversario
+        div.style.color = '#00BFFF';
+        div.style.backgroundColor = '#1F305E';
+        div.style.borderRadius = '10px';
+        div.style.padding = month === mis ? '10px 0 33px 0' : '10px 0 15px 0';
+        
+        // Colore
+        if (!(wishes.style.color || wishes.style.backgroundColor)) {
+            wishes.style.color = '#00BFFF';
+            wishes.style.backgroundColor = '#1F305E';
+        }
         
         // Testo
-        div.innerHTML = h >= (os) ? `
+        div.innerHTML = h >= (ois) ? `
             <h3>
-                ${wishes.innerHTML ? "<br />PS: ": ''}Buon ${month === ms ? 'anniversario' : 'mesiversario'}!
+                ${wishes.innerHTML ? "PS: ": ''}Buon ${month === mis ? 'anniversario' : 'mesiversario'}!
                 <br /><br />
-                Questo per ricordare ad una persona speciale ${month === ms ? `
+                Questo per ricordare ad una persona speciale ${month === mis ? `
                     che ${as === 1 ? 'è un' : 'sono'} ${as} ann${as === 1 ? 'o' : 'i'} 
-                ` : ''}che mi s(u/o)pporta${month !== ms ? ` 
-                    da molto tempo, precisamente ${as}:${(month < ms ? month + (12 - ms) : month) * 5}
+                ` : ''}che mi s(u/o)pporta${month !== mis ? ` 
+                    da molto tempo, precisamente ${as}:${(month < mis ? month + (12 - mis) : month) * 5}
                 ` : ''} :)
             </h3>
         ` : `
@@ -1307,13 +1319,13 @@ export function wishes_function(date) {
                 We, che controlli? Non è ancora arrivata l'ora!
                 <br /><br />
                 Torna tra 
-                ${((os - 1) - h > 0 || ((os - 1) - h === 0 && m === 0)) ? (((os - 2) - h === 0 && m > 0) || ((os - 1) - h === 0 && m === 0) ? '1 ora' : `${os - (h + 1)} ore`) + ' e' : ''} 
+                ${((ois - 1) - h > 0 || ((ois - 1) - h === 0 && m === 0)) ? (((ois - 2) - h === 0 && m > 0) || ((ois - 1) - h === 0 && m === 0) ? '1 ora' : `${ois - (h + 1)} ore`) + ' e' : ''} 
                 ${60 - m} minut${m === 59 ? 'o' : 'i'} :)
             </h3>
         `;
 
         // Se non è il mesiversario
-        if (month === ms) {
+        if (month === mis) {
             // Testo sottoforma di array
             let text = [
                 ['00100000 00100000 00100000 01011111 01011111 00100000 00100000 00100000 00100000 01011111 01011111'],
@@ -1333,10 +1345,6 @@ export function wishes_function(date) {
                     &nbsp;`)}
                 </code>
             `;
-            
-            // Coloro anche il codice
-            div.style.color = wishes.style.color;
-            div.style.backgroundColor = wishes.style.backgroundColor;
         }
 
         // Inserisco gli auguri
