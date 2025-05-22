@@ -1308,11 +1308,11 @@ export function wishes_function(date) {
             <h3>
                 ${wishes.innerHTML ? "PS: ": ''}Buon ${month === mis ? 'anniversario' : 'mesiversario'}!
                 <br /><br />
-                Questo per ricordare ad una persona speciale ${month === mis ? `
+                Questo per ricordare, ad una persona speciale, ${month === mis ? `
                     che ${as === 1 ? 'è un' : 'sono'} ${as} ann${as === 1 ? 'o' : 'i'} 
                 ` : ''}che mi s(u/o)pporta${month !== mis ? ` 
-                    da molto tempo, precisamente ${as}:${(month < mis ? month + (12 - mis) : month) * 5}
-                ` : ''} :)
+                    da diverso tempo (${as}:${(month < mis ? month + (12 - mis) : month - mis) < 2 ? 0 : ''}${(month < mis ? month + (12 - mis) : month - mis) * 5})
+                ` : ''}
             </h3>
         ` : `
             <h3>
@@ -1334,16 +1334,12 @@ export function wishes_function(date) {
                 ['01111100 00100000 00100000 01011100 00100000 00100000 01001100 01010101 00100000 00100000 00101111 00100000 00100000 01111100'],
                 ['01111100 00100000 00100000 00100000 01011100 00100000 00100000 00100000 00100000 00101111 00100000 00100000 00100000 01111100'],
                 ['01111100 00100000 00100000 00100000 00100000 01011100 00100000 00100000 00101111 00100000 00100000 00100000 00100000 01111100'],
-                ['01111100 00100000 00100000 00100000 00100000 00100000 01011100 00101111 00100000 00100000 00100000 00100000 00100000 01111100']
+                ['01111100 00100000 00100000 00100000 00100000 00100000 01011100 00101111 00100000 00100000 00100000 00100000 00100000 01111100'],
             ];
 
             // Inserisco il testo nel tag <code>
             div.innerHTML += `
-                <code>
-                    ${text.join(`&nbsp;
-                        <br />
-                    &nbsp;`)}
-                </code>
+                <code>${text.join(`<br />&nbsp;`)}</code>
             `;
         }
 
