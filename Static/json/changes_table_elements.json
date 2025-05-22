@@ -1175,7 +1175,7 @@
                             {
                                 "Aggiunta una condizione per vedere se il giorno è quello del mesiversario (in base ai parametri inseriti dell'ora, giorno, etc)": [
                                     "Se il mese è quello indicato -> faccio gli auguri per l'anniversario (spostata logica da switch a dentro la condizione);",
-                                    "Altrimenti -> faccio gli auguri per il mesiversario"
+                                    "Altrimenti -> faccio gli auguri per il mesiversario;"
                                 ]
                             }
                         ]
