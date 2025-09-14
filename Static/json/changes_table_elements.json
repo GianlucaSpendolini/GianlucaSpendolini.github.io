@@ -1188,6 +1188,27 @@
     },
 
     {
+        "tData": "12/09/2025 - 14/09/2025",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "about.html": [
+                    "Migliorata descrizione generale del percorso formativo e lavorativo;",
+                    "Suddivisa descrizione generale in base alle tappe;",
+                    "Aggiunte descrizioni per le borse di studio presso l'Istituto Mario Negri;",
+                    "Aggiunta descrizione dell'Università eCampus;",
+                    "Aggiunti i certificati nei vari corsi di CS50;"
+                ],
+                "Static/json/progress.json": "Aggiornate le percentuali per l'EMR e sito statico;",
+                "README.md": "Nuova versione (0.28.2)."
+            }
+        },
+        "tAggiunte": [
+            "Approfondire la descrizione dell'Università eCampus."
+        ]
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,
