@@ -1197,9 +1197,9 @@
                     "Suddivisa descrizione generale in base alle tappe;",
                     "Aggiunte descrizioni per le borse di studio presso l'Istituto Mario Negri;",
                     "Aggiunta descrizione dell'Università eCampus;",
-                    "Aggiunti i certificati nei vari corsi di CS50;"
+                    "Aggiunti i certificati nei vari corsi di CS50 e modificate le loro descrizioni;"
                 ],
-                "Static/json/progress.json": "Aggiornate le percentuali per l'EMR e sito statico;",
+                "Static/json/progress.json": "Aggiornate le percentuali per l'EMR e questo sito;",
                 "README.md": "Nuova versione (0.28.2)."
             }
         },
