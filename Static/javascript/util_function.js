@@ -6,14 +6,16 @@
             - Funzione per avvisare se capslock è attivo
         - advertiment_numlock
             - Funzione per avvisare se blocco numerico non è attivo
+        - change_type_field
+            - Permette di cambiare il tipo di un campo (di default cambia il tipo da password a testo)
         - checkAnyState
             - Funzione contenente tutti gli eventi per controllare se attivi alcuni blocchi
         - clickable_path
             - Funzione per creare un percorso cliccabile da inserire nell'apposita sezione
-        - copy_icons_swap
-            - Funzione per cambiare l'icona da 'copy' a 'copied'
         - copy_to_clipboard
             - Funzione per copiare un determinato contenuto nella clipboard (appunti)
+        - icons_swap
+            - Funzione per cambiare le icone (di default da 'copy' a 'copied')
         - insert_examples
             - Funzione per inserire esempi (di codice o di altro)
         - insert_in_head
@@ -32,8 +34,6 @@
             - Aggiungo dei bottoni prima e dopo per andare in cima o in fondo ad una tabella
         - svg
             - Funzione per capire il mese e mettere l'SVG giusto
-        - togglePasswordVisibility
-            - Settare icona per vedere o meno password
         - wishes_function
             - Inserisce gli auguri in una sezione apposita
 */
@@ -190,6 +190,140 @@ export function advertiment_numlock(event) {
 }
 
 
+// Permette di cambiare il tipo di un campo (di default cambia il tipo da password a testo)
+export function change_type_field(
+    field,
+    modified,
+    button,
+    svgs={
+        original: {
+            alt: 'Show',
+            src: points_number(path) + svg(date.getMonth()).barrato,
+            title: 'Show password'
+        },
+        modified: {
+            alt: 'alt',
+            src: 'path',
+            title: 'title'
+        },
+        disabled: false
+    }
+) {
+
+    /*
+        Campi
+            - field -> tag HTML o id (se stringa)
+                - da esso mi ricavo il valore dell'attributo 'type'
+            - modified -> stringa che indica in che tipo di campo voglio convertire l'originale
+            - button -> quando cliccato cambia l'icona del bottone e il tipo di campo
+            - svgs -> oggetto contenente i riferimenti alle due icone (original e modified)
+                {
+                    original: {
+                        alt: 'alt',
+                        src: 'path',
+                        title: 'title'
+                    },
+                    modified: {
+                        alt: 'alt',
+                        src: 'path',
+                        title: 'title'
+                    },
+                    modified: 'modified'
+                }
+    */
+
+    // Se il campo di testo è una stringa
+    if (typeof field === 'string') {
+        // Prendo il campo della password
+        field = document.getElementById(field);
+    }
+
+    //Controllo che il campo abbia l'attributo type
+    if (!field.hasAttribute('type')) {
+        console.error('Il campo passato non ha l\'attributo "type" e non può essere convertito!');
+        return;
+    }
+
+    // Ricavo il tipo di partenza dal campo field
+    let original = field.type;
+
+    // Mi ricavo l'id del bottone (per semplicità inserire l'id del campo nell'elenco delle classi)
+    let button_id = button.id;
+
+    // Se non c'è la classe con il nome dell'id -> la aggiungo (mi serve per aggiungere l'immagine siccome lavora con le classi)
+    if (!button.classList.contains(button_id)) {
+        button.classList.add(button_id);
+    }
+
+    // Controllo se il bottone sia un'immagine
+    if (button.tagName === 'IMG') {
+        if (field.type === original) {
+            // Cambio il tipo
+            field.type = modified;
+            // Inserisco l'svg
+            button.alt = svgs.modified.alt;
+            button.src = svgs.modified.src;
+            button.title = svgs.modified.title;
+        } else {
+            // Cambio il tipo
+            field.type = original;
+            // Inserisco l'svg
+            button.alt = svgs.original.alt;
+            button.src = svgs.original.src;
+            button.title = svgs.original.title;
+        }
+    } else {
+        // Se il tipo è modificato -> eseguo la funzione per tornare all'originale (cambiando l'icona)
+        if (field.type === modified) {
+            // Cambio il tipo
+            field.type = original;
+            // Inserisco l'icona tramite la funzione
+            icons_swap(
+                button_id,
+                {
+                    alt: svgs.original.alt,
+                    src: svgs.original.path,
+                    title: svgs.original.title
+                },
+                {
+                    alt: svgs.modified.alt,
+                    src: svgs.modified.path,
+                    title: svgs.modified.title
+                },
+                disabled
+            );
+        } else {
+            // Cambio solo il tipo MA non eseguo la funzione perchè altrimenti inserirebbe l'icona original
+            field.type = original;
+        }
+    }
+
+    // if (field.type === original) {
+    //     // Cambio il tipo
+    //     field.type = modified;
+    //     // Inserisco l'svg
+    //     if (button.tagName === 'IMG') {
+    //         button.alt = 'Hide';
+    //         button.src = points_number(path) + svg(date.getMonth()).non_barrato;
+    //         button.title = 'Hide password';
+    //     } else {
+    //         button.innerHTML = svgs.non_barrato;
+    //     }
+    // } else {
+    //     // Cambio il tipo
+    //     field.type = "password";
+    //     // Inserisco l'svg
+    //     if (button.tagName === 'IMG') {
+    //         button.alt = 'Show';
+    //         button.src = points_number(path) + svg(date.getMonth()).barrato;
+    //         button.title = 'Show password';
+    //     } else {
+    //         button.innerHTML = svgs.barrato;
+    //     }
+    // }
+}
+
+
 // Funzione contenente eventi per controllare se qualche blocco è attivo
 export function checkAnyState(field) {
 
@@ -274,46 +408,6 @@ export function clickable_path(path) {
 
     // Ritorno l'array
     return path_to_move_into_pages;
-}
-
-
-// Funzione per cambiare l'icona da 'copy' a 'copied'
-export function copy_icons_swap() {
-
-    // Prendo il bottone e gli inserisco l'immagine svg
-    let buttons = document.getElementsByClassName('copy');
-
-    if (buttons) {
-
-        Array.from(buttons).forEach(button => {
-            // Elimino eventuali figli
-            if (button.hasChildNodes()) {
-                button.removeChild(button.firstElementChild);
-            }
-
-            // Abilito il bottone (soprattutto se disattivato)
-            button.disabled = false;
-
-            // Creo l'elemento di immagine ed inserisco le proprietà
-            let img = document.createElement('img');
-            img.src = points_number(path) + 'Static/images/icons/copy.svg';
-            img.alt = 'Copy';
-            img.title = 'Copy';
-
-            // Inserisco l'icona di default
-            button.appendChild(img);
-    
-            // Se clicco -> cambio l'icona
-            button.onclick = function() {
-                img.src = points_number(path) + 'Static/images/icons/copied.svg';
-                img.alt = 'Copied';
-                img.title = 'Copied';
-
-                // Disabilito il bottone
-                button.disabled = true;
-            };
-        });
-    }
 }
 
 
@@ -446,6 +540,73 @@ export async function copy_to_clipboard(content) {
         console.error('❌ Errore copia:', err);
     }
 
+}
+
+
+// Funzione per cambiare le icone (di default da 'copy' a 'copied')
+export function icons_swap(
+    button_class='copy',
+    original={
+        alt: 'Copy',
+        src: points_number(path) + 'Static/images/icons/copy.svg',
+        title: 'Copy'
+    },
+    modified={
+        alt: 'Copied',
+        src: points_number(path) + 'Static/images/icons/copied.svg',
+        title: 'Copied'
+    },
+    disabled=false
+) {
+
+    // Prendo il bottone e gli inserisco l'immagine svg
+    let buttons = document.getElementsByClassName(button_class);
+	
+	// Controllo ciò che viene passato non sia un oggetto non nullo
+	if (
+		!(typeof original === 'object' && original !== null) && 
+		!(typeof modified === 'object' && modified !== null)
+	) {
+		// Avviso tramite console che uno o più oggetti sono sbagliati
+		console.error('Non sono stati passati correttamente 1 o più oggetti!');
+		
+		// Inserisco nei bottoni un messaggio di errore per avvisare che qualcosa è andato storto
+		Array.from(buttons).forEach(button => {
+			button.innerHTML = 'Errore!';
+		});
+	}
+
+    if (buttons) {
+
+        Array.from(buttons).forEach(button => {
+            // Elimino eventuali figli
+            if (button.hasChildNodes()) {
+                button.removeChild(button.firstElementChild);
+            }
+
+            // Abilito il bottone (soprattutto se disattivato)
+            button.disabled = false;
+
+            // Creo l'elemento di immagine ed inserisco le proprietà
+            let img = document.createElement('img');
+            img.alt = original.alt;
+            img.src = original.src;
+            img.title = original.title;
+
+            // Inserisco l'icona di default
+            button.appendChild(img);
+    
+            // Se clicco -> cambio l'icona
+            button.onclick = function() {
+                img.alt = modified.alt;
+                img.src = modified.src;
+                img.title = modified.title;
+
+                // Disabilito il bottone (se ho specificato di farlo)
+                button.disabled = disabled;
+            };
+        });
+    }
 }
 
 
@@ -1075,41 +1236,6 @@ export function svg(month) {
     // Ritorno gli svg che mi servono        
     return svgs;
         
-}
-
-
-// Settare icona per vedere o meno password
-export function togglePasswordVisibility(passwordField, button, svgs) {
-
-    // Se il campo di testo è una stringa
-    if (typeof passwordField === 'string') {
-        // Prendo il campo della password
-        passwordField = document.getElementById(passwordField);
-    }
-
-    if (passwordField.type === "password") {
-        // Cambio il tipo
-        passwordField.type = "text";
-        // Inserisco l'svg
-        if (button.tagName === 'IMG') {
-            button.src = points_number(path) + svg(date.getMonth()).non_barrato;
-            button.alt = 'Hide';
-            button.title = 'Hide password';
-        } else {
-            button.innerHTML = svgs.non_barrato;
-        }
-    } else {
-        // Cambio il tipo
-        passwordField.type = "password";
-        // Inserisco l'svg
-        if (button.tagName === 'IMG') {
-            button.src = points_number(path) + svg(date.getMonth()).barrato;
-            button.alt = 'Show';
-            button.title = 'Show password';
-        } else {
-            button.innerHTML = svgs.barrato;
-        }
-    }
 }
 
 
