@@ -5,8 +5,8 @@
 import { 
     add_css_js, 
     clickable_path,
-    copy_icons_swap,
     copy_to_clipboard,
+    icons_swap,
     insert_examples,
     insert_in_head, 
     insert_my_json, 
@@ -14,7 +14,7 @@ import {
     movement_into_pages,
     points_number,
     show_details,
-    start_end_table, 
+    start_end_table,
     svg,
     wishes_function
 } from './util_function.js';
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     movement_into_pages(points, path);
 
     // Inserisco l'icona per copiare se trovo il bottone
-    copy_icons_swap();
+    icons_swap();
 });
 
 
