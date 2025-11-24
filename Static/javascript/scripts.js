@@ -359,7 +359,7 @@ function what_page(points_path) {
             break;
 
         // /changes_table
-        case '/changes/changes_table.html':
+        case '/changes/changes_table':
 
             // Titolo
             title.innerHTML = 'Changes table';
