@@ -498,7 +498,7 @@ function what_page(points_path) {
             break;
 
         // /code-translator
-        case '/utilities/code-translator.html':
+        case '/utilities/code-translator':
 
             // Titolo
             title.innerHTML = 'Transformer';
@@ -526,7 +526,7 @@ function what_page(points_path) {
             break;
 
         // /password-checker
-        case '/utilities/password-checker.html':
+        case '/utilities/password-checker':
 
             // Titolo
             title.innerHTML = 'Password checker';
@@ -553,7 +553,7 @@ function what_page(points_path) {
             break;
 
         // /pattern-matcher
-        case '/utilities/pattern-matcher.html':
+        case '/utilities/pattern-matcher':
 
             // Titolo
             title.innerHTML = 'Smart Pattern Matcher';
