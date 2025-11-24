@@ -1247,14 +1247,18 @@
         },
         "tAggiunte": {
             "Creare la sezione dei GDR nella sezione /projects/games/": [
-                "Fare riferimento a ./RPG/ per il nome della sezione;",
+                {
+                    "Fare riferimento a ./RPG/ per il nome della sezione": [
+                        "Sistemare dimensioni dell'immagine dei dadi;"
+                    ]
+                },
                 {
                     "Inserire": [
                         "Elenco dei riferimenti con ul-li;",
                         {
                             "Varie sezioni con titolo h2 (iniziando con L'ultima torcia": [
-                                "Il titolo fa riferimento alla <a href='https://www.serpentarium.net/l-ultima-torcia'>pagina del gioco</a>;",
-                                "Mettere il logo (mettere il <a href='https://static.wixstatic.com/media/5738c7_88ead40507834445af073b0208f2dc64~mv2.png/v1/fill/w_444,h_188,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5738c7_88ead40507834445af073b0208f2dc64~mv2.png'>logo</a> come nella pagina projects/games/);",
+                                "Il titolo fa riferimento alla pagina del gioco 'https://www.serpentarium.net/l-ultima-torcia';",
+                                "Mettere il logo (mettere il logo 'https://static.wixstatic.com/media/5738c7_88ead40507834445af073b0208f2dc64~mv2.png/v1/fill/w_444,h_188,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5738c7_88ead40507834445af073b0208f2dc64~mv2.png' come nella pagina projects/games/);",
                                 "Descrizione generale del GDR (ambientazione, meccaniche principali, etc) con riferimento alla guida quickstarter (scaricabile dalla home citata prima);"
                             ]
                         }
