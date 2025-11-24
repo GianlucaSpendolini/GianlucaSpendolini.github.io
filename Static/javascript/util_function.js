@@ -202,9 +202,9 @@ export function change_type_field(
             title: 'Show password'
         },
         modified: {
-            alt: 'alt',
-            src: 'path',
-            title: 'title'
+            alt: 'Hide',
+            src: points_number(path) + svg(date.getMonth()).non_barrato,
+            title: 'Hide password'
         },
         disabled: false
     }
@@ -556,7 +556,7 @@ export function icons_swap(
         src: points_number(path) + 'Static/images/icons/copied.svg',
         title: 'Copied'
     },
-    disabled=false
+    disabled=true
 ) {
 
     // Prendo il bottone e gli inserisco l'immagine svg

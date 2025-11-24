@@ -131,8 +131,8 @@
         } from './../Static/javascript/util_class.js';
 
         import {
-            copy_icons_swap,
-            copy_to_clipboard
+            copy_to_clipboard,
+            icons_swap
         } from './../Static/javascript/util_function.js';
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -244,7 +244,7 @@
                 left_input(content);
 
                 // Aggiorno le icone a quelle originali
-                copy_icons_swap();
+                icons_swap();
 
             });
             left.addEventListener('click', () => {
@@ -256,7 +256,7 @@
                 left_input(content);
 
                 // Aggiorno le icone a quelle originali
-                copy_icons_swap();
+                icons_swap();
 
             });
 
@@ -270,7 +270,7 @@
                 right_input(content);
 
                 // Aggiorno le icone a quelle originali
-                copy_icons_swap();
+                icons_swap();
                 
             });
             right.addEventListener('click', () => {
@@ -282,7 +282,7 @@
                 right_input(content);
 
                 // Aggiorno le icone a quelle originali
-                copy_icons_swap();
+                icons_swap();
                 
             });
 
@@ -301,7 +301,7 @@
                 right.value = left_content;
 
                 // Aggiorno le icone a quelle originali
-                copy_icons_swap();
+                icons_swap();
 
             })
 
