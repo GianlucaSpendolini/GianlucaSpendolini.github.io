@@ -1257,8 +1257,11 @@
                         "Elenco dei riferimenti con ul-li;",
                         {
                             "Varie sezioni con titolo h2 (iniziando con L'ultima torcia": [
-                                "Il titolo fa riferimento alla pagina del gioco 'https://www.serpentarium.net/l-ultima-torcia';",
-                                "Mettere il logo (mettere il logo 'https://static.wixstatic.com/media/5738c7_88ead40507834445af073b0208f2dc64~mv2.png/v1/fill/w_444,h_188,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5738c7_88ead40507834445af073b0208f2dc64~mv2.png' come nella pagina projects/games/);",
+                                {
+                                    "Il titolo fa riferimento alla pagina del gioco (specificata in un commento in .../projects/games/ sopra la sezione GDR)":
+                                        "Ci sarà anche un link che manda alle eventuali cose che faccio per i vari gdr (come schede e cose piccole che hanno bisogno di una sola pagina);"
+                                },
+                                "Mettere il logo come nella pagina projects/games/;",
                                 "Descrizione generale del GDR (ambientazione, meccaniche principali, etc) con riferimento alla guida quickstarter (scaricabile dalla home citata prima);"
                             ]
                         }

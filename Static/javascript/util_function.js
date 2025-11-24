@@ -258,14 +258,6 @@ export function change_type_field(
     if (!button.classList.contains(button_id)) {
         button.classList.add(button_id);
     }
-
-    // // Aspetto che venga inserita la classe con il nome dell'id
-    // (async () => {
-    //     // Se non c'è la classe con il nome dell'id -> la aggiungo (mi serve per aggiungere l'immagine siccome lavora con le classi)
-    //     if (!button.classList.contains(button_id)) {
-    //         await button.classList.add(button_id);
-    //     }
-    // })();
     
     // Controllo che ci siano SVG da inserire
     if (svgs.to_insert) {
@@ -318,30 +310,6 @@ export function change_type_field(
         }
 
     });
-
-    // if (field.type === original) {
-    //     // Cambio il tipo
-    //     field.type = modified;
-    //     // Inserisco l'svg
-    //     if (button.tagName === 'IMG') {
-    //         button.alt = 'Hide';
-    //         button.src = points_number(path) + svg(date.getMonth()).non_barrato;
-    //         button.title = 'Hide password';
-    //     } else {
-    //         button.innerHTML = svgs.non_barrato;
-    //     }
-    // } else {
-    //     // Cambio il tipo
-    //     field.type = "password";
-    //     // Inserisco l'svg
-    //     if (button.tagName === 'IMG') {
-    //         button.alt = 'Show';
-    //         button.src = points_number(path) + svg(date.getMonth()).barrato;
-    //         button.title = 'Show password';
-    //     } else {
-    //         button.innerHTML = svgs.barrato;
-    //     }
-    // }
 }
 
 
@@ -947,8 +915,17 @@ export async function insert_my_json(file_description, points) {
                                     // Aggiungo la chiave
                                     td_aggiunte.append(k);
 
-                                    // Aggiungo la lista che ne esce
-                                    td_aggiunte.appendChild(json_to_element('ul', v));
+                                    // Prendo l'elemento ricavato dalla funzione
+                                    let element_from_json = json_to_element('ul', v);
+
+                                    // Se è un nodo -> la aggiungo come figlio
+                                    if (element_from_json instanceof Node) {
+                                        // Aggiungo la lista che ne esce
+                                        td_aggiunte.appendChild(element_from_json);
+                                    } else {
+                                        // Altrimenti la aggiungo come testo in una lista (per farlo tornare come elenco)
+                                        td_aggiunte.appendChild(json_to_element('ul', [element_from_json]));
+                                    }
                     
                                     // Aggiungo uno spazio
                                     td_aggiunte.append('\n');
