@@ -75,9 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Cerco se voglio la lista delle pagine (per avere un minimo di percorso)
     movement_into_pages(points, path);
-
-    // // Inserisco l'icona per copiare se trovo il bottone
-    // icons_swap();
 });
 
 

@@ -196,6 +196,7 @@ export function change_type_field(
     modified,
     button,
     svgs={
+        to_insert: true,
         original: {
             alt: 'Show',
             src: points_number(path) + svg(date.getMonth()).barrato,
@@ -218,6 +219,7 @@ export function change_type_field(
             - button -> quando cliccato cambia l'icona del bottone e il tipo di campo
             - svgs -> oggetto contenente i riferimenti alle due icone (original e modified)
                 {
+                    to_insert: true/false,
                     original: {
                         alt: 'alt',
                         src: 'path',
@@ -228,7 +230,7 @@ export function change_type_field(
                         src: 'path',
                         title: 'title'
                     },
-                    modified: 'modified'
+                    disabled: 'disabled'
                 }
 
         In questa funzione è compreso anche il cambio dell'icona tramite l'apposita funzione
@@ -265,27 +267,30 @@ export function change_type_field(
     //     }
     // })();
     
-    // Inserisco l'icona tramite la funzione
-    icons_swap(
-        button_id,
-        {
-            alt: svgs.original.alt,
-            src: svgs.original.src,
-            title: svgs.original.title
-        },
-        {
-            alt: svgs.modified.alt,
-            src: svgs.modified.src,
-            title: svgs.modified.title
-        },
-        svgs.disabled
-    );
+    // Controllo che ci siano SVG da inserire
+    if (svgs.to_insert) {
+        // Inserisco l'icona tramite la funzione
+        icons_swap(
+            button_id,
+            {
+                alt: svgs.original.alt,
+                src: svgs.original.src,
+                title: svgs.original.title
+            },
+            {
+                alt: svgs.modified.alt,
+                src: svgs.modified.src,
+                title: svgs.modified.title
+            },
+            svgs.disabled
+        );
+    }
 
     // Aggiungo l'evento onclick al bottone
     button.addEventListener('click', () => {
 
-        // Controllo se il bottone sia un'immagine
-        if (button.tagName === 'IMG') {
+        // Controllo se ci sono SVG da cambiare (già inseriti ma in formato SVG e non percorso)
+        if (svgs.to_insert && button.tagName === 'IMG') {
             if (field.type === original) {
                 // Cambio il tipo
                 field.type = modified;

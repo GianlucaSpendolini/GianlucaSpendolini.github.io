@@ -1209,6 +1209,65 @@
     },
 
     {
+        "tData": "20/11/2025 - 24/11/2025",
+        "tDescrizione": {
+            "Aggiunta": {
+                "utilities/password-checker.html": "Aggiunto bottone per copiare la password;"
+            },
+            "Aggiornamento": {
+                "about.html": "Correzione descrizione logica per vedere i framework utilizzati nella ssezione 'Linguaggi informatici';",
+                "projects/games/": "Descrizione più generale per indicare che ci sono videogiochi e materiale per altri tipi di giochi (come GDR);",
+                "utilities/": {
+                    "/password-checker.html": [
+                        "Sistemati i riferimenti per i richiami delle funzioni icons_swap() e change_type_field();",
+                        "Eseguito l'evento JS per il cambio di tipo e delle icone SVG (in change_type_field() sono gestiti) non tramite un evento click;"
+                    ],
+                    "/pattern-matcher.html": [
+                        "Sistemati i riferimenti per i richiami della funzione icons_swap();"
+                    ],
+                    "/code-translator": [
+                        "Sistemati i riferimenti per i richiami della funzione icons_swap();"
+                    ]
+                },
+                "Static/javascript/": {
+                    "/scripts.js": "Tolto richiamo per la funzione icons_swap() in quanto richiamata solo quando serve e dentro change_type_field();",
+                    "/util_function.js": {
+                        "icons_swap()": [
+                            "Funzione rinominata da copy_icons_swap()",
+                            "Gestione migliore del cambio di icona usando i parametri passati;"
+                        ],
+                        "change_type_field()": [
+                            "Funzione rinominata da togglePasswordVisibility();",
+                            "Gestione migliore del cambio di tipologia usando i parametri passati (se non segno che c'è l'SVG tramite {to_insert: ...} cambio solo la tipologia);"
+                        ]
+                    }
+                },
+                "README.md": "Nuova versione (0.29.0)."
+            }
+        },
+        "tAggiunte": {
+            "Creare la sezione dei GDR nella sezione /projects/games/": [
+                "Fare riferimento a ./RPG/ per il nome della sezione;",
+                {
+                    "Inserire": [
+                        "Elenco dei riferimenti con ul-li;",
+                        {
+                            "Varie sezioni con titolo h2 (iniziando con L'ultima torcia": [
+                                "Il titolo fa riferimento alla <a href='https://www.serpentarium.net/l-ultima-torcia'>pagina del gioco</a>;",
+                                "Mettere il logo (mettere il <a href='https://static.wixstatic.com/media/5738c7_88ead40507834445af073b0208f2dc64~mv2.png/v1/fill/w_444,h_188,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5738c7_88ead40507834445af073b0208f2dc64~mv2.png'>logo</a> come nella pagina projects/games/);",
+                                "Descrizione generale del GDR (ambientazione, meccaniche principali, etc) con riferimento alla guida quickstarter (scaricabile dalla home citata prima);"
+                            ]
+                        }
+                    ]
+                },
+                "Comprende anche schede per le avventure (rimanendo il più fedele possibile all'originale e con le quali si possono fare i calcoli più semplicemente);"
+            ],
+            "Inserire i vari GDR per cui ho creato qualcosa (schede e altro)":
+                "Aggiungere una descrizione per ognuna (con eventuali link per scaricare o usarle)."
+        }
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,
