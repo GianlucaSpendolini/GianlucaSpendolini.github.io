@@ -230,6 +230,8 @@ export function change_type_field(
                     },
                     modified: 'modified'
                 }
+
+        In questa funzione è compreso anche il cambio dell'icona tramite l'apposita funzione
     */
 
     // Se il campo di testo è una stringa
@@ -248,55 +250,69 @@ export function change_type_field(
     let original = field.type;
 
     // Mi ricavo l'id del bottone (per semplicità inserire l'id del campo nell'elenco delle classi)
-    let button_id = button.id;
-
+    let button_id = button.id ? button.id : 'generic-id';
+    
     // Se non c'è la classe con il nome dell'id -> la aggiungo (mi serve per aggiungere l'immagine siccome lavora con le classi)
     if (!button.classList.contains(button_id)) {
         button.classList.add(button_id);
     }
 
-    // Controllo se il bottone sia un'immagine
-    if (button.tagName === 'IMG') {
-        if (field.type === original) {
-            // Cambio il tipo
-            field.type = modified;
-            // Inserisco l'svg
-            button.alt = svgs.modified.alt;
-            button.src = svgs.modified.src;
-            button.title = svgs.modified.title;
+    // // Aspetto che venga inserita la classe con il nome dell'id
+    // (async () => {
+    //     // Se non c'è la classe con il nome dell'id -> la aggiungo (mi serve per aggiungere l'immagine siccome lavora con le classi)
+    //     if (!button.classList.contains(button_id)) {
+    //         await button.classList.add(button_id);
+    //     }
+    // })();
+    
+    // Inserisco l'icona tramite la funzione
+    icons_swap(
+        button_id,
+        {
+            alt: svgs.original.alt,
+            src: svgs.original.src,
+            title: svgs.original.title
+        },
+        {
+            alt: svgs.modified.alt,
+            src: svgs.modified.src,
+            title: svgs.modified.title
+        },
+        svgs.disabled
+    );
+
+    // Aggiungo l'evento onclick al bottone
+    button.addEventListener('click', () => {
+
+        // Controllo se il bottone sia un'immagine
+        if (button.tagName === 'IMG') {
+            if (field.type === original) {
+                // Cambio il tipo
+                field.type = modified;
+                // Inserisco l'svg
+                button.alt = svgs.modified.alt;
+                button.src = svgs.modified.src;
+                button.title = svgs.modified.title;
+            } else {
+                // Cambio il tipo
+                field.type = original;
+                // Inserisco l'svg
+                button.alt = svgs.original.alt;
+                button.src = svgs.original.src;
+                button.title = svgs.original.title;
+            }
         } else {
-            // Cambio il tipo
-            field.type = original;
-            // Inserisco l'svg
-            button.alt = svgs.original.alt;
-            button.src = svgs.original.src;
-            button.title = svgs.original.title;
+            // Se il tipo è modificato -> eseguo la funzione per tornare all'originale (cambiando l'icona)
+            if (field.type === modified) {
+                // Cambio il tipo
+                field.type = original;
+            } else {
+                // Cambio solo il tipo MA non eseguo la funzione perchè altrimenti inserirebbe l'icona original
+                field.type = modified;
+            }
         }
-    } else {
-        // Se il tipo è modificato -> eseguo la funzione per tornare all'originale (cambiando l'icona)
-        if (field.type === modified) {
-            // Cambio il tipo
-            field.type = original;
-            // Inserisco l'icona tramite la funzione
-            icons_swap(
-                button_id,
-                {
-                    alt: svgs.original.alt,
-                    src: svgs.original.path,
-                    title: svgs.original.title
-                },
-                {
-                    alt: svgs.modified.alt,
-                    src: svgs.modified.path,
-                    title: svgs.modified.title
-                },
-                disabled
-            );
-        } else {
-            // Cambio solo il tipo MA non eseguo la funzione perchè altrimenti inserirebbe l'icona original
-            field.type = original;
-        }
-    }
+
+    });
 
     // if (field.type === original) {
     //     // Cambio il tipo
@@ -577,7 +593,6 @@ export function icons_swap(
 	}
 
     if (buttons) {
-
         Array.from(buttons).forEach(button => {
             // Elimino eventuali figli
             if (button.hasChildNodes()) {
@@ -593,18 +608,31 @@ export function icons_swap(
             img.src = original.src;
             img.title = original.title;
 
-            // Inserisco l'icona di default
-            button.appendChild(img);
+            // Cambio il cursore
+            button.style.cursor = 'pointer';
+
+            // Prendo i nomi dei file dell'immagine modifiata
+            let modFile = modified.src.split('/').pop();
     
             // Se clicco -> cambio l'icona
-            button.onclick = function() {
-                img.alt = modified.alt;
-                img.src = modified.src;
-                img.title = modified.title;
+            button.addEventListener('click', () => {
+                // Prendo il nome del file attuale
+                let currFile = img.src.split('/').pop();
 
-                // Disabilito il bottone (se ho specificato di farlo)
-                button.disabled = disabled;
-            };
+                // Confronto i nomi dei file per capire quale immagine mostrare
+                img.alt = currFile === modFile ? original.alt : modified.alt;
+                img.src = currFile === modFile ? original.src : modified.src;
+                img.title = currFile === modFile ? original.title : modified.title;
+
+                // Se non voglio disabilitare il bottone -> eseguo di nuovo la funzione MA con i parametri invertiti
+                if (disabled) {
+                    // Disabilito il bottone (se ho specificato di farlo)
+                    button.disabled = disabled;
+                }
+            });
+
+            // Inserisco l'icona di default
+            button.appendChild(img);
         });
     }
 }

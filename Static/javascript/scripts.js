@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cerco se voglio la lista delle pagine (per avere un minimo di percorso)
     movement_into_pages(points, path);
 
-    // Inserisco l'icona per copiare se trovo il bottone
-    icons_swap();
+    // // Inserisco l'icona per copiare se trovo il bottone
+    // icons_swap();
 });
 
 
@@ -243,6 +243,7 @@ function create_footer(points_path, links_list) {
             }
             else {
                 ul.innerHTML = '<li>Le liste hanno lunghezze differenti</li>';
+                console.error('Le liste hanno lunghezze differenti');
             }
         }
 
@@ -497,7 +498,7 @@ function what_page(points_path) {
             break;
 
         // /code-translator
-        case '/utilities/code-translator':
+        case '/utilities/code-translator.html':
 
             // Titolo
             title.innerHTML = 'Transformer';
@@ -513,17 +514,19 @@ function what_page(points_path) {
             /*
                 Eseguo altre funzionalità
             */
-           // Copiare l'elemento nella clipboard
+            // Copiare l'elemento nella clipboard
             Array.from(document.getElementsByClassName('copy')).forEach(button => {
                 button.addEventListener('click', async () => {
                     await copy_to_clipboard(button.parentNode.parentNode.querySelector('textarea').value);
                 });
             });
+            // Inserisco l'icona per copiare se trovo il bottone
+            icons_swap();
 
             break;
 
         // /password-checker
-        case '/utilities/password-checker':
+        case '/utilities/password-checker.html':
 
             // Titolo
             title.innerHTML = 'Password checker';
@@ -537,10 +540,20 @@ function what_page(points_path) {
                 'E\' anche possibile vedere la password tramite un bottone accanto al campo.'
             ].join(' ');
 
+            /*
+                Eseguo altre funzionalità
+            */
+           // Copiare l'elemento nella clipboard
+            Array.from(document.getElementsByClassName('copy')).forEach(button => {
+                button.addEventListener('click', async () => {
+                    await copy_to_clipboard(button.parentNode.parentNode.querySelector('input').value);
+                });
+            });
+
             break;
 
         // /pattern-matcher
-        case '/utilities/pattern-matcher':
+        case '/utilities/pattern-matcher.html':
 
             // Titolo
             title.innerHTML = 'Smart Pattern Matcher';
@@ -563,6 +576,8 @@ function what_page(points_path) {
                     await copy_to_clipboard(button.parentNode.parentNode.querySelector('textarea').value);
                 });
             });
+            // Inserisco l'icona per copiare se trovo il bottone
+            icons_swap();
 
             break;
 
