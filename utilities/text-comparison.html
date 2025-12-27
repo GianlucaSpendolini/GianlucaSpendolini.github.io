@@ -1,0 +1,150 @@
+<!doctype html>
+
+<html>
+
+<head>
+    
+    <title></title>
+
+</head>
+
+<body>
+
+    <header></header>
+
+    <hr />
+
+    <main>
+
+		<div class="texts-container">
+
+            <div class="old-text-container">
+                
+                <textarea id="old" placeholder="Inserire il testo iniziale"></textarea>
+                
+            </div>
+
+            <div class="new-text-container">
+                
+                <textarea id="new" placeholder="Inserire il testo da confrontare"></textarea>
+                
+            </div>
+
+            <div class="result-container">
+
+                <div>
+                    <button class="copy"></button>
+                </div>
+
+                <div id="result"></div>
+                
+            </div>
+
+		</div>
+
+        <div>
+            <p>
+                Il confronto considererà il primo testo come quello più vecchio ed il secondo come quello più recente. 
+            </p>
+            <p>
+                Nell'ultimo riquadro sarà possibile clickare sopra le varie differenze per scegliere quale tra le due si vuole tenere.
+                Sarà inoltre possibile copiare il testo ottenuto tramite l'apposito bottone in alto a destra.
+            </p>
+        </div>
+
+    </main>
+
+    <hr />
+
+    <footer></footer>
+
+    <!-- File JavaScript generico -->
+    <script src="./../Static/javascript/scripts.js" type="module"></script>
+    
+    <script type="module">
+
+        import {
+            UserText
+        } from './../Static/javascript/util_class.js';
+
+        import {
+            copy_to_clipboard,
+            icons_swap
+        } from './../Static/javascript/util_function.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Prendo i testi
+            let old_text = document.getElementById('old');
+            let new_text = document.getElementById('new');
+
+            // Aggiungo gli eventi
+            old_text.addEventListener('input', () => {
+                manage_array(old_text, new_text);
+                icons_swap();
+            });
+            new_text.addEventListener('input', () => {
+                manage_array(old_text, new_text);
+                icons_swap();
+            });
+
+            // Copiare l'elemento nella clipboard
+            let button = document.getElementsByClassName('copy')[0];
+            button.addEventListener('click', async () => {
+                await copy_to_clipboard(button.parentNode.parentNode.querySelector('#result').innerText);
+            });
+
+            // Inserisco l'icona per copiare se trovo il bottone
+            icons_swap();
+            
+        });
+
+        // Funzione per gestire l'array che mi ritorna
+        function manage_array(old_text, new_text) {
+            // Nuova istanza della classe
+            let text = new UserText(old_text.value);
+
+            // Variabile per contenere il testo comparato
+            let compared_texts = '';
+
+            text.compare(new_text.value).forEach(w => {
+                // Se è array -> analizzo per evidenziare le differenze
+                if (typeof w === 'object') {
+                    // // Se sono array, li converto in stringhe (se nella funzione aggiungo l'array delle differenze come array di array)
+                    // if (Array.isArray(w['old'])) {
+                    //     w['old'] = w['old'].join(' ');
+                    // }
+                    // if (Array.isArray(w['new'])) {
+                    //     w['new'] = w['new'].join(' ');
+                    // }
+                    // Aggiungo lo stile per evidenziare le differenze
+                    compared_texts += (w['old'] ? `<span
+                            class='choice'
+                            style='background-color: #ff9999; text-decoration: line-through;'
+                        >${w['old']}</span> ` : '') + (w['new'] ? `<span
+                            class='choice'
+                            style='background-color: #99ff99;'
+                        >${w['new']}</span> ` : '');
+                } else {
+                    compared_texts += `${w} `;
+                }
+            });
+
+            // Inserisco il testo con le differenze
+            document.getElementById('result').innerHTML = compared_texts;
+
+            // Seleziono tutte le possibili scelte che ho
+            Array.from(document.getElementsByClassName('choice')).forEach(choice => {
+                // Aggiungo l'evento click sulla scelta
+                choice.addEventListener('click', () => {
+                    // La nascondo
+                    choice.style.display = 'none';
+                });
+            });
+        }
+
+    </script>
+    
+</body>
+
+</html>

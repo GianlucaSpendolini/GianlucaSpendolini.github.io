@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html>
+
+<head>
+    
+    <title></title>
+
+</head>
+
+<body>
+
+    <header></header>
+
+    <hr />
+
+    <main>
+
+        <div class="texts-container">
+
+            <div class="text-container">
+
+                <div>
+                    <button class="copy"></button>
+                </div>
+                
+                <textarea id="text" placeholder="Inserire il testo"></textarea>
+                
+            </div>
+
+            <div class="result-container">
+
+                <div>
+                    <button class="copy"></button>
+                </div>
+                
+                <textarea disabled id="result" placeholder="Quì apparirà il risultato ottenuto"></textarea>
+                
+            </div>
+            
+        </div>
+
+        <div>
+            <p>
+                Formatta il testo nel modo più semplice, convertendo eventuali caratteri speciali (come quelli copiati da Word) in caratteri semplici.
+            </p>
+            <p>
+                I bottoni per copiare si disabilitano una volta avvenuta la copia.
+                Per abilitarli nuovamente, basta clickare dentro la sezione in cui è stato inserito il testo da convertire.
+            </p>
+        </div>
+
+    </main>
+
+    <hr />
+
+    <footer></footer>
+
+    <!-- File JavaScript generico -->
+    <script src="./../Static/javascript/scripts.js" type="module"></script>
+    
+    <script type="module">
+
+        import {
+            UserText
+        } from './../Static/javascript/util_class.js';
+
+        import {
+            icons_swap
+        } from './../Static/javascript/util_function.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Text area contenente il testo
+            let textarea = document.getElementById('text');
+
+            textarea.addEventListener('input', () => {
+                formatting(textarea.value);
+                icons_swap();
+            });
+            textarea.addEventListener('click', () => {
+                formatting(textarea.value);
+                icons_swap();
+            });
+            
+        });
+
+        // Funzione per formattare
+        function formatting(value) {
+            // Nuova istanza della classe
+            let text = new UserText(value);
+
+            (async () => {
+                // Inserisco il testo formattato
+                let formatted_text = await text.correctFormatting();
+                document.getElementById('result').value = formatted_text.text;
+            })();
+        }
+
+    </script>
+    
+</body>
+
+</html>

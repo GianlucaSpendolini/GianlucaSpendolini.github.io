@@ -33,6 +33,21 @@
 
 		<hr class="break-line" />
 
+        <!--
+            Per ogni esempio inserito, applicare questa sequenza di sostituzioni (usando /pattern-matcher)
+            - sostituire " con \"
+                - eventuali virgolette danno problemi essendo che ogni riga sarà racchiusa tra esse
+                - ATTENZIONE
+                    - se all'inizio c'è un a capo -> toglierlo
+                    - se alla fine non c'è " dopo l'ultimo carattere dell'ultima riga -> metterlo (nei controlli non verrà inserito in automatico)
+            - sostituire \n( {4}|\t){'numero'} con \n"
+                - inserire il "numero" di tabulazioni da togliere da sinistra (guarda quante sono alla prima ed ultima riga)
+            - sostituire \n con ",\n
+                - chiude le righe
+            - sostituire \n", con \n"",
+                - sistema le righe che non hanno un inizio ma solo ",
+        -->
+
         <div>
 
             <h2><a href="./automatic-filling" name="automatic-filling">Compilazione automatica</a></h2>

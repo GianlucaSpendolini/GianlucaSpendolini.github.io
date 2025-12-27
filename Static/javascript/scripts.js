@@ -578,6 +578,55 @@ function what_page(points_path) {
 
             break;
 
+        // /text-comparison
+        case '/utilities/text-comparison.html':
+
+            // Titolo
+            title.innerHTML = 'Text Comparison';
+
+            // Header title
+            header_title.innerHTML = 'Text Comparison';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = [
+                'Pagina utile per comparare due testi ed evidenziare le differenze tra essi.',
+                'Se si vuole, c\'è anche la possibilità di scegliere quali modifiche scegliere (tra versione nuova o vecchia).'
+            ].join(' ');
+
+            /*
+                Eseguo altre funzionalità
+            */
+
+            break;
+
+        // /text-formatter
+        case '/utilities/text-formatter.html':
+
+            // Titolo
+            title.innerHTML = 'Text Formatter';
+
+            // Header title
+            header_title.innerHTML = 'Text Formatter';
+
+            // Definisco il contenuto della meta-descrizione
+            meta_descrizione = [
+                'Pagina utile per formattare un testo con caratteri semplici, andando a sostituire eventuali caratteri speciali (come quelli copiabili da Word).'
+            ].join(' ');
+
+            /*
+                Eseguo altre funzionalità
+            */
+           // Copiare l'elemento nella clipboard
+            Array.from(document.getElementsByClassName('copy')).forEach(button => {
+                button.addEventListener('click', async () => {
+                    await copy_to_clipboard(button.parentNode.parentNode.querySelector('textarea').value);
+                });
+            });
+            // Inserisco l'icona per copiare se trovo il bottone
+            icons_swap();
+
+            break;
+
         // /scripts/
         case '/utilities/scripts/':
 

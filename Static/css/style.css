@@ -88,7 +88,6 @@
 
 :has(> .copy) {
     background-color: lightslategray;
-    border-radius: 0 0 5px 5px;
     border-radius: 5px 5px 0 0;
     text-align: -webkit-right;
 }
@@ -97,6 +96,14 @@
     border-radius: 0 0 5px 5px;
     box-sizing: border-box;
 } */
+
+:has(> :has(> .copy)) > textarea {
+    align-self: center;
+    border-radius: 0 0 5px 5px;
+    max-width: 100%;
+    min-height: 100px;
+    min-width: 100%;
+}
 
 body {
     line-height: 1.5;
@@ -343,6 +350,15 @@ main#descrizione hr:not(.break-line) {
     min-width: 50%;
 }
 
+main:has(>.converter-container) > div:has(>p) {
+    text-align: -webkit-center;
+}
+
+main:has(>.converter-container) > div:has(>p) > * {
+    text-align: left;
+    max-width: 1000px;
+}
+
 
 /*
     PASSWORD CHECKER 
@@ -463,7 +479,7 @@ main:has(>.checker-container) > div:has(>p) {
     text-align: -webkit-center;
 }
 
-main:has(>.checker-container) > div:has(>p) > p {
+main:has(>.checker-container) > div:has(>p) > * {
     text-align: left;
     max-width: 1000px;
 }
@@ -501,6 +517,10 @@ main:has(>.checker-container) > div:has(>p) > p {
     min-height: 50px;
 }
 
+#pattern, #text-to-search, textarea#replacement {
+    border-radius: 5px;
+}
+
 #text-to-search, #replacement, #result {
     min-height: 100px;
 }
@@ -520,6 +540,73 @@ main:has(>.checker-container) > div:has(>p) > p {
 
 div:has(> #result) {
     margin-top: 20px;
+}
+
+main:has(>.matcher-container) > div:has(>p) {
+    text-align: -webkit-center;
+}
+
+main:has(>.matcher-container) > div:has(>p) > * {
+    text-align: left;
+    max-width: 1000px;
+}
+
+
+/*
+    TEXT COMPARISON
+*/
+
+.texts-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    min-width: 100%;
+    text-align: left;
+}
+
+.texts-container > * {
+    align-self: center;
+    margin: 10px 0px;
+    max-width: 75%;
+    min-width: 75% !important;
+}
+
+div#result {
+    border: solid 1px lightslategray;
+    border-radius: 0 0 5px 5px;
+    max-width: auto;
+    min-width: auto;
+    padding: 0 2.5px 0 2.5px;
+}
+
+textarea#old, textarea#new {
+    align-self: center;
+    border-radius: 5px;
+    max-width: 100%;
+    min-height: 100px;
+    min-width: 100%;
+}
+
+
+/*
+    TEXT FORMATTER
+*/
+
+main:has(>.texts-container) > div:has(>p) {
+    text-align: -webkit-center;
+}
+
+main:has(>.texts-container) > div:has(>p) > * {
+    text-align: left;
+    max-width: 1000px;
+}
+
+textarea#text {
+    align-self: center;
+    border-radius: 0 0 5px 5px;
+    max-width: 100%;
+    min-height: 100px;
+    min-width: 100%;
 }
 
 

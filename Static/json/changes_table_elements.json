@@ -1275,6 +1275,75 @@
     },
 
     {
+        "tData": "24/12/2025 - 26/12/2025",
+        "tDescrizione": {
+            "Aggiunta": {
+                "/utilities/": {
+                    "/text-comparison.html": "Creazione pagina per comparare due testi;",
+                    "/text-formatter.html": "Creazione pagina per formattare il testo, togliendo eventuali caratteri speciali;"
+                },
+                "/Static/": {
+                    "/javascript/util_class.js": "Aggiunto il metodo per il confronto tra testi (funzione non completamente funzionante);"
+                }
+            },
+            "Aggiornamento": {
+                "/utilities/": {
+                    "/index.html": "Aggiunti i riferimenti per le nuove pagine text-comparison e text-formatter;",
+                    "/scripts/": {
+                        "/index.html": "Aggiunta logica per rendere un elenco di stringhe gli esempi;",
+                        "/general-checks.html": "Aggiunti riferimenti per la sezione per il confronto tra testi;"
+                    }
+                },
+                ".gitignore": "Non considera i file *.tmp per le add/push/...;",
+                "README.md": "Nuova versione (0.30.0)."
+            }
+        },
+        "tAggiunte": [
+            {
+                "/Static/": {
+                    "/javascript/util_class.js": [
+                        "Migliora la funzione per il confronto tra testi per gestire anche modifiche in testi lunghi;",
+                        {
+                            "Appena trovo una corrispondenza in uno degli array (shorter o longer)": [
+                                "Se ho usato solo il ciclo j, faccio una ricerca se uno degli i_shorter-no_match elementi prima di i_shorter sia presente prima del j-esimo elemento di longer;",
+                                "Se sono dentro al ciclo k, faccio una ricerca se uno degli j-i_longer elementi prima di j sia presente prima del k-esimo elemento di shorter;",
+                                {
+                                    "Per entrambe le situazioni verrà usata una funzione ricorsiva, nella quale verranno passati": [
+                                        {
+                                            "Oggetto contenente": [
+                                                "Sezione dell'array dell'iterazione coinvolta (se j uso shorter e se k uso longer);",
+                                                "Iterazione più a sinistra (in caso di shorter uso 'iterazione'-no_match e in caso di longer uso i_longer);",
+                                                "Iterazione più a destra;"
+                                            ]
+                                        },
+                                        {
+                                            "Oggetto contenente": [
+                                                "Sezione dell'array dell'iterazione non coinvolta (il contrario del precedente);",
+                                                "Iterazione più a sinistra (in caso di shorter uso 'iterazione'-no_match e in caso di longer uso i_longer);",
+                                                "Iterazione più a destra;"
+                                            ]
+                                        }
+                                    ],
+                                    "Se viene trovata una corrispondenza": [
+                                        "Ritorno ciò che esce richiamando la funzione e passando gli oggetti nel primo ordine;",
+                                        "Uso come iterazione iniziale quella che mi era passata e come quella finale quella a cui sono arrivato;"
+                                    ],
+                                    "Se finisco e non ho trovato altre corrispondenze nel range indicato": [
+                                        "Ritorno ciò che mi è stato passato come parametro sottoforma di oggetto;",
+                                        "L'oggetto che ritorna mi serve per prelevare la sezione o l'elemento nel range indicato nell'array indicato come primo elemento;"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "/json/description.json": "Modifica le funzioni esempio con quelle migliorate (segui i consigli in \"/utilities/scripts/\";"
+                }
+            },
+            "Aggiungi la sezione dei GDR e le pagine descritte nella modifica precedente."
+        ]
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,
