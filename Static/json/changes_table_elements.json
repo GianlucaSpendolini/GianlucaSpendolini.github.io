@@ -1283,15 +1283,29 @@
                     "/text-formatter.html": "Creazione pagina per formattare il testo, togliendo eventuali caratteri speciali;"
                 },
                 "/Static/": {
-                    "/javascript/util_class.js": "Aggiunto il metodo per il confronto tra testi (funzione non completamente funzionante);"
+                    "/javascript/util_class.js": "Metodo per il confronto tra testi (logica presa da funzione PHP e non ancora perfettamente funzionante);"
                 }
             },
             "Aggiornamento": {
                 "/utilities/": {
                     "/index.html": "Aggiunti i riferimenti per le nuove pagine text-comparison e text-formatter;",
+                    "/code-translator.html": "Sistemata descrizione a fondo pagina (dato un massimo di larghezza per gestirlo in schermi larghi;",
+                    "/pattern-matcher.html": "Sistemata descrizione a fondo pagina (dato un massimo di larghezza per gestirlo in schermi larghi;",
                     "/scripts/": {
                         "/index.html": "Aggiunta logica per rendere un elenco di stringhe gli esempi;",
                         "/general-checks.html": "Aggiunti riferimenti per la sezione per il confronto tra testi;"
+                    }
+                },
+                "/Static/": {
+                    "/css/": {
+                        "/style.css": "Stili per nuove pagine e generalizzato quello per il testo a fondo pagina nelle pagine sotto /utilities/;"
+                    },
+                    "/javascript/": {
+                        "/scripts.js": "Aggiunti i riferimenti per le nuove pagine text-comparison e text-formatter;"
+                    },
+                    "/json/": {
+                        "/descriptions.json": "Descrizioni ed esempi per la sezione \"Confronto tra testi\" in general-checks (esempi con JavaScript e PHP);",
+                        "/encoding-map.json": "Aggiunti caratteri da sistemare per la formattazione generale;"
                     }
                 },
                 ".gitignore": "Non considera i file *.tmp per le add/push/...;",

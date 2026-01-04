@@ -579,7 +579,7 @@ function what_page(points_path) {
             break;
 
         // /text-comparison
-        case '/utilities/text-comparison.html':
+        case '/utilities/text-comparison':
 
             // Titolo
             title.innerHTML = 'Text Comparison';
@@ -600,7 +600,7 @@ function what_page(points_path) {
             break;
 
         // /text-formatter
-        case '/utilities/text-formatter.html':
+        case '/utilities/text-formatter':
 
             // Titolo
             title.innerHTML = 'Text Formatter';
