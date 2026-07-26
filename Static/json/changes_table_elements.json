@@ -1358,6 +1358,21 @@
     },
 
     {
+        "tData": "25/07/2026 - 27/07/2026",
+        "tDescrizione": {
+            "Aggiunta": null,
+            "Aggiornamento": {
+                "about.html": [
+                    "Aggiornata la presentazione;",
+                    "Aggiornata la descrizione della sezione inerente all'Istituto Mario Negri;"
+                ],
+                "README.md": "Nuova versione (0.30.1)."
+            }
+        },
+        "tAggiunte": null
+    },
+
+    {
         "tData": "",
         "tDescrizione": {
             "Aggiunta": null,
