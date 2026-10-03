@@ -310,7 +310,7 @@ function what_page(points_path) {
             break;
 
         // About
-        case '/about.html':
+        case '/about':
 
             // Titolo
             title.innerHTML = 'Contatti';
