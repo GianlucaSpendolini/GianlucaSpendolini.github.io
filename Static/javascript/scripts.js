@@ -310,7 +310,7 @@ function what_page(points_path) {
             break;
 
         // About
-        case '/about':
+        case '/about.html':
 
             // Titolo
             title.innerHTML = 'Contatti';
@@ -329,7 +329,7 @@ function what_page(points_path) {
             // Calcolo la mia eta'
             let my_age = date.getFullYear() - 2001;
             // Se e' prima del mio compleanno -> vado in dietro di 1 anno
-            if (date.getDate() < 11 || (date.getMonth() + 1) < 9) {
+            if (((date.getMonth() + 1) < 9) || (date.getDate() < 11 && (date.getMonth() + 1) === 9)) {
                 my_age -= 1;
             }
             // Inserisco il mio anno nella presentazione
