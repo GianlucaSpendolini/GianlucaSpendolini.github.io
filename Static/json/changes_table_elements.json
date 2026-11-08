@@ -1373,13 +1373,16 @@
     },
 
     {
-        "tData": "03/10/2026",
+        "tData": "03/10/2026 & 08/11/2026",
         "tDescrizione": {
             "Aggiunta": null,
             "Aggiornamento": {
-                "Static/javascript/": {
-                    "/scripts.js": "Aggiornata la funzione per calcolare la mia età (specificando meglio le condizioni);",
-                    "/util_function.js": "Aggiornato il messaggio mostrato in codice binario per l'anniversario;"
+                "Static/": {
+                    "/javascript/": {
+                        "/scripts.js": "Aggiornata la funzione per calcolare la mia età (specificando meglio le condizioni);",
+                        "/util_function.js": "Aggiornato il messaggio mostrato in codice binario per l'anniversario;"
+                    },
+                    "/json/progress.json": "Aggiornati i progressi per linguaggio di questo sito;"
                 },
                 "about.html": [
                     "Spostata la presentazione prima dell'elenco puntato delle sezioni;",
