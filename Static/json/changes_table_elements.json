@@ -1377,7 +1377,10 @@
         "tDescrizione": {
             "Aggiunta": null,
             "Aggiornamento": {
-                "Static/javascript/scripts.js": "Aggiornata la funzione per calcolare la mia età (specificando meglio le condizioni);",
+                "Static/javascript/": {
+                    "/scripts.js": "Aggiornata la funzione per calcolare la mia età (specificando meglio le condizioni);",
+                    "/util_function.js": "Aggiornato il messaggio mostrato in codice binario per l'anniversario;"
+                },
                 "about.html": [
                     "Spostata la presentazione prima dell'elenco puntato delle sezioni;",
                     "Tolto il riferimento alla sezione \"Descrizione\" perchè riportato prima dell'elenco;",
@@ -1386,7 +1389,7 @@
                 "README.md": "Nuova versione (0.30.2)."
             }
         },
-        "tAggiunte": null
+        "tAggiunte": "Aggiornare meglio le descrizioni in /about"
     },
 
     {
